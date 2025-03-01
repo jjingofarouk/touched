@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FAQ | Touched Hearts</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/faq.css">
+    <script src="./assets/js/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Frequently Asked Questions</h1>
+    </header>
+
+    <main>
+        <!-- Accordion FAQ Section -->
+        <section class="faq-section">
+            <h2>Common Questions</h2>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button">How can I donate?</button>
+                    <div class="accordion-content">
+                        <p>You can donate by visiting our <a href="donate.html">donation page</a>, where you can choose the amount you'd like to contribute and select your preferred payment method.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-button">Where do funds go?</button>
+                    <div class="accordion-content">
+                        <p>All funds raised go directly to supporting our initiatives in education, healthcare, disability support, and community development. For a detailed breakdown, visit our <a href="our-work.html">Our Work</a> page.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-button">How can I volunteer?</button>
+                    <div class="accordion-content">
+                        <p>To volunteer, simply fill out our <a href="get-involved.html">volunteer sign-up form</a>. We appreciate any time and skills you're able to offer to support our mission.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-button">What programs do you run?</button>
+                    <div class="accordion-content">
+                        <p>We offer a range of programs focused on education, healthcare, community development, and disability support. You can learn more about them on our <a href="our-work.html">Programs</a> page.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-button">Can I fundraise for your cause?</button>
+                    <div class="accordion-content">
+                        <p>Yes! You can start your own fundraiser to support our mission. Visit our <a href="get-involved.html">fundraise page</a> for more information and tips on how to get started.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+            <p>Still have questions? <a href="contact.html">Contact us</a> and we'd be happy to assist you!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Touched Hearts | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Accordion functionality
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                content.classList.toggle('active');
+                button.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
