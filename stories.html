@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Stories | Touched Hearts</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Touched Hearts</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="stories.html" class="active">Stories</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-header">
+        <h1>Impact Stories</h1>
+        <p>Discover how lives are being transformed through our work.</p>
+    </section>
+
+    <!-- Stories Section -->
+    <section class="stories-section">
+        <div id="stories-container" class="stories-grid"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Touched Hearts. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to Fetch and Display Stories -->
+    <script>
+        fetch('./stories.json')
+            .then(response => response.json())
+            .then(stories => {
+                const container = document.getElementById('stories-container');
+                stories.forEach(story => {
+                    const storyHTML = `
+                        <div class="story-card">
+                            <img src="${story.image}" alt="${story.title}" class="story-image">
+                            <div class="story-content">
+                                <h3 class="story-title">${story.title}</h3>
+                                <p class="story-quote">${story.quote}</p>
+                                <p class="story-attribution">${story.author}</p>
+                                <a href="${story.link}" class="text-link">Read Full Story</a>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += storyHTML;
+                });
+            })
+            .catch(error => console.error('Error loading stories:', error));
+    </script>
+
+</body>
+</html>
