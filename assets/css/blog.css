@@ -1,76 +1,175 @@
+/* Blog Page Styles */
 
-/* Blog-Specific Styles (blog.css) */
+/* Global Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
 
-/* Blog Post Card */
+/* Container for the Blog Page */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* Blog Grid Layout (Masonry) */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Individual Blog Post Card */
 .blog-post {
-    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blog-post:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Blog Post Image */
+.blog-post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 /* Blog Post Title */
-.blog-post h2 a {
+.blog-post h3 {
+    font-size: 1.5rem;
     color: #333;
-    font-size: 1.8em;
-    font-weight: bold;
-    transition: color 0.3s;
+    margin: 20px;
+    font-weight: 600;
 }
 
-.blog-post h2 a:hover {
-    color: #4CAF50;
+/* Blog Post Excerpt */
+.blog-post p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0 20px 20px;
+    line-height: 1.6;
 }
 
-/* Excerpt */
-.blog-post p.excerpt {
-    font-size: 1em;
-    color: #666;
+/* Read More Button */
+.blog-post .read-more {
+    display: block;
+    text-align: center;
+    background-color: #48BB78; /* Accent color */
+    color: white;
+    padding: 10px 0;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.blog-post .read-more:hover {
+    background-color: #2f9b5b; /* Darker shade on hover */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: sticky;
+    top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h4 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Sidebar Widget (Categories or Tags) */
+.sidebar .widget {
+    margin-bottom: 30px;
+}
+
+.sidebar .widget ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar .widget ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar .widget ul li a {
+    font-size: 1.1rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sidebar .widget ul li a:hover {
+    color: #48BB78; /* Accent color */
 }
 
 /* Pagination */
 .pagination {
-    margin-top: 40px;
+    display: flex;
     justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
 }
 
-.pagination a {
-    padding: 12px 25px;
-    font-size: 1.1em;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.pagination a:hover {
-    background-color: #4CAF50;
-}
-
-/* Active Page */
 .pagination .page-number {
-    font-weight: bold;
-    color: #fff;
-    background-color: #4CAF50;
-}
-
-/* Search Bar */
-.sidebar form input[type="text"] {
-    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: white;
+    color: #333;
     border: 1px solid #ddd;
-    padding: 10px;
-    font-size: 1em;
-}
-
-.sidebar form button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    font-size: 1em;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.sidebar form button:hover {
-    background-color: #45a049;
+.pagination .page-number:hover {
+    background-color: #48BB78; /* Accent color */
+    color: white;
+}
+
+/* Active Page Number */
+.pagination .page-number.active {
+    background-color: #48BB78; /* Accent color */
+    color: white;
+    border-color: #48BB78;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-post img {
+        height: 250px;
+    }
+
+    .sidebar {
+        position: relative;
+        top: initial;
+        margin-top: 40px;
+    }
+
+    .pagination {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
