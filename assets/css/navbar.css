@@ -1,1 +1,186 @@
+/* Navbar-Specific Styles */
 
+/* Basic Navbar Styles */
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary);
+    z-index: 1000;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+/* Navbar Links - Hover and Focus States */
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: var(--secondary);
+    color: #fff;
+    outline: none;
+}
+
+/* Dropdown Menu for 'Get Involved' */
+nav ul li.dropdown {
+    position: relative;
+}
+
+nav ul li.dropdown:hover > ul {
+    display: block;
+}
+
+nav ul li.dropdown > a {
+    cursor: pointer;
+}
+
+nav ul li.dropdown > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 999;
+    padding: 10px 0;
+}
+
+nav ul li.dropdown > ul li {
+    padding: 10px 20px;
+}
+
+nav ul li.dropdown > ul li a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: none;
+    padding: 5px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li.dropdown > ul li a:hover,
+nav ul li.dropdown > ul li a:focus {
+    background-color: var(--secondary);
+    color: #fff;
+}
+
+/* Hamburger Menu (Mobile) */
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+}
+
+.navbar-toggle .bar {
+    width: 30px;
+    height: 3px;
+    margin: 5px;
+    background-color: #fff;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.navbar-menu {
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-left: 30px;
+}
+
+.navbar-menu li a {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.navbar-menu.active {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: var(--primary);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.navbar-menu.active li {
+    margin: 15px 0;
+}
+
+/* Responsive - Mobile View */
+@media (max-width: 768px) {
+    /* Logo for Mobile */
+    .logo {
+        font-size: 1.6rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-menu.active {
+        display: block;
+    }
+}
+
+/* Accessibility - Focus States */
+nav ul li a:focus,
+nav ul li.dropdown > a:focus {
+    outline: 2px solid var(--secondary);
+    outline-offset: 4px;
+}
+
+nav ul li.dropdown > ul li a:focus {
+    outline: none;
+    background-color: var(--secondary);
+    color: #fff;
+}
