@@ -1,1 +1,91 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Difference - Touched Hearts</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/donate.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav id="navbar">
+            <div class="logo">
+                <a href="../index.html">Touched Hearts</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="our-work.html">Our Work</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Make a Difference</h1>
+        <p>Your support helps change lives and empowers our community.</p>
+    </section>
+
+    <!-- Donation Form -->
+    <div class="donation-form-container">
+        <h2>Donate Now</h2>
+        <p>Choose your donation amount and payment method below to contribute.</p>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 40%"></div>
+        </div>
+        <p class="progress-text">Raised: $4,000 of $10,000 Goal</p>
+
+        <!-- Donation Form -->
+        <form id="donation-form" action="success.html" method="POST">
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <div class="amount-options">
+                    <input type="radio" name="amount" value="50" id="amount-50" checked>
+                    <label for="amount-50">$50</label>
+                    <input type="radio" name="amount" value="100" id="amount-100">
+                    <label for="amount-100">$100</label>
+                    <input type="radio" name="amount" value="200" id="amount-200">
+                    <label for="amount-200">$200</label>
+                    <input type="number" name="customAmount" id="customAmount" placeholder="Custom Amount" min="1">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" id="name" placeholder="Full Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" name="email" id="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="payment">Payment Method</label>
+                <select name="payment" id="payment" required>
+                    <option value="mobileMoney">Mobile Money</option>
+                    <option value="card">Credit/Debit Card</option>
+                </select>
+            </div>
+
+            <button type="submit">Donate Now</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Touched Hearts. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/formValidation.js"></script>
+</body>
+</html>
