@@ -1914,3 +1914,92 @@ input:focus, textarea:focus, select:focus {
     color: var(--dark);
   }
 }
+/* ===== PARTNERS SECTION ===== */
+.partners {
+  padding: var(--spacing-xxl) var(--spacing-md);
+  background-color: var(--off-white);
+  text-align: center;
+}
+
+.partners-text {
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xl);
+  color: var(--dark-gray);
+}
+
+/* Horizontal scrolling grid */
+.partners-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing-lg);
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--spacing-md) 0;
+}
+
+/* Individual Partner Logos */
+.partner-logo {
+  flex: 0 0 auto;
+  width: 150px; /* Adjust width dynamically */
+  height: auto; /* Auto height to maintain aspect ratio */
+  max-height: 100px; /* Ensures consistency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.partner-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures logos fit fully inside */
+}
+
+/* Scrollbar Styling (for Webkit Browsers) */
+.partners-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.partners-grid::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+
+.partners-grid::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+
+.partners-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .partners-grid {
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .partner-logo {
+    width: 120px;
+    max-height: 80px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .partner-logo {
+    width: 130px;
+    max-height: 90px;
+  }
+}
+
+/* Prevent horizontal scrolling on large screens if all logos fit */
+@media (min-width: 992px) {
+  .partners-grid {
+    overflow-x: hidden;
+  }
+}
