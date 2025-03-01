@@ -1,114 +1,223 @@
-/* About Page Styles */
+/* ===== ABOUT PAGE STYLES ===== */
 
-/* Global Styles */
-body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
+/* Page Header */
+.page-header {
+  position: relative;
+  min-height: 40vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('../images/about-header.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
 }
 
-/* About Section */
-.about-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 20px;
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: headerLine 1.5s ease-out forwards;
 }
 
-.about-section h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #333;
+.page-header h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 1s ease-out;
 }
 
-/* Two-column Layout for History and Mission */
-.history-mission {
-    display: grid;
+@keyframes headerLine {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* About Content */
+.about-content {
+  padding: var(--spacing-xxl) var(--spacing-md);
+  background-color: var(--white);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.about-text h2 {
+  position: relative;
+  padding-bottom: var(--spacing-sm);
+}
+
+.about-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: var(--border-radius-full);
+}
+
+.about-image {
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 3;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+.about-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent 50%);
+  pointer-events: none;
+}
+
+/* Why We Exist */
+.why-we-exist {
+  padding: var(--spacing-xxl) var(--spacing-md);
+  background-color: var(--off-white);
+  text-align: center;
+}
+
+.exist-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.exist-item {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.exist-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+}
+
+.exist-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.exist-item:hover img {
+  transform: scale(1.03);
+}
+
+.exist-item h3 {
+  color: var(--primary-color);
+  padding: var(--spacing-md) var(--spacing-md) 0;
+}
+
+.exist-item p {
+  padding: var(--spacing-md);
+  flex: 1;
+}
+
+/* Meet the Team Teaser */
+.meet-team {
+  padding: var(--spacing-xxl) var(--spacing-md);
+  background: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.meet-team::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../assets/images/pattern.svg') repeat;
+  opacity: 0.1;
+  z-index: var(--z-negative);
+}
+
+.meet-team h2 {
+  color: var(--white);
+  margin-bottom: var(--spacing-md);
+}
+
+.meet-team p {
+  max-width: 600px;
+  margin: 0 auto var(--spacing-lg);
+}
+
+.meet-team .btn {
+  background: var(--secondary-color);
+  color: var(--white);
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius-full);
+  transition: all var(--transition-fast);
+}
+
+.meet-team .btn:hover {
+  background: var(--secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .about-content {
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    align-items: center;
+  }
+  
+  .about-text {
+    padding-right: var(--spacing-xl);
+  }
 }
 
-.history, .mission {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-    transition: transform 0.3s ease;
-}
-
-.history img, .mission img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.history:hover, .mission:hover {
-    transform: translateY(-10px);
-}
-
-.history h3, .mission h3 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #48BB78; /* Accent color */
-}
-
-.history p, .mission p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
-}
-
-.history img, .mission img {
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-/* Hover Effect on 'Meet the Team' Teaser */
-.meet-the-team {
-    background-color: #48BB78; /* Accent color */
-    color: #fff;
-    padding: 30px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    cursor: pointer;
-}
-
-.meet-the-team:hover {
-    transform: translateY(-5px);
-    background-color: #2f9b5b; /* Darker hover color */
-}
-
-.meet-the-team h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.meet-the-team p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .history-mission {
-        grid-template-columns: 1fr;
-    }
-
-    .meet-the-team {
-        margin-top: 40px;
-    }
+@media (max-width: 575.98px) {
+  .page-header {
+    min-height: 30vh;
+  }
+  
+  .about-content {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  
+  .why-we-exist {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  
+  .meet-team {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
 }
