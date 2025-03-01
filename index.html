@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/navbar.css">
@@ -28,8 +30,17 @@
                 <ul class="navbar-menu">
                     <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
                     <li><a href="about.html" class="nav-link">About Us</a></li>
-                    <li><a href="programs.html" class="nav-link">Programs</a></li>
-                    <li><a href="donate.html" class="nav-link">Donate</a></li>
+                    <li class="nav-dropdown">
+                        <a href="programs.html" class="nav-link">Our Programs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="healthcare.html">Healthcare</a></li>
+                            <li><a href="disabilities.html">Disability Support</a></li>
+                            <li><a href="community.html">Community Development</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+                    <li><a href="donate.html" class="nav-link btn-donate">Donate</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </div>
@@ -42,31 +53,366 @@
             <div class="hero-content">
                 <h1 class="hero-title">Transforming Lives in Uganda</h1>
                 <p class="hero-subtitle">Supporting persons with disabilities, children, and vulnerable communities with compassion and hope.</p>
-                <a href="donate.html" class="cta-button" role="button">Donate Now</a>
+                <div class="hero-cta">
+                    <a href="donate.html" class="cta-button primary" role="button">Donate Now</a>
+                    <a href="get-involved.html" class="cta-button secondary" role="button">Get Involved</a>
+                </div>
             </div>
-            <img src="../assets/images/hero-image.jpg" alt="Children smiling in Uganda" class="hero-image">
+            <div class="hero-image-container">
+                <img src="./assets/images/hero-image.jpg" alt="Children smiling in Uganda" class="hero-image">
+            </div>
+        </section>
+
+        <!-- Impact Numbers -->
+        <section class="impact-numbers">
+            <div class="impact-container">
+                <div class="impact-item">
+                    <span class="impact-number">10,000+</span>
+                    <p>Lives Touched</p>
+                </div>
+                <div class="impact-item">
+                    <span class="impact-number">25</span>
+                    <p>Communities Served</p>
+                </div>
+                <div class="impact-item">
+                    <span class="impact-number">15</span>
+                    <p>Years of Service</p>
+                </div>
+                <div class="impact-item">
+                    <span class="impact-number">90%</span>
+                    <p>Funds to Programs</p>
+                </div>
+            </div>
         </section>
 
         <!-- Mission Section -->
         <section class="mission" aria-labelledby="mission-title">
-            <h2 id="mission-title" class="section-title">Our Mission</h2>
-            <p class="section-text">At Touched Hearts, we empower underprivileged communities by providing education, healthcare, and opportunities for growth.</p>
+            <div class="mission-container">
+                <div class="mission-content">
+                    <h2 id="mission-title" class="section-title">Our Mission</h2>
+                    <p class="section-text">At Touched Hearts, we empower underprivileged communities by providing education, healthcare, and opportunities for growth. We believe in creating sustainable solutions that allow individuals to build better futures for themselves and their communities.</p>
+                    <a href="about.html" class="text-link">Learn more about our vision <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="mission-video">
+                    <img src="./assets/images/mission-placeholder.jpg" alt="Our mission in action" class="mission-image">
+                    <button class="play-button"><i class="fas fa-play"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section class="programs" aria-labelledby="programs-title">
+            <h2 id="programs-title" class="section-title">Our Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <img src="./assets/images/education-program.jpg" alt="Education program" class="program-image">
+                    <div class="program-content">
+                        <h3 class="program-title">Education</h3>
+                        <p class="program-text">Providing quality education and learning resources for children in underserved communities.</p>
+                        <a href="education.html" class="program-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="./assets/images/healthcare-program.jpg" alt="Healthcare program" class="program-image">
+                    <div class="program-content">
+                        <h3 class="program-title">Healthcare</h3>
+                        <p class="program-text">Delivering essential medical services and health education to remote villages.</p>
+                        <a href="healthcare.html" class="program-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="./assets/images/disability-program.jpg" alt="Disability support program" class="program-image">
+                    <div class="program-content">
+                        <h3 class="program-title">Disability Support</h3>
+                        <p class="program-text">Creating inclusive environments and specialized services for persons with disabilities.</p>
+                        <a href="disabilities.html" class="program-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="./assets/images/community-program.jpg" alt="Community development program" class="program-image">
+                    <div class="program-content">
+                        <h3 class="program-title">Community Development</h3>
+                        <p class="program-text">Building infrastructure and sustainable projects to strengthen local communities.</p>
+                        <a href="community.html" class="program-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="programs-cta">
+                <a href="programs.html" class="cta-button secondary">View All Programs</a>
+            </div>
+        </section>
+
+        <!-- Success Stories -->
+        <section class="success-stories" aria-labelledby="stories-title">
+            <h2 id="stories-title" class="section-title">Impact Stories</h2>
+            <div class="stories-slider">
+                <div class="story-card">
+                    <img src="./assets/images/story1.jpg" alt="Portrait of Amara" class="story-image">
+                    <div class="story-content">
+                        <h3 class="story-title">Amara's Journey</h3>
+                        <p class="story-quote">"Touched Hearts helped me get the education I never thought possible. Now I'm teaching other children in my village."</p>
+                        <p class="story-attribution">— Amara, 24, Teacher</p>
+                        <a href="stories.html#amara" class="text-link">Read Full Story</a>
+                    </div>
+                </div>
+                <!-- Navigation buttons for slider -->
+                <div class="slider-nav">
+                    <button class="slider-prev" aria-label="Previous story"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots">
+                        <span class="slider-dot active"></span>
+                        <span class="slider-dot"></span>
+                        <span class="slider-dot"></span>
+                    </div>
+                    <button class="slider-next" aria-label="Next story"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News & Updates -->
+        <section class="news-updates" aria-labelledby="news-title">
+            <h2 id="news-title" class="section-title">Latest News</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <img src="./assets/images/news1.jpg" alt="New school opening ceremony" class="news-image">
+                    <div class="news-content">
+                        <span class="news-date">February 15, 2025</span>
+                        <h3 class="news-title">New School Opens in Mbale District</h3>
+                        <p class="news-excerpt">Our newest educational facility brings learning opportunities to over 200 children in the region.</p>
+                        <a href="news/school-opening.html" class="text-link">Read More</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="./assets/images/news2.jpg" alt="Healthcare workers at mobile clinic" class="news-image">
+                    <div class="news-content">
+                        <span class="news-date">January 28, 2025</span>
+                        <h3 class="news-title">Mobile Health Clinic Serves 500 Patients</h3>
+                        <p class="news-excerpt">Our medical team provided essential healthcare services to remote communities in northern Uganda.</p>
+                        <a href="news/mobile-clinic.html" class="text-link">Read More</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="./assets/images/news3.jpg" alt="Annual fundraising gala" class="news-image">
+                    <div class="news-content">
+                        <span class="news-date">January 10, 2025</span>
+                        <h3 class="news-title">Annual Gala Raises Record Funds</h3>
+                        <p class="news-excerpt">Thanks to our generous supporters, we exceeded our fundraising goal at this year's Hearts of Hope Gala.</p>
+                        <a href="news/annual-gala.html" class="text-link">Read More</a>
+                    </div>
+                </article>
+            </div>
+            <div class="news-cta">
+                <a href="news.html" class="text-link">View All News <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <!-- Donation Section -->
+        <section class="donation-section" aria-labelledby="donate-title">
+            <div class="donation-container">
+                <div class="donation-content">
+                    <h2 id="donate-title" class="section-title">Make a Difference Today</h2>
+                    <p class="section-text">Your contribution helps us continue our vital work with vulnerable communities in Uganda. Every donation, no matter the size, brings hope and creates lasting change.</p>
+                    <div class="donation-options">
+                        <button class="donation-amount">$25</button>
+                        <button class="donation-amount">$50</button>
+                        <button class="donation-amount active">$100</button>
+                        <button class="donation-amount">$250</button>
+                        <button class="donation-amount">Other</button>
+                    </div>
+                    <div class="donation-frequency">
+                        <label class="radio-container">
+                            <input type="radio" name="frequency" value="one-time" checked>
+                            <span class="radio-label">One-time</span>
+                        </label>
+                        <label class="radio-container">
+                            <input type="radio" name="frequency" value="monthly">
+                            <span class="radio-label">Monthly</span>
+                        </label>
+                    </div>
+                    <a href="donate.html" class="cta-button primary">Donate Now</a>
+                </div>
+                <div class="donation-impact">
+                    <h3 class="impact-title">Your Donation's Impact</h3>
+                    <ul class="impact-list">
+                        <li class="impact-item">
+                            <i class="fas fa-book"></i>
+                            <div class="impact-description">
+                                <span class="impact-highlight">$25</span> provides school supplies for a child
+                            </div>
+                        </li>
+                        <li class="impact-item">
+                            <i class="fas fa-medkit"></i>
+                            <div class="impact-description">
+                                <span class="impact-highlight">$50</span> delivers medical care for a family
+                            </div>
+                        </li>
+                        <li class="impact-item">
+                            <i class="fas fa-home"></i>
+                            <div class="impact-description">
+                                <span class="impact-highlight">$100</span> supports housing improvements
+                            </div>
+                        </li>
+                        <li class="impact-item">
+                            <i class="fas fa-water"></i>
+                            <div class="impact-description">
+                                <span class="impact-highlight">$250</span> helps build clean water systems
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter" aria-labelledby="newsletter-title">
+            <div class="newsletter-container">
+                <h2 id="newsletter-title" class="section-title">Stay Connected</h2>
+                <p class="newsletter-text">Subscribe to our newsletter to receive updates on our projects, success stories, and upcoming events.</p>
+                <form class="newsletter-form" action="subscribe.php" method="post">
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" placeholder="Your email address" required>
+                        <button type="submit" class="cta-button primary">Subscribe</button>
+                    </div>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="consent" required>
+                        <span class="checkbox-label">I agree to receive communications from Touched Hearts. View our <a href="privacy.html">Privacy Policy</a>.</span>
+                    </label>
+                </form>
+            </div>
+        </section>
+
+        <!-- Partners & Sponsors -->
+        <section class="partners" aria-labelledby="partners-title">
+            <h2 id="partners-title" class="section-title">Our Partners</h2>
+            <p class="partners-text">We're grateful for the support of these organizations that make our work possible.</p>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="./assets/images/partner1.png" alt="Partner Organization 1">
+                </div>
+                <div class="partner-logo">
+                    <img src="./assets/images/partner2.png" alt="Partner Organization 2">
+                </div>
+                <div class="partner-logo">
+                    <img src="./assets/images/partner3.png" alt="Partner Organization 3">
+                </div>
+                <div class="partner-logo">
+                    <img src="./assets/images/partner4.png" alt="Partner Organization 4">
+                </div>
+                <div class="partner-logo">
+                    <img src="./assets/images/partner5.png" alt="Partner Organization 5">
+                </div>
+            </div>
+            <a href="partners.html" class="text-link">Become a Partner <i class="fas fa-arrow-right"></i></a>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2 class="cta-title">Together, We Can Make a Difference</h2>
+                <p class="cta-text">Join our community of supporters and help us create lasting change for the people of Uganda.</p>
+                <div class="cta-buttons">
+                    <a href="donate.html" class="cta-button primary">Donate</a>
+                    <a href="volunteer.html" class="cta-button secondary">Volunteer</a>
+                    <a href="fundraise.html" class="cta-button secondary">Fundraise</a>
+                </div>
+            </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="footer-container">
-            <p>&copy; 2025 Touched Hearts. All rights reserved.</p>
-            <ul class="footer-links">
-                <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
-                <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+            <div class="footer-column">
+                <a href="index.html" class="footer-logo">
+                    <img src="./assets/images/logo-white.png" alt="Touched Hearts Logo" class="logo">
+                </a>
+                <p class="footer-tagline">Transforming lives with compassion and hope</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/touchedhearts" aria-label="LinkedIn" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://youtube.com/touchedhearts" aria-label="YouTube" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="programs.html" class="footer-link">Our Programs</a></li>
+                    <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
+                    <li><a href="donate.html" class="footer-link">Donate</a></li>
+                    <li><a href="events.html" class="footer-link">Events</a></li>
+                    <li><a href="news.html" class="footer-link">News & Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="annual-reports.html" class="footer-link">Annual Reports</a></li>
+                    <li><a href="financial-statements.html" class="footer-link">Financial Statements</a></li>
+                    <li><a href="media.html" class="footer-link">Media Resources</a></li>
+                    <li><a href="stories.html" class="footer-link">Success Stories</a></li>
+                    <li><a href="faq.html" class="footer-link">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Contact Us</h3>
+                <address class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
+                    <p><i class="fas fa-phone"></i> +256 712 345 678</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@touchedhearts.org">info@touchedhearts.org</a></p>
+                </address>
+                <div class="certifications">
+                    <img src="./assets/images/charity-seal.png" alt="Charity Navigator Seal" class="certification-logo">
+                    <img src="./assets/images/transparency-badge.png" alt="Transparency Badge" class="certification-logo">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2025 Touched Hearts. All rights reserved.</p>
+            <ul class="legal-links">
+                <li><a href="privacy.html" class="legal-link">Privacy Policy</a></li>
+                <li><a href="terms.html" class="legal-link">Terms of Service</a></li>
+                <li><a href="accessibility.html" class="legal-link">Accessibility</a></li>
             </ul>
         </div>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner">
+        <div class="cookie-content">
+            <p>We use cookies to improve your experience on our website. By continuing to browse, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+            <div class="cookie-buttons">
+                <button class="cookie-button accept">Accept All</button>
+                <button class="cookie-button preferences">Preferences</button>
+                <button class="cookie-button reject">Reject All</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Donation Floating Button (Mobile) -->
+    <a href="donate.html" class="floating-donate-button" aria-label="Donate Now">
+        <i class="fas fa-heart"></i> Donate
+    </a>
+
     <!-- JavaScript -->
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/navbar.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/navbar.js"></script>
+    <script src="./assets/js/slider.js"></script>
 </body>
 </html>
