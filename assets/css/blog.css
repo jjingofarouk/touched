@@ -1,1 +1,76 @@
 
+/* Blog-Specific Styles (blog.css) */
+
+/* Blog Post Card */
+.blog-post {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Blog Post Title */
+.blog-post h2 a {
+    color: #333;
+    font-size: 1.8em;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.blog-post h2 a:hover {
+    color: #4CAF50;
+}
+
+/* Excerpt */
+.blog-post p.excerpt {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.pagination a {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.pagination a:hover {
+    background-color: #4CAF50;
+}
+
+/* Active Page */
+.pagination .page-number {
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+}
+
+/* Search Bar */
+.sidebar form input[type="text"] {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 1em;
+}
+
+.sidebar form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar form button:hover {
+    background-color: #45a049;
+}
