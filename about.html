@@ -3,37 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Touched Hearts</title>
+    <meta name="description" content="Learn about Touched Hearts, our mission to support Uganda's vulnerable communities, and our impactful journey since 2010.">
+    <title>About Touched Hearts - Our Story & Mission</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/about.css">
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <!-- Navigation -->
-    <header>
-        <nav id="navbar">
-            <div class="logo">
-                <a href="../index.html">Touched Hearts</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="our-work.html">Our Work</a></li>
-                <li><a href="get-involved.html">Get Involved</a></li>
-                <li><a href="team.html">Our Team</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-logo">
+                <img src="./assets/images/logo.png" alt="Touched Hearts Logo" class="logo">
+            </a>
+            <button class="navbar-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="navbar-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="our-work.html" class="nav-link">Our Work</a></li>
+                    <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+                    <li><a href="team.html" class="nav-link">Our Team</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Page Header -->
-    <section class="page-header">
+    <section class="page-header" role="banner">
         <h1>About Touched Hearts</h1>
     </section>
 
     <!-- About Section -->
-    <section class="about-content">
+    <section class="about-content" aria-labelledby="our-story">
         <div class="about-text">
-            <h2>Our Story</h2>
+            <h2 id="our-story">Our Story</h2>
             <p>Touched Hearts was founded in 2010 with a mission to support Uganda’s most vulnerable communities, including children, women, and persons with disabilities. Our journey began with a small group of passionate volunteers dedicated to making a difference. Today, we have impacted thousands through education, healthcare, and empowerment programs.</p>
             
             <h2>Our Mission</h2>
@@ -42,46 +51,54 @@
             <h2>Our Vision</h2>
             <p>We envision a future where every child and vulnerable person in Uganda has access to healthcare, education, and a dignified life.</p>
         </div>
-
-        <div class="about-image">
-            <img src="../assets/images/programs/mission.jpg" alt="Touched Hearts in action">
-        </div>
+        <figure class="about-image">
+            <img src="./assets/images/programs/mission.jpg" alt="Touched Hearts team working with community in Uganda">
+            <figcaption class="visually-hidden">Touched Hearts in action supporting Uganda's communities</figcaption>
+        </figure>
     </section>
 
     <!-- Why We Exist Section -->
-    <section class="why-we-exist">
-        <h2>Why We Exist</h2>
+    <section class="why-we-exist" aria-labelledby="why-we-exist-heading">
+        <h2 id="why-we-exist-heading">Why We Exist</h2>
         <div class="exist-container">
-            <div class="exist-item">
-                <img src="../assets/images/programs/education.jpg" alt="Education Program">
+            <article class="exist-item">
+                <img src="./assets/images/programs/education.jpg" alt="Children receiving education support">
                 <h3>Education for All</h3>
                 <p>We provide scholarships and learning materials to children from low-income families.</p>
-            </div>
-            <div class="exist-item">
-                <img src="../assets/images/programs/healthcare.jpg" alt="Healthcare Program">
+            </article>
+            <article class="exist-item">
+                <img src="./assets/images/programs/healthcare.jpg" alt="Healthcare professional assisting patient">
                 <h3>Healthcare Support</h3>
                 <p>We offer free medical check-ups and ensure access to essential health services.</p>
-            </div>
-            <div class="exist-item">
-                <img src="../assets/images/programs/empowerment.jpg" alt="Women Empowerment">
+            </article>
+            <article class="exist-item">
+                <img src="./assets/images/programs/empowerment.jpg" alt="Women in vocational training">
                 <h3>Women’s Empowerment</h3>
                 <p>We equip women with vocational skills to help them achieve financial independence.</p>
-            </div>
+            </article>
         </div>
     </section>
 
     <!-- Meet the Team Teaser -->
-    <section class="meet-team">
-        <h2>Meet Our Team</h2>
+    <section class="meet-team" aria-labelledby="meet-team-heading">
+        <h2 id="meet-team-heading">Meet Our Team</h2>
         <p>Behind Touched Hearts is a team of dedicated individuals committed to making a difference.</p>
-        <a href="team.html" class="btn">Meet the Team</a>
+        <a href="team.html" class="btn cta-button primary" aria-label="Meet the Touched Hearts Team">Meet the Team</a>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Touched Hearts. All Rights Reserved.</p>
+    <footer class="footer" role="contentinfo">
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>© 2025 Touched Hearts. All Rights Reserved.</p>
+                <nav class="footer-nav">
+                    <a href="./privacy.html" class="footer-link">Privacy Policy</a>
+                    <a href="./terms.html" class="footer-link">Terms of Use</a>
+                </nav>
+            </div>
+        </div>
     </footer>
 
-    <script src="../assets/js/main.js"></script>
+    <script src="./assets/js/main.js" defer></script>
 </body>
 </html>
