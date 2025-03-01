@@ -1,1 +1,75 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Gallery - Touched Hearts</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/gallery.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p>Explore the impact of our work through images</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="community">Community</button>
+                <button class="filter-btn" data-filter="programs">Programs</button>
+            </div>
+
+            <!-- Image Grid -->
+            <div class="image-gallery">
+                <!-- Example Image Cards -->
+                <div class="image-card event">
+                    <a href="./assets/images/gallery/image1.jpg" class="lightbox">
+                        <img src="./assets/images/gallery/image1.jpg" alt="Event 1">
+                    </a>
+                </div>
+                <div class="image-card community">
+                    <a href="./assets/images/gallery/image2.jpg" class="lightbox">
+                        <img src="./assets/images/gallery/image2.jpg" alt="Community 1">
+                    </a>
+                </div>
+                <div class="image-card programs">
+                    <a href="./assets/images/gallery/image3.jpg" class="lightbox">
+                        <img src="./assets/images/gallery/image3.jpg" alt="Program 1">
+                    </a>
+                </div>
+                <div class="image-card event">
+                    <a href="./assets/images/gallery/image4.jpg" class="lightbox">
+                        <img src="./assets/images/gallery/image4.jpg" alt="Event 2">
+                    </a>
+                </div>
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span id="close-lightbox" class="close-btn">&times;</span>
+        <img id="lightbox-image" src="" alt="Lightbox Image">
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Touched Hearts - All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/gallery.js"></script>
+</body>
+
+</html>
