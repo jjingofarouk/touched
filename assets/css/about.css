@@ -1,99 +1,114 @@
+/* About Page Styles */
 
-/* General Styling */
+/* Global Styles */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-/* Page Header */
-.page-header {
-    background: url('../images/programs/header-bg.jpg') center/cover no-repeat;
-    text-align: center;
-    padding: 80px 20px;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
 }
 
 /* About Section */
-.about-content {
+.about-section {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 50px 20px;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.about-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Two-column Layout for History and Mission */
+.history-mission {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
     max-width: 1200px;
-    margin: auto;
-}
-
-.about-text {
-    flex: 1;
+    margin: 0 auto;
     padding: 20px;
-    min-width: 300px;
 }
 
-.about-image img {
+.history, .mission {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.history img, .mission img {
     width: 100%;
-    max-width: 400px;
+    max-height: 300px;
+    object-fit: cover;
     border-radius: 10px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Why We Exist Section */
-.why-we-exist {
-    text-align: center;
-    padding: 50px 20px;
-    background: #fff;
+.history:hover, .mission:hover {
+    transform: translateY(-10px);
 }
 
-.exist-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+.history h3, .mission h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #48BB78; /* Accent color */
 }
 
-.exist-item {
-    background: #fff;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+.history p, .mission p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.history img, .mission img {
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-.exist-item img {
-    width: 100%;
+/* Hover Effect on 'Meet the Team' Teaser */
+.meet-the-team {
+    background-color: #48BB78; /* Accent color */
+    color: #fff;
+    padding: 30px;
+    text-align: center;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
 }
 
-/* Meet the Team Section */
-.meet-team {
-    text-align: center;
-    padding: 50px 20px;
-    background: #e6f0ff;
+.meet-the-team:hover {
+    transform: translateY(-5px);
+    background-color: #2f9b5b; /* Darker hover color */
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    color: white;
-    background: #0077cc;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
+.meet-the-team h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-.btn:hover {
-    background: #005fa3;
+.meet-the-team p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #333;
-    color: white;
-    margin-top: 50px;
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .history-mission {
+        grid-template-columns: 1fr;
+    }
+
+    .meet-the-team {
+        margin-top: 40px;
+    }
 }
