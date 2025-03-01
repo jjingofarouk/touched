@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thank You | Touched Hearts</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/main.js" defer></script>
+    <style>
+        /* Celebratory animation */
+        .celebration {
+            font-size: 3em;
+            color: #FFD700;
+            animation: bounce 2s infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* General Layout */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .message {
+            font-size: 1.5em;
+            color: #333;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-container a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Thank You!</h1>
+    </header>
+
+    <div class="celebration">
+        <span>🎉</span>
+    </div>
+
+    <div class="message">
+        <p>Your donation/support has been received. Thank you for making a difference!</p>
+    </div>
+
+    <div class="button-container">
+        <a href="../index.html">Return to Home</a>
+        <a href="../donate.html">Donate Again</a>
+    </div>
+
+</body>
+
+</html>
