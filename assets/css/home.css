@@ -869,6 +869,7 @@ input:focus, textarea:focus, select:focus {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .play-button {
@@ -964,6 +965,8 @@ input:focus, textarea:focus, select:focus {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+    object-position: top;
+
 }
 
 .program-content {
@@ -1045,6 +1048,8 @@ input:focus, textarea:focus, select:focus {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+    object-position: top;
+
 }
 
 .story-content {
@@ -1103,6 +1108,8 @@ input:focus, textarea:focus, select:focus {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+    object-position: top;
+
 }
 
 .story-content {
@@ -1339,12 +1346,16 @@ input:focus, textarea:focus, select:focus {
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   position: relative;
+  object-position: top;
+
 }
 
 .volunteer-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+    object-position: top;
+
 }
 
 .volunteer-cta {
@@ -1390,6 +1401,8 @@ input:focus, textarea:focus, select:focus {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+    object-position: top;
+
 }
 
 .news-content {
@@ -1900,109 +1913,5 @@ input:focus, textarea:focus, select:focus {
   body {
     background-color: var(--white);
     color: var(--dark);
-  }
-}
-
-/* ===== PARTNERS SECTION ===== */
-.partners {
-  padding: var(--spacing-xxl) var(--spacing-md);
-  background-color: var(--white);
-  text-align: center;
-}
-
-.partners-text {
-  max-width: 600px;
-  margin: 0 auto var(--spacing-xl);
-  color: var(--dark-gray);
-}
-
-.partners-grid {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-lg);
-  max-width: var(--container-xl);
-  margin: 0 auto var(--spacing-xl);
-  overflow-x: auto;
-  padding: var(--spacing-md) 0;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: var(--primary-color) var(--light-gray);
-}
-
-/* Custom scrollbar for Webkit browsers */
-.partners-grid::-webkit-scrollbar {
-  height: 8px;
-}
-
-.partners-grid::-webkit-scrollbar-track {
-  background: var(--light-gray);
-  border-radius: var(--border-radius-full);
-}
-
-.partners-grid::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border-radius: var(--border-radius-full);
-}
-
-.partners-grid::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-dark);
-}
-
-.partner-logo {
-  flex: 0 0 auto; /* Prevents shrinking or growing */
-  width: 150px; /* Fixed width for consistency */
-  height: 100px; /* Fixed height for consistency */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--off-white);
-  border-radius: var(--border-radius-md);
-  padding: var(--spacing-sm);
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-  box-shadow: var(--shadow-sm);
-}
-
-.partner-logo:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-}
-
-.partner-logo img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain; /* Ensures logos maintain aspect ratio */
-  filter: grayscale(100%); /* Default grayscale effect */
-  transition: filter var(--transition-normal);
-}
-
-.partner-logo:hover img {
-  filter: grayscale(0%); /* Color on hover */
-}
-
-/* Ensure horizontal alignment on smaller screens */
-@media (max-width: 575.98px) {
-  .partners {
-    padding: var(--spacing-lg) var(--spacing-sm);
-  }
-  
-  .partners-grid {
-    gap: var(--spacing-md);
-    padding: var(--spacing-sm) var(--spacing-md);
-  }
-  
-  .partner-logo {
-    width: 120px; /* Slightly smaller for mobile */
-    height: 80px;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 991.98px) {
-  .partner-logo {
-    width: 130px;
-    height: 90px;
   }
 }
