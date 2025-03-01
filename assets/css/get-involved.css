@@ -1,1 +1,102 @@
 
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Page Header */
+.page-header {
+    background: url('../images/get-involved-bg.jpg') center/cover no-repeat;
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Main Container */
+.get-involved-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+/* Sections */
+.involve-section {
+    width: 350px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.involve-section:hover {
+    transform: translateY(-5px);
+}
+
+/* Icons */
+.involve-section i {
+    font-size: 3rem;
+    color: #0077cc;
+    margin-bottom: 15px;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background: #0077cc;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #005fa3;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background: #0077cc;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #005fa3;
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+    .get-involved-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
