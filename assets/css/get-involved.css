@@ -1,61 +1,125 @@
+/* Get Involved Page Styles */
 
-/* General Styling */
+/* Global Styles */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    color: #333;
 }
 
-/* Page Header */
-.page-header {
-    background: url('../images/get-involved-bg.jpg') center/cover no-repeat;
-    text-align: center;
-    padding: 80px 20px;
-    color: white;
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* Section Title */
+section h2 {
     font-size: 2rem;
-    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* Main Container */
+/* Flex Container for Sections */
 .get-involved-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: auto;
-    padding: 50px 20px;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 50px;
 }
 
-/* Sections */
-.involve-section {
-    width: 350px;
-    padding: 30px;
-    background: white;
+/* Individual Section Style (Volunteer, Donate, Fundraise) */
+.get-involved-card {
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin: 20px;
-    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.involve-section:hover {
+.get-involved-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.get-involved-card i {
+    font-size: 3rem;
+    color: #48BB78; /* Accent color */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.get-involved-card:hover i {
+    transform: scale(1.2);
+}
+
+.get-involved-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.get-involved-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Call to Action Button */
+.cta-button {
+    padding: 15px 30px;
+    background-color: #48BB78; /* Accent color */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+.cta-button:hover {
+    background-color: #2f9b5b; /* Darker shade on hover */
     transform: translateY(-5px);
 }
 
-/* Icons */
-.involve-section i {
-    font-size: 3rem;
-    color: #0077cc;
-    margin-bottom: 15px;
+/* Form Section */
+.form-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
 }
 
-/* Forms */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.form-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
 }
 
 input, textarea {
@@ -63,40 +127,65 @@ input, textarea {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
-button {
-    background: #0077cc;
+input:focus, textarea:focus {
+    border-color: #48BB78; /* Accent color */
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+button[type="submit"] {
+    padding: 12px 20px;
+    background-color: #48BB78;
     color: white;
     border: none;
-    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
     cursor: pointer;
-    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background: #005fa3;
+button[type="submit"]:hover {
+    background-color: #2f9b5b; /* Darker shade on hover */
 }
 
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    color: white;
-    background: #0077cc;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
+/* Form Validation Feedback */
+input:invalid, textarea:invalid {
+    border-color: #e74c3c;
 }
 
-.btn:hover {
-    background: #005fa3;
+input:valid, textarea:valid {
+    border-color: #48BB78;
 }
 
-/* Responsive */
-@media screen and (max-width: 900px) {
+.validation-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .get-involved-card {
+        width: 100%;
+        padding: 20px;
+    }
+
     .get-involved-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 15px;
     }
 }
