@@ -1,1 +1,128 @@
 
+/* Team Page Styles (team.css) */
+
+/* General Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Team Grid */
+.team-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.team-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 80%;
+}
+
+/* Individual Team Member Cards */
+.team-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+}
+
+.team-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.team-info {
+    padding: 15px;
+}
+
+.team-info h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.team-info .role {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.team-info .bio {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Leadership Section */
+.leadership {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.leadership-profiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.leadership-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.leadership-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.leadership-info {
+    padding: 20px;
+}
+
+.leadership-info h3 {
+    font-size: 1.8em;
+    color: #333;
+}
+
+.leadership-info .leadership-role {
+    font-size: 1.3em;
+    color: #666;
+}
+
+.leadership-info .leadership-bio {
+    font-size: 1em;
+    color: #555;
+}
