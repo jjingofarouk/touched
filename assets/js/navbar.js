@@ -23,12 +23,17 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.overflow = !expanded ? 'hidden' : '';
   });
   
-  // Close menu when clicking outside
+  // Close menu when clicking overlay (but not when clicking menu items)
   overlay.addEventListener('click', function() {
     navToggle.setAttribute('aria-expanded', 'false');
     navMenu.classList.remove('active');
     overlay.classList.remove('active');
     document.body.style.overflow = '';
+  });
+  
+  // Prevent clicks on the menu from closing it
+  navMenu.addEventListener('click', function(e) {
+    e.stopPropagation();
   });
   
   // Handle dropdowns in mobile view
