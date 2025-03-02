@@ -1,18 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector(".nav-toggle");
-    const menu = document.querySelector(".nav-menu");
+let lastScrollTop = 0;
+const navbar = document.querySelector(".navbar");
 
-    toggle.addEventListener("click", function () {
-        menu.classList.toggle("active");
-        toggle.classList.toggle("active");
-    });
+window.addEventListener("scroll", function () {
+  let currentScroll = window.scrollY;
 
-    window.addEventListener("scroll", function () {
-        const nav = document.querySelector(".nav");
-        if (window.scrollY > 50) {
-            nav.classList.add("scrolled");
-        } else {
-            nav.classList.remove("scrolled");
-        }
-    });
+  if (currentScroll > lastScrollTop) {
+    // Scrolling down - Hide navbar
+    navbar.style.transform = "translateY(-100%)";
+  } else {
+    // Scrolling up - Show navbar
+    navbar.style.transform = "translateY(0)";
+  }
+  
+  lastScrollTop = currentScroll;
 });
