@@ -2,9 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const navToggle = document.querySelector(".nav-toggle");
     const navMenu = document.querySelector(".nav-menu");
     const overlay = document.querySelector(".nav-overlay");
-    const navbar = document.querySelector(".navbar"); // Assuming your navbar has a class of "navbar"
-
-    let lastScrollTop = 0; // To keep track of the last scroll position
+    let lastScrollTop = 0; // To track the last scroll position
+    const navbar = document.querySelector(".nav");
 
     // Function to open the menu
     function openMenu() {
@@ -54,20 +53,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Detect scroll direction
+    // Scroll functionality to hide navbar on scroll down and show on scroll up
     window.addEventListener("scroll", function () {
-        let currentScrollTop = window.scrollY; // Current scroll position
-
-        // Check if the user is scrolling down or up
-        if (currentScrollTop > lastScrollTop) {
-            // User is scrolling down, hide the navbar
-            navbar.style.transform = "translateY(-100%)"; // Hide the navbar
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (currentScroll > lastScrollTop) {
+            // User is scrolling down, hide navbar
+            navbar.classList.add("hidden");
         } else {
-            // User is scrolling up, show the navbar
-            navbar.style.transform = "translateY(0)"; // Show the navbar
+            // User is scrolling up, show navbar
+            navbar.classList.remove("hidden");
         }
-
-        // Update the last scroll position
-        lastScrollTop = currentScrollTop;
+        
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
     });
 });
