@@ -2,12 +2,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.querySelector(".navbar-toggle"); // Updated class name
     const menu = document.querySelector(".navbar-menu");     // Updated class name
     const nav = document.querySelector(".nav");
+    const overlay = document.querySelector(".nav-overlay");  // Target overlay
     let lastScroll = 0;
 
     // Mobile menu toggle
     toggle.addEventListener("click", function () {
         menu.classList.toggle("active");
         toggle.classList.toggle("active");
+        overlay.classList.toggle("active");  // Toggle the overlay when the menu is active
+    });
+
+    // Overlay click to close the menu
+    overlay.addEventListener("click", function () {
+        menu.classList.remove("active");
+        toggle.classList.remove("active");
+        overlay.classList.remove("active");  // Remove overlay when menu is closed
     });
 
     // Scroll handling
