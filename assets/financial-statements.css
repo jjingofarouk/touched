@@ -1,0 +1,130 @@
+/* assets/css/financial-statements.css */
+.financial-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.financial-section::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+    animation: glow 20s infinite;
+}
+
+@keyframes glow {
+    0% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.1); opacity: 0.2; }
+    100% { transform: scale(1); opacity: 0.4; }
+}
+
+.financial-filter {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#yearFilter {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 25px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#yearFilter:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.financial-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.financial-table {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: right;
+    font-family: 'Open Sans', sans-serif;
+}
+
+th {
+    background: #007bff;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+td {
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover td {
+    background: #f9f9f9;
+    transition: background 0.3s ease;
+}
+
+.financial-chart {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.financial-download {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+#downloadBtn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#downloadBtn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+    .financial-container {
+        grid-template-columns: 1fr;
+    }
+
+    th, td {
+        font-size: 0.85rem;
+        padding: 0.75rem;
+    }
+}
