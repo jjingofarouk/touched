@@ -12,118 +12,155 @@
 </head>
 
 <body>
-<header>
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">
-                <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
-            </a>
-            <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="navbar-menu">
-                <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li class="nav-dropdown">
-                    <a href="programs.html" class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="education.html">Education</a></li>
-                        <li><a href="healthcare.html">Healthcare</a></li>
-                        <li><a href="disabilities.html">Disability Support</a></li>
-                        <li><a href="community.html">Community Development</a></li>
-                    </ul>
-                </li>
-                <li><a href="stories.html" class="nav-link">Stories</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="news.html" class="nav-link">Blog</a></li>
-                
-                <li class="nav-dropdown">
-                    <a href="get-involved.html" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="volunteers.html">Volunteers</a></li>
-                        <li><a href="partners.html">Partners</a></li>
-                        
-                    </ul>
-                </li>
-                
-                <li><a href="donate.html" class="nav-link btn-donate">Donate Now</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-logo">
+                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
+                </a>
+                <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="navbar-menu">
+                    <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="nav-dropdown">
+                        <a href="programs.html" class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="healthcare.html">Healthcare</a></li>
+                            <li><a href="disabilities.html">Disability Support</a></li>
+                            <li><a href="community.html">Community Development</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="stories.html" class="nav-link">Stories</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="news.html" class="nav-link">Blog</a></li>
+                    <li class="nav-dropdown">
+                        <a href="get-involved.html" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="volunteers.html">Volunteers</a></li>
+                            <li><a href="partners.html">Partners</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="donate.html" class="nav-link btn-donate">Donate Now</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
     <main>
-        <section class="team-grid">
-            <h2>Meet Our Team</h2>
-            <div class="team-cards">
+        <section class="team-grid" aria-label="Meet Our Dedicated Team">
+            <h1 class="section-title">Meet Our Team</h1>
+            <div class="team-cards" role="list">
                 <!-- Team Member 1 -->
-                <div class="team-card">
-                    <img src="../assets/images/team/member1.jpg" alt="Team Member 1" class="team-img">
+                <div class="team-card" role="listitem">
+                    <img src="../assets/images/team/member1.jpg" alt="John Doe, Founder & CEO" class="team-img">
                     <div class="team-info">
-                        <h3>John Doe</h3>
+                        <h2 class="team-name">John Doe</h2>
                         <p class="role">Founder & CEO</p>
-                        <p class="bio">John is passionate about creating sustainable solutions for the underserved communities in Uganda. With years of experience in leadership and social impact, John leads the team with a focus on innovation and empathy.</p>
+                        <p class="bio">John is passionate about creating sustainable solutions for underserved communities in Uganda. With years of experience in leadership and social impact, he leads the team with a focus on innovation and empathy.</p>
                     </div>
                 </div>
 
                 <!-- Team Member 2 -->
-                <div class="team-card">
-                    <img src="../assets/images/team/member2.jpg" alt="Team Member 2" class="team-img">
+                <div class="team-card" role="listitem">
+                    <img src="../assets/images/team/member2.jpg" alt="Jane Smith, Program Manager" class="team-img">
                     <div class="team-info">
-                        <h3>Jane Smith</h3>
+                        <h2 class="team-name">Jane Smith</h2>
                         <p class="role">Program Manager</p>
-                        <p class="bio">Jane is the heart of our initiatives, ensuring that our programs meet the needs of the communities we serve. Her expertise in program management helps ensure efficiency and impact.</p>
+                        <p class="bio">Jane is the heart of our initiatives, ensuring that our programs meet the needs of the communities we serve. Her expertise in program management drives efficiency and impact.</p>
                     </div>
                 </div>
 
                 <!-- Team Member 3 -->
-                <div class="team-card">
-                    <img src="../assets/images/team/member3.jpg" alt="Team Member 3" class="team-img">
+                <div class="team-card" role="listitem">
+                    <img src="../assets/images/team/member3.jpg" alt="Michael Brown, Chief Technology Officer" class="team-img">
                     <div class="team-info">
-                        <h3>Michael Brown</h3>
+                        <h2 class="team-name">Michael Brown</h2>
                         <p class="role">Chief Technology Officer</p>
-                        <p class="bio">Michael is responsible for leading our tech initiatives, using cutting-edge technologies to solve critical social issues. He believes in the power of technology to drive change in underserved communities.</p>
+                        <p class="bio">Michael leads our tech initiatives, harnessing cutting-edge technologies to address critical social issues. He believes in the transformative power of technology for underserved communities.</p>
                     </div>
                 </div>
 
                 <!-- Team Member 4 -->
-                <div class="team-card">
-                    <img src="../assets/images/team/member4.jpg" alt="Team Member 4" class="team-img">
+                <div class="team-card" role="listitem">
+                    <img src="../assets/images/team/member4.jpg" alt="Linda Williams, Community Outreach Lead" class="team-img">
                     <div class="team-info">
-                        <h3>Linda Williams</h3>
+                        <h2 class="team-name">Linda Williams</h2>
                         <p class="role">Community Outreach Lead</p>
-                        <p class="bio">Linda brings extensive experience in community outreach and engagement. She is passionate about empowering local leaders to help improve the living standards of marginalized populations.</p>
+                        <p class="bio">Linda brings extensive experience in community outreach and engagement. She is dedicated to empowering local leaders to improve the living standards of marginalized populations.</p>
+                    </div>
+                </div>
+
+                <!-- New Team Member 5 -->
+                <div class="team-card" role="listitem">
+                    <img src="../assets/images/team/solomon.jpg" alt="Ssekiranda Solomon, Co-Founder & Education Lead" class="team-img">
+                    <div class="team-info">
+                        <h2 class="team-name">Ssekiranda Solomon</h2>
+                        <p class="role">Co-Founder & Education Lead</p>
+                        <p class="bio">Solomon is a passionate advocate for education and healthcare, holding a Bachelor’s degree in Education, Chemistry, and Mathematics from Makerere University. Currently pursuing a Bachelor’s in Medicine and Surgery at Kabale University, he has served as Vice President and Director of Research and Projects in the Federation of Uganda Medical Students' Association (FUMSA), driving innovation and collaboration.</p>
+                    </div>
+                </div>
+
+                <!-- New Team Member 6 -->
+                <div class="team-card" role="listitem">
+                    <img src="../assets/images/team/robinson.jpg" alt="Byamukama Robinson, Co-Founder & Healthcare Coordinator" class="team-img">
+                    <div class="team-info">
+                        <h2 class="team-name">Byamukama Robinson</h2>
+                        <p class="role">Co-Founder & Healthcare Coordinator</p>
+                        <p class="bio">Robinson, a dedicated medical student at Mbarara University, is a co-founder of Touched Hearts. He has held leadership roles in the Federation of Uganda Medical Students' Association (FUMSA), including President and Director of Community Health, where he spearheaded health awareness campaigns and fostered collaboration among students to address healthcare disparities.</p>
+                    </div>
+                </div>
+
+                <!-- New Team Member 7 -->
+                <div class="team-card" role="listitem">
+                    <img src="./assets/images/team/stanley.jpg" alt="Okecho Stanley, Secretary General" class="team-img">
+                    <div class="team-info">
+                        <h2 class="team-name">Okecho Stanley</h2>
+                        <p class="role">Secretary General</p>
+                        <p class="bio">Stanley serves as the Secretary General, bringing exceptional organizational skills and a commitment to transparency. With a background in community development and leadership training, he ensures seamless communication and coordination across all Touched Hearts initiatives, driving the organization’s mission forward.</p>
+                    </div>
+                </div>
+
+                <!-- New Team Member 8 -->
+                <div class="team-card" role="listitem">
+                    <img src="./assets/images/team/farouk.jpg" alt="Jjingo Farouk, Director of Innovation" class="team-img">
+                    <div class="team-info">
+                        <h2 class="team-name">Jjingo Farouk</h2>
+                        <p class="role">Director of Innovation</p>
+                        <p class="bio">Farouk is a visionary leader dedicated to rural empowerment through innovation and sustainable social entrepreneurship. With a Bachelor’s in Medicine and Surgery from Mbarara University, he has founded CareWave+ and EcoSpin, developing telehealth platforms and recycling initiatives that benefit over 200,000 Ugandans. His expertise in digital health and project management drives Touched Hearts’ innovative solutions.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Leadership Section -->
-        <section class="leadership">
-            <h2>Leadership</h2>
-            <div class="leadership-profiles">
-                <div class="leadership-card">
-                    <img src="../assets/images/team/leader1.jpg" alt="Leader 1" class="leadership-img">
+        <section class="leadership" aria-label="Our Leadership Team">
+            <h1 class="section-title">Leadership</h1>
+            <div class="leadership-profiles" role="list">
+                <div class="leadership-card" role="listitem">
+                    <img src="./assets/images/team/leader1.jpg" alt="David Nyandwi, Executive Director" class="leadership-img">
                     <div class="leadership-info">
-                        <h3>David Nyandwi</h3>
+                        <h2 class="leadership-name">David Nyandwi</h2>
                         <p class="leadership-role">Executive Director</p>
-                        <p class="leadership-bio">David is the visionary behind Touched Hearts. With over 20 years in nonprofit leadership, his experience and passion drive the strategic direction of the organization.</p>
+                        <p class="leadership-bio">David is the visionary behind Touched Hearts. With over 20 years in nonprofit leadership, his experience and passion guide the organization’s strategic direction.</p>
                     </div>
                 </div>
 
-                <div class="leadership-card">
-                    <img src="../assets/images/team/leader2.jpg" alt="Leader 2" class="leadership-img">
+                <div class="leadership-card" role="listitem">
+                    <img src="./assets/images/team/leader2.jpg" alt="Mary Nanteza, Senior Advisor" class="leadership-img">
                     <div class="leadership-info">
-                        <h3>Mary Nanteza</h3>
+                        <h2 class="leadership-name">Mary Nanteza</h2>
                         <p class="leadership-role">Senior Advisor</p>
-                        <p class="leadership-bio">Mary has been a key advisor for Touched Hearts, offering strategic guidance on operations and partnerships. Her leadership in the sector has been pivotal in scaling the organization’s impact.</p>
+                        <p class="leadership-bio">Mary provides strategic guidance on operations and partnerships, leveraging her extensive leadership experience to scale Touched Hearts’ impact.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-<footer class="footer" role="contentinfo">
+    <footer class="footer" role="contentinfo">
         <div class="footer-container">
             <div class="footer-column">
                 <a href="index.html" class="footer-logo">
@@ -183,7 +220,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="copyright">&copy; 2025 Touched Hearts. All rights reserved.</p>
+            <p class="copyright">© 2025 Touched Hearts. All rights reserved.</p>
             <ul class="legal-links">
                 <li><a href="privacy.html" class="legal-link">Privacy Policy</a></li>
                 <li><a href="terms.html" class="legal-link">Terms of Service</a></li>
@@ -191,6 +228,8 @@
             </ul>
         </div>
     </footer>
+           <script src="./assets/js/footer.js"></script>
+            <script src="./assets/js/navbar.js"></script>
 </body>
 
 </html>
