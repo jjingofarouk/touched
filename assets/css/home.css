@@ -439,14 +439,14 @@ input:focus, textarea:focus, select:focus {
   /* Main Navigation Styles */
 /* Main Navigation Styles */
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: var(--white);
   box-shadow: var(--shadow-md);
   z-index: var(--z-sticky);
-  transition: all var(--transition-normal);
+  transition: all var(--transition-normal), transform 0.3s ease; /* Added transform transition */
 }
 /* Hidden navbar on scroll down */
 .nav.hidden {
