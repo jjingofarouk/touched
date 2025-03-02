@@ -1,1 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Partner with Touched Hearts to support vulnerable communities in Uganda. Learn about our partnership opportunities and get involved.">
+    <title>Partners - Touched Hearts</title>
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        /* Embedded CSS */
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: #f5f7fa;
+            color: #333;
+        }
 
+        .page-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            animation: pulse 15s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.2; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        .page-header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .partners-section {
+            padding: 4rem 2rem;
+            background: #fff;
+        }
+
+        .partners-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1e3c72;
+        }
+
+        /* Why Partner */
+        .why-partner {
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            text-align: center;
+        }
+
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .benefit-card i {
+            font-size: 2rem;
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            margin: 0 0 1rem;
+        }
+
+        /* Our Partners */
+        .our-partners {
+            background: #f5f7fa;
+        }
+
+        .partners-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .partner-card {
+            width: 200px;
+            text-align: center;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .partner-card:hover {
+            transform: scale(1.05);
+        }
+
+        .partner-card img {
+            width: 100%;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        /* Become a Partner */
+        .become-partner {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            text-align: center;
+        }
+
+        #partnerForm {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #partnerForm input, #partnerForm select, #partnerForm textarea {
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #partnerForm button {
+            padding: 1rem;
+            background: #fff;
+            color: #1e3c72;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        #partnerForm button:hover {
+            background: #007bff;
+            color: #fff;
+        }
+
+        .contact-details {
+            font-size: 1.1rem;
+        }
+
+        .contact-details p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .benefits-container {
+                grid-template-columns: 1fr;
+            }
+
+            .partners-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .partner-card {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-logo">
+                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
+                </a>
+                <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="navbar-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="nav-dropdown">
+                        <a href="programs.html" class="nav-link">Our Programs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="healthcare.html">Healthcare</a></li>
+                            <li><a href="disabilities.html">Disability Support</a></li>
+                            <li><a href="community.html">Community Development</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+                    <li><a href="donate.html" class="nav-link btn-donate">Donate</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Partner with Us</h1>
+        <p class="header-subtitle">Join hands with Touched Hearts to transform lives in Uganda</p>
+    </section>
+
+    <!-- Why Partner with Us -->
+    <section class="partners-section why-partner">
+        <h2>Why Partner with Touched Hearts?</h2>
+        <div class="benefits-container">
+            <div class="benefit-card">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Amplify Your Impact</h3>
+                <p>Collaborate with us to extend your reach and support vulnerable communities effectively.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-globe-africa"></i>
+                <h3>Local Expertise</h3>
+                <p>Leverage our deep understanding of Uganda’s needs and networks since 2010.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Measurable Results</h3>
+                <p>Access detailed reports and metrics to see the tangible outcomes of our joint efforts.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-users"></i>
+                <h3>Community Trust</h3>
+                <p>Partner with a trusted organization known for transparency and compassion.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Partners -->
+    <section class="partners-section our-partners">
+        <h2>Our Partners</h2>
+        <div class="partners-container" id="partnersContainer">
+            <!-- Dynamically populated by JS -->
+        </div>
+    </section>
+
+    <!-- Become a Partner -->
+    <section class="partners-section become-partner">
+        <h2>Become a Partner</h2>
+        <form id="partnerForm">
+            <input type="text" name="organization" placeholder="Organization Name" required>
+            <input type="text" name="contact" placeholder="Contact Person" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <select name="partnershipType" required>
+                <option value="" disabled selected>Select Partnership Type</option>
+                <option value="corporate">Corporate Sponsorship</option>
+                <option value="ngo">NGO Collaboration</option>
+                <option value="government">Government Partnership</option>
+                <option value="other">Other</option>
+            </select>
+            <textarea name="message" placeholder="Tell us about your interest in partnering with us" required></textarea>
+            <button type="submit">Submit Inquiry</button>
+        </form>
+        <div class="contact-details">
+            <p><i class="fas fa-envelope"></i> partnerships@touchedhearts.org</p>
+            <p><i class="fas fa-phone"></i> +256 712 345 680</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-column">
+                <a href="index.html" class="footer-logo">
+                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
+                </a>
+                <p class="footer-tagline">Transforming lives with compassion and hope</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/touchedhearts" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://youtube.com/touchedhearts" aria-label="YouTube" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="programs.html" class="footer-link">Our Programs</a></li>
+                    <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
+                    <li><a href="donate.html" class="footer-link">Donate</a></li>
+                    <li><a href="events.html" class="footer-link">Events</a></li>
+                    <li><a href="news.html" class="footer-link">News & Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="annual-reports.html" class="footer-link">Annual Reports</a></li>
+                    <li><a href="financial-statements.html" class="footer-link">Financial Statements</a></li>
+                    <li><a href="media.html" class="footer-link">Media Resources</a></li>
+                    <li><a href="stories.html" class="footer-link">Success Stories</a></li>
+                    <li><a href="faq.html" class="footer-link">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Contact Us</h3>
+                <address class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
+                    <p><i class="fas fa-phone"></i> +256 712 345 678</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@touchedhearts.org">info@touchedhearts.org</a></p>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© 2025 Touched Hearts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Embedded JavaScript -->
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script> <!-- Replace with your Font Awesome Kit ID -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Dummy partner data
+            const partners = [
+                { name: "Uganda Red Cross", logo: "./assets/images/partners/red-cross.png", url: "https://redcrossug.org" },
+                { name: "MTN Uganda", logo: "./assets/images/partners/mtn.png", url: "https://mtn.co.ug" },
+                { name: "UNICEF Uganda", logo: "./assets/images/partners/unicef.png", url: "https://unicef.org/uganda" },
+                { name: "Kampala Capital City Authority", logo: "./assets/images/partners/kcca.png", url: "https://kcca.go.ug" }
+            ];
+
+            // Render Partners
+            const partnersContainer = document.getElementById('partnersContainer');
+            partners.forEach(partner => {
+                const card = document.createElement('div');
+                card.className = 'partner-card';
+                card.innerHTML = `
+                    <a href="${partner.url}" target="_blank">
+                        <img src="${partner.logo}" alt="${partner.name} Logo" loading="lazy">
+                        <p>${partner.name}</p>
+                    </a>
+                `;
+                partnersContainer.appendChild(card);
+            });
+
+            // Form Submission
+            const partnerForm = document.getElementById('partnerForm');
+            partnerForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(partnerForm);
+                const data = Object.fromEntries(formData);
+                console.log('Partnership Inquiry:', data); // Replace with actual submission logic (e.g., API call)
+                alert('Thank you for your interest! We’ll contact you soon.');
+                partnerForm.reset();
+            });
+
+            // Scroll Animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.benefit-card, .partner-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+
+            document.querySelectorAll('.show').forEach(card => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
