@@ -1,66 +1,101 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const galleryGrid = document.getElementById("gallery-grid");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const prevPageBtn = document.getElementById("prev-page");
+    const nextPageBtn = document.getElementById("next-page");
+    const pageNumberDisplay = document.getElementById("page-number");
 
-// gallery.js
+    let imagesData = [];
+    let currentFilter = "all";
+    let currentPage = 1;
+    const itemsPerPage = 12; // Number of images per page
 
-// Lightbox Functionality
-const lightboxLinks = document.querySelectorAll('.lightbox');
-const lightboxModal = document.getElementById('lightbox-modal');
-const lightboxImage = document.getElementById('lightbox-image');
-const closeBtn = document.getElementById('close-lightbox');
+    // Fetch gallery data from JSON
+    fetch("./assets/data/gallery.json")
+        .then(response => response.json())
+        .then(data => {
+            imagesData = data;
+            displayImages();
+        });
 
-// Open lightbox when clicking on an image
-lightboxLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent default behavior of anchor tags
-        const imageSrc = this.getAttribute('href'); // Get the image URL
-        lightboxImage.src = imageSrc; // Set the image in the lightbox
-        lightboxModal.classList.add('open'); // Show the modal
-    });
-});
+    // Function to display images based on filters and pagination
+    function displayImages() {
+        galleryGrid.innerHTML = "";
 
-// Close lightbox when clicking on the close button
-closeBtn.addEventListener('click', function () {
-    lightboxModal.classList.remove('open'); // Hide the modal
-});
+        let filteredImages = imagesData.filter(img => currentFilter === "all" || img.category === currentFilter);
+        let totalPages = Math.ceil(filteredImages.length / itemsPerPage);
 
-// Close lightbox when clicking outside the image
-lightboxModal.addEventListener('click', function (e) {
-    if (e.target === lightboxModal) {
-        lightboxModal.classList.remove('open');
+        let start = (currentPage - 1) * itemsPerPage;
+        let paginatedImages = filteredImages.slice(start, start + itemsPerPage);
+
+        paginatedImages.forEach(img => {
+            const item = document.createElement("div");
+            item.classList.add("gallery-item");
+            item.dataset.category = img.category;
+
+            item.innerHTML = `
+                <a href="${img.src}" class="lightbox-link" data-caption="${img.caption}">
+                    <img src="${img.src}" alt="${img.caption}" loading="lazy">
+                    <div class="overlay">
+                        <span class="overlay-text">${img.category}</span>
+                    </div>
+                </a>
+            `;
+            galleryGrid.appendChild(item);
+        });
+
+        pageNumberDisplay.textContent = `Page ${currentPage}`;
+        prevPageBtn.disabled = currentPage === 1;
+        nextPageBtn.disabled = currentPage === totalPages;
+
+        // Lightbox functionality
+        document.querySelectorAll(".lightbox-link").forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                openLightbox(link.href, link.dataset.caption);
+            });
+        });
     }
-});
 
-// Filter Functionality
-const filterButtons = document.querySelectorAll('.filter-btn');
-const imageCards = document.querySelectorAll('.image-card');
+    // Filter images
+    filterButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelector(".filter-btn.active").classList.remove("active");
+            btn.classList.add("active");
 
-// Add event listener to filter buttons
-filterButtons.forEach(button => {
-    button.addEventListener('click', function () {
-        const filterValue = this.getAttribute('data-filter'); // Get the filter category
-        filterImages(filterValue); // Call the filterImages function
-        highlightActiveButton(this); // Highlight the active filter button
+            currentFilter = btn.dataset.filter;
+            currentPage = 1;
+            displayImages();
+        });
     });
-});
 
-// Function to filter images based on category
-function filterImages(category) {
-    imageCards.forEach(card => {
-        // Show or hide images based on the selected category
-        if (category === 'all' || card.classList.contains(category)) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
+    // Pagination controls
+    prevPageBtn.addEventListener("click", () => {
+        if (currentPage > 1) {
+            currentPage--;
+            displayImages();
         }
     });
-}
 
-// Function to highlight the active filter button
-function highlightActiveButton(activeButton) {
-    filterButtons.forEach(button => {
-        button.classList.remove('active'); // Remove active class from all buttons
+    nextPageBtn.addEventListener("click", () => {
+        currentPage++;
+        displayImages();
     });
-    activeButton.classList.add('active'); // Add active class to the clicked button
-}
 
-// Initialize with all images displayed
-filterImages('all');
+    // Lightbox functionality
+    const lightbox = document.getElementById("lightbox-modal");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const closeBtn = document.getElementById("close-lightbox");
+
+    function openLightbox(src, caption) {
+        lightboxImage.src = src;
+        lightboxCaption.textContent = caption;
+        lightbox.classList.add("active");
+    }
+
+    closeBtn.addEventListener("click", () => lightbox.classList.remove("active"));
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) lightbox.classList.remove("active");
+    });
+});
