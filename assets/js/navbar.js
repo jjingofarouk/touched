@@ -2,10 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const navToggle = document.querySelector(".nav-toggle");
     const navMenu = document.querySelector(".nav-menu");
     const overlay = document.querySelector(".nav-overlay");
-    const nav = document.querySelector(".nav");
-    
-    let lastScrollTop = 0;
-    
+
     // Function to open the menu
     function openMenu() {
         navMenu.classList.add("active");
@@ -52,29 +49,5 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.key === "Escape") {
             closeMenu();
         }
-    });
-    
-    // Handle scroll behavior for navbar
-    window.addEventListener("scroll", function() {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // Don't do anything if at the very top (navbar should be visible by default)
-        if (currentScroll <= 0) {
-            nav.style.transform = "translateY(0)";
-            return;
-        }
-        
-        // Scrolling down
-        if (currentScroll > lastScrollTop) {
-            // Hide the navbar
-            nav.style.transform = "translateY(-100%)";
-        } 
-        // Scrolling up
-        else {
-            // Show the navbar
-            nav.style.transform = "translateY(0)";
-        }
-        
-        lastScrollTop = currentScroll;
     });
 });
