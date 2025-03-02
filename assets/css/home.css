@@ -471,12 +471,24 @@ input:focus, textarea:focus, select:focus {
 
 /* Menu Styling */
 .nav-menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  gap: var(--spacing-md);
+  position: fixed;
+  top: 0;
+  right: -100%; /* Start hidden */
+  width: 75%;
+  height: 100vh;
+  background-color: var(--white);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000; /* Above overlay */
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+.nav-menu li {
+  position: relative;
+  z-index: 1001; /* Ensure they are clickable */
 }
 
 .nav-link {
@@ -694,7 +706,6 @@ input:focus, textarea:focus, select:focus {
   
   /* Overlay */
 
-/* Overlay */
 .nav-overlay {
   position: fixed;
   top: 0;
@@ -704,8 +715,8 @@ input:focus, textarea:focus, select:focus {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
-  transition: all var(--transition-normal);
-  z-index: calc(var(--z-drawer) - 1); /* Just below the menu */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999; /* Behind menu but above content */
 }
 
 .nav-overlay.active {
