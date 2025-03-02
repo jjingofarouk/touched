@@ -439,7 +439,7 @@ input:focus, textarea:focus, select:focus {
   /* Main Navigation Styles */
 /* Main Navigation Styles */
 .nav {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
