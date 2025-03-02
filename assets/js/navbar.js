@@ -1,53 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const navToggle = document.querySelector(".nav-toggle");
-    const navMenu = document.querySelector(".nav-menu");
-    const overlay = document.querySelector(".nav-overlay");
+    const toggle = document.querySelector(".navbar-toggle");
+    const menu = document.querySelector(".navbar-menu");
 
-    // Function to open the menu
-    function openMenu() {
-        navMenu.classList.add("active");
-        overlay.classList.add("active");
-        navToggle.setAttribute("aria-expanded", "true");
-        document.body.style.overflow = "hidden"; // Prevent scrolling
-    }
+    toggle.addEventListener("click", function () {
+        menu.classList.toggle("active");
+        toggle.classList.toggle("active");
+    });
 
-    // Function to close the menu
-    function closeMenu() {
-        navMenu.classList.remove("active");
-        overlay.classList.remove("active");
-        navToggle.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = ""; // Restore scrolling
-    }
+    let lastScrollTop = 0;
+    const navbar = document.querySelector(".navbar");
 
-    // Toggle menu when clicking the button
-    navToggle.addEventListener("click", function (e) {
-        e.stopPropagation(); // Prevent bubbling issues
-        if (navMenu.classList.contains("active")) {
-            closeMenu();
+    window.addEventListener("scroll", function () {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > 50) {
+            navbar.classList.add("scrolled");
         } else {
-            openMenu();
+            navbar.classList.remove("scrolled");
         }
-    });
 
-    // Prevent clicks inside the menu from closing it
-    navMenu.addEventListener("click", function (e) {
-        e.stopPropagation();
-    });
-
-    // Close menu when clicking the overlay
-    overlay.addEventListener("click", closeMenu);
-
-    // Close menu when clicking anywhere outside of it
-    document.addEventListener("click", function (e) {
-        if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-            closeMenu();
+        // Hide navbar when scrolling down and show when scrolling up
+        if (currentScroll > lastScrollTop) {
+            // Scroll Down: Hide Navbar
+            navbar.style.top = "-80px";  // Adjust to the height of your navbar
+        } else {
+            // Scroll Up: Show Navbar
+            navbar.style.top = "0";
         }
-    });
-
-    // Close menu when pressing the Escape key
-    document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-            closeMenu();
-        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative values
     });
 });
+    
