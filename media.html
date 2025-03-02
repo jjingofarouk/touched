@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Touched Hearts' media resources, press releases, photos, videos, and more.">
+    <title>Media - Touched Hearts</title>
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/media.css">
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation (same as previous pages) -->
+    <header><!-- Navbar code here --></header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Media Center</h1>
+        <p class="header-subtitle">Stories, visuals, and updates from Touched Hearts</p>
+    </section>
+
+    <!-- Press Releases -->
+    <section class="media-section press-releases">
+        <h2>Press Releases</h2>
+        <div class="filter-bar">
+            <input type="text" placeholder="Search..." id="pressSearch">
+            <select id="pressFilter">
+                <option value="all">All Categories</option>
+                <!-- Populated by JS -->
+            </select>
+        </div>
+        <div class="press-container" id="pressContainer"></div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="media-section photo-gallery">
+        <h2>Photo Gallery</h2>
+        <div class="gallery-filter" id="galleryFilter"></div>
+        <div class="gallery-container" id="galleryContainer"></div>
+    </section>
+
+    <!-- Video Library -->
+    <section class="media-section video-library">
+        <h2>Video Library</h2>
+        <div class="video-container" id="videoContainer"></div>
+    </section>
+
+    <!-- Media Kit -->
+    <section class="media-section media-kit">
+        <h2>Media Kit</h2>
+        <div class="kit-preview" id="kitPreview"></div>
+        <button id="downloadKit">Download Media Kit</button>
+    </section>
+
+    <!-- In the News -->
+    <section class="media-section in-the-news">
+        <h2>In the News</h2>
+        <div class="news-container" id="newsContainer"></div>
+    </section>
+
+    <!-- Social Media Feed -->
+    <section class="media-section social-feed">
+        <h2>Social Media</h2>
+        <div class="feed-container" id="feedContainer"></div>
+    </section>
+
+    <!-- Interactive Infographics -->
+    <section class="media-section infographics">
+        <h2>Our Impact</h2>
+        <div class="infographic-container" id="infographicContainer"></div>
+    </section>
+
+    <!-- Media Inquiries -->
+    <section class="media-section media-inquiries">
+        <h2>Media Inquiries</h2>
+        <form id="mediaForm">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="organization" placeholder="Organization" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="contact-details">
+            <p><i class="fas fa-envelope"></i> media@touchedhearts.org</p>
+            <p><i class="fas fa-phone"></i> +256 712 345 679</p>
+        </div>
+    </section>
+
+    <!-- Footer (same as previous pages) -->
+    <footer><!-- Footer code here --></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/js/media.js" defer></script>
+</body>
+</html>
