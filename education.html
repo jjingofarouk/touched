@@ -1,1 +1,551 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Touched Hearts' education initiatives, empowering Uganda's children and communities through scholarships, school infrastructure, and more.">
+    <title>Education - Touched Hearts</title>
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        /* Embedded CSS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .page-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            animation: pulse 15s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.2; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        .page-header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Education Section */
+        .education-section {
+            padding: 4rem 2rem;
+            background: #fff;
+        }
+
+        .education-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            color: #1e3c72;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .education-intro {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .education-intro p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Initiatives */
+        .initiatives-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .initiative-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .initiative-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .initiative-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .initiative-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .initiative-content {
+            padding: 1.5rem;
+        }
+
+        .initiative-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            color: #2a5298;
+            margin-bottom: 1rem;
+        }
+
+        .initiative-content p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* Impact Stats */
+        .impact-section {
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: #1e3c72;
+            color: #fff;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Footer Consistency */
+        .footer {
+            background: #1e3c72;
+            color: #fff;
+            padding: 3rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-logo img {
+            width: 100px;
+        }
+
+        .footer-tagline {
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            color: #fff;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #007bff;
+        }
+
+        .footer-heading {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #007bff;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: #007bff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .initiative-container, .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                padding: 3rem 1rem;
+            }
+
+            .education-section, .impact-section, .cta-section {
+                padding: 3rem 1rem;
+            }
+
+            .education-section h2 {
+                font-size: 1.75rem;
+            }
+
+            .initiative-card h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-logo">
+                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
+                </a>
+                <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="navbar-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="nav-dropdown">
+                        <a href="programs.html" class="nav-link">Our Programs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="education.html" class="nav-link active" aria-current="page">Education</a></li>
+                            <li><a href="healthcare.html">Healthcare</a></li>
+                            <li><a href="disabilities.html">Disability Support</a></li>
+                            <li><a href="community.html">Community Development</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+                    <li><a href="donate.html" class="nav-link btn-donate">Donate</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Education Initiatives</h1>
+        <p class="header-subtitle">Empowering Uganda’s future through transformative education</p>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section">
+        <div class="education-intro">
+            <h2>Our Commitment to Education</h2>
+            <p>At Touched Hearts, we believe education is the cornerstone of a thriving community. Since 2010, we’ve worked tirelessly to break down barriers to learning for Uganda’s most vulnerable children. From providing scholarships to building schools, our initiatives aim to ensure every child has access to quality education, equipping them with the skills and knowledge to build a brighter future.</p>
+        </div>
+
+        <h2>What We Do</h2>
+        <div class="initiatives-container">
+            <div class="initiative-card">
+                <img src="./assets/images/scholarships.jpg" alt="Students receiving scholarships" class="initiative-image">
+                <div class="initiative-content">
+                    <h3>Scholarships Program</h3>
+                    <p>We offer scholarships to children from low-income families, covering tuition, uniforms, and learning materials. In 2024 alone, we supported over 5,000 students across Uganda, ensuring financial barriers don’t stand in the way of their education.</p>
+                </div>
+            </div>
+            <div class="initiative-card">
+                <img src="./assets/images/school-building.jpg" alt="New school construction" class="initiative-image">
+                <div class="initiative-content">
+                    <h3>School Infrastructure</h3>
+                    <p>We build and renovate schools in rural areas, creating safe, conducive learning environments. Our projects include classrooms, libraries, and sanitation facilities, benefiting thousands of students and teachers annually.</p>
+                </div>
+            </div>
+            <div class="initiative-card">
+                <img src="./assets/images/teacher-training.jpg" alt="Teacher training session" class="initiative-image">
+                <div class="initiative-content">
+                    <h3>Teacher Training</h3>
+                    <p>We empower educators through professional development workshops, enhancing teaching quality. Topics include modern pedagogy, inclusive education, and child psychology, impacting over 1,000 teachers since inception.</p>
+                </div>
+            </div>
+            <div class="initiative-card">
+                <img src="./assets/images/adult-literacy.jpg" alt="Adult literacy class" class="initiative-image">
+                <div class="initiative-content">
+                    <h3>Adult Literacy Programs</h3>
+                    <p>We extend education to adults, offering literacy and numeracy classes to parents and community members. This strengthens family support for children’s learning and fosters community development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <h2>Our Impact</h2>
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">10,000+</div>
+                <div class="stat-label">Children Educated</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Schools Built</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1,500+</div>
+                <div class="stat-label">Teachers Trained</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3,000+</div>
+                <div class="stat-label">Adults Literate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <h2>Join Us in Educating Uganda</h2>
+        <p>Your support can help us reach more children and communities. Partner with us or donate to make a lasting impact.</p>
+        <a href="get-involved.html" class="cta-button">Get Involved</a>
+        <a href="donate.html" class="cta-button" style="margin-left: 1rem;">Donate Now</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-column">
+                <a href="index.html" class="footer-logo">
+                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
+                </a>
+                <p class="footer-tagline">Transforming lives with compassion and hope</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/touchedhearts" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://youtube.com/touchedhearts" aria-label="YouTube" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="programs.html" class="footer-link">Our Programs</a></li>
+                    <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
+                    <li><a href="donate.html" class="footer-link">Donate</a></li>
+                    <li><a href="events.html" class="footer-link">Events</a></li>
+                    <li><a href="news.html" class="footer-link">News & Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="annual-reports.html" class="footer-link">Annual Reports</a></li>
+                    <li><a href="financial-statements.html" class="footer-link">Financial Statements</a></li>
+                    <li><a href="media.html" class="footer-link">Media Resources</a></li>
+                    <li><a href="stories.html" class="footer-link">Success Stories</a></li>
+                    <li><a href="faq.html" class="footer-link">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Contact Us</h3>
+                <address class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
+                    <p><i class="fas fa-phone"></i> +256 712 345 678</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@touchedhearts.org">info@touchedhearts.org</a></p>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© 2025 Touched Hearts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Embedded JavaScript -->
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script> <!-- Replace with your Font Awesome Kit ID -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll Animation for Initiative Cards
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.initiative-card').forEach(card => {
+                observer.observe(card);
+            });
+
+            // Stat Counter Animation
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent.replace(/[^0-9]/g, ''));
+                let count = 0;
+                const increment = target / 50; // Animation speed
+                const updateCount = () => {
+                    count += increment;
+                    if (count >= target) {
+                        stat.textContent = stat.textContent.includes('+') ? `${target.toLocaleString()}+` : target.toLocaleString();
+                    } else {
+                        stat.textContent = Math.ceil(count).toLocaleString() + (stat.textContent.includes('+') ? '+' : '');
+                        requestAnimationFrame(updateCount);
+                    }
+                };
+                const statObserver = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        requestAnimationFrame(updateCount);
+                        statObserver.unobserve(stat);
+                    }
+                }, { threshold: 0.5 });
+                statObserver.observe(stat);
+            });
+        });
+    </script>
+</body>
+</html>
