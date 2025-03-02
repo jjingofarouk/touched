@@ -693,22 +693,53 @@ input:focus, textarea:focus, select:focus {
   }
   
   /* Overlay */
-  .nav-overlay {
+
+/* Overlay */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  z-index: calc(var(--z-drawer) - 1); /* Just below the menu */
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Menu */
+@media (max-width: 1023px) {
+  .nav-menu {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: all var(--transition-normal);
-    z-index: var(--z-sticky);
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: 80px var(--spacing-lg) var(--spacing-lg);
+    box-shadow: var(--shadow-xl);
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+    z-index: var(--z-drawer); /* Make sure this is higher than overlay */
+    overflow-y: auto;
   }
   
-  .nav-overlay.active {
-    opacity: 1;
-    visibility: visible;
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+  
+  .nav-toggle {
+    display: block;
+    z-index: calc(var(--z-drawer) + 1); /* Above the menu */
   }
 }
 
