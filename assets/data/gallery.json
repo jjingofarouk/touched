@@ -1,11 +1,11 @@
 [
     {
-        "src": "./assets/images/image1.jpg",
+        "src": "./assets/images/E12.jpg",
         "caption": "Annual Charity Event 2024",
         "category": "events"
     },
     {
-        "src": "./assets/images/image2.jpg",
+        "src": "./assets/images/H15.jpg",
         "caption": "Community Outreach in Karamoja",
         "category": "community"
     },
@@ -15,7 +15,7 @@
         "category": "programs"
     },
     {
-        "src": "./assets/images/image4.jpg",
+        "src": "./assets/images/E1.jpg",
         "caption": "School Supplies Donation Event",
         "category": "education"
     },
@@ -30,12 +30,12 @@
         "category": "disabilities"
     },
     {
-        "src": "./assets/images/image7.jpg",
+        "src": "./assets/images/C1.jpg",
         "caption": "Clean Water Initiative in Rural Areas",
         "category": "community"
     },
     {
-        "src": "./assets/images/image8.jpg",
+        "src": "./assets/images/E2.jpg",
         "caption": "Vocational Training for Youth",
         "category": "education"
     },
@@ -55,7 +55,7 @@
         "category": "healthcare"
     },
     {
-        "src": "./assets/images/image12.jpg",
+        "src": "./assets/images/C2.jpg",
         "caption": "Tree Planting Campaign",
         "category": "community"
     },
@@ -65,7 +65,7 @@
         "category": "healthcare"
     },
     {
-        "src": "./assets/images/image14.jpg",
+        "src": "./assets/images/E3.jpg",
         "caption": "School Renovation Project",
         "category": "education"
     },
@@ -80,7 +80,7 @@
         "category": "disabilities"
     },
     {
-        "src": "./assets/images/image17.jpg",
+        "src": "./assets/images/E4.jpg",
         "caption": "STEM Workshop for Underprivileged Kids",
         "category": "education"
     },
@@ -90,7 +90,7 @@
         "category": "healthcare"
     },
     {
-        "src": "./assets/images/image19.jpg",
+        "src": "./assets/images/C3.jpg",
         "caption": "Food Drive for Displaced Families",
         "category": "community"
     },
@@ -105,12 +105,12 @@
         "category": "disabilities"
     },
     {
-        "src": "./assets/images/image22.jpg",
+        "src": "./assets/images/C4.jpg",
         "caption": "Hygiene and Sanitation Workshop",
         "category": "community"
     },
     {
-        "src": "./assets/images/image23.jpg",
+        "src": "./assets/images/E5.jpg",
         "caption": "Back-to-School Campaign",
         "category": "education"
     },
@@ -135,7 +135,7 @@
         "category": "programs"
     },
     {
-        "src": "./assets/images/image28.jpg",
+        "src": "./assets/images/E6.jpg",
         "caption": "Digital Literacy Program for Teens",
         "category": "education"
     },
@@ -145,7 +145,7 @@
         "category": "healthcare"
     },
     {
-        "src": "./assets/images/image30.jpg",
+        "src": "./assets/images/C5.jpg",
         "caption": "Disaster Preparedness Training",
         "category": "community"
     },
@@ -166,7 +166,7 @@
         "category": "programs"
     },
     {
-        "src": "./assets/images/image4.jpg",
+        "src": "./assets/images/E7.jpg",
         "caption": "School Supplies Donation Event",
         "category": "education"
     },
@@ -186,7 +186,7 @@
         "category": "community"
     },
     {
-        "src": "./assets/images/image8.jpg",
+        "src": "./assets/images/E8.jpg",
         "caption": "Vocational Training for Youth",
         "category": "education"
     },
@@ -216,7 +216,7 @@
         "category": "healthcare"
     },
     {
-        "src": "./assets/images/image14.jpg",
+        "src": "./assets/images/E9.jpg",
         "caption": "School Renovation Project",
         "category": "education"
     },
@@ -226,12 +226,12 @@
         "category": "programs"
     },
     {
-        "src": "./assets/images/image16.jpg",
+        "src": "./assets/images/D1.jpg",
         "caption": "Wheelchair Donation to Persons with Disabilities",
         "category": "disabilities"
     },
     {
-        "src": "./assets/images/image17.jpg",
+        "src": "./assets/images/E10.jpg",
         "caption": "STEM Workshop for Underprivileged Kids",
         "category": "education"
     },
@@ -251,7 +251,7 @@
         "category": "programs"
     },
     {
-        "src": "./assets/images/image21.jpg",
+        "src": "./assets/images/D2.jpg",
         "caption": "Sign Language Workshop for Volunteers",
         "category": "disabilities"
     },
@@ -261,7 +261,7 @@
         "category": "community"
     },
     {
-        "src": "./assets/images/image23.jpg",
+        "src": "./assets/images/E11.jpg",
         "caption": "Back-to-School Campaign",
         "category": "education"
     },
@@ -276,7 +276,7 @@
         "category": "events"
     },
     {
-        "src": "./assets/images/image26.jpg",
+        "src": "./assets/images/D3.jpg",
         "caption": "Job Fair for Persons with Disabilities",
         "category": "disabilities"
     },
@@ -286,7 +286,7 @@
         "category": "programs"
     },
     {
-        "src": "./assets/images/image28.jpg",
+        "src": "./assets/images/E12.jpg",
         "caption": "Digital Literacy Program for Teens",
         "category": "education"
     },
@@ -311,7 +311,7 @@
         "category": "events"
     },
     {
-        "src": "./assets/images/image33.jpg",
+        "src": "./assets/images/E13.jpg",
         "caption": "Reading Program for Young Children",
         "category": "education"
     },
@@ -321,7 +321,7 @@
         "category": "healthcare"
     },
     {
-        "src": "./assets/images/image35.jpg",
+        "src": "./assets/images/D4.jpg",
         "caption": "Accessibility Ramp Installation Project",
         "category": "disabilities"
     },
@@ -336,7 +336,7 @@
         "category": "community"
     },
     {
-        "src": "./assets/images/image38.jpg",
+        "src": "./assets/images/E14.jpg",
         "caption": "Scholarship Award Ceremony 2025",
         "category": "education"
     },
@@ -346,7 +346,7 @@
         "category": "events"
     },
     {
-        "src": "./assets/images/image40.jpg",
+        "src": "./assets/images/D5.jpg",
         "caption": "Hearing Aid Distribution Event",
         "category": "disabilities"
     },
@@ -361,7 +361,7 @@
         "category": "community"
     },
     {
-        "src": "./assets/images/image43.jpg",
+        "src": "./assets/images/E15.jpg",
         "caption": "Coding Bootcamp for Girls",
         "category": "education"
     },
@@ -386,7 +386,7 @@
         "category": "community"
     },
     {
-        "src": "./assets/images/image48.jpg",
+        "src": "./assets/images/E15.jpg",
         "caption": "Teacher Training Seminar",
         "category": "education"
     },
@@ -417,7 +417,7 @@
         "category": "programs"
     },
     {
-        "src": "./assets/images/image4.jpg",
+        "src": "./assets/images/E15.jpg",
         "caption": "School Supplies Donation Event",
         "category": "education"
     },
@@ -437,7 +437,7 @@
         "category": "community"
     },
     {
-        "src": "./assets/images/image8.jpg",
+        "src": "./assets/images/E16.jpg",
         "caption": "Vocational Training for Youth",
         "category": "education"
     },
