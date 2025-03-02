@@ -437,7 +437,7 @@ input:focus, textarea:focus, select:focus {
 
 
   /* Main Navigation Styles */
-.navbar {
+.nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -448,7 +448,7 @@ input:focus, textarea:focus, select:focus {
   transition: all var(--transition-normal);
 }
 
-.navbar-container {
+.nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -457,7 +457,7 @@ input:focus, textarea:focus, select:focus {
   padding: var(--spacing-md) var(--spacing-lg);
 }
 
-.navbar-logo {
+.nav-logo {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -469,7 +469,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* Menu Styling */
-.navbar-menu {
+.nav-menu {
   display: flex;
   list-style: none;
   margin: 0;
@@ -589,7 +589,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* Hamburger Menu Toggle */
-.navbar-toggle {
+.nav-toggle {
   display: none;
   background: none;
   border: none;
