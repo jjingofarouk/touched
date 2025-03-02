@@ -1,75 +1,130 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the transformative impact of Touched Hearts through our stunning gallery of events, community work, and programs.">
     <title>Our Gallery - Touched Hearts</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/gallery.css">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-    <header>
+    <!-- Header -->
+    <header class="gallery-header">
         <div class="container">
-            <h1>Our Gallery</h1>
-            <p>Explore the impact of our work through images</p>
+            <h1 class="header-title">Our Gallery</h1>
+            <p class="header-subtitle">A visual journey through the lives we’ve touched</p>
         </div>
     </header>
 
-    <main>
+    <!-- Main Content -->
+    <main class="gallery-main">
         <div class="container">
             <!-- Filter Buttons -->
-            <div class="filter-buttons">
-                <button class="filter-btn" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="events">Events</button>
-                <button class="filter-btn" data-filter="community">Community</button>
-                <button class="filter-btn" data-filter="programs">Programs</button>
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all" aria-label="Show all images">All</button>
+                <button class="filter-btn" data-filter="events" aria-label="Show events images">Events</button>
+                <button class="filter-btn" data-filter="community" aria-label="Show community images">Community</button>
+                <button class="filter-btn" data-filter="programs" aria-label="Show programs images">Programs</button>
             </div>
 
             <!-- Image Grid -->
-            <div class="image-gallery">
-                <!-- Example Image Cards -->
-                <div class="image-card event">
-                    <a href="./assets/images/gallery/image1.jpg" class="lightbox">
-                        <img src="./assets/images/gallery/image1.jpg" alt="Event 1">
+            <div class="gallery-grid" role="region" aria-label="Image Gallery">
+                <div class="gallery-item" data-category="events">
+                    <a href="./assets/images/gallery/image1.jpg" class="lightbox-link" data-caption="Annual Charity Event 2024">
+                        <img src="./assets/images/gallery/image1.jpg" alt="Volunteers at Annual Charity Event 2024" loading="lazy">
+                        <div class="overlay">
+                            <span class="overlay-text">Events</span>
+                        </div>
                     </a>
                 </div>
-                <div class="image-card community">
-                    <a href="./assets/images/gallery/image2.jpg" class="lightbox">
-                        <img src="./assets/images/gallery/image2.jpg" alt="Community 1">
+                <div class="gallery-item" data-category="community">
+                    <a href="./assets/images/gallery/image2.jpg" class="lightbox-link" data-caption="Community Outreach in Karamoja">
+                        <img src="./assets/images/gallery/image2.jpg" alt="Community members receiving aid in Karamoja" loading="lazy">
+                        <div class="overlay">
+                            <span class="overlay-text">Community</span>
+                        </div>
                     </a>
                 </div>
-                <div class="image-card programs">
-                    <a href="./assets/images/gallery/image3.jpg" class="lightbox">
-                        <img src="./assets/images/gallery/image3.jpg" alt="Program 1">
+                <div class="gallery-item" data-category="programs">
+                    <a href="./assets/images/gallery/image3.jpg" class="lightbox-link" data-caption="Healthcare Program Launch">
+                        <img src="./assets/images/gallery/image3.jpg" alt="Doctors at Healthcare Program Launch" loading="lazy">
+                        <div class="overlay">
+                            <span class="overlay-text">Programs</span>
+                        </div>
                     </a>
                 </div>
-                <div class="image-card event">
-                    <a href="./assets/images/gallery/image4.jpg" class="lightbox">
-                        <img src="./assets/images/gallery/image4.jpg" alt="Event 2">
+                <div class="gallery-item" data-category="events">
+                    <a href="./assets/images/gallery/image4.jpg" class="lightbox-link" data-caption="School Supplies Donation Event">
+                        <img src="./assets/images/gallery/image4.jpg" alt="Children receiving school supplies" loading="lazy">
+                        <div class="overlay">
+                            <span class="overlay-text">Events</span>
+                        </div>
                     </a>
                 </div>
-                <!-- Add more images as needed -->
+                <!-- Add more items as needed -->
             </div>
         </div>
     </main>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="lightbox-modal">
-        <span id="close-lightbox" class="close-btn">&times;</span>
-        <img id="lightbox-image" src="" alt="Lightbox Image">
+    <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-label="Image Lightbox">
+        <button id="close-lightbox" class="close-btn" aria-label="Close lightbox">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="Selected Gallery Image">
+            <p id="lightbox-caption" class="lightbox-caption"></p>
+        </div>
     </div>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="gallery-footer">
         <div class="container">
-            <p>&copy; 2025 Touched Hearts - All rights reserved.</p>
+            <p>© <span id="current-year"></span> Touched Hearts - All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/gallery.js"></script>
-</body>
+    <script>
+        // Dynamic Year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
+        // Gallery Filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    item.style.display = (filter === 'all' || filter === category) ? 'block' : 'none';
+                });
+            });
+        });
+
+        // Lightbox Functionality
+        const lightbox = document.getElementById('lightbox-modal');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const closeBtn = document.getElementById('close-lightbox');
+
+        document.querySelectorAll('.lightbox-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                lightboxImage.src = link.href;
+                lightboxCaption.textContent = link.getAttribute('data-caption');
+                lightbox.classList.add('active');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) lightbox.classList.remove('active');
+        });
+    </script>
+</body>
 </html>
