@@ -1,27 +1,26 @@
 /* ===== GLOBAL STYLES ===== */
 :root {
   /* Primary color palette */
-  --primary-color: #ff7f50; /* Coral - represents warmth, energy, and compassion */
-  --primary-dark: #e64a19;  /* Deep coral - strong and empowering */
-  --primary-light: #ff9e80; /* Light coral - gentle and approachable */
-  --secondary-color: #ffeb3b; /* Bright yellow - optimism, hope, and positivity */
-  --secondary-dark: #fbc02d; /* Rich yellow - energetic and uplifting */
-  --secondary-light: #fff59d; /* Soft yellow - light and welcoming */
+  --primary-color: #2e86de;
+  --primary-dark: #1c6dc0;
+  --primary-light: #54a0ff;
+  --secondary-color: #ff6b6b;
+  --secondary-dark: #ee5253;
+  --secondary-light: #ff7f8e;
   
   /* Neutral colors */
-  --dark: #212121; /* Dark charcoal - elegant and professional */
-  --dark-gray: #424242; /* Dark gray - balanced and modern */
-  --medium-gray: #757575; /* Medium gray - clean and contemporary */
-  --light-gray: #bdbdbd; /* Light gray - calm and minimalistic */
-  --off-white: #fafafa; /* Soft white - clean and fresh */
-  --white: #ffffff; /* Pure white - timeless and neutral */
+  --dark: #1e272e;
+  --dark-gray: #485460;
+  --medium-gray: #808e9b;
+  --light-gray: #d2dae2;
+  --off-white: #f5f6fa;
+  --white: #ffffff;
   
   /* Accent colors */
-  --success: #4caf50; /* Green - growth, success, and renewal */
-  --warning: #ff9800; /* Warm orange - attention-grabbing and inviting */
-  --error: #f44336; /* Red - urgency and compassion */
-  --info: #2196f3;  /* Blue - trust, calmness, and professionalism */
-}
+  --success: #1dd1a1;
+  --warning: #feca57;
+  --error: #ff6b6b;
+  --info: #00d2d3;
   
   /* Typography */
   --heading-font: 'Poppins', sans-serif;
