@@ -1,26 +1,26 @@
 /* ===== GLOBAL STYLES ===== */
 :root {
   /* Primary color palette */
-  --primary-color: #ff7f50;
-  --primary-dark: #e64a19;
-  --primary-light: #ff9e80;
-  --secondary-color: #ffeb3b;
-  --secondary-dark: #fbc02d;
-  --secondary-light: #fff59d;
+  --primary-color: #4285f4;   /* Trustworthy blue */
+  --primary-dark: #3367d6;    /* Deeper blue for emphasis */
+  --primary-light: #8ab4f8;   /* Lighter blue for accents */
+  --secondary-color: #34a853; /* Nurturing green */
+  --secondary-dark: #2e7d32;  /* Deeper green */
+  --secondary-light: #66bb6a; /* Lighter green */
   
   /* Neutral colors */
-  --dark: #212121;
-  --dark-gray: #424242;
-  --medium-gray: #757575;
-  --light-gray: #bdbdbd;
-  --off-white: #fafafa;
+  --dark: #263238;            /* Softer dark */
+  --dark-gray: #455a64;       /* More muted gray */
+  --medium-gray: #78909c;     /* Gentle medium gray */
+  --light-gray: #cfd8dc;      /* Soft light gray */
+  --off-white: #f5f7fa;       /* Warmer off-white */
   --white: #ffffff;
   
   /* Accent colors */
-  --success: #4caf50;
-  --warning: #ff9800;
-  --error: #f44336;
-  --info: #2196f3;
+  --success: #34a853;         /* Consistent green */
+  --warning: #fbbc04;         /* Accessible yellow */
+  --error: #ea4335;           /* Softer red */
+  --info: #4285f4;            /* Matching primary */
   
   /* Typography */
   --heading-font: 'Poppins', sans-serif;
