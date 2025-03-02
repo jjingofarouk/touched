@@ -1,33 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector(".navbar-toggle");
-    const menu = document.querySelector(".navbar-menu");
+    const toggle = document.querySelector(".navbar-toggle"); // Updated class name
+    const menu = document.querySelector(".navbar-menu");     // Updated class name
+    const nav = document.querySelector(".nav");
+    let lastScroll = 0;
 
+    // Mobile menu toggle
     toggle.addEventListener("click", function () {
         menu.classList.toggle("active");
         toggle.classList.toggle("active");
     });
 
-    let lastScrollTop = 0;
-    const navbar = document.querySelector(".navbar");
-
+    // Scroll handling
     window.addEventListener("scroll", function () {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const currentScroll = window.scrollY;
 
-        if (currentScroll > 50) {
-            navbar.classList.add("scrolled");
-        } else {
-            navbar.classList.remove("scrolled");
+        if (currentScroll > lastScroll && currentScroll > 50) {
+            // Scrolling down & past 50px
+            nav.classList.add("hidden");
+            nav.classList.add("scrolled");
+        } else if (currentScroll < lastScroll && currentScroll > 50) {
+            // Scrolling up & past 50px
+            nav.classList.remove("hidden");
+            nav.classList.add("scrolled");
+        } else if (currentScroll <= 50) {
+            // At top of page
+            nav.classList.remove("hidden");
+            nav.classList.remove("scrolled");
         }
 
-        // Hide navbar when scrolling down and show when scrolling up
-        if (currentScroll > lastScrollTop) {
-            // Scroll Down: Hide Navbar
-            navbar.style.top = "-80px";  // Adjust to the height of your navbar
-        } else {
-            // Scroll Up: Show Navbar
-            navbar.style.top = "0";
-        }
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative values
+        lastScroll = currentScroll;
     });
 });
-    
