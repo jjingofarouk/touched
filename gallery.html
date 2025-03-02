@@ -23,54 +23,30 @@
         <div class="container">
             <!-- Filter Buttons -->
             <div class="filter-bar">
-                <button class="filter-btn active" data-filter="all" aria-label="Show all images">All</button>
-                <button class="filter-btn" data-filter="events" aria-label="Show events images">Events</button>
-                <button class="filter-btn" data-filter="community" aria-label="Show community images">Community</button>
-                <button class="filter-btn" data-filter="programs" aria-label="Show programs images">Programs</button>
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="community">Community</button>
+                <button class="filter-btn" data-filter="programs">Programs</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                <button class="filter-btn" data-filter="volunteering">Volunteering</button>
             </div>
 
             <!-- Image Grid -->
-            <div class="gallery-grid" role="region" aria-label="Image Gallery">
-                <div class="gallery-item" data-category="events">
-                    <a href="./assets/images/gallery/image1.jpg" class="lightbox-link" data-caption="Annual Charity Event 2024">
-                        <img src="./assets/images/gallery/image1.jpg" alt="Volunteers at Annual Charity Event 2024" loading="lazy">
-                        <div class="overlay">
-                            <span class="overlay-text">Events</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="gallery-item" data-category="community">
-                    <a href="./assets/images/gallery/image2.jpg" class="lightbox-link" data-caption="Community Outreach in Karamoja">
-                        <img src="./assets/images/gallery/image2.jpg" alt="Community members receiving aid in Karamoja" loading="lazy">
-                        <div class="overlay">
-                            <span class="overlay-text">Community</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="gallery-item" data-category="programs">
-                    <a href="./assets/images/gallery/image3.jpg" class="lightbox-link" data-caption="Healthcare Program Launch">
-                        <img src="./assets/images/gallery/image3.jpg" alt="Doctors at Healthcare Program Launch" loading="lazy">
-                        <div class="overlay">
-                            <span class="overlay-text">Programs</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="gallery-item" data-category="events">
-                    <a href="./assets/images/gallery/image4.jpg" class="lightbox-link" data-caption="School Supplies Donation Event">
-                        <img src="./assets/images/gallery/image4.jpg" alt="Children receiving school supplies" loading="lazy">
-                        <div class="overlay">
-                            <span class="overlay-text">Events</span>
-                        </div>
-                    </a>
-                </div>
-                <!-- Add more items as needed -->
+            <div class="gallery-grid" id="gallery-grid"></div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button id="prev-page" disabled>Previous</button>
+                <span id="page-number">Page 1</span>
+                <button id="next-page">Next</button>
             </div>
         </div>
     </main>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-label="Image Lightbox">
-        <button id="close-lightbox" class="close-btn" aria-label="Close lightbox">
+    <div id="lightbox-modal" class="lightbox-modal">
+        <button id="close-lightbox" class="close-btn">
             <i class="fas fa-times"></i>
         </button>
         <div class="lightbox-content">
@@ -87,44 +63,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/gallery.js"></script>
-    <script>
-        // Dynamic Year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Gallery Filter
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelector('.filter-btn.active').classList.remove('active');
-                btn.classList.add('active');
-                const filter = btn.getAttribute('data-filter');
-                document.querySelectorAll('.gallery-item').forEach(item => {
-                    const category = item.getAttribute('data-category');
-                    item.style.display = (filter === 'all' || filter === category) ? 'block' : 'none';
-                });
-            });
-        });
-
-        // Lightbox Functionality
-        const lightbox = document.getElementById('lightbox-modal');
-        const lightboxImage = document.getElementById('lightbox-image');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-        const closeBtn = document.getElementById('close-lightbox');
-
-        document.querySelectorAll('.lightbox-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                lightboxImage.src = link.href;
-                lightboxCaption.textContent = link.getAttribute('data-caption');
-                lightbox.classList.add('active');
-            });
-        });
-
-        closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) lightbox.classList.remove('active');
-        });
-    </script>
 </body>
 </html>
