@@ -1,30 +1,29 @@
-/* ===== GLOBAL STYLES ===== */
 :root {
-  /* Primary color palette */
-  --primary-color: #4285f4;   /* Trustworthy blue */
-  --primary-dark: #3367d6;    /* Deeper blue for emphasis */
-  --primary-light: #8ab4f8;   /* Lighter blue for accents */
-  --secondary-color: #34a853; /* Nurturing green */
-  --secondary-dark: #2e7d32;  /* Deeper green */
-  --secondary-light: #66bb6a; /* Lighter green */
+  /* Primary color palette - Warm Teal/Sage */
+  --primary-color: #3a8f85;   /* Sophisticated teal */
+  --primary-dark: #2c7269;    /* Deeper teal for emphasis */
+  --primary-light: #8cc5bf;   /* Softer teal for accents */
+  --secondary-color: #d68c45; /* Warm terracotta orange */
+  --secondary-dark: #b87339;  /* Deeper terracotta */
+  --secondary-light: #e9b384; /* Soft peach accent */
   
-  /* Neutral colors */
-  --dark: #263238;            /* Softer dark */
-  --dark-gray: #455a64;       /* More muted gray */
-  --medium-gray: #78909c;     /* Gentle medium gray */
-  --light-gray: #cfd8dc;      /* Soft light gray */
-  --off-white: #f5f7fa;       /* Warmer off-white */
+  /* Neutral colors - Warmer and more organic */
+  --dark: #2d3a3a;            /* Charcoal with hint of teal */
+  --dark-gray: #4d5c5c;       /* Warmer dark gray */
+  --medium-gray: #7e8c8c;     /* Sophisticated medium gray */
+  --light-gray: #d2d8d8;      /* Warmer light gray */
+  --off-white: #f8f7f5;       /* Cream off-white */
   --white: #ffffff;
   
-  /* Accent colors */
-  --success: #34a853;         /* Consistent green */
-  --warning: #fbbc04;         /* Accessible yellow */
-  --error: #ea4335;           /* Softer red */
-  --info: #4285f4;            /* Matching primary */
+  /* Accent colors - More earthy and harmonious */
+  --success: #739e73;         /* Sage green */
+  --warning: #e6b86a;         /* Subdued gold */
+  --error: #c17b7b;           /* Muted brick red */
+  --info: #6a91ab;            /* Soft steel blue */
   
   /* Typography */
-  --heading-font: 'Poppins', sans-serif;
-  --body-font: 'Open Sans', sans-serif;
+  --heading-font: 'Playfair Display', serif;
+  --body-font: 'Source Sans Pro', sans-serif;
   
   /* Spacing - Using 8px grid system */
   --spacing-xs: 0.25rem;  /* 4px */
@@ -34,17 +33,17 @@
   --spacing-xl: 2rem;     /* 32px */
   --spacing-xxl: 3rem;    /* 48px */
   
-  /* Borders & Shadows */
-  --border-radius-sm: 4px;
-  --border-radius-md: 8px;
-  --border-radius-lg: 16px;
-  --border-radius-xl: 24px;
+  /* Borders & Shadows - More refined */
+  --border-radius-sm: 3px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 18px;
   --border-radius-full: 9999px;
   
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.07), 0 5px 10px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px rgba(45, 58, 58, 0.08);
+  --shadow-md: 0 4px 6px rgba(45, 58, 58, 0.05), 0 1px 3px rgba(45, 58, 58, 0.07);
+  --shadow-lg: 0 10px 15px rgba(45, 58, 58, 0.05), 0 5px 10px rgba(45, 58, 58, 0.04);
+  --shadow-xl: 0 20px 25px rgba(45, 58, 58, 0.07), 0 10px 10px rgba(45, 58, 58, 0.03);
   
   /* Transitions */
   --transition-fast: 150ms ease;
