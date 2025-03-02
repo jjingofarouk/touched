@@ -437,6 +437,7 @@ input:focus, textarea:focus, select:focus {
 
 
   /* Main Navigation Styles */
+/* Main Navigation Styles */
 .nav {
   position: fixed;
   top: 0;
@@ -598,60 +599,40 @@ input:focus, textarea:focus, select:focus {
   margin-left: auto;
 }
 
-.hamburger {
-  position: relative;
+.nav-toggle span {
   display: block;
   width: 24px;
   height: 2px;
+  margin: 5px 0;
   background-color: var(--primary-color);
   transition: all var(--transition-fast);
-}
-
-.hamburger::before,
-.hamburger::after {
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 2px;
-  background-color: var(--primary-color);
-  transition: all var(--transition-fast);
-}
-
-.hamburger::before {
-  top: -8px;
-}
-
-.hamburger::after {
-  bottom: -8px;
 }
 
 /* Hamburger Animation */
-.navbar-toggle[aria-expanded="true"] .hamburger {
-  background-color: transparent;
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
-.navbar-toggle[aria-expanded="true"] .hamburger::before {
-  top: 0;
-  transform: rotate(45deg);
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
 }
 
-.navbar-toggle[aria-expanded="true"] .hamburger::after {
-  bottom: 0;
-  transform: rotate(-45deg);
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Responsive Styles */
 @media (max-width: 1023px) {
-  .navbar-container {
+  .nav-container {
     padding: var(--spacing-md);
   }
   
-  .navbar-toggle {
+  .nav-toggle {
     display: block;
     z-index: var(--z-dropdown);
   }
   
-  .navbar-menu {
+  .nav-menu {
     position: fixed;
     top: 0;
     right: 0;
@@ -669,11 +650,11 @@ input:focus, textarea:focus, select:focus {
     overflow-y: auto;
   }
   
-  .navbar-menu.active {
+  .nav-menu.active {
     transform: translateX(0);
   }
   
-  .navbar-menu li {
+  .nav-menu li {
     width: 100%;
   }
   
@@ -708,6 +689,7 @@ input:focus, textarea:focus, select:focus {
   .btn-donate {
     margin-top: var(--spacing-md);
     text-align: center;
+    width: 100%;
   }
   
   /* Overlay */
@@ -731,24 +713,22 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* Optional: Scroll-activated navbar style */
-.navbar.scrolled {
+.nav.scrolled {
   background-color: var(--white);
   box-shadow: var(--shadow-lg);
   padding: var(--spacing-xs) 0;
 }
 
-.navbar.transparent {
+.nav.transparent {
   background-color: transparent;
   box-shadow: none;
 }
 
-.navbar.transparent .nav-link {
+.nav.transparent .nav-link {
   color: var(--white);
 }
 
-.navbar.transparent .hamburger,
-.navbar.transparent .hamburger::before,
-.navbar.transparent .hamburger::after {
+.nav.transparent .nav-toggle span {
   background-color: var(--white);
 }
 
