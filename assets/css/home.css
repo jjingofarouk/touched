@@ -252,6 +252,8 @@ p {
 }
 
 /* ===== BUTTONS & INTERACTIVE ELEMENTS ===== */
+
+/* ===== BUTTONS & INTERACTIVE ELEMENTS ===== */
 .cta-button {
   display: inline-flex;
   align-items: center;
@@ -259,8 +261,8 @@ p {
   padding: 0.75rem 1.5rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  border-radius: var(--border-radius-md);
-  transition: all var(--transition-fast);
+  border-radius: 8px; /* Assuming --border-radius-md is 8px */
+  transition: all 0.2s ease; /* Assuming --transition-fast is 0.2s */
   text-align: center;
   min-width: 120px;
   position: relative;
@@ -278,7 +280,7 @@ p {
   background: rgba(255, 255, 255, 0.1);
   z-index: -1;
   transform: translateX(-100%);
-  transition: transform var(--transition-normal);
+  transition: transform 0.3s ease; /* Assuming --transition-normal is 0.3s */
 }
 
 .cta-button:hover::before {
@@ -286,15 +288,15 @@ p {
 }
 
 .cta-button.primary {
-  background-color: var(--primary-color);
-  color: var(--white);
-  box-shadow: var(--shadow-md);
+  background-color: #FF6F61; /* Bright Orange */
+  color: #FFFFFF; /* White */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Assuming --shadow-md */
 }
 
 .cta-button.primary:hover {
-  background-color: var(--primary-dark);
+  background-color: #E85A4F; /* Deep Coral */
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* Assuming --shadow-lg */
 }
 
 .cta-button.primary:active {
@@ -303,13 +305,13 @@ p {
 
 .cta-button.secondary {
   background-color: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
+  color: #FF6F61; /* Bright Orange */
+  border: 2px solid #FF6F61; /* Bright Orange */
 }
 
 .cta-button.secondary:hover {
-  background-color: var(--primary-color);
-  color: var(--white);
+  background-color: #F5E8C7; /* Soft Beige */
+  color: #2F2E41; /* Dark Slate */
   transform: translateY(-2px);
 }
 
@@ -321,21 +323,21 @@ p {
 input, textarea, select {
   width: 100%;
   padding: 0.75rem 1rem;
-  background-color: var(--white);
-  border: 1px solid var(--light-gray);
-  border-radius: var(--border-radius-md);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  background-color: #FFFFFF; /* White */
+  border: 1px solid #D3D3D3; /* Light Gray */
+  border-radius: 8px; /* Assuming --border-radius-md is 8px */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Assuming --transition-fast */
 }
 
 input:focus, textarea:focus, select:focus {
   outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(46, 134, 222, 0.2);
+  border-color: #FF6F61; /* Bright Orange */
+  box-shadow: 0 0 0 3px rgba(255, 111, 97, 0.2); /* Orange-based glow */
 }
 
 .form-group {
   position: relative;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 16px; /* Assuming --spacing-md is 16px */
   display: flex;
 }
 
@@ -343,8 +345,8 @@ input:focus, textarea:focus, select:focus {
 .checkbox-container, .radio-container {
   display: flex;
   align-items: flex-start;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-sm);
+  gap: 8px; /* Assuming --spacing-sm is 8px */
+  margin-bottom: 8px; /* Assuming --spacing-sm */
   cursor: pointer;
 }
 
@@ -363,6 +365,7 @@ input:focus, textarea:focus, select:focus {
   user-select: none;
   font-size: 0.9rem;
   line-height: 1.4;
+  color: #2F2E41; /* Dark Slate for readability */
 }
 
 .checkbox-label::before {
@@ -372,15 +375,15 @@ input:focus, textarea:focus, select:focus {
   left: 0;
   height: 18px;
   width: 18px;
-  background-color: var(--white);
-  border: 1px solid var(--light-gray);
-  border-radius: var(--border-radius-sm);
-  transition: all var(--transition-fast);
+  background-color: #FFFFFF; /* White */
+  border: 1px solid #D3D3D3; /* Light Gray */
+  border-radius: 4px; /* Assuming --border-radius-sm is 4px */
+  transition: all 0.2s ease; /* Assuming --transition-fast */
 }
 
 .checkbox-container input:checked ~ .checkbox-label::before {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: #FF6F61; /* Bright Orange */
+  border-color: #FF6F61; /* Bright Orange */
 }
 
 .checkbox-label::after {
@@ -391,7 +394,7 @@ input:focus, textarea:focus, select:focus {
   top: 3px;
   width: 5px;
   height: 10px;
-  border: solid white;
+  border: solid #FFFFFF; /* White */
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
@@ -407,14 +410,14 @@ input:focus, textarea:focus, select:focus {
   left: 0;
   height: 18px;
   width: 18px;
-  background-color: var(--white);
-  border: 1px solid var(--light-gray);
+  background-color: #FFFFFF; /* White */
+  border: 1px solid #D3D3D3; /* Light Gray */
   border-radius: 50%;
-  transition: all var(--transition-fast);
+  transition: all 0.2s ease; /* Assuming --transition-fast */
 }
 
 .radio-container input:checked ~ .radio-label::before {
-  border-color: var(--primary-color);
+  border-color: #FF6F61; /* Bright Orange */
 }
 
 .radio-label::after {
@@ -426,13 +429,12 @@ input:focus, textarea:focus, select:focus {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--primary-color);
+  background: #FF6F61; /* Bright Orange */
 }
 
 .radio-container input:checked ~ .radio-label::after {
   display: block;
 }
-
 
 
   /* Main Navigation Styles */
