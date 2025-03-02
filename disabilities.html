@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how Touched Hearts supports persons with disabilities in Uganda through empowerment, healthcare, and community inclusion programs.">
+    <title>Disability Support - Touched Hearts</title>
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        /* Embedded Modern CSS */
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .navbar-logo img {
+            width: 80px;
+        }
+
+        .navbar-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            position: relative;
+        }
+
+        .hamburger::before, .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger::before {
+            top: -8px;
+        }
+
+        .hamburger::after {
+            bottom: -8px;
+        }
+
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #007bff;
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            list-style: none;
+            padding: 0.5rem 0;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li a {
+            color: #333;
+            padding: 0.5rem 1rem;
+            display: block;
+            text-decoration: none;
+        }
+
+        .dropdown-menu li a:hover {
+            background: #f5f7fa;
+        }
+
+        /* Main Content */
+        .disabilities-hero {
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .disabilities-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+            animation: pulse 15s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.2; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        .disabilities-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .disabilities-hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Disabilities Content */
+        .disabilities-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .disabilities-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.5rem;
+        }
+
+        .disabilities-content p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: #ddd;
+            border-radius: 10px;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+        }
+
+        /* Programs Accordion */
+        .programs-list {
+            margin: 2rem 0;
+        }
+
+        .program-item {
+            border-bottom: 1px solid #eee;
+        }
+
+        .program-header {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .program-header:hover {
+            background: #f0f4ff;
+        }
+
+        .program-header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            color: #2a5298;
+        }
+
+        .program-header .toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .program-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .program-details {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1.5rem;
+            background: #fff;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .program-details.active {
+            max-height: 500px; /* Adjust based on content */
+            padding: 1.5rem;
+        }
+
+        .program-details p {
+            margin-bottom: 1rem;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            padding: 4rem 2rem;
+        }
+
+        .case-studies h2 {
+            color: #fff;
+            border-bottom-color: #fff;
+        }
+
+        .case-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .case-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .case-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3c72;
+            color: #fff;
+            padding: 3rem 2rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-logo img {
+            width: 100px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            color: #fff;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #007bff;
+        }
+
+        .footer-heading {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #007bff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar-toggle {
+                display: block;
+            }
+
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #1e3c72;
+                padding: 1rem;
+            }
+
+            .navbar-menu.active {
+                display: flex;
+            }
+
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+            }
+
+            .disabilities-hero h1 {
+                font-size: 2rem;
+            }
+
+            .disabilities-hero p {
+                font-size: 1rem;
+            }
+
+            .case-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .disabilities-content {
+                padding: 2rem 1rem;
+            }
+
+            .disabilities-hero {
+                padding: 2rem 1rem;
+            }
+
+            .case-studies {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-logo">
+                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo">
+                </a>
+                <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="navbar-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="nav-dropdown">
+                        <a href="programs.html" class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="healthcare.html">Healthcare</a></li>
+                            <li><a href="disabilities.html" class="nav-link active">Disability Support</a></li>
+                            <li><a href="community.html">Community Development</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+                    <li><a href="donate.html" class="nav-link">Donate</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="disabilities-hero">
+        <h1>Supporting Persons with Disabilities</h1>
+        <p>At Touched Hearts, we empower individuals with disabilities in Uganda through inclusive programs, healthcare access, and community integration, ensuring they live with dignity and opportunity.</p>
+    </section>
+
+    <!-- Main Content -->
+    <section class="disabilities-content">
+        <h2>Our Commitment to Disability Support</h2>
+        <p>Since our founding in 2010, Touched Hearts has been dedicated to addressing the unique challenges faced by persons with disabilities (PWDs) in Uganda. With over 1.5 million Ugandans living with some form of disability—ranging from physical impairments to visual, hearing, and intellectual challenges—we work tirelessly to bridge gaps in access to healthcare, education, and economic opportunities.</p>
+        <p>Our approach combines direct support with advocacy, partnering with local communities, government bodies, and international organizations to create sustainable change. Below are some of the key programs and outreaches we’ve undertaken to uplift PWDs across Uganda.</p>
+        
+        <div class="image-placeholder">Image: [Wheelchair distribution in Gulu]</div>
+
+        <!-- Programs Accordion -->
+        <div class="programs-list">
+            <div class="program-item">
+                <div class="program-header">
+                    <h3>Assistive Devices Outreach</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="program-details">
+                    <p>We provide wheelchairs, hearing aids, and prosthetic limbs to PWDs in rural areas. In 2023, our outreach in Gulu District distributed over 150 wheelchairs to individuals like Peter Okello, a 32-year-old farmer who lost his leg in a motorcycle accident. With his new wheelchair, Peter regained mobility and now supports his family through farming.</p>
+                    <p>This program also includes training on device maintenance and follow-up visits to ensure long-term usability.</p>
+                </div>
+            </div>
+            <div class="program-item">
+                <div class="program-header">
+                    <h3>Vocational Skills Training</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="program-details">
+                    <p>In Kampala, we run tailoring and carpentry workshops for PWDs, empowering them with skills for financial independence. Sarah Atim, a 25-year-old visually impaired woman from Lira, completed our tailoring course in 2024 and now runs a small business, stitching school uniforms for her community.</p>
+                    <p>These workshops are adapted with braille materials, sign language interpreters, and accessible tools.</p>
+                </div>
+            </div>
+            <div class="program-item">
+                <div class="program-header">
+                    <h3>Inclusive Education Support</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="program-details">
+                    <p>We collaborate with schools in Mbale to provide learning aids like braille books and sign language training for teachers. In 2022, we supported 12-year-old Emmanuel Ouma, a deaf student from Tororo, with hearing aids and tutoring. Today, Emmanuel excels in class and dreams of becoming a teacher.</p>
+                </div>
+            </div>
+            <div class="program-item">
+                <div class="program-header">
+                    <h3>Healthcare Access Program</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="program-details">
+                    <p>Our mobile clinics bring physiotherapy and eye care to remote areas like Arua. In 2024, we treated over 300 PWDs, including Grace Akello, a 40-year-old mother with cerebral palsy, who received physiotherapy to improve her mobility after years of neglect.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies">
+        <h2>Real Lives, Real Impact</h2>
+        <div class="case-container">
+            <div class="case-card">
+                <h3>Peter Okello - Gulu</h3>
+                <p>Peter, a father of three, lost his leg in a 2019 accident. Without resources for a wheelchair, he struggled to farm. Our 2023 Gulu outreach provided him with a wheelchair, restoring his ability to work and support his family.</p>
+                <div class="image-placeholder">Image: [Peter with his wheelchair]</div>
+            </div>
+            <div class="case-card">
+                <h3>Sarah Atim - Lira</h3>
+                <p>Blind since childhood, Sarah faced exclusion until she joined our tailoring program. Now, she earns a living stitching uniforms, proving that disability is not inability.</p>
+                <div class="image-placeholder">Image: [Sarah at her sewing machine]</div>
+            </div>
+            <div class="case-card">
+                <h3>Emmanuel Ouma - Tororo</h3>
+                <p>Deaf since birth, Emmanuel struggled in school until our education support provided hearing aids and teacher training. He’s now a top student with big dreams.</p>
+                <div class="image-placeholder">Image: [Emmanuel in class]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <a href="index.html" class="footer-logo">
+                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo">
+                </a>
+                <p>Transforming lives with compassion and hope</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="programs.html" class="footer-link">Programs</a></li>
+                    <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
+                <p><i class="fas fa-phone"></i> +256 712 345 678</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@touchedhearts.org" class="footer-link">info@touchedhearts.org</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Touched Hearts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Embedded JavaScript -->
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script> <!-- Replace with your Font Awesome Kit ID -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar Toggle
+            const navbarToggle = document.querySelector('.navbar-toggle');
+            const navbarMenu = document.querySelector('.navbar-menu');
+            navbarToggle.addEventListener('click', () => {
+                navbarMenu.classList.toggle('active');
+                const isExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+                navbarToggle.setAttribute('aria-expanded', !isExpanded);
+            });
+
+            // Accordion Functionality
+            const programHeaders = document.querySelectorAll('.program-header');
+            programHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const details = header.nextElementSibling;
+                    const isActive = details.classList.contains('active');
+                    programHeaders.forEach(h => h.nextElementSibling.classList.remove('active'));
+                    programHeaders.forEach(h => h.classList.remove('active'));
+                    if (!isActive) {
+                        details.classList.add('active');
+                        header.classList.add('active');
+                    }
+                });
+            });
+
+            // Scroll Animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.program-item, .case-card').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(item);
+            });
+
+            document.querySelectorAll('.show').forEach(item => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
