@@ -436,8 +436,7 @@ input:focus, textarea:focus, select:focus {
 
 
 
-  /* Main Navigation Styles */
-/* Main Navigation Styles */
+ /* Main Navigation Styles */
 .navbar {
   position: fixed;
   top: 0;
@@ -446,8 +445,7 @@ input:focus, textarea:focus, select:focus {
   background-color: var(--white);
   box-shadow: var(--shadow-md);
   z-index: var(--z-sticky);
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Specific transitions for performance */
-  will-change: transform, opacity; /* Optimize for animations */
+  transition: all var(--transition-normal);
 }
 
 .navbar-container {
@@ -462,12 +460,12 @@ input:focus, textarea:focus, select:focus {
 .navbar-logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .logo {
   height: 40px;
   width: auto;
-  display: block; /* Prevent margin issues with images */
 }
 
 /* Menu Styling */
@@ -487,19 +485,12 @@ input:focus, textarea:focus, select:focus {
   text-decoration: none;
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius-md);
-  transition: color 0.2s ease; /* Specific transition for performance */
+  transition: all var(--transition-fast);
   position: relative;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+.nav-link:hover {
   color: var(--primary-color);
-  outline: none; /* Remove default focus outline */
-}
-
-.nav-link:focus-visible {
-  outline: 2px solid var(--primary-color); /* Accessible focus state */
-  outline-offset: 2px;
 }
 
 .nav-link.active {
@@ -531,11 +522,10 @@ input:focus, textarea:focus, select:focus {
 
 .nav-dropdown .fas {
   font-size: 0.75rem;
-  transition: transform 0.2s ease;
+  transition: transform var(--transition-fast);
 }
 
-.nav-dropdown:hover .fas,
-.nav-dropdown:focus-within .fas {
+.nav-dropdown:hover .fas {
   transform: rotate(180deg);
 }
 
@@ -552,13 +542,12 @@ input:focus, textarea:focus, select:focus {
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: all var(--transition-normal);
   z-index: var(--z-dropdown);
   list-style: none;
 }
 
-.nav-dropdown:hover .dropdown-menu,
-.nav-dropdown:focus-within .dropdown-menu {
+.nav-dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -574,42 +563,29 @@ input:focus, textarea:focus, select:focus {
   color: var(--dark-gray);
   text-decoration: none;
   border-radius: var(--border-radius-sm);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
-.dropdown-menu a:hover,
-.dropdown-menu a:focus {
+.dropdown-menu a:hover {
   background-color: var(--off-white);
   color: var(--primary-color);
-}
-
-.dropdown-menu a:focus-visible {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
 }
 
 /* Donate Button */
 .btn-donate {
   background-color: var(--secondary-color);
-  color: var(--white);
+  color: var(--white) !important;
   font-weight: 600;
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-lg) !important;
   border-radius: var(--border-radius-full);
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all var(--transition-fast);
   box-shadow: var(--shadow-sm);
-  text-decoration: none; /* Ensure consistency */
 }
 
-.btn-donate:hover,
-.btn-donate:focus {
+.btn-donate:hover {
   background-color: var(--secondary-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-}
-
-.btn-donate:focus-visible {
-  outline: 2px solid var(--secondary-dark);
-  outline-offset: 2px;
 }
 
 /* Hamburger Menu Toggle */
@@ -628,7 +604,7 @@ input:focus, textarea:focus, select:focus {
   width: 24px;
   height: 2px;
   background-color: var(--primary-color);
-  transition: background-color 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .hamburger::before,
@@ -638,7 +614,7 @@ input:focus, textarea:focus, select:focus {
   width: 24px;
   height: 2px;
   background-color: var(--primary-color);
-  transition: transform 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .hamburger::before {
@@ -679,7 +655,7 @@ input:focus, textarea:focus, select:focus {
     position: fixed;
     top: 0;
     right: 0;
-    width: min(300px, 80vw); /* More responsive width */
+    width: 300px;
     height: 100vh;
     background-color: var(--white);
     flex-direction: column;
@@ -688,7 +664,7 @@ input:focus, textarea:focus, select:focus {
     padding: 80px var(--spacing-lg) var(--spacing-lg);
     box-shadow: var(--shadow-xl);
     transform: translateX(100%);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-normal);
     z-index: var(--z-drawer);
     overflow-y: auto;
   }
@@ -716,13 +692,13 @@ input:focus, textarea:focus, select:focus {
     box-shadow: none;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height var(--transition-normal);
     padding: 0 var(--spacing-md);
     margin: 0;
   }
   
   .nav-dropdown.open .dropdown-menu {
-    max-height: 500px; /* Consider calculating this dynamically if possible */
+    max-height: 500px;
   }
   
   .nav-dropdown .fas {
@@ -734,13 +710,17 @@ input:focus, textarea:focus, select:focus {
     text-align: center;
   }
   
+  /* Overlay */
   .nav-overlay {
     position: fixed;
-    inset: 0; /* Modern shorthand for top/left/right/bottom */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease;
+    transition: all var(--transition-normal);
     z-index: var(--z-sticky);
   }
   
@@ -750,31 +730,38 @@ input:focus, textarea:focus, select:focus {
   }
 }
 
-/* Scroll-activated navbar styles */
+/* Optional: Scroll-activated navbar style */
 .navbar.scrolled {
   background-color: var(--white);
   box-shadow: var(--shadow-lg);
-  padding: var(--spacing-xs) var(--spacing-lg);
+  padding: var(--spacing-xs) 0;
 }
 
-.navbar.hide {
-  transform: translateY(-100%);
-  opacity: 0;
+.navbar.transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.navbar.transparent .nav-link {
+  color: var(--white);
+}
+
+.navbar.transparent .hamburger,
+.navbar.transparent .hamburger::before,
+.navbar.transparent .hamburger::after {
+  background-color: var(--white);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .navbar,
-  .navbar-menu,
-  .dropdown-menu,
-  .nav-link,
-  .btn-donate,
-  .hamburger,
-  .hamburger::before,
-  .hamburger::after,
-  .nav-overlay {
-    transition: none !important; /* Disable transitions for accessibility */
+  * {
+    transition-duration: 0.01ms !important;
   }
 }
+
+
+
+
+
 /* ===== HERO SECTION ===== */
 .hero {
   position: relative;
