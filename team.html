@@ -6,15 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Our Team | Touched Hearts</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="./assets/css/team.css">
     <script src="./assets/js/main.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <h1>Our Team</h1>
-    </header>
+<header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
+            </a>
+            <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li class="nav-dropdown">
+                    <a href="programs.html" class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="healthcare.html">Healthcare</a></li>
+                        <li><a href="disabilities.html">Disability Support</a></li>
+                        <li><a href="community.html">Community Development</a></li>
+                    </ul>
+                </li>
+                <li><a href="stories.html" class="nav-link">Stories</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="news.html" class="nav-link">Blog</a></li>
+                
+                <li class="nav-dropdown">
+                    <a href="get-involved.html" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="volunteers.html">Volunteers</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        
+                    </ul>
+                </li>
+                
+                <li><a href="donate.html" class="nav-link btn-donate">Donate Now</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
     <main>
         <section class="team-grid">
@@ -87,8 +123,73 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Touched Hearts | All Rights Reserved</p>
+<footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-column">
+                <a href="index.html" class="footer-logo">
+                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
+                </a>
+                <p class="footer-tagline">Transforming lives with compassion and hope</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/touchedhearts" aria-label="LinkedIn" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://youtube.com/touchedhearts" aria-label="YouTube" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="programs.html" class="footer-link">Our Programs</a></li>
+                    <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
+                    <li><a href="donate.html" class="footer-link">Donate</a></li>
+                    <li><a href="events.html" class="footer-link">Events</a></li>
+                    <li><a href="news.html" class="footer-link">News & Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="annual-reports.html" class="footer-link">Annual Reports</a></li>
+                    <li><a href="financial-statements.html" class="footer-link">Financial Statements</a></li>
+                    <li><a href="media.html" class="footer-link">Media Resources</a></li>
+                    <li><a href="stories.html" class="footer-link">Success Stories</a></li>
+                    <li><a href="faq.html" class="footer-link">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Contact Us</h3>
+                <address class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
+                    <p><i class="fas fa-phone"></i> +256 712 345 678</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@touchedhearts.org">info@touchedhearts.org</a></p>
+                </address>
+                <div class="certifications">
+                    <img src="./assets/images/seal.PNG" alt="Charity Navigator Seal" class="certification-logo">
+                    <img src="./assets/images/transparency.JPG" alt="Transparency Badge" class="certification-logo">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2025 Touched Hearts. All rights reserved.</p>
+            <ul class="legal-links">
+                <li><a href="privacy.html" class="legal-link">Privacy Policy</a></li>
+                <li><a href="terms.html" class="legal-link">Terms of Service</a></li>
+                <li><a href="accessibility.html" class="legal-link">Accessibility</a></li>
+            </ul>
+        </div>
     </footer>
 </body>
 
