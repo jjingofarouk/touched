@@ -1,33 +1,39 @@
 
   document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector(".navbar-toggle");
-    const menu = document.querySelector(".navbar-menu");
+    const toggle = document.querySelector(".navbar-toggle"); // Updated selector to match HTML
+    const menu = document.querySelector(".navbar-menu");     // Updated selector to match HTML
+    const navbar = document.querySelector(".navbar");
+    
+    let lastScroll = 0;
 
+    // Mobile menu toggle
     toggle.addEventListener("click", function () {
         menu.classList.toggle("active");
-        toggle.classList.toggle("active");
+        toggle.setAttribute("aria-expanded", 
+            toggle.getAttribute("aria-expanded") === "false" ? "true" : "false"
+        );
     });
 
-    let lastScrollTop = 0;
-    const navbar = document.querySelector(".navbar");
-
+    // Scroll behavior
     window.addEventListener("scroll", function () {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const currentScroll = window.scrollY;
 
-        if (currentScroll > 50) {
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            // Scrolling down & past 100px
+            navbar.classList.add("hide");
             navbar.classList.add("scrolled");
-        } else {
-            navbar.classList.remove("scrolled");
+        } else if (currentScroll < lastScroll) {
+            // Scrolling up
+            navbar.classList.remove("hide");
+            navbar.classList.add("scrolled");
         }
 
-        // Hide navbar when scrolling down and show when scrolling up
-        if (currentScroll > lastScrollTop) {
-            // Scroll Down: Hide Navbar
-            navbar.style.top = "-80px";  // Adjust to the height of your navbar
-        } else {
-            // Scroll Up: Show Navbar
-            navbar.style.top = "0";
+        if (currentScroll <= 50) {
+            // At top of page
+            navbar.classList.remove("scrolled");
+            navbar.classList.remove("hide");
         }
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative values
+
+        lastScroll = currentScroll;
     });
 });
