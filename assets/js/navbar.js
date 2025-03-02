@@ -1,66 +1,105 @@
-
-// Navbar JavaScript
 document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.querySelector('.navbar');
-    const toggleBtn = document.querySelector('.navbar-toggle');
-    const menu = document.querySelector('.navbar-menu');
-    const dropdowns = document.querySelectorAll('.nav-dropdown');
-
-    // Toggle Mobile Menu
-    toggleBtn.addEventListener('click', () => {
-        menu.classList.toggle('active');
-        const isOpen = menu.classList.contains('active');
-        toggleBtn.setAttribute('aria-expanded', isOpen);
-        toggleBtn.classList.toggle('active');
-        document.body.style.overflow = isOpen ? 'hidden' : 'auto'; // Prevent scroll when open
+  const navbar = document.querySelector('.navbar');
+  const navbarToggle = document.querySelector('.navbar-toggle');
+  const navbarMenu = document.querySelector('.navbar-menu');
+  const dropdownLinks = document.querySelectorAll('.nav-dropdown > .nav-link');
+  
+  // Create overlay element for mobile menu
+  const overlay = document.createElement('div');
+  overlay.classList.add('nav-overlay');
+  document.body.appendChild(overlay);
+  
+  // Toggle mobile menu
+  function toggleMenu() {
+    const expanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+    navbarToggle.setAttribute('aria-expanded', !expanded);
+    navbarMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = !expanded ? 'hidden' : '';
+  }
+  
+  navbarToggle.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', toggleMenu);
+  
+  // Handle dropdowns in mobile view
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 1023) {
+        e.preventDefault();
+        const dropdown = link.parentElement;
+        dropdown.classList.toggle('open');
+        
+        // Toggle aria-expanded
+        const isExpanded = dropdown.classList.contains('open');
+        link.setAttribute('aria-expanded', isExpanded);
+      }
     });
-
-    // Handle Dropdowns on Mobile
-    dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector('.nav-link');
-        const submenu = dropdown.querySelector('.dropdown-menu');
-
-        link.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-            }
-        });
+  });
+  
+  // Close menu when clicking on a non-dropdown link in mobile view
+  const nonDropdownLinks = document.querySelectorAll('.navbar-menu > li:not(.nav-dropdown) > .nav-link');
+  nonDropdownLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 1023 && navbarMenu.classList.contains('active')) {
+        toggleMenu();
+      }
     });
-
-    // Close Menu on Link Click (Mobile)
-    menu.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768 && !link.classList.contains('btn-donate') && !link.parentElement.classList.contains('nav-dropdown')) {
-                menu.classList.remove('active');
-                toggleBtn.setAttribute('aria-expanded', 'false');
-                toggleBtn.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-    });
-
-    // Scroll Effect
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // Smooth Intersection Observer for Active Link Highlighting
-    const observerOptions = {
-        root: null,
-        threshold: 0.5,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const id = entry.target.getAttribute('id');
-            const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
-            if (entry.isIntersecting && navLink) {
-                document.querySelector('.nav-link.active')?.classList.remove('active');
-                navLink.classList.add('active');
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('section[id]').forEach(section => observer.observe(section));
+  });
+  
+  // Handle scroll effects
+  function handleScroll() {
+    if (window.scrollY > 100) {
+      navbar.classList.add('scrolled');
+      navbar.classList.remove('transparent');
+    } else {
+      if (navbar.classList.contains('transparent-on-top')) {
+        navbar.classList.add('transparent');
+      }
+      navbar.classList.remove('scrolled');
+    }
+  }
+  
+  // Optional: Enable transparent navbar on top
+  // Uncomment the line below if you want a transparent navbar at the top of the page
+  // navbar.classList.add('transparent', 'transparent-on-top');
+  
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Initialize on page load
+  
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1023) {
+      // Reset mobile menu state when returning to desktop view
+      navbarToggle.setAttribute('aria-expanded', 'false');
+      navbarMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+      
+      // Reset dropdown open states
+      document.querySelectorAll('.nav-dropdown.open').forEach(dropdown => {
+        dropdown.classList.remove('open');
+        dropdown.querySelector('.nav-link').setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+  
+  // Handle keyboard navigation for accessibility
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navbarMenu.classList.contains('active')) {
+      toggleMenu();
+    }
+  });
+  
+  // Add proper ARIA attributes for accessibility
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(dropdown => {
+    const link = dropdown.querySelector('.nav-link');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    const id = `dropdown-${Math.random().toString(36).substr(2, 9)}`;
+    
+    menu.id = id;
+    link.setAttribute('aria-controls', id);
+    link.setAttribute('aria-expanded', 'false');
+    link.setAttribute('aria-haspopup', 'true');
+  });
 });
