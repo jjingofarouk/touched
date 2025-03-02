@@ -7,10 +7,436 @@
     <title>Our Gallery - Touched Hearts</title>
     <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="./assets/css/gallery.css">
-    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Mobile-First Navbar */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            position: relative;
+        }
+        
+        .navbar-logo img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .navbar-toggle {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+        
+        .hamburger, .hamburger::before, .hamburger::after {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: #333;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+        
+        .hamburger::before, .hamburger::after {
+            content: '';
+            position: absolute;
+        }
+        
+        .hamburger::before {
+            top: -8px;
+        }
+        
+        .hamburger::after {
+            bottom: -8px;
+        }
+        
+        .navbar-menu {
+            display: none;
+            list-style-type: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            padding: 15px 0;
+            z-index: 1000;
+        }
+        
+        .navbar-menu.show {
+            display: flex;
+        }
+        
+        .navbar-menu li {
+            margin: 10px 20px;
+        }
+        
+        .navbar-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 8px 0;
+        }
+        
+        .navbar-menu a:hover, .navbar-menu a.active {
+            color: #4a6fdc;
+        }
+        
+        .btn-donate {
+            background-color: #4a6fdc;
+            color: white !important;
+            padding: 8px 16px !important;
+            border-radius: 25px;
+            text-align: center;
+        }
+        
+        /* Gallery Main */
+        .gallery-main {
+            padding: 30px 0;
+        }
+        
+        /* Filter Buttons */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+            justify-content: center;
+        }
+        
+        .filter-btn {
+            background-color: #f0f2f5;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            margin-bottom: 5px;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #4a6fdc;
+            color: white;
+        }
+        
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+            aspect-ratio: 1 / 1;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-item-caption {
+            transform: translateY(0);
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .pagination button {
+            padding: 8px 16px;
+            background-color: #4a6fdc;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .pagination button:hover {
+            background-color: #3556b3;
+        }
+        
+        .pagination button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        #page-number {
+            font-weight: 500;
+        }
+        
+        /* Lightbox Modal */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lightbox-modal.show {
+            opacity: 1;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .lightbox-content img {
+            max-height: 80vh;
+            max-width: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        #lightbox-caption {
+            color: white;
+            margin-top: 15px;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+        .lightbox-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+        }
+        
+        .lightbox-control {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .lightbox-control:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 2001;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        /* Loading indicator */
+        .loading-spinner {
+            display: none;
+            margin: 20px auto;
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(74, 111, 220, 0.2);
+            border-top-color: #4a6fdc;
+            border-radius: 50%;
+            animation: spin 1s infinite linear;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive Styles */
+        @media (min-width: 576px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .filter-btn {
+                font-size: 15px;
+                padding: 10px 16px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .navbar-toggle {
+                display: none;
+            }
+            
+            .navbar-menu {
+                display: flex !important;
+                position: static;
+                flex-direction: row;
+                box-shadow: none;
+                padding: 0;
+                align-items: center;
+            }
+            
+            .navbar-menu li {
+                margin: 0 15px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .lightbox-content img {
+                max-width: 80%;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 25px;
+            }
+            
+            .navbar-container {
+                padding: 15px 40px;
+            }
+            
+            .filter-bar {
+                gap: 12px;
+                margin-bottom: 35px;
+            }
+        }
+        
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .scale-in {
+            animation: scaleIn 0.3s ease forwards;
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
+
+<!-- Header -->
 <header>
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="navbar-container">
@@ -51,45 +477,60 @@
     </nav>
 </header>
 
-    <!-- Main Content -->
-    <main class="gallery-main">
-        <div class="container">
-            <!-- Filter Buttons -->
-            <div class="filter-bar">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="events">Events</button>
-                <button class="filter-btn" data-filter="community">Community</button>
-                <button class="filter-btn" data-filter="programs">Programs</button>
-                <button class="filter-btn" data-filter="education">Education</button>
-                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
-                <button class="filter-btn" data-filter="volunteering">Volunteering</button>
-            </div>
-
-            <!-- Image Grid -->
-            <div class="gallery-grid" id="gallery-grid"></div>
-
-            <!-- Pagination -->
-            <div class="pagination">
-                <button id="prev-page" disabled>Previous</button>
-                <span id="page-number">Page 1</span>
-                <button id="next-page">Next</button>
-            </div>
+<!-- Main Content -->
+<main class="gallery-main">
+    <div class="container">
+        <h1 class="gallery-title text-center fade-in" style="text-align: center; margin-bottom: 30px;">Our Gallery</h1>
+        
+        <!-- Filter Buttons -->
+        <div class="filter-bar fade-in">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+            <button class="filter-btn" data-filter="community">Community</button>
+            <button class="filter-btn" data-filter="programs">Programs</button>
+            <button class="filter-btn" data-filter="education">Education</button>
         </div>
-    </main>
+        
+        <!-- Loading indicator -->
+        <div class="loading-spinner" id="loading-spinner"></div>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="lightbox-modal">
-        <button id="close-lightbox" class="close-btn">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="lightbox-content">
-            <img id="lightbox-image" src="" alt="Selected Gallery Image">
-            <p id="lightbox-caption" class="lightbox-caption"></p>
+        <!-- Image Grid -->
+        <div class="gallery-grid" id="gallery-grid"></div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button id="prev-page" disabled>
+                <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <span id="page-number">Page 1 of 1</span>
+            <button id="next-page" disabled>
+                Next <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </div>
+</main>
 
-    <!-- Footer -->
-<footer class="footer" role="contentinfo">
+<!-- Lightbox Modal -->
+<div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-content">
+        <button id="close-lightbox" class="close-btn" aria-label="Close lightbox">
+            <i class="fas fa-times"></i>
+        </button>
+        <img id="lightbox-image" src="" alt="Gallery Image">
+        <p id="lightbox-caption"></p>
+        <div class="lightbox-controls">
+            <button class="lightbox-control" id="prev-image" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-control" id="next-image" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="footer-container">
             <div class="footer-column">
                 <a href="index.html" class="footer-logo">
@@ -158,7 +599,313 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="./assets/js/gallery.js"></script>
+<!-- JavaScript -->
+<script>
+    // Expanded image gallery
+    const images = [
+        { src: "./assets/images/gallery1.jpg", category: "events", caption: "Community Event" },
+        { src: "./assets/images/gallery2.jpg", category: "community", caption: "Helping Hands" },
+        { src: "./assets/images/gallery3.jpg", category: "programs", caption: "Education Program" },
+        { src: "./assets/images/gallery4.jpg", category: "education", caption: "School Visit" },
+        { src: "./assets/images/gallery5.jpg", category: "events", caption: "Fundraising Gala" },
+        { src: "./assets/images/gallery6.jpg", category: "programs", caption: "Youth Empowerment" },
+        { src: "./assets/images/gallery7.jpg", category: "community", caption: "Neighborhood Cleanup" },
+        { src: "./assets/images/gallery8.jpg", category: "education", caption: "STEM Workshop" },
+        { src: "./assets/images/gallery9.jpg", category: "events", caption: "Annual Festival" },
+        { src: "./assets/images/gallery10.jpg", category: "community", caption: "Food Drive" },
+        { src: "./assets/images/gallery11.jpg", category: "programs", caption: "Arts Initiative" },
+        { src: "./assets/images/gallery12.jpg", category: "education", caption: "Literacy Program" }
+    ];
+
+    // For demonstration, using fallback images if actual images not available
+    images.forEach(img => {
+        const testImg = new Image();
+        testImg.onload = () => {}; // Image exists
+        testImg.onerror = () => {
+            // Use placeholder if image doesn't exist
+            img.src = `/api/placeholder/400/400`;
+        };
+        testImg.src = img.src;
+    });
+
+    let currentPage = 1;
+    let currentFilter = "all";
+    let currentLightboxIndex = 0;
+    
+    // Get screen size and adjust items per page accordingly (mobile-first approach)
+    function getItemsPerPage() {
+        const width = window.innerWidth;
+        if (width < 576) return 3; // Mobile
+        if (width < 768) return 4; // Small tablets
+        if (width < 992) return 6; // Tablets
+        return 8; // Desktop
+    }
+    
+    let itemsPerPage = getItemsPerPage();
+    
+    // Update items per page when window resizes
+    window.addEventListener('resize', () => {
+        const newItemsPerPage = getItemsPerPage();
+        if (newItemsPerPage !== itemsPerPage) {
+            itemsPerPage = newItemsPerPage;
+            displayImages(currentFilter);
+        }
+    });
+
+    // Display images with loading state and animations
+    function displayImages(filter = "all") {
+        currentFilter = filter;
+        const galleryGrid = document.getElementById("gallery-grid");
+        const loadingSpinner = document.getElementById("loading-spinner");
+        
+        // Show loading spinner
+        galleryGrid.style.opacity = "0.5";
+        loadingSpinner.style.display = "block";
+        
+        // Simulate loading (remove in production and use real image loading events)
+        setTimeout(() => {
+            galleryGrid.innerHTML = "";
+            galleryGrid.style.opacity = "1";
+            loadingSpinner.style.display = "none";
+
+            let filteredImages = images.filter(img => filter === "all" || img.category === filter);
+            let start = (currentPage - 1) * itemsPerPage;
+            let paginatedImages = filteredImages.slice(start, start + itemsPerPage);
+            
+            let totalPages = Math.ceil(filteredImages.length / itemsPerPage);
+
+            paginatedImages.forEach((img, index) => {
+                let div = document.createElement("div");
+                div.classList.add("gallery-item", "scale-in");
+                div.style.animationDelay = `${index * 0.05}s`;
+                
+                div.innerHTML = `
+                    <img src="${img.src}" alt="${img.caption}" loading="lazy">
+                    <div class="gallery-item-caption">
+                        <h3>${img.caption}</h3>
+                    </div>
+                `;
+                
+                div.addEventListener("click", () => {
+                    openLightbox(filteredImages.indexOf(img), filteredImages);
+                });
+                
+                galleryGrid.appendChild(div);
+            });
+
+            // Update pagination
+            document.getElementById("page-number").innerText = `Page ${currentPage} of ${totalPages || 1}`;
+            document.getElementById("prev-page").disabled = currentPage === 1;
+            document.getElementById("next-page").disabled = start + itemsPerPage >= filteredImages.length;
+        }, 300);
+    }
+
+    // Change page with potential smooth scrolling
+    function changePage(step) {
+        currentPage += step;
+        displayImages(currentFilter);
+        
+        // Smooth scroll to top of gallery
+        document.querySelector('.gallery-title').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    }
+
+    // Filter images with animation
+    function filterImages(category) {
+        document.querySelectorAll(".filter-btn").forEach(btn => {
+            if (btn.dataset.filter === category) {
+                btn.classList.add("active");
+            } else {
+                btn.classList.remove("active");
+            }
+        });
+        
+        currentPage = 1;
+        displayImages(category);
+    }
+
+    // Enhanced lightbox functionality
+    function openLightbox(index, imageSet) {
+        const modal = document.getElementById("lightbox-modal");
+        const img = document.getElementById("lightbox-image");
+        const caption = document.getElementById("lightbox-caption");
+        
+        currentLightboxIndex = index;
+        
+        updateLightboxContent(imageSet);
+        
+        modal.style.display = "flex";
+        setTimeout(() => {
+            modal.classList.add("show");
+        }, 10);
+        
+        // Prevent body scrolling
+        document.body.style.overflow = "hidden";
+        
+        // Set up keyboard navigation
+        document.addEventListener("keydown", handleLightboxKeyboard);
+        
+        // Set up swipe detection for mobile
+        setupSwipeDetection(imageSet);
+    }
+    
+    function updateLightboxContent(imageSet) {
+        const img = document.getElementById("lightbox-image");
+        const caption = document.getElementById("lightbox-caption");
+        
+        img.src = imageSet[currentLightboxIndex].src;
+        caption.textContent = imageSet[currentLightboxIndex].caption;
+        
+        // Update lightbox navigation buttons
+        document.getElementById("prev-image").disabled = currentLightboxIndex === 0;
+        document.getElementById("next-image").disabled = currentLightboxIndex === imageSet.length - 1;
+    }
+    
+    function nextLightboxImage(imageSet) {
+        if (currentLightboxIndex < imageSet.length - 1) {
+            currentLightboxIndex++;
+            updateLightboxContent(imageSet);
+        }
+    }
+    
+    function prevLightboxImage(imageSet) {
+        if (currentLightboxIndex > 0) {
+            currentLightboxIndex--;
+            updateLightboxContent(imageSet);
+        }
+    }
+
+    function closeLightbox() {
+        const modal = document.getElementById("lightbox-modal");
+        modal.classList.remove("show");
+        
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 300);
+        
+        // Re-enable body scrolling
+        document.body.style.overflow = "";
+        
+        // Remove keyboard listener
+        document.removeEventListener("keydown", handleLightboxKeyboard);
+    }
+    
+    function handleLightboxKeyboard(e) {
+        const filteredImages = images.filter(img => currentFilter === "all" || img.category === currentFilter);
+        
+        if (e.key === "Escape") {
+            closeLightbox();
+        } else if (e.key === "ArrowRight") {
+            nextLightboxImage(filteredImages);
+        } else if (e.key === "ArrowLeft") {
+            prevLightboxImage(filteredImages);
+        }
+    }
+    
+    // Mobile swipe detection
+    function setupSwipeDetection(imageSet) {
+        const lightbox = document.getElementById("lightbox-modal");
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        lightbox.addEventListener("touchstart", e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+        
+        lightbox.addEventListener("touchend", e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe(imageSet);
+        }, {passive: true});
+        
+        function handleSwipe(imageSet) {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                // Swipe left - next image
+                nextLightboxImage(imageSet);
+            }
+            
+            if (touchEndX > touchStartX + swipeThreshold) {
+                // Swipe right - previous image
+                prevLightboxImage(imageSet);
+            }
+        }
+    }
+
+    // Toggle mobile menu
+    function toggleMenu() {
+        const menu = document.querySelector(".navbar-menu");
+        menu.classList.toggle("show");
+    }
+
+    // Set up event listeners
+    document.addEventListener("DOMContentLoaded", () => {
+        // Initial load
+        displayImages();
+        
+        // Set up filter buttons
+        document.querySelectorAll(".filter-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                filterImages(btn.dataset.filter);
+            });
+        });
+        
+        // Set up pagination
+        document.getElementById("prev-page").addEventListener("click", () => changePage(-1));
+        document.getElementById("next-page").addEventListener("click", () => changePage(1));
+        
+        // Set up lightbox controls
+        document.getElementById("close-lightbox").addEventListener("click", closeLightbox);
+        document.getElementById("next-image").addEventListener("click", () => {
+            const filteredImages = images.filter(img => currentFilter === "all" || img.category === currentFilter);
+            nextLightboxImage(filteredImages);
+        });
+        document.getElementById("prev-image").addEventListener("click", () => {
+            const filteredImages = images.filter(img => currentFilter === "all" || img.category === currentFilter);
+            prevLightboxImage(filteredImages);
+        });
+        
+        // Close lightbox when clicking outside the image
+        document.getElementById("lightbox-modal").addEventListener("click", (e) => {
+            if (e.target === document.getElementById("lightbox-modal")) {
+                closeLightbox();
+            }
+        });
+        
+        // Set up mobile menu toggle
+        document.querySelector(".navbar-toggle").addEventListener("click", toggleMenu);
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener("click", (e) => {
+            const menu = document.querySelector(".navbar-menu");
+            const toggle = document.querySelector(".navbar-toggle");
+            
+            if (menu.classList.contains("show") && 
+                !menu.contains(e.target) && 
+                !toggle.contains(e.target)) {
+                menu.classList.remove("show");
+            }
+        });
+        
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const lazyImages = document.querySelectorAll("img[loading='lazy']");
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    });
+</script>
+
 </body>
 </html>
