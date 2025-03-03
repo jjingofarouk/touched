@@ -352,20 +352,7 @@ section:not(:last-child) {
   }
 }
 
-/* Navbar Mobile JavaScript Support */
-.navbar-toggle.active .hamburger {
-  background: transparent;
-}
 
-.navbar-toggle.active .hamburger::before {
-  transform: rotate(45deg);
-  top: 0;
-}
-
-.navbar-toggle.active .hamburger::after {
-  transform: rotate(-45deg);
-  bottom: 0;
-}
 
 /* Animations and Effects */
 .team-card, 
