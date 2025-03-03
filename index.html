@@ -621,6 +621,127 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if user has already made a cookie choice
+    if (!getCookieConsent()) {
+        showCookieBanner();
+    }
+
+    // Get DOM elements
+    const cookieBanner = document.querySelector('.cookie-banner');
+    const acceptButton = document.querySelector('.cookie-button.accept');
+    const preferencesButton = document.querySelector('.cookie-button.preferences');
+    const rejectButton = document.querySelector('.cookie-button.reject');
+
+    // Event listeners for buttons
+    if (acceptButton) {
+        acceptButton.addEventListener('click', function() {
+            setCookieConsent('accepted');
+            hideCookieBanner();
+            enableAllCookies();
+        });
+    }
+
+    if (preferencesButton) {
+        preferencesButton.addEventListener('click', function() {
+            showCookiePreferences();
+        });
+    }
+
+    if (rejectButton) {
+        rejectButton.addEventListener('click', function() {
+            setCookieConsent('rejected');
+            hideCookieBanner();
+            disableAllCookies();
+        });
+    }
+
+    // Functions to handle cookie consent
+    function setCookieConsent(status) {
+        // Set consent cookie that expires in 6 months
+        const expiryDate = new Date();
+        expiryDate.setMonth(expiryDate.getMonth() + 6);
+        document.cookie = `cookieConsent=${status}; expires=${expiryDate.toUTCString()}; path=/; SameSite=Lax`;
+        
+        // Trigger consent event for analytics or other scripts
+        const event = new CustomEvent('cookieConsentUpdate', { detail: { status: status } });
+        document.dispatchEvent(event);
+    }
+
+    function getCookieConsent() {
+        const cookieConsent = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('cookieConsent='));
+        
+        return cookieConsent ? cookieConsent.split('=')[1] : null;
+    }
+
+    function showCookieBanner() {
+        if (cookieBanner) {
+            cookieBanner.style.display = 'block';
+        }
+    }
+
+    function hideCookieBanner() {
+        if (cookieBanner) {
+            cookieBanner.style.opacity = '0';
+            cookieBanner.style.transform = 'translateY(20px)';
+            cookieBanner.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            
+            setTimeout(() => {
+                cookieBanner.style.display = 'none';
+            }, 300);
+        }
+    }
+
+    // Cookie preference management
+    function showCookiePreferences() {
+        // This would open a more detailed preferences modal
+        // For this example, we'll just show a simple alert
+        alert('Cookie preferences would open here. In a real implementation, this would be a modal with checkboxes for different cookie categories.');
+        
+        // You could also implement a modal like this:
+        // const preferencesModal = document.getElementById('cookie-preferences-modal');
+        // if (preferencesModal) {
+        //     preferencesModal.style.display = 'block';
+        // }
+    }
+
+    function enableAllCookies() {
+        // Implementation to enable all cookie categories
+        console.log('All cookies enabled');
+        
+        // This is where you would initialize analytics, ad trackers, etc.
+        // Example:
+        // initializeGoogleAnalytics();
+        // initializeFacebookPixel();
+    }
+
+    function disableAllCookies() {
+        // Implementation to disable all non-essential cookies
+        console.log('All non-essential cookies disabled');
+        
+        // This is where you would disable or prevent loading of optional trackers
+        // You might also want to clear any existing cookies except essentials
+        clearNonEssentialCookies();
+    }
+
+    function clearNonEssentialCookies() {
+        // Get all cookies and clear non-essential ones
+        const cookies = document.cookie.split(';');
+        const essentialCookies = ['cookieConsent']; // Add other essential cookie names
+        
+        cookies.forEach(cookie => {
+            const cookieName = cookie.split('=')[0].trim();
+            
+            if (!essentialCookies.includes(cookieName)) {
+                // Set expiration to the past to delete the cookie
+                document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax`;
+            }
+        });
+    }
+});
     </script>
 </body>
 </html>
