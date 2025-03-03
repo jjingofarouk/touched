@@ -4,27 +4,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const rejectButton = document.querySelector(".cookie-button.reject");
     const preferencesButton = document.querySelector(".cookie-button.preferences");
 
-    // Check if the user has already made a choice
+    // Check if user has already made a choice
     if (!localStorage.getItem("cookieConsent")) {
-        cookieBanner.style.display = "block"; // Show banner if no choice is made
+        cookieBanner.style.display = "block"; // Show banner
     }
 
-    // Function to set cookie preference
-    function setCookiePreference(choice) {
-        localStorage.setItem("cookieConsent", choice);
-        cookieBanner.style.display = "none"; // Hide banner after selection
-    }
-
-    // Event listeners for buttons
+    // Accept all cookies
     acceptButton.addEventListener("click", function () {
-        setCookiePreference("accepted");
+        localStorage.setItem("cookieConsent", "accepted");
+        cookieBanner.style.display = "none";
     });
 
+    // Reject all cookies
     rejectButton.addEventListener("click", function () {
-        setCookiePreference("rejected");
+        localStorage.setItem("cookieConsent", "rejected");
+        cookieBanner.style.display = "none";
     });
 
+    // Placeholder for preferences (Expand this later)
     preferencesButton.addEventListener("click", function () {
-        alert("Preferences feature coming soon!"); // You can replace this with a real settings modal
+        alert("Cookie Preferences functionality coming soon!"); 
     });
 });
