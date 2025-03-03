@@ -1619,7 +1619,7 @@ input:focus, textarea:focus, select:focus {
   color: var(--medium-gray);
 }
 
-.slider-controls {
+.slider-nav {
   display: flex;
   gap: var(--spacing-md); /* Increased gap for a more spacious feel */
   justify-content: center;
@@ -1630,24 +1630,33 @@ input:focus, textarea:focus, select:focus {
 .slider-arrow {
   width: 56px; /* Larger size for thicker appearance */
   height: 56px;
-  border-radius: 12px; /* Modern rounded square instead of full circle */
+  border-radius: 12px; /* Modern rounded square */
   background-color: #ffffff;
-  color: #2ecc71; /* Stylish emerald green */
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2); /* Green-tinted shadow */
   transition: all var(--transition-fast) ease-in-out;
   border: 2px solid #2ecc71; /* Thick green border */
-  font-size: 20px; /* Larger icons */
   cursor: pointer;
+  padding: 0; /* Remove default button padding */
+  outline: none; /* Remove focus outline */
 }
 
 .slider-arrow:hover {
   background-color: #2ecc71;
-  color: #ffffff;
-  transform: translateY(-2px); /* Subtle lift effect */
   box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.slider-arrow svg {
+  width: 28px;
+  height: 28px;
+  transition: fill var(--transition-fast) ease-in-out;
+}
+
+.slider-arrow:hover svg {
+  fill: #ffffff; /* White fill on hover */
 }
 
 .slider-dots {
@@ -1673,11 +1682,12 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 0 8px rgba(46, 204, 113, 0.4); /* Glowing effect */
 }
 
-/* Optional: Add some hover effect for dots */
 .slider-dot:hover:not(.active) {
   background-color: #b8e994; /* Light green hover */
   transform: scale(1.1);
 }
+
+
 
 @media (min-width: 768px) {
   .story-card {
