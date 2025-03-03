@@ -4042,3 +4042,121 @@ p {
 html {
     scroll-behavior: smooth;
 }
+
+/* Cookie Banner Styles */
+.cookie-banner {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  max-width: 420px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  z-index: 9999;
+  animation: slide-up 0.4s ease-out;
+}
+
+.cookie-content {
+  padding: 1.5rem 2rem;
+}
+
+.cookie-content p {
+  color: #333333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1.25rem 0;
+}
+
+.cookie-content a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.cookie-content a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.cookie-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cookie-button {
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.cookie-button.accept {
+  background-color: #2563eb;
+  color: white;
+}
+
+.cookie-button.accept:hover {
+  background-color: #1d4ed8;
+}
+
+.cookie-button.preferences {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.cookie-button.preferences:hover {
+  background-color: #e5e7eb;
+}
+
+.cookie-button.reject {
+  background-color: transparent;
+  color: #6b7280;
+  text-decoration: underline;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.cookie-button.reject:hover {
+  color: #4b5563;
+}
+
+/* Animation */
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .cookie-banner {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    max-width: none;
+  }
+  
+  .cookie-content {
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .cookie-buttons {
+    flex-direction: column;
+  }
+  
+  .cookie-button {
+    width: 100%;
+    text-align: center;
+  }
+}
