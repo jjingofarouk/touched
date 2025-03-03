@@ -20,108 +20,6 @@
             line-height: 1.6;
         }
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #fff;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .navbar-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .navbar-logo img {
-            width: 80px;
-        }
-
-        .navbar-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .hamburger {
-            width: 25px;
-            height: 3px;
-            background: #fff;
-            position: relative;
-        }
-
-        .hamburger::before, .hamburger::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 3px;
-            background: #fff;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger::before {
-            top: -8px;
-        }
-
-        .hamburger::after {
-            bottom: -8px;
-        }
-
-        .navbar-menu {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-link {
-            color: #fff;
-            text-decoration: none;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #007bff;
-        }
-
-        .nav-dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: #fff;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            list-style: none;
-            padding: 0.5rem 0;
-        }
-
-        .nav-dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-menu li a {
-            color: #333;
-            padding: 0.5rem 1rem;
-            display: block;
-            text-decoration: none;
-        }
-
-        .dropdown-menu li a:hover {
-            background: #f5f7fa;
-        }
 
         /* Hero Section */
         .programs-hero {
@@ -294,112 +192,7 @@
             color: #fff;
         }
 
-        /* Footer */
-        footer {
-            background: #1e3c72;
-            color: #fff;
-            padding: 3rem 2rem;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .footer-logo img {
-            width: 100px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-link {
-            color: #fff;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-link:hover {
-            color: #007bff;
-        }
-
-        .footer-heading {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.2rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-link {
-            color: #fff;
-            text-decoration: none;
-            margin-bottom: 0.5rem;
-            display: block;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: #007bff;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar-toggle {
-                display: block;
-            }
-
-            .navbar-menu {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #1e3c72;
-                padding: 1rem;
-            }
-
-            .navbar-menu.active {
-                display: flex;
-            }
-
-            .dropdown-menu {
-                position: static;
-                box-shadow: none;
-            }
-
-            .programs-hero h1 {
-                font-size: 2rem;
-            }
-
-            .programs-hero p {
-                font-size: 1rem;
-            }
-
-            .programs-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
+     
         @media (max-width: 480px) {
             .programs-overview {
                 padding: 2rem 1rem;
@@ -418,19 +211,21 @@
 <body>
     <!-- Navigation -->
     <header>
-        <nav class="navbar" role="navigation" aria-label="Main navigation">
-            <div class="navbar-container">
-                <a href="index.html" class="navbar-logo">
-                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
                 </a>
-                <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                    <span class="hamburger"></span>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
-                <ul class="navbar-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
                     <li><a href="about.html" class="nav-link">About Us</a></li>
                     <li class="nav-dropdown">
-                        <a href="programs.html" class="nav-link active">Programs <i class="fas fa-chevron-down"></i></a>
+                        <a href="programs.html" class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="education.html">Education</a></li>
                             <li><a href="healthcare.html">Healthcare</a></li>
@@ -438,9 +233,17 @@
                             <li><a href="community.html">Community Development</a></li>
                         </ul>
                     </li>
-                    <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
-                    <li><a href="donate.html" class="nav-link">Donate</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="stories.html" class="nav-link">Stories</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="news.html" class="nav-link">Blog</a></li>
+                    <li class="nav-dropdown">
+                        <a href="get-involved.html" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="volunteers.html">Volunteers</a></li>
+                            <li><a href="partners.html">Partners</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="donate.html" class="nav-link btn-donate">Donate Now</a></li>
                 </ul>
             </div>
         </nav>
