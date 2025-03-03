@@ -867,13 +867,14 @@ input:focus, textarea:focus, select:focus {
 
 /* ===== IMPACT NUMBERS ===== */
 .impact-numbers {
-  background-color: var(--primary-color);
-  color: var(--white);
-  padding: var(--spacing-xl) 0;
+  background: linear-gradient(135deg, #FF6F61 0%, #E85A4F 100%); /* Orange gradient */
+  color: #FFFFFF; /* White text */
+  padding: 2rem 0; /* Reduced from --spacing-xl (~32px) for mobile */
   position: relative;
   overflow: hidden;
 }
 
+/* Subtle pattern overlay */
 .impact-numbers::before {
   content: '';
   position: absolute;
@@ -881,51 +882,115 @@ input:focus, textarea:focus, select:focus {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../assets/images/pattern.svg');
-  opacity: 0.1;
-  z-index: var(--z-negative);
+  background: url('../assets/images/pattern.svg') repeat;
+  opacity: 0.15; /* Slightly more visible */
+  z-index: -1; /* Assuming --z-negative is -1 */
 }
 
+/* Container with mobile-first grid */
 .impact-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: var(--spacing-xl);
-  max-width: var(--container-xl);
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 2rem; /* Assuming --spacing-xl is ~32px */
+  max-width: 1200px; /* Assuming --container-xl is 1200px */
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 1rem; /* Assuming --spacing-md is ~16px */
 }
 
+/* Impact item styling */
 .impact-item {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.3s ease; /* Smooth scale on interaction */
 }
 
+/* Number styling with animation */
 .impact-number {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  margin-bottom: var(--spacing-sm);
-  font-family: var(--heading-font);
+  font-size: clamp(2rem, 6vw, 3.5rem); /* Larger and more fluid */
+  font-weight: 800; /* Bolder for emphasis */
+  margin-bottom: 0.5rem; /* Assuming --spacing-sm is ~8px */
+  font-family: 'Your-Heading-Font', sans-serif; /* Replace with your --heading-font */
   position: relative;
   display: inline-block;
+  color: #FFFFFF; /* White */
+  opacity: 0; /* For animation */
+  transform: translateY(20px); /* Start position for animation */
+  animation: slideUp 0.6s ease forwards; /* Animate on load */
 }
 
+/* Animation keyframes */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Underline effect */
 .impact-number::after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 40px;
-  height: 3px;
-  background-color: var(--white);
-  border-radius: var(--border-radius-full);
+  width: 50px; /* Wider for better emphasis */
+  height: 4px; /* Thicker */
+  background-color: #F5E8C7; /* Soft Beige for contrast */
+  border-radius: 9999px; /* Assuming --border-radius-full is pill-shaped */
+  transition: width 0.3s ease; /* Animate width on hover */
 }
 
+/* Description text */
 .impact-item p {
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 3vw, 1rem); /* Fluid and readable */
   margin-bottom: 0;
+  color: #FFFFFF; /* White */
+  opacity: 0.9; /* Slightly faded for hierarchy */
+}
+
+/* Hover/tap interaction (for desktop or touch devices) */
+.impact-item:hover {
+  transform: scale(1.05); /* Slight scale-up */
+}
+
+.impact-item:hover .impact-number::after {
+  width: 60px; /* Expands underline on hover */
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .impact-numbers {
+    padding: 4rem 0; /* Increased padding for desktop */
+  }
+
+  .impact-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Multi-column layout */
+    gap: 3rem; /* More spacious */
+  }
+
+  .impact-number {
+    font-size: clamp(2.5rem, 4vw, 4rem); /* Larger on desktop */
+  }
+
+  .impact-item p {
+    font-size: 1.125rem; /* Slightly larger text */
+  }
+}
+
+/* Animation delay for each item */
+.impact-item:nth-child(1) .impact-number {
+  animation-delay: 0.1s;
+}
+.impact-item:nth-child(2) .impact-number {
+  animation-delay: 0.2s;
+}
+.impact-item:nth-child(3) .impact-number {
+  animation-delay: 0.3s;
+}
+.impact-item:nth-child(4) .impact-number {
+  animation-delay: 0.4s;
 }
 
 /* ===== MISSION SECTION ===== */
