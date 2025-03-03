@@ -277,7 +277,7 @@ p {
 
 /* Primary Button */
 .btn-primary {
-  background-color: var(--primary-color);
+  background-color: #3a8f85;
   color: var(--white);
   border: 1px solid transparent;
   box-shadow: var(--shadow-sm);
