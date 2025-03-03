@@ -1133,10 +1133,10 @@ input:focus, textarea:focus, select:focus {
   animation-delay: 0.4s;
 }
 
-  /* ===== MISSION SECTION ===== */
+/* ===== MISSION SECTION ===== */
 .mission {
-  padding: 2rem 1rem; /* Mobile-first: reduced from --spacing-xxl/--spacing-md (~48px/16px) */
-  background: linear-gradient(to bottom, #F9F5F0 0%, #F2EDE5 100%); /* Subtle beige gradient */
+  padding: 2rem 1rem; /* Mobile-first padding */
+  background: linear-gradient(to bottom, #F9F5F0 0%, #F2EDE5 100%); /* Beige gradient */
   position: relative;
 }
 
@@ -1144,8 +1144,8 @@ input:focus, textarea:focus, select:focus {
 .mission-container {
   display: grid;
   grid-template-columns: 1fr; /* Single column on mobile */
-  gap: 2rem; /* Assuming --spacing-xl is ~32px */
-  max-width: 1200px; /* Assuming --container-xl */
+  gap: 2rem; /* Spacious gap */
+  max-width: 1200px; /* Wide container */
   margin: 0 auto;
 }
 
@@ -1154,57 +1154,73 @@ input:focus, textarea:focus, select:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center; /* Better for mobile */
+  text-align: center; /* Centered on mobile */
 }
 
-/* Add heading and subtext (assumed HTML) */
-.mission-content h2 {
-  font-family: 'Georgia', serif; /* Classy serif, replace with your heading font */
-  font-size: clamp(1.75rem, 5vw, 2.5rem); /* Fluid, impactful */
-  font-weight: 700; /* Bold */
+.section-title {
+  font-family: 'Georgia', serif; /* Classy serif, replace with your font */
+  font-size: clamp(1.75rem, 5vw, 2.5rem); /* Fluid, bold */
+  font-weight: 700;
   color: #2F2E41; /* Dark Slate */
-  margin-bottom: 0.75rem; /* Spacing */
-  letter-spacing: 0.5px; /* Refined */
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px; /* Refined spacing */
   text-shadow: 0 1px 3px rgba(47, 46, 65, 0.1); /* Subtle pop */
 }
 
-.mission-content p {
+.section-text {
   font-family: 'Arial', sans-serif; /* Clean sans-serif, replace if needed */
-  font-size: clamp(1rem, 3vw, 1.25rem); /* Readable, fluid */
-  font-weight: 400; /* Light but clear */
+  font-size: clamp(1rem, 3vw, 1.25rem); /* Readable */
+  font-weight: 400;
   color: #2F2E41; /* Dark Slate */
   line-height: 1.6; /* Better readability */
   opacity: 0.9; /* Subtle fade */
   max-width: 600px; /* Constrain for readability */
-  margin: 0 auto; /* Center on mobile */
+  margin: 0 auto 1rem; /* Spacing */
 }
 
-/* Video/image wrapper */
+.text-link {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #D4A017; /* Golden Beige */
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.text-link:hover {
+  color: #B88C14; /* Darker gold */
+}
+
+/* Video wrapper */
 .mission-video {
   position: relative;
   aspect-ratio: 16 / 9;
-  border-radius: 12px; /* Assuming --border-radius-lg is ~12px */
+  border-radius: 12px; /* Rounded corners */
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(47, 46, 65, 0.15); /* Assuming --shadow-lg */
+  box-shadow: 0 10px 20px rgba(47, 46, 65, 0.15); /* Deeper shadow */
   background: #FFFFFF; /* White frame */
-  padding: 8px; /* Inner frame effect */
+  padding: 8px; /* Frame effect */
 }
 
-/* Image styling */
-.mission-image {
+/* Video element */
+.mission-video-element {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Fills frame */
   border-radius: 8px; /* Inner rounding */
+  display: block;
 }
 
-/* Refined play button */
+/* Play button */
 .play-button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70px; /* Slightly smaller for elegance */
+  width: 70px;
   height: 70px;
   background-color: #D4A017; /* Golden Beige */
   border-radius: 50%;
@@ -1213,9 +1229,11 @@ input:focus, textarea:focus, select:focus {
   justify-content: center;
   color: #FFFFFF; /* White */
   font-size: 1.75rem; /* Larger icon */
-  box-shadow: 0 6px 12px rgba(47, 46, 65, 0.2); /* Deeper shadow */
-  transition: all 0.3s ease; /* Assuming --transition-normal */
-  border: 2px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+  box-shadow: 0 6px 12px rgba(47, 46, 65, 0.2);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  opacity: 1; /* Visible by default */
 }
 
 .play-button::before {
@@ -1226,14 +1244,14 @@ input:focus, textarea:focus, select:focus {
   right: -10px;
   bottom: -10px;
   border-radius: 50%;
-  border: 2px dashed #D4A017; /* Dashed for classiness */
+  border: 2px dashed #D4A017; /* Dashed elegance */
   opacity: 0.4;
   animation: pulse 2.5s infinite ease-in-out;
 }
 
 .play-button:hover {
-  background-color: #B88C14; /* Darker gold on hover */
-  transform: translate(-50%, -50%) scale(1.05); /* Subtler scale */
+  background-color: #B88C14; /* Darker gold */
+  transform: translate(-50%, -50%) scale(1.05);
   box-shadow: 0 8px 16px rgba(47, 46, 65, 0.25);
 }
 
@@ -1256,7 +1274,7 @@ input:focus, textarea:focus, select:focus {
 /* Desktop layout */
 @media (min-width: 992px) {
   .mission {
-    padding: 4rem 2rem; /* Larger padding for desktop */
+    padding: 4rem 2rem; /* Larger padding */
   }
 
   .mission-container {
@@ -1269,16 +1287,15 @@ input:focus, textarea:focus, select:focus {
     text-align: left; /* Left-align for desktop */
   }
 
-  .mission-content h2 {
-    font-size: clamp(2rem, 4vw, 3rem); /* Larger on desktop */
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem); /* Larger */
   }
 
-  .mission-content p {
+  .section-text {
     font-size: 1.25rem; /* Larger text */
-    max-width: none; /* Full width on desktop */
+    max-width: none; /* Full width */
   }
 }
-
 /* ===== PROGRAMS SECTION ===== */
 .programs {
   padding: var(--spacing-xxl) var(--spacing-md);
