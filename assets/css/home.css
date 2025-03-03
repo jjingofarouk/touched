@@ -3118,8 +3118,8 @@ input:focus, textarea:focus, select:focus {
 }
 
 .partner-logo img {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
@@ -3198,8 +3198,8 @@ input:focus, textarea:focus, select:focus {
   }
   
     .partner-logo img {
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
   }
   
   
