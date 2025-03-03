@@ -457,5 +457,32 @@
     <script src="./assets/js/main.js"></script>
         <script src="./assets/js/footer.js"></script>
             <script src="./assets/js/navbar.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const video = document.querySelector(".mission-video-element");
+    const playButton = document.querySelector(".play-button");
+
+    playButton.addEventListener("click", function () {
+        if (video.paused) {
+            video.play();
+            playButton.style.opacity = "0"; /* Hide button when playing */
+            playButton.setAttribute("aria-label", "Pause video");
+            playButton.innerHTML = '<i class="fas fa-pause"></i>';
+        } else {
+            video.pause();
+            playButton.style.opacity = "1"; /* Show button when paused */
+            playButton.setAttribute("aria-label", "Play video");
+            playButton.innerHTML = '<i class="fas fa-play"></i>';
+        }
+    });
+
+    // Show play button when video ends
+    video.addEventListener("ended", function () {
+        playButton.style.opacity = "1";
+        playButton.setAttribute("aria-label", "Play video");
+        playButton.innerHTML = '<i class="fas fa-play"></i>';
+    });
+});
+    </script>
 </body>
 </html>
