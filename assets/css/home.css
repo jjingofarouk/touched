@@ -1621,47 +1621,62 @@ input:focus, textarea:focus, select:focus {
 
 .slider-controls {
   display: flex;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md); /* Increased gap for a more spacious feel */
   justify-content: center;
-  margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-2xl); /* More margin for prominence */
+  align-items: center;
 }
 
 .slider-arrow {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--white);
-  color: var(--primary-color);
+  width: 56px; /* Larger size for thicker appearance */
+  height: 56px;
+  border-radius: 12px; /* Modern rounded square instead of full circle */
+  background-color: #ffffff;
+  color: #2ecc71; /* Stylish emerald green */
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-fast);
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2); /* Green-tinted shadow */
+  transition: all var(--transition-fast) ease-in-out;
+  border: 2px solid #2ecc71; /* Thick green border */
+  font-size: 20px; /* Larger icons */
+  cursor: pointer;
 }
 
 .slider-arrow:hover {
-  background-color: var(--primary-color);
-  color: var(--white);
+  background-color: #2ecc71;
+  color: #ffffff;
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
 }
 
 .slider-dots {
   display: flex;
-  gap: var(--spacing-xs);
-  margin-top: var(--spacing-md);
-  justify-content: center;
+  gap: var(--spacing-sm); /* More space between dots */
+  margin: 0 var(--spacing-md); /* Side margins for balance */
 }
 
 .slider-dot {
-  width: 10px;
-  height: 10px;
+  width: 14px; /* Thicker dots */
+  height: 14px;
   border-radius: 50%;
-  background-color: var(--light-gray);
-  transition: all var(--transition-fast);
+  background-color: #e6f0ea; /* Light green-gray */
+  transition: all var(--transition-fast) ease-in-out;
+  border: 2px solid #27ae60; /* Darker green border */
+  cursor: pointer;
 }
 
 .slider-dot.active {
-  background-color: var(--primary-color);
-  transform: scale(1.2);
+  background-color: #27ae60; /* Rich forest green */
+  transform: scale(1.3); /* Slightly larger scale */
+  border-color: #219653; /* Even darker green */
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.4); /* Glowing effect */
+}
+
+/* Optional: Add some hover effect for dots */
+.slider-dot:hover:not(.active) {
+  background-color: #b8e994; /* Light green hover */
+  transform: scale(1.1);
 }
 
 @media (min-width: 768px) {
