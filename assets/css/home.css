@@ -867,9 +867,9 @@ input:focus, textarea:focus, select:focus {
 
 /* ===== IMPACT NUMBERS ===== */
 .impact-numbers {
-  background: linear-gradient(135deg, #FF6F61 0%, #E85A4F 100%); /* Orange gradient */
-  color: #FFFFFF; /* White text */
-  padding: 2rem 0; /* Reduced from --spacing-xl (~32px) for mobile */
+  background: linear-gradient(135deg, #F5E8C7 0%, #E8D9A8 100%); /* Beige gradient */
+  color: #2F2E41; /* Dark Slate */
+  padding: 2rem 0; /* Mobile-first padding */
   position: relative;
   overflow: hidden;
 }
@@ -883,18 +883,18 @@ input:focus, textarea:focus, select:focus {
   width: 100%;
   height: 100%;
   background: url('../assets/images/pattern.svg') repeat;
-  opacity: 0.15; /* Slightly more visible */
-  z-index: -1; /* Assuming --z-negative is -1 */
+  opacity: 0.1; /* Very subtle */
+  z-index: -1;
 }
 
 /* Container with mobile-first grid */
 .impact-container {
   display: grid;
   grid-template-columns: 1fr; /* Single column on mobile */
-  gap: 2rem; /* Assuming --spacing-xl is ~32px */
-  max-width: 1200px; /* Assuming --container-xl is 1200px */
+  gap: 2rem; /* Spacious gap */
+  max-width: 1200px; /* Wide container */
   margin: 0 auto;
-  padding: 0 1rem; /* Assuming --spacing-md is ~16px */
+  padding: 0 1rem; /* Mobile padding */
 }
 
 /* Impact item styling */
@@ -903,21 +903,26 @@ input:focus, textarea:focus, select:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease; /* Smooth scale on interaction */
+  background: rgba(138, 85, 47, 0.1); /* Dark Taupe overlay, subtle */
+  padding: 1rem; /* Inner padding for depth */
+  border-radius: 8px; /* Rounded for elegance */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Number styling with animation */
+/* Number styling with enhanced typography */
 .impact-number {
-  font-size: clamp(2rem, 6vw, 3.5rem); /* Larger and more fluid */
-  font-weight: 800; /* Bolder for emphasis */
-  margin-bottom: 0.5rem; /* Assuming --spacing-sm is ~8px */
-  font-family: 'Your-Heading-Font', sans-serif; /* Replace with your --heading-font */
+  font-size: clamp(2.5rem, 7vw, 4rem); /* Larger, fluid size */
+  font-weight: 900; /* Extra bold */
+  margin-bottom: 0.75rem; /* More space */
+  font-family: 'Georgia', serif; /* Classy serif font, replace with your --heading-font if desired */
+  letter-spacing: 1px; /* Spacing for refinement */
+  color: #2F2E41; /* Dark Slate */
+  text-shadow: 0 2px 4px rgba(47, 46, 65, 0.15); /* Subtle shadow for pop */
   position: relative;
   display: inline-block;
-  color: #FFFFFF; /* White */
-  opacity: 0; /* For animation */
-  transform: translateY(20px); /* Start position for animation */
-  animation: slideUp 0.6s ease forwards; /* Animate on load */
+  opacity: 0;
+  transform: translateY(30px); /* Deeper animation start */
+  animation: slideUp 0.7s ease forwards; /* Slower, smoother animation */
 }
 
 /* Animation keyframes */
@@ -932,50 +937,55 @@ input:focus, textarea:focus, select:focus {
 .impact-number::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -12px; /* Lower for prominence */
   left: 50%;
   transform: translateX(-50%);
-  width: 50px; /* Wider for better emphasis */
+  width: 60px; /* Wider */
   height: 4px; /* Thicker */
-  background-color: #F5E8C7; /* Soft Beige for contrast */
-  border-radius: 9999px; /* Assuming --border-radius-full is pill-shaped */
-  transition: width 0.3s ease; /* Animate width on hover */
+  background-color: #D4A017; /* Golden Beige */
+  border-radius: 9999px; /* Pill-shaped */
+  transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 /* Description text */
 .impact-item p {
-  font-size: clamp(0.875rem, 3vw, 1rem); /* Fluid and readable */
+  font-size: clamp(0.9375rem, 3.5vw, 1.125rem); /* Slightly larger, fluid */
+  font-weight: 500; /* Medium weight for balance */
   margin-bottom: 0;
-  color: #FFFFFF; /* White */
-  opacity: 0.9; /* Slightly faded for hierarchy */
+  color: #2F2E41; /* Dark Slate */
+  opacity: 0.85; /* Subtle fade */
+  letter-spacing: 0.5px; /* Classy spacing */
+  line-height: 1.5; /* Better readability */
 }
 
-/* Hover/tap interaction (for desktop or touch devices) */
+/* Hover/tap interaction */
 .impact-item:hover {
-  transform: scale(1.05); /* Slight scale-up */
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 6px 12px rgba(47, 46, 65, 0.2); /* Deeper shadow */
 }
 
 .impact-item:hover .impact-number::after {
-  width: 60px; /* Expands underline on hover */
+  width: 80px; /* Wider on hover */
+  background-color: #E8D9A8; /* Lighter beige for contrast */
 }
 
 /* Media query for larger screens */
 @media (min-width: 768px) {
   .impact-numbers {
-    padding: 4rem 0; /* Increased padding for desktop */
+    padding: 4rem 0; /* More spacious on desktop */
   }
 
   .impact-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Multi-column layout */
-    gap: 3rem; /* More spacious */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Wider columns */
+    gap: 2.5rem; /* More breathing room */
   }
 
   .impact-number {
-    font-size: clamp(2.5rem, 4vw, 4rem); /* Larger on desktop */
+    font-size: clamp(3rem, 5vw, 5rem); /* Even larger on desktop */
   }
 
   .impact-item p {
-    font-size: 1.125rem; /* Slightly larger text */
+    font-size: 1.25rem; /* Larger text */
   }
 }
 
@@ -992,7 +1002,6 @@ input:focus, textarea:focus, select:focus {
 .impact-item:nth-child(4) .impact-number {
   animation-delay: 0.4s;
 }
-
 /* ===== MISSION SECTION ===== */
 .mission {
   padding: var(--spacing-xxl) var(--spacing-md);
