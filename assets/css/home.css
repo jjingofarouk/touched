@@ -1644,7 +1644,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .slider-arrow:hover {
-  background-color: #2ecc71;
+  background-color: #2c7269;
   box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
   transform: translateY(-2px); /* Subtle lift effect */
 }
