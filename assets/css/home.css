@@ -1619,74 +1619,96 @@ input:focus, textarea:focus, select:focus {
   color: var(--medium-gray);
 }
 
+
+ 
+:root {
+  /* Your provided color palette */
+  --primary-color: #3a8f85;    /* Sophisticated teal */
+  --primary-dark: #2c7269;     /* Deeper teal for emphasis */
+  --primary-light: #8cc5bf;    /* Softer teal for accents */
+  --secondary-color: #d68c45;  /* Warm terracotta orange */
+  --secondary-dark: #b87339;   /* Deeper terracotta */
+  --secondary-light: #e9b384;  /* Soft peach accent */
+  --dark: #2d3a3a;            /* Charcoal with hint of teal */
+  --dark-gray: #4d5c5c;       /* Warmer dark gray */
+  --medium-gray: #7e8c8c;     /* Sophisticated medium gray */
+  --light-gray: #d2d8d8;      /* Warmer light gray */
+  --off-white: #f8f7f5;       /* Cream off-white */
+  --white: #ffffff;
+  --success: #739e73;         /* Sage green */
+  --warning: #e6b86a;         /* Subdued gold */
+  --error: #c17b7b;           /* Muted brick red */
+  --info: #6a91ab;            /* Cool blue-gray */
+}
+
 .slider-nav {
   display: flex;
-  gap: var(--spacing-md); /* Increased gap for a more spacious feel */
+  gap: 16px; /* Specific value or use --spacing-md */
   justify-content: center;
-  margin-top: var(--spacing-2xl); /* More margin for prominence */
+  margin-top: 32px; /* Specific value or use --spacing-2xl */
   align-items: center;
 }
 
 .slider-arrow {
-  width: 56px; /* Larger size for thicker appearance */
+  width: 56px; /* Thick and bold */
   height: 56px;
   border-radius: 12px; /* Modern rounded square */
-  background-color: #ffffff;
+  background-color: var(--white); /* Clean white base */
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2); /* Green-tinted shadow */
-  transition: all var(--transition-fast) ease-in-out;
-  border: 2px solid #2ecc71; /* Thick green border */
+  box-shadow: 0 4px 15px rgba(58, 143, 133, 0.2); /* Teal-tinted shadow */
+  transition: all 0.3s ease-in-out; /* Specific value or use --transition-fast */
+  border: 2px solid var(--primary-color); /* Teal border */
   cursor: pointer;
-  padding: 0; /* Remove default button padding */
-  outline: none; /* Remove focus outline */
+  padding: 0;
+  outline: none;
 }
 
 .slider-arrow:hover {
-  background-color: #2c7269;
-  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
-  transform: translateY(-2px); /* Subtle lift effect */
+  background-color: var(--primary-color); /* Teal on hover */
+  box-shadow: 0 6px 20px rgba(58, 143, 133, 0.3); /* Stronger teal shadow */
+  transform: translateY(-2px); /* Subtle lift */
 }
 
 .slider-arrow svg {
   width: 28px;
   height: 28px;
-  transition: fill var(--transition-fast) ease-in-out;
+  fill: var(--primary-color); /* Teal arrows by default */
+  transition: fill 0.3s ease-in-out;
 }
 
 .slider-arrow:hover svg {
-  fill: #ffffff; /* White fill on hover */
+  fill: var(--white); /* White arrows on hover */
 }
 
 .slider-dots {
   display: flex;
-  gap: var(--spacing-sm); /* More space between dots */
-  margin: 0 var(--spacing-md); /* Side margins for balance */
+  gap: 8px; /* Specific value or use --spacing-sm */
+  margin: 0 16px; /* Specific value or use --spacing-md */
 }
 
 .slider-dot {
-  width: 14px; /* Thicker dots */
+  width: 14px; /* Thick dots */
   height: 14px;
   border-radius: 50%;
-  background-color: #e6f0ea; /* Light green-gray */
-  transition: all var(--transition-fast) ease-in-out;
-  border: 2px solid #27ae60; /* Darker green border */
+  background-color: var(--light-gray); /* Warmer light gray */
+  transition: all 0.3s ease-in-out;
+  border: 2px solid var(--primary-dark); /* Deeper teal border */
   cursor: pointer;
 }
 
 .slider-dot.active {
-  background-color: #27ae60; /* Rich forest green */
-  transform: scale(1.3); /* Slightly larger scale */
-  border-color: #219653; /* Even darker green */
-  box-shadow: 0 0 8px rgba(46, 204, 113, 0.4); /* Glowing effect */
+  background-color: var(--primary-color); /* Teal for active state */
+  transform: scale(1.3); /* Slightly larger */
+  border-color: var(--primary-dark); /* Deeper teal emphasis */
+  box-shadow: 0 0 8px rgba(58, 143, 133, 0.4); /* Teal glow */
 }
 
 .slider-dot:hover:not(.active) {
-  background-color: #b8e994; /* Light green hover */
+  background-color: var(--primary-light); /* Softer teal on hover */
   transform: scale(1.1);
 }
-
 
 
 @media (min-width: 768px) {
