@@ -112,18 +112,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--border-radius-full);
 }
 
-/* Header & Navigation */
-header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background-color: var(--light);
-  box-shadow: var(--shadow-md);
-  z-index: 1000;
-  height: var(--header-height);
-  display: flex;
-  align-items: center;
-}
+
 
 
 /* Main Sections */
