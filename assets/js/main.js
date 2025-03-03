@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initImpactNumbers();
   initDonationOptions();
   initBackToTop();
-  initCookieConsent();
   initNewsletterForm();
   initSmoothScrolling();
   initLazyLoading();
