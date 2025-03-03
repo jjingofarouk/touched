@@ -3118,11 +3118,12 @@ input:focus, textarea:focus, select:focus {
 }
 
 .partner-logo img {
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
+  max-height: 100%;
+  max-width: 100%;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.8;
+  opacity: 1;
   transition: all 0.4s ease;
 }
 
@@ -3195,6 +3196,12 @@ input:focus, textarea:focus, select:focus {
     width: 130px;
     height: 80px;
   }
+  
+    .partner-logo img {
+    width: 95%;
+    height: 95%;
+  }
+  
   
   .partners-nav {
     width: 32px;
