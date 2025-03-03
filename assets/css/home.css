@@ -3127,7 +3127,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .partner-logo:hover img {
-  filter: grayscale(0%);
+  
   opacity: 1;
 }
 
