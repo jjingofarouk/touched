@@ -2042,7 +2042,7 @@ p {
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--white);
-  background-color: #3a8f85
+  background-color: #3a8f85;
   border: none;
   border-radius: var(--border-radius-md);
   padding: var(--spacing-md) var(--spacing-xl);
@@ -4248,4 +4248,5 @@ html {
         height: 45px;
         font-size: 1rem;
     }
+}
 }
