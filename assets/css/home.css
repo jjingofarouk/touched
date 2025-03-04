@@ -586,7 +586,7 @@ p {
   /* Main Navigation Styles */
 /* Main Navigation Styles */
 .nav {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
