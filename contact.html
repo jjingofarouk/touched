@@ -56,7 +56,7 @@
         <!-- Contact Form Section -->
         <section class="contact-form">
             <h2>Get in Touch</h2>
-            <form id="contactForm" action="#" method="POST" onsubmit="return validateForm()">
+            <form action="https://formsubmit.co/jjingofarouq@gmail.com" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required placeholder="Your Name">
@@ -69,8 +69,11 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
                 </div>
+                <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                <input type="hidden" name="_captcha" value="false">
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
+            
         </section>
 
         <!-- Google Maps Section -->
