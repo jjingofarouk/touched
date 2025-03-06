@@ -583,27 +583,23 @@ p {
   animation: check-wave 0.5s ease-out;
 }
 
-  /* Main Navigation Styles */
+  
 /* Main Navigation Styles */
 .nav {
-  position: relative;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
   background-color: var(--white);
   box-shadow: var(--shadow-md);
   z-index: var(--z-sticky);
   transition: transform 0.3s ease;
 }
+
 /* Hidden navbar on scroll down */
 .nav.hidden {
   transform: translateY(-100%);
 }
-/* Ensure that the navbar is visible when the page loads */
-.nav {
-    transform: translateY(0);
-    transition: transform 0.3s ease;
-}
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -679,17 +675,19 @@ p {
 .nav-dropdown .fas {
   font-size: 0.75rem;
   transition: transform var(--transition-fast);
+  color: var(--primary-light);
 }
 
 .nav-dropdown:hover .fas {
   transform: rotate(180deg);
+  color: var(--primary-color);
 }
 
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 200px;
+  min-width: 220px;
   background-color: var(--white);
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-lg);
@@ -701,6 +699,7 @@ p {
   transition: all var(--transition-normal);
   z-index: var(--z-dropdown);
   list-style: none;
+  border-top: 3px solid var(--primary-light);
 }
 
 .nav-dropdown:hover .dropdown-menu {
@@ -725,6 +724,13 @@ p {
 .dropdown-menu a:hover {
   background-color: var(--off-white);
   color: var(--primary-color);
+  padding-left: calc(var(--spacing-md) + 4px);
+}
+
+.dropdown-menu a.active {
+  background-color: var(--primary-light);
+  color: var(--white);
+  font-weight: 500;
 }
 
 /* Donate Button */
@@ -735,13 +741,13 @@ p {
   padding: var(--spacing-sm) var(--spacing-lg) !important;
   border-radius: var(--border-radius-full);
   transition: all var(--transition-fast);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 8px rgba(214, 140, 69, 0.2);
 }
 
 .btn-donate:hover {
   background-color: var(--secondary-dark);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 6px 12px rgba(214, 140, 69, 0.25);
 }
 
 /* Hamburger Menu Toggle */
@@ -766,6 +772,7 @@ p {
 /* Hamburger Animation */
 .nav-toggle[aria-expanded="true"] span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
+  background-color: var(--primary-dark);
 }
 
 .nav-toggle[aria-expanded="true"] span:nth-child(2) {
@@ -774,6 +781,7 @@ p {
 
 .nav-toggle[aria-expanded="true"] span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
+  background-color: var(--primary-dark);
 }
 
 /* Responsive Styles */
@@ -793,7 +801,7 @@ p {
     right: 0;
     width: 300px;
     height: 100vh;
-    background-color: var(--white);
+    background-color: var(--off-white);
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-sm);
@@ -803,6 +811,7 @@ p {
     transition: transform var(--transition-normal);
     z-index: var(--z-drawer);
     overflow-y: auto;
+    border-left: 4px solid var(--primary-light);
   }
   
   .nav-menu.active {
@@ -817,6 +826,18 @@ p {
     display: block;
     width: 100%;
     padding: var(--spacing-md);
+    border-left: 3px solid transparent;
+    border-radius: 0;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    border-left: 3px solid var(--primary-color);
+    background-color: rgba(58, 143, 133, 0.05);
+  }
+  
+  .nav-link.active::after {
+    display: none;
   }
   
   .dropdown-menu {
@@ -831,10 +852,25 @@ p {
     transition: max-height var(--transition-normal);
     padding: 0 var(--spacing-md);
     margin: 0;
+    border-top: none;
+    background-color: rgba(140, 197, 191, 0.1);
   }
   
   .nav-dropdown.open .dropdown-menu {
     max-height: 500px;
+    padding: var(--spacing-xs) 0;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .dropdown-menu a {
+    padding-left: calc(var(--spacing-md) + var(--spacing-lg));
+    border-left: 2px solid transparent;
+  }
+  
+  .dropdown-menu a:hover,
+  .dropdown-menu a.active {
+    border-left: 2px solid var(--primary-light);
+    background-color: rgba(58, 143, 133, 0.05);
   }
   
   .nav-dropdown .fas {
@@ -845,9 +881,9 @@ p {
     margin-top: var(--spacing-md);
     text-align: center;
     width: 100%;
+    background-color: var(--secondary-color);
   }
-  
-  /* Overlay */
+}
 
 /* Overlay */
 .nav-overlay {
@@ -856,11 +892,12 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(45, 58, 58, 0.6);
   opacity: 0;
   visibility: hidden;
   transition: all var(--transition-normal);
-  z-index: calc(var(--z-drawer) - 1); /* Just below the menu */
+  z-index: calc(var(--z-drawer) - 1);
+  backdrop-filter: blur(3px);
 }
 
 .nav-overlay.active {
@@ -868,40 +905,10 @@ p {
   visibility: visible;
 }
 
-/* Mobile Menu */
-@media (max-width: 1023px) {
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 100vh;
-    background-color: var(--white);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-sm);
-    padding: 80px var(--spacing-lg) var(--spacing-lg);
-    box-shadow: var(--shadow-xl);
-    transform: translateX(100%);
-    transition: transform var(--transition-normal);
-    z-index: var(--z-drawer); /* Make sure this is higher than overlay */
-    overflow-y: auto;
-  }
-  
-  .nav-menu.active {
-    transform: translateX(0);
-  }
-  
-  .nav-toggle {
-    display: block;
-    z-index: calc(var(--z-drawer) + 1); /* Above the menu */
-  }
-}
-
 /* Optional: Scroll-activated navbar style */
 .nav.scrolled {
   background-color: var(--white);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 4px 12px rgba(58, 143, 133, 0.1);
   padding: var(--spacing-xs) 0;
 }
 
@@ -914,8 +921,25 @@ p {
   color: var(--white);
 }
 
+.nav.transparent .nav-link:hover {
+  color: var(--primary-light);
+}
+
 .nav.transparent .nav-toggle span {
   background-color: var(--white);
+}
+
+.nav.transparent.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.nav.transparent.scrolled .nav-link {
+  color: var(--dark);
+}
+
+.nav.transparent.scrolled .nav-toggle span {
+  background-color: var(--primary-color);
 }
 
 @media (prefers-reduced-motion: reduce) {
