@@ -1,168 +1,110 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Support Touched Hearts to transform lives through education, healthcare, and community development.">
-    <meta name="keywords" content="donate, charity, Touched Hearts, Uganda, community support">
-    <meta name="author" content="Touched Hearts">
     <title>Make a Difference - Touched Hearts</title>
     <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="./assets/css/donate.css">
-    <!-- Add Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Favicon -->
-    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
-    <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="Make a Difference - Touched Hearts">
-    <meta property="og:description" content="Your support helps change lives and empowers our community.">
-    <meta property="og:image" content="./assets/images/logo.jpg">
-    <meta property="og:url" content="https://www.touchedhearts.org/donate.html">
 </head>
 <body>
-    <!-- Accessibility Skip Link -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Navigation -->
-    <header role="banner">
-        <nav class="nav" aria-label="Main navigation">
+    <header>
+        <nav class="nav">
             <div class="nav-container">
                 <a href="index.html" class="nav-logo">
                     <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
                 </a>
-                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <button class="nav-toggle" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <ul class="nav-menu" role="menubar">
-                    <li role="menuitem"><a href="index.html" class="nav-link active">Home</a></li>
-                    <li role="menuitem"><a href="about.html" class="nav-link">About Us</a></li>
-                    <li class="nav-dropdown" role="menuitem" aria-haspopup="true">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="nav-dropdown">
                         <a href="programs.html" class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li role="menuitem"><a href="education.html">Education</a></li>
-                            <li role="menuitem"><a href="healthcare.html">Healthcare</a></li>
-                            <li role="menuitem"><a href="disabilities.html">Disability Support</a></li>
-                            <li role="menuitem"><a href="community.html">Community Development</a></li>
+                        <ul class="dropdown-menu">
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="healthcare.html">Healthcare</a></li>
+                            <li><a href="disabilities.html">Disability Support</a></li>
+                            <li><a href="community.html">Community Development</a></li>
                         </ul>
                     </li>
-                    <li role="menuitem"><a href="stories.html" class="nav-link">Stories</a></li>
-                    <li role="menuitem"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                    <li role="menuitem"><a href="news.html" class="nav-link">Blog</a></li>
-                    <li class="nav-dropdown" role="menuitem" aria-haspopup="true">
+                    <li><a href="stories.html" class="nav-link">Stories</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="news.html" class="nav-link">Blog</a></li>
+                    <li class="nav-dropdown">
                         <a href="get-involved.html" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li role="menuitem"><a href="volunteers.html">Volunteers</a></li>
-                            <li role="menuitem"><a href="partners.html">Partners</a></li>
+                        <ul class="dropdown-menu">
+                            <li><a href="volunteers.html">Volunteers</a></li>
+                            <li><a href="partners.html">Partners</a></li>
                         </ul>
                     </li>
-                    <li role="menuitem"><a href="donate.html" class="nav-link btn-donate">Donate Now</a></li>
+                    <li><a href="donate.html" class="nav-link btn-donate">Donate Now</a></li>
                 </ul>
-                <!-- Search Bar -->
-                <form class="nav-search" role="search" action="search.html" method="GET">
-                    <input type="search" placeholder="Search..." aria-label="Search site" name="q">
-                    <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
-                </form>
             </div>
         </nav>
     </header>
 
-    <!-- Page Header with Call-to-Action -->
-    <section class="page-header" id="main-content" role="main">
+    <!-- Page Header -->
+    <section class="page-header">
         <h1>Make a Difference</h1>
         <p>Your support helps change lives and empowers our community.</p>
-        <a href="#donation-form-container" class="cta-button">Donate Today</a>
     </section>
 
-    <!-- Donation Form Section -->
-    <div class="donation-form-container" id="donation-form-container">
+    <!-- Donation Form -->
+    <div class="donation-form-container">
         <h2>Donate Now</h2>
         <p>Choose your donation amount and payment method below to contribute.</p>
 
-        <!-- Progress Bar with Accessibility -->
-        <div class="progress-container" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Fundraising progress">
+        <!-- Progress Bar -->
+        <div class="progress-container">
             <div class="progress-bar" style="width: 40%"></div>
         </div>
         <p class="progress-text">Raised: $4,000 of $10,000 Goal</p>
 
-        <!-- Donation Form with Enhanced Features -->
-        <form id="donation-form" action="success.html" method="POST" novalidate>
+        <!-- Donation Form -->
+        <form id="donation-form" action="success.html" method="POST">
             <div class="form-group">
                 <label for="amount">Amount</label>
-                <div class="amount-options" role="radiogroup" aria-labelledby="amount">
+                <div class="amount-options">
                     <input type="radio" name="amount" value="50" id="amount-50" checked>
                     <label for="amount-50">$50</label>
                     <input type="radio" name="amount" value="100" id="amount-100">
                     <label for="amount-100">$100</label>
                     <input type="radio" name="amount" value="200" id="amount-200">
                     <label for="amount-200">$200</label>
-                    <input type="number" name="customAmount" id="customAmount" placeholder="Custom Amount" min="1" step="1" aria-describedby="custom-amount-hint">
-                    <small id="custom-amount-hint">Enter any amount above $1</small>
+                    <input type="number" name="customAmount" id="customAmount" placeholder="Custom Amount" min="1">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="frequency">Donation Frequency</label>
-                <select name="frequency" id="frequency" aria-label="Donation frequency">
-                    <option value="one-time" selected>One-Time</option>
-                    <option value="monthly">Monthly</option>
-                    <option value="yearly">Yearly</option>
-                </select>
-            </div>
-
-            <div class="form-group">
                 <label for="name">Your Name</label>
-                <input type="text" name="name" id="name" placeholder="Full Name" required aria-required="true">
+                <input type="text" name="name" id="name" placeholder="Full Name" required>
             </div>
 
             <div class="form-group">
                 <label for="email">Your Email</label>
-                <input type="email" name="email" id="email" placeholder="Email Address" required aria-required="true">
+                <input type="email" name="email" id="email" placeholder="Email Address" required>
             </div>
 
             <div class="form-group">
                 <label for="payment">Payment Method</label>
-                <select name="payment" id="payment" required aria-required="true">
-                    <option value="" disabled selected>Select a method</option>
+                <select name="payment" id="payment" required>
                     <option value="mobileMoney">Mobile Money</option>
                     <option value="card">Credit/Debit Card</option>
-                    <option value="paypal">PayPal</option>
-                    <option value="bank">Bank Transfer</option>
                 </select>
             </div>
 
-            <div class="form-group">
-                <label for="message">Leave a Message (Optional)</label>
-                <textarea name="message" id="message" rows="3" placeholder="Your message of support" aria-label="Optional message"></textarea>
-            </div>
-
-            <div class="form-group checkbox">
-                <input type="checkbox" name="anonymous" id="anonymous">
-                <label for="anonymous">Donate Anonymously</label>
-            </div>
-
-            <button type="submit" aria-label="Submit donation">Donate Now</button>
+            <button type="submit">Donate Now</button>
         </form>
-
-        <!-- Donation Impact Info -->
-        <div class="donation-impact">
-            <h3>Your Impact</h3>
-            <ul>
-                <li>$50 - Provides school supplies for 5 children</li>
-                <li>$100 - Funds a month of healthcare for a family</li>
-                <li>$200 - Supports a community project for a week</li>
-            </ul>
-        </div>
     </div>
 
-    <!-- Live Chat Widget Placeholder -->
-    <aside class="live-chat" aria-label="Live chat support">
-        <button id="chat-toggle" aria-label="Open live chat">Chat with Us</button>
-    </aside>
-
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
+<footer class="footer" role="contentinfo">
         <div class="footer-container">
             <div class="footer-column">
                 <a href="index.html" class="footer-logo">
@@ -170,28 +112,22 @@
                 </a>
                 <p class="footer-tagline">Transforming lives with compassion and hope</p>
                 <div class="social-links">
-                    <a href="https://facebook.com/touchedhearts" aria-label="Follow us on Facebook" class="social-link">
+                    <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://twitter.com/touchedhearts" aria-label="Follow us on Twitter" class="social-link">
+                    <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="https://instagram.com/touchedhearts" aria-label="Follow us on Instagram" class="social-link">
+                    <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://linkedin.com/company/touchedhearts" aria-label="Connect on LinkedIn" class="social-link">
+                    <a href="https://linkedin.com/company/touchedhearts" aria-label="LinkedIn" class="social-link">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://youtube.com/touchedhearts" aria-label="Watch us on YouTube" class="social-link">
+                    <a href="https://youtube.com/touchedhearts" aria-label="YouTube" class="social-link">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
-                <!-- Newsletter Signup -->
-                <form class="newsletter" action="subscribe.html" method="POST" aria-label="Newsletter signup">
-                    <label for="newsletter-email">Subscribe to Our Newsletter</label>
-                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email" required>
-                    <button type="submit" aria-label="Subscribe">Subscribe</button>
-                </form>
             </div>
             <div class="footer-column">
                 <h3 class="footer-heading">Quick Links</h3>
@@ -218,13 +154,14 @@
                 <h3 class="footer-heading">Contact Us</h3>
                 <address class="contact-info">
                     <p><i class="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
-                    <p><i class="fas fa-phone"></i> <a href="tel:+256700834733">+256 700 834 733</a></p>
+                    <p><i class="fas fa-phone"></i> +256 700 834 733</p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:touchedheartsug@gmail.com">touchedheartsug@gmail.com</a></p>
                 </address>
+
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="copyright">© <span id="current-year"></span> Touched Hearts. All rights reserved.</p>
+            <p class="copyright">&copy; 2025 Touched Hearts. All rights reserved.</p>
             <ul class="legal-links">
                 <li><a href="privacy.html" class="legal-link">Privacy Policy</a></li>
                 <li><a href="terms.html" class="legal-link">Terms of Service</a></li>
@@ -233,25 +170,8 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-
-    <!-- Scripts -->
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/formValidation.js"></script>
     <script src="./assets/js/footer.js"></script>
-    <script>
-        // Dynamic Year in Footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Back to Top Functionality
-        const backToTop = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
 </body>
 </html>
