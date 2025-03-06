@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Annual Charity Run",
             date: "2025-04-15",
             description: "Join us for a 5K run to raise funds for education in Uganda.",
-            image: "./assets/images/events/charity-run.png",
+            image: "./assets/images/charity-run.png",
             type: "upcoming"
         },
         {
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Karamoja Medical Camp",
             date: "2025-08-20",
             description: "Free medical check-ups for rural communities.",
-            image: "./assets/images/events/karamoja.png",
+            image: "./assets/images/karamoja.png",
             type: "upcoming"
         },
         {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Women's Empowerment Workshop",
             date: "2025-02-10",
             description: "Vocational training for women in Kampala.",
-            image: "./assets/images/events/empowerment.png",
+            image: "./assets/images/empowerment.png",
             type: "past"
         },
         {
