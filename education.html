@@ -11,231 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/education.css">
 
-   <style>
-        /* Embedded CSS */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Header */
-        .page-header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #fff;
-            text-align: center;
-            padding: 4rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
-            animation: pulse 15s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 0.2; }
-            100% { transform: scale(1); opacity: 0.5; }
-        }
-
-        .page-header h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            margin: 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Education Section */
-        .education-section {
-            padding: 4rem 2rem;
-            background: #fff;
-        }
-
-        .education-section h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
-            color: #1e3c72;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .education-intro {
-            max-width: 900px;
-            margin: 0 auto 4rem;
-            text-align: center;
-        }
-
-        .education-intro p {
-            font-size: 1.1rem;
-            color: #666;
-        }
-
-        /* Initiatives */
-        .initiatives-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .initiative-card {
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-        .initiative-card.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .initiative-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .initiative-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .initiative-content {
-            padding: 1.5rem;
-        }
-
-        .initiative-content h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.25rem;
-            color: #2a5298;
-            margin-bottom: 1rem;
-        }
-
-        .initiative-content p {
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        /* Impact Stats */
-        .impact-section {
-            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .stats-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .stat-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            width: 200px;
-            transition: transform 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: scale(1.05);
-        }
-
-        .stat-number {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
-            color: #007bff;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        /* Call to Action */
-        .cta-section {
-            background: #1e3c72;
-            color: #fff;
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 25px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #0056b3;
-            transform: translateY(-2px);
-        }
-
-    
-
-        @media (max-width: 480px) {
-            .page-header {
-                padding: 3rem 1rem;
-            }
-
-            .education-section, .impact-section, .cta-section {
-                padding: 3rem 1rem;
-            }
-
-            .education-section h2 {
-                font-size: 1.75rem;
-            }
-
-            .initiative-card h3 {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -295,31 +72,31 @@
         <h2>What We Do</h2>
         <div class="initiatives-container">
             <div class="initiative-card">
-                <img src="./assets/images/scholarships.jpg" alt="Students receiving scholarships" class="initiative-image">
+                <img src="./assets/images/scholarships.png" alt="Students receiving scholarships" class="initiative-image">
                 <div class="initiative-content">
                     <h3>Scholarships Program</h3>
-                    <p>We offer scholarships to children from low-income families, covering tuition, uniforms, and learning materials. In 2024 alone, we supported over 5,000 students across Uganda, ensuring financial barriers don’t stand in the way of their education.</p>
+                    <p>We offer scholarships to children from low-income families, which cover tuition, uniforms, and learning materials. In 2024, we supported over 47 students across Uganda to ensure that financial barriers don’t stand in the way of their education.</p>
                 </div>
             </div>
             <div class="initiative-card">
-                <img src="./assets/images/school-building.jpg" alt="New school construction" class="initiative-image">
+                <img src="./assets/images/school-building.png" alt="New school construction" class="initiative-image">
                 <div class="initiative-content">
                     <h3>School Infrastructure</h3>
-                    <p>We build and renovate schools in rural areas, creating safe, conducive learning environments. Our projects include classrooms, libraries, and sanitation facilities, benefiting thousands of students and teachers annually.</p>
+                    <p>We renovate schools in rural areas to create safe and conducive learning environments. Our projects include renovating classrooms and sanitation facilities to benefit thousands of students and teachers annually.</p>
                 </div>
             </div>
             <div class="initiative-card">
-                <img src="./assets/images/teacher-training.jpg" alt="Teacher training session" class="initiative-image">
+                <img src="./assets/images/teacher-training.png" alt="Teacher training session" class="initiative-image">
                 <div class="initiative-content">
                     <h3>Teacher Training</h3>
-                    <p>We empower educators through professional development workshops, enhancing teaching quality. Topics include modern pedagogy, inclusive education, and child psychology, impacting over 1,000 teachers since inception.</p>
+                    <p>We empower educators through professional development workshops to enhance teaching quality. Topics include modern pedagogy, inclusive education, and child psychology. We have impacted over 130 teachers since inception.</p>
                 </div>
             </div>
             <div class="initiative-card">
-                <img src="./assets/images/adult-literacy.jpg" alt="Adult literacy class" class="initiative-image">
+                <img src="./assets/images/adult-literacy.png" alt="Adult literacy class" class="initiative-image">
                 <div class="initiative-content">
                     <h3>Adult Literacy Programs</h3>
-                    <p>We extend education to adults, offering literacy and numeracy classes to parents and community members. This strengthens family support for children’s learning and fosters community development.</p>
+                    <p>We extend education to adults by offering literacy and numeracy classes to parents and community members. This strengthens family support for children’s learning and fosters community development.</p>
                 </div>
             </div>
         </div>
@@ -338,11 +115,11 @@
                 <div class="stat-label">Schools Visited</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">50+</div>
+                <div class="stat-number">150+</div>
                 <div class="stat-label">Teachers Trained</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">300+</div>
+                <div class="stat-number">200+</div>
                 <div class="stat-label">Adults Trained</div>
             </div>
         </div>
