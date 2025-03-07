@@ -1,12 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get involved with Touched Hearts through volunteering, donating, fundraising, or partnering with us to transform lives in Uganda.">
     <title>Get Involved - Touched Hearts</title>
     <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="./assets/css/get-involved.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -23,7 +24,7 @@
                     <span></span>
                 </button>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About Us</a></li>
                     <li class="nav-dropdown">
                         <a href="programs.html" class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
@@ -38,7 +39,7 @@
                     <li><a href="gallery.html" class="nav-link">Gallery</a></li>
                     <li><a href="news.html" class="nav-link">Blog</a></li>
                     <li class="nav-dropdown">
-                        <a href="get-involved.html" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
+                        <a href="get-involved.html" class="nav-link active">Get Involved <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="volunteers.html">Volunteers</a></li>
                             <li><a href="partners.html">Partners</a></li>
@@ -53,40 +54,117 @@
     <!-- Page Header -->
     <section class="page-header">
         <h1>Get Involved</h1>
-        <p>Join us in making a difference through volunteering, donating, or fundraising.</p>
+        <p>Join us in making a lasting impact on communities in Uganda through volunteering, donating, fundraising, or partnering with Touched Hearts.</p>
     </section>
 
     <!-- Main Content -->
     <div class="get-involved-container">
         
+        <!-- Introduction Section -->
+        <section class="involve-section intro">
+            <h2>Why Get Involved?</h2>
+            <p>At Touched Hearts, we believe that every individual has the power to create change. Whether you're passionate about education, healthcare, disability support, or community development, your involvement helps us reach more people and transform lives. Together, we can build a future filled with hope, compassion, and opportunity.</p>
+            <p>Explore the many ways you can contribute below and become part of our mission to empower communities across Uganda.</p>
+        </section>
+
         <!-- Volunteer Section -->
         <section class="involve-section volunteer">
             <i class="fas fa-hands-helping"></i>
-            <h2>Volunteer</h2>
-            <p>Be a part of our impactful programs by signing up as a volunteer.</p>
+            <h2>Volunteer with Us</h2>
+            <p>Volunteering with Touched Hearts is a rewarding way to make a direct impact. Whether you're teaching children, assisting with healthcare initiatives, or supporting community projects, your time and skills can change lives.</p>
+            <h3>Opportunities Include:</h3>
+            <ul>
+                <li><strong>Education Support:</strong> Tutor students or assist with school supply drives.</li>
+                <li><strong>Healthcare Outreach:</strong> Help with mobile clinics or health education workshops.</li>
+                <li><strong>Community Building:</strong> Participate in construction projects or skill-building programs.</li>
+                <li><strong>Event Support:</strong> Organize or assist at fundraising and awareness events.</li>
+            </ul>
+            <p>No matter your background, we welcome your enthusiasm and dedication. Fill out the form below to join our volunteer team!</p>
             
-            <form id="volunteer-form">
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                <textarea id="message" name="message" placeholder="Why do you want to volunteer?" required></textarea>
-                <button type="submit">Sign Up</button>
+            <form id="volunteer-form" action="submit-volunteer.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <label for="skills">Your Skills or Interests</label>
+                    <input type="text" id="skills" name="skills" placeholder="E.g., Teaching, Medical, Event Planning" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Why Do You Want to Volunteer?</label>
+                    <textarea id="message" name="message" placeholder="Tell us your motivation" rows="4" required></textarea>
+                </div>
+                <button type="submit">Sign Up to Volunteer</button>
             </form>
         </section>
 
         <!-- Donate Section -->
         <section class="involve-section donate">
             <i class="fas fa-donate"></i>
-            <h2>Donate</h2>
-            <p>Your contribution helps us create lasting change.</p>
+            <h2>Make a Donation</h2>
+            <p>Your financial support fuels our programs and allows us to reach more individuals in need. Every dollar counts—whether it's funding school supplies, medical care, or community infrastructure, your donation creates a ripple effect of positive change.</p>
+            <h3>How Your Donation Helps:</h3>
+            <ul>
+                <li><strong>$50:</strong> Provides textbooks for 10 students.</li>
+                <li><strong>$100:</strong> Funds a week of healthcare supplies for a rural clinic.</li>
+                <li><strong>$200:</strong> Supports a month-long community training program.</li>
+            </ul>
+            <p>Ready to contribute? Click below to make a secure donation and see the difference you can make.</p>
             <a href="donate.html" class="btn">Donate Now</a>
         </section>
 
         <!-- Fundraise Section -->
         <section class="involve-section fundraise">
             <i class="fas fa-chart-line"></i>
-            <h2>Fundraise</h2>
-            <p>Organize a fundraising campaign and support our mission.</p>
-            <a href="./assets/fundraising-guide.pdf" class="btn" download>Download Guide</a>
+            <h2>Start a Fundraiser</h2>
+            <p>Turn your passion into action by organizing a fundraising campaign for Touched Hearts. Whether it’s a birthday fundraiser, a charity run, or a community event, your efforts can raise vital funds and awareness for our cause.</p>
+            <h3>Steps to Get Started:</h3>
+            <ol>
+                <li><strong>Plan Your Campaign:</strong> Choose an event or activity that excites you.</li>
+                <li><strong>Download Our Guide:</strong> Get tips and resources to make your fundraiser a success.</li>
+                <li><strong>Spread the Word:</strong> Use social media and our toolkit to rally support.</li>
+                <li><strong>Collect Donations:</strong> Direct funds to our secure donation page.</li>
+            </ol>
+            <p>Download our Fundraising Guide to kickstart your journey and inspire others to join the movement!</p>
+            <a href="./assets/fundraising-guide.pdf" class="btn" download>Download Fundraising Guide</a>
+        </section>
+
+        <!-- Partner Section -->
+        <section class="involve-section partner">
+            <i class="fas fa-handshake"></i>
+            <h2>Become a Partner</h2>
+            <p>We collaborate with businesses, organizations, and institutions to amplify our impact. Partnerships allow us to pool resources, share expertise, and reach more communities effectively.</p>
+            <h3>Partnership Benefits:</h3>
+            <ul>
+                <li><strong>Corporate Social Responsibility:</strong> Enhance your brand by supporting a meaningful cause.</li>
+                <li><strong>Joint Projects:</strong> Co-create initiatives tailored to your goals and ours.</li>
+                <li><strong>Visibility:</strong> Gain recognition on our website, events, and reports.</li>
+            </ul>
+            <p>Interested in partnering with us? Contact us to explore collaboration opportunities.</p>
+            <a href="mailto:touchedheartsug12@gmail.com" class="btn">Contact Us</a>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="involve-section testimonials">
+            <h2>What Our Supporters Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Volunteering with Touched Hearts was life-changing. I saw firsthand how my efforts helped kids get an education."</p>
+                    <span>- Sarah K., Volunteer</span>
+                </div>
+                <div class="testimonial">
+                    <p>"Donating to Touched Hearts gave me a sense of purpose. Knowing my money supports real change is incredible."</p>
+                    <span>- James M., Donor</span>
+                </div>
+                <div class="testimonial">
+                    <p>"Fundraising for Touched Hearts brought my community together. It was a fun and impactful experience!"</p>
+                    <span>- Aisha N., Fundraiser</span>
+                </div>
+            </div>
         </section>
 
     </div>
@@ -145,11 +223,10 @@
                     <p><i class="fas fa-phone"></i> +256 700 834 733</p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:touchedheartsug12@gmail.com">touchedheartsug12@gmail.com</a></p>
                 </address>
-
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="copyright">&copy; 2025 Touched Hearts. All rights reserved.</p>
+            <p class="copyright">© 2025 Touched Hearts. All rights reserved.</p>
             <ul class="legal-links">
                 <li><a href="privacy.html" class="legal-link">Privacy Policy</a></li>
                 <li><a href="terms.html" class="legal-link">Terms of Service</a></li>
@@ -157,7 +234,6 @@
             </ul>
         </div>
     </footer>
-
 
     <!-- JavaScript -->
     <script src="./assets/js/main.js"></script>
