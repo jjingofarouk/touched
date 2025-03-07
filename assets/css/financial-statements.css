@@ -1,130 +1,214 @@
-/* assets/css/financial-statements.css */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--off-white);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* Page Header */
+.page-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: var(--white);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.page-header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Financial Section */
 .financial-section {
-    padding: 5rem 2rem;
-    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.financial-section::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    left: -20%;
-    width: 140%;
-    height: 140%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
-    animation: glow 20s infinite;
-}
-
-@keyframes glow {
-    0% { transform: scale(1); opacity: 0.4; }
-    50% { transform: scale(1.1); opacity: 0.2; }
-    100% { transform: scale(1); opacity: 0.4; }
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
 .financial-filter {
-    text-align: center;
-    margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-#yearFilter {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    border: none;
-    border-radius: 25px;
-    background: #fff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.3s ease;
+.financial-filter select {
+  font-family: 'Open Sans', sans-serif;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid var(--light-gray);
+  border-radius: 5px;
+  background-color: var(--white);
+  color: var(--dark);
+  cursor: pointer;
+  transition: border-color 0.3s ease;
 }
 
-#yearFilter:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+.financial-filter select:focus {
+  border-color: var(--primary-color);
+  outline: none;
 }
 
+/* Financial Container */
 .financial-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .financial-table {
-    background: #fff;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.financial-table table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-th, td {
-    padding: 1rem;
-    text-align: right;
-    font-family: 'Open Sans', sans-serif;
+.financial-table th,
+.financial-table td {
+  padding: 1rem;
+  text-align: right;
 }
 
-th {
-    background: #007bff;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+.financial-table th {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
 
-td {
-    border-bottom: 1px solid #eee;
+.financial-table th:first-child,
+.financial-table td:first-child {
+  text-align: left;
 }
 
-tr:hover td {
-    background: #f9f9f9;
-    transition: background 0.3s ease;
+.financial-table tr:nth-child(even) {
+  background-color: var(--light-gray);
 }
 
+.financial-table tr:hover {
+  background-color: var(--primary-light);
+  transition: background-color 0.3s ease;
+}
+
+/* Financial Chart */
 .financial-chart {
-    background: #fff;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+#financialChart {
+  max-height: 400px;
+}
+
+/* Download Button */
 .financial-download {
-    text-align: center;
-    margin-top: 3rem;
+  text-align: center;
 }
 
 #downloadBtn {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #downloadBtn:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  background-color: var(--secondary-dark);
+  transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-    .financial-container {
-        grid-template-columns: 1fr;
-    }
+#downloadBtn:active {
+  transform: translateY(0);
+}
 
-    th, td {
-        font-size: 0.85rem;
-        padding: 0.75rem;
-    }
+/* Visually Hidden (for accessibility) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 3rem 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .header-subtitle {
+    font-size: 1rem;
+  }
+
+  .financial-container {
+    grid-template-columns: 1fr;
+  }
+
+  .financial-table th,
+  .financial-table td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  #downloadBtn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: 2rem 0.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .financial-table th,
+  .financial-table td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .financial-filter select {
+    width: 100%;
+    padding: 0.5rem;
+  }
 }
