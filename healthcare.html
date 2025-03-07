@@ -10,17 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/home.css">
-    <link rel="stylesheet" href="./assets/css/healthcare.css"> 
+<link rel="stylesheet" href="./assets/css/healthcare.css"> 
+  
 </head>
 <body>
     <!-- Navigation -->
+
     <header>
         <nav class="nav">
             <div class="nav-container">
                 <a href="index.html" class="nav-logo">
                     <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
                 </a>
-                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <button class="nav-toggle" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -66,7 +68,6 @@
         <p>Working alongside local health professionals, government health departments, and international partners, we deliver sustainable healthcare solutions that create lasting impact. Our holistic approach combines immediate medical care with preventive education and community empowerment.</p>
         
         <img src="./assets/images/clinic.png" alt="Mobile clinic in rural Karamoja" class="image-placeholder">
-        
         <!-- Impact Stats -->
         <h2>Our Impact</h2>
         <div class="impact-stats">
@@ -151,17 +152,17 @@
             <div class="case-card">
                 <h3>Maria Namukasa - Mubende</h3>
                 <p>Maria was pregnant with her third child when complications developed. Thanks to our first maternal waiting home, she received timely care during a difficult delivery. Today, both Maria and her baby boy are healthy.</p>
-                <img src="./assets/images/maria.png" alt="Maria with her healthy baby" class="image-placeholder">
-            </div>
+                <img src="./assets/images/maria.png" alt="Maria with her healthy baby" class="image-placeholder">            </div>
             <div class="case-card">
                 <h3>Brenda Ochieng - Soroti</h3>
-                <p>Sixteen-year-old Brenda suffered from recurring malaria until her family received insecticide-treated nets through our program. Now malaria-free for over six months, she's thriving in school and her parents have become active participants in our community health education sessions.</p>
-                <img src="./assets/images/mosquito-net.png" alt="Brenda with her mosquito net" class="image-placeholder">
-            </div>
+                <p>Sixteen-year-year-old Brenda suffered from recurring malaria until her family received insecticide-treated nets through our program. Now malaria-free for over six months, she's thriving in school and her parents have become active participants in our community health education sessions.</p>
+                <img src="./assets/images/mosquito-net.png" alt="Brenda with her mosquito net" class="image-placeholder">            </div>
+
         </div>
     </section>
 
     <!-- Footer -->
+   
     <footer class="footer" role="contentinfo">
         <div class="footer-container">
             <div class="footer-column">
@@ -215,10 +216,11 @@
                     <p><i class="fas fa-phone"></i> +256 700 834 733</p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:touchedheartsug12@gmail.com">touchedheartsug12@gmail.com</a></p>
                 </address>
+
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="copyright">© 2025 Touched Hearts. All rights reserved.</p>
+            <p class="copyright">&copy; 2025 Touched Hearts. All rights reserved.</p>
             <ul class="legal-links">
                 <li><a href="privacy.html" class="legal-link">Privacy Policy</a></li>
                 <li><a href="terms.html" class="legal-link">Terms of Service</a></li>
@@ -226,6 +228,7 @@
             </ul>
         </div>
     </footer>
+
 
     <!-- JavaScript -->
     <script src="./assets/js/main.js"></script>
@@ -236,12 +239,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Navbar Toggle
-            const navToggle = document.querySelector('.nav-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-                navToggle.setAttribute('aria-expanded', !isExpanded);
+            const navbarToggle = document.querySelector('.navbar-toggle');
+            const navbarMenu = document.querySelector('.navbar-menu');
+            navbarToggle.addEventListener('click', () => {
+                navbarMenu.classList.toggle('active');
+                const isExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+                navbarToggle.setAttribute('aria-expanded', !isExpanded);
             });
 
             // Accordion Functionality
@@ -249,32 +252,12 @@
             programHeaders.forEach(header => {
                 header.addEventListener('click', () => {
                     const details = header.nextElementSibling;
-                    const toggleIcon = header.querySelector('.toggle-icon');
                     const isActive = details.classList.contains('active');
-
-                    // Close all other accordions
-                    programHeaders.forEach(otherHeader => {
-                        const otherDetails = otherHeader.nextElementSibling;
-                        const otherIcon = otherHeader.querySelector('.toggle-icon');
-                        if (otherHeader !== header && otherDetails.classList.contains('active')) {
-                            otherDetails.classList.remove('active');
-                            otherHeader.classList.remove('active');
-                            otherIcon.textContent = '▼';
-                            otherDetails.style.maxHeight = null;
-                        }
-                    });
-
-                    // Toggle the clicked accordion
-                    if (isActive) {
-                        details.classList.remove('active');
-                        header.classList.remove('active');
-                        toggleIcon.textContent = '▼';
-                        details.style.maxHeight = null;
-                    } else {
+                    programHeaders.forEach(h => h.nextElementSibling.classList.remove('active'));
+                    programHeaders.forEach(h => h.classList.remove('active'));
+                    if (!isActive) {
                         details.classList.add('active');
                         header.classList.add('active');
-                        toggleIcon.textContent = '▲';
-                        details.style.maxHeight = details.scrollHeight + 'px';
                     }
                 });
             });
@@ -302,5 +285,7 @@
             });
         });
     </script>
+        <script src="./assets/js/main.js"></script>
+        <script src="./assets/js/footer.js"></script>
 </body>
 </html>
