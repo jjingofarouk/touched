@@ -236,55 +236,7 @@
 
     <!-- Embedded JavaScript -->
     <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script> <!-- Replace with your Font Awesome Kit ID -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Navbar Toggle
-            const navbarToggle = document.querySelector('.navbar-toggle');
-            const navbarMenu = document.querySelector('.navbar-menu');
-            navbarToggle.addEventListener('click', () => {
-                navbarMenu.classList.toggle('active');
-                const isExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
-                navbarToggle.setAttribute('aria-expanded', !isExpanded);
-            });
 
-            // Accordion Functionality
-            const programHeaders = document.querySelectorAll('.program-header');
-            programHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const details = header.nextElementSibling;
-                    const isActive = details.classList.contains('active');
-                    programHeaders.forEach(h => h.nextElementSibling.classList.remove('active'));
-                    programHeaders.forEach(h => h.classList.remove('active'));
-                    if (!isActive) {
-                        details.classList.add('active');
-                        header.classList.add('active');
-                    }
-                });
-            });
-
-            // Scroll Animation
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.2 });
-
-            document.querySelectorAll('.program-item, .case-card, .stat-card').forEach(item => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(item);
-            });
-
-            document.querySelectorAll('.show').forEach(item => {
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            });
-        });
-    </script>
         <script src="./assets/js/main.js"></script>
         <script src="./assets/js/footer.js"></script>
 </body>
