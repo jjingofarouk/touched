@@ -35,6 +35,19 @@ body {
   background-color: var(--off-white);
   color: var(--dark);
   line-height: 1.6;
+  font-size: 16px; /* Consistent base size */
+}
+
+/* Typography Base */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-dark);
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--dark-gray);
+  margin-bottom: 1.25rem; /* Consistent spacing */
 }
 
 /* Healthcare Hero Section */
@@ -64,10 +77,10 @@ body {
 }
 
 .healthcare-hero h1 {
-  font-family: 'Poppins', sans-serif;
   font-size: 2.5rem;
+  font-weight: 600;
   color: var(--white);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
@@ -75,7 +88,7 @@ body {
 }
 
 .healthcare-hero p {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   color: var(--off-white);
   max-width: 800px;
   margin: 0 auto;
@@ -92,32 +105,27 @@ body {
 }
 
 .healthcare-content h2 {
-  font-family: 'Poppins', sans-serif;
   font-size: 2rem;
+  font-weight: 600;
   color: var(--primary-dark);
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid var(--primary-color);
+  text-align: center;
+  border-bottom: 2px solid var(--primary-light);
   padding-bottom: 0.5rem;
 }
 
 .healthcare-content p {
   font-size: 1rem;
-  color: var(--dark-gray);
-  margin-bottom: 1.5rem;
 }
 
+/* Image Placeholder */
 .image-placeholder {
   width: 100%;
-  height: 300px;
-  background: var(--light-gray);
+  max-width: 800px;
+  height: auto;
   border-radius: 10px;
-  margin: 2rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--medium-gray);
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
+  margin: 2rem auto;
+  display: block;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -145,72 +153,88 @@ body {
 
 .stat-number {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--secondary-color);
-  margin-bottom: 0.5rem;
-  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0.75rem;
 }
 
 .stat-label {
-  color: var(--dark-gray);
   font-size: 1rem;
+  color: var(--medium-gray);
 }
 
-/* Programs Accordion */
-.programs-list {
-  margin: 2rem 0;
+/* Accordion Styling */
+.accordion {
+  max-width: 900px; /* Slightly wider for readability */
+  margin: 2rem auto;
 }
 
-.program-item {
-  border-bottom: 1px solid var(--light-gray);
-  margin-bottom: 0.5rem;
+.accordion-item {
+  margin-bottom: 1rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  overflow: hidden; /* Cleaner edges */
+  background: var(--white);
 }
 
-.program-header {
-  background: var(--off-white);
-  padding: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.3s ease;
-}
-
-.program-header:hover {
-  background: var(--primary-light);
-}
-
-.program-header h3 {
-  font-family: 'Poppins', sans-serif;
+.accordion-button {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--off-white);
+  border: none;
   font-size: 1.25rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-dark);
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+.accordion-button:hover {
+  background-color: var(--primary-light);
   color: var(--primary-dark);
 }
 
-.program-header .toggle-icon {
-  font-size: 1.2rem;
+.accordion-button.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.accordion-button::after {
+  content: '▼';
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1rem;
   color: var(--secondary-color);
   transition: transform 0.3s ease;
 }
 
-.program-header.active .toggle-icon {
+.accordion-button.active::after {
   transform: rotate(180deg);
+  color: var(--white);
 }
 
-.program-details {
+.accordion-button:focus {
+  outline: 2px solid var(--secondary-light);
+  outline-offset: 2px;
+}
+
+.accordion-content {
+  display: block;
+  padding: 1.5rem;
+  background-color: var(--white);
+  font-size: 1rem;
+  color: var(--dark-gray);
   max-height: 0;
   overflow: hidden;
-  padding: 0 1.5rem;
-  background: var(--white);
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.3s ease;
 }
 
-.program-details.active {
-  max-height: 500px; /* Adjust based on content */
-  padding: 1.5rem;
-}
-
-.program-details p {
-  margin-bottom: 1rem;
+.accordion-content.active {
+  display: block;
 }
 
 /* Case Studies Section */
@@ -222,7 +246,9 @@ body {
 
 .case-studies h2 {
   color: var(--white);
-  border-bottom-color: var(--secondary-light);
+  border-bottom: 2px solid var(--secondary-light);
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .case-container {
@@ -247,10 +273,10 @@ body {
 }
 
 .case-card h3 {
-  font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-weight: 600;
   color: var(--secondary-light);
+  margin-bottom: 1rem;
 }
 
 .case-card p {
@@ -268,7 +294,7 @@ body {
   }
 
   .healthcare-hero p {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .healthcare-content {
@@ -286,23 +312,24 @@ body {
   }
 
   .healthcare-content h2 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+  }
+
+  .accordion-button {
+    font-size: 1.125rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .accordion-content {
+    padding: 1.25rem;
   }
 
   .impact-stats {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
-  .stat-card {
-    padding: 1.5rem;
-  }
-
   .stat-number {
     font-size: 2rem;
-  }
-
-  .case-studies {
-    padding: 3rem 1rem;
   }
 }
 
@@ -312,11 +339,11 @@ body {
   }
 
   .healthcare-hero h1 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .healthcare-hero p {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 
   .healthcare-content {
@@ -327,108 +354,16 @@ body {
     font-size: 1.5rem;
   }
 
-  .image-placeholder {
-    height: 200px;
+  .accordion-button {
     font-size: 1rem;
+    padding: 0.875rem 1rem;
   }
 
-  .program-header h3 {
-    font-size: 1.1rem;
-  }
-
-  .program-details.active {
+  .accordion-content {
     padding: 1rem;
   }
 
-  .case-studies {
-    padding: 2rem 1rem;
-  }
-
   .case-card h3 {
-    font-size: 1.3rem;
-  }
-}
-
-/* Accordion Styling */
-.accordion {
-  max-width: 800px; /* Adjust as needed */
-  margin: 0 auto; /* Center the accordion */
-}
-
-.accordion-item {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.accordion-button {
-  width: 100%;
-  text-align: left;
-  padding: 15px;
-  background-color: #f5f5f5;
-  border: none;
-  font-size: 1.2em;
-  font-family: 'Poppins', sans-serif;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s ease;
-}
-
-.accordion-button:hover {
-  background-color: #e0e0e0;
-}
-
-.accordion-button.active {
-  background-color: #d3d3d3;
-}
-
-.accordion-button::after {
-  content: '▼';
-  float: right;
-  transition: transform 0.3s ease;
-}
-
-.accordion-button.active::after {
-  transform: rotate(180deg);
-}
-
-.accordion-content {
-  display: none;
-  padding: 15px;
-  background-color: #fff;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.6;
-}
-
-.accordion-content.active {
-  display: block;
-}
-
-/* Ensure content section is centered and readable */
-.healthcare-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.healthcare-content h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-family: 'Poppins', sans-serif;
-}
-
-.healthcare-content p {
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .accordion-button {
-      font-size: 1em;
-      padding: 10px;
-  }
-  .accordion-content {
-      padding: 10px;
+    font-size: 1.25rem;
   }
 }

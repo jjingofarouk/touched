@@ -10,19 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/home.css">
-<link rel="stylesheet" href="./assets/css/healthcare.css"> 
-  
+    <link rel="stylesheet" href="./assets/css/healthcare.css">
+    <!-- Add Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/REPLACE_WITH_YOUR_KIT_ID.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Navigation -->
-
     <header>
         <nav class="nav">
             <div class="nav-container">
                 <a href="index.html" class="nav-logo">
                     <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
                 </a>
-                <button class="nav-toggle" aria-label="Toggle navigation">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -57,79 +57,86 @@
 
     <!-- Hero Section -->
     <section class="healthcare-hero">
-        <h1>Healthcare for All Communities</h1>
-        <p>At Touched Hearts, we believe quality healthcare is a basic human right. Our initiatives bring vital medical services, preventive care, and health education to underserved communities throughout Uganda.</p>
+        <div class="hero-content">
+            <h1>Healthcare for All Communities</h1>
+            <p>At Touched Hearts, we believe quality healthcare is a basic human right. Our initiatives bring vital medical services, preventive care, and health education to underserved communities throughout Uganda.</p>
+        </div>
     </section>
 
-<!-- Main Content -->
-<section class="healthcare-content">
-    <h2>Our Healthcare Mission</h2>
-    <p>Since 2010, Touched Hearts has been committed to addressing the healthcare challenges facing vulnerable communities across Uganda. With limited access to medical facilities, inadequate resources, and preventable diseases causing significant suffering, we've implemented comprehensive healthcare programs that bring vital services directly to those in need.</p>
-    <p>Working alongside local health professionals, government health departments, and international partners, we deliver sustainable healthcare solutions that create lasting impact. Our holistic approach combines immediate medical care with preventive education and community empowerment.</p>
-    
-    <img src="./assets/images/clinic.png" alt="Mobile clinic in rural Karamoja" class="image-placeholder">
+    <!-- Main Content -->
+    <main class="healthcare-content">
+        <section>
+            <h2>Our Healthcare Mission</h2>
+            <p>Since 2010, Touched Hearts has been committed to addressing the healthcare challenges facing vulnerable communities across Uganda. With limited access to medical facilities, inadequate resources, and preventable diseases causing significant suffering, we've implemented comprehensive healthcare programs that bring vital services directly to those in need.</p>
+            <p>Working alongside local health professionals, government health departments, and international partners, we deliver sustainable healthcare solutions that create lasting impact. Our holistic approach combines immediate medical care with preventive education and community empowerment.</p>
+            <img src="./assets/images/clinic.png" alt="Mobile clinic in rural Karamoja" class="image-placeholder">
+        </section>
 
-    <!-- Impact Stats (unchanged) -->
-    <h2>Our Impact</h2>
-    <div class="impact-stats">
-        <div class="stat-card">
-            <div class="stat-number">5,000+</div>
-            <div class="stat-label">Patients Treated (2024)</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">4</div>
-            <div class="stat-label">Rural Communities Served</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">45%</div>
-            <div class="stat-label">Vaccination Rate Achieved</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">150</div>
-            <div class="stat-label">Safe Births Facilitated</div>
-        </div>
-    </div>
+        <!-- Impact Stats -->
+        <section>
+            <h2>Our Impact</h2>
+            <div class="impact-stats">
+                <div class="stat-card">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Patients Treated (2024)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Rural Communities Served</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">45%</div>
+                    <div class="stat-label">Vaccination Rate Achieved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">150</div>
+                    <div class="stat-label">Safe Births Facilitated</div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Programs Accordion -->
-    <h2>Our Healthcare Programs</h2>
-    <div class="accordion">
-        <div class="accordion-item">
-            <button class="accordion-button">Mobile Medical Outreach</button>
-            <div class="accordion-content">
-                <p>Our fleet of mobile clinics travels to remote areas across Uganda, bringing primary healthcare services to communities with limited access to medical facilities. Each mobile unit is staffed with doctors, nurses, and community health workers who provide consultations, basic treatments, and medication.</p>
-                <p>In 2024, our mobile clinics conducted outreaches in Karamoja, reaching over 12,000 patients across 15 villages. These visits included general medical check-ups, dental care, eye examinations, and treatment for common illnesses such as malaria, respiratory infections, and diarrheal diseases.</p>
+        <!-- Programs Accordion -->
+        <section>
+            <h2>Our Healthcare Programs</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false">Mobile Medical Outreach</button>
+                    <div class="accordion-content">
+                        <p>Our fleet of mobile clinics travels to remote areas across Uganda, bringing primary healthcare services to communities with limited access to medical facilities. Each mobile unit is staffed with doctors, nurses, and community health workers who provide consultations, basic treatments, and medication.</p>
+                        <p>In 2024, our mobile clinics conducted outreaches in Karamoja, reaching over 12,000 patients across 15 villages. These visits included general medical check-ups, dental care, eye examinations, and treatment for common illnesses such as malaria, respiratory infections, and diarrheal diseases.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false">Maternal and Child Health</button>
+                    <div class="accordion-content">
+                        <p>Our maternal health initiative provides comprehensive care for pregnant women and newborns. We support safe births by training traditional birth attendants, providing birthing kits, and offering transportation to health facilities for complicated deliveries.</p>
+                        <p>In Mubende District, we worked with local midwives to establish a maternal waiting home where high-risk mothers can stay near the health center before delivery. This program has reduced maternal mortality in the region by 45% since its inception in 2022, and facilitated over 1,200 safe deliveries last year alone.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false">Disease Prevention and Vaccination</button>
+                    <div class="accordion-content">
+                        <p>We conduct vaccination campaigns targeting preventable diseases like measles, polio, and tetanus. Our growing community of health workers go door-to-door to ensure all children receive their essential immunizations, while also distributing mosquito nets to prevent malaria.</p>
+                        <p>In 2023-2024, our vaccination drive in Katete parish reached over 100 children, achieving a 65% immunization rate. We also distributed 1,000 insecticide-treated mosquito nets to families with children under five and pregnant women, hoping for a 60% reduction in reported malaria cases.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false">Health Education and Training</button>
+                    <div class="accordion-content">
+                        <p>Knowledge is power in disease prevention. We train community health workers and conduct public health education campaigns on nutrition, hygiene, family planning, and disease prevention.</p>
+                        <p>Our "Healthy Villages" initiative in Mbarara District trains local volunteers to become health educators within their communities. These volunteers hold regular sessions on handwashing, safe water handling, balanced diets, and early disease recognition. In 2024, we trained 20 community health workers who now serve as the first point of contact for health information in their villages.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false">HIV/AIDS Support and Testing</button>
+                    <div class="accordion-content">
+                        <p>Our HIV/AIDS program provides confidential testing, counseling, and support groups for affected individuals. We partner with local clinics to ensure access to antiretroviral therapy and work to reduce stigma through community education.</p>
+                        <p>In Kampala's informal settlements, our mobile testing units provided HIV screening to over 500 individuals in 2024. For those testing positive, we established support networks and ensured linkage to care, with a 70% retention rate in treatment programs.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <button class="accordion-button">Maternal and Child Health</button>
-            <div class="accordion-content">
-                <p>Our maternal health initiative provides comprehensive care for pregnant women and newborns. We support safe births by training traditional birth attendants, providing birthing kits, and offering transportation to health facilities for complicated deliveries.</p>
-                <p>In Mubende District, we worked with local midwives to establish a maternal waiting home where high-risk mothers can stay near the health center before delivery. This program has reduced maternal mortality in the region by 45% since its inception in 2022, and facilitated over 1,200 safe deliveries last year alone.</p>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <button class="accordion-button">Disease Prevention and Vaccination</button>
-            <div class="accordion-content">
-                <p>We conduct vaccination campaigns targeting preventable diseases like measles, polio, and tetanus. Our growing community of health workers go door-to-door to ensure all children receive their essential immunizations, while also distributing mosquito nets to prevent malaria.</p>
-                <p>In 2023-2024, our vaccination drive in Katete parish reached over 100 children, achieving a 65% immunization rate. We also distributed 1,000 insecticide-treated mosquito nets to families with children under five and pregnant women, hoping for a 60% reduction in reported malaria cases.</p>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <button class="accordion-button">Health Education and Training</button>
-            <div class="accordion-content">
-                <p>Knowledge is power in disease prevention. We train community health workers and conduct public health education campaigns on nutrition, hygiene, family planning, and disease prevention.</p>
-                <p>Our "Healthy Villages" initiative in Mbarara District trains local volunteers to become health educators within their communities. These volunteers hold regular sessions on handwashing, safe water handling, balanced diets, and early disease recognition. In 2024, we trained 20 community health workers who now serve as the first point of contact for health information in their villages.</p>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <button class="accordion-button">HIV/AIDS Support and Testing</button>
-            <div class="accordion-content">
-                <p>Our HIV/AIDS program provides confidential testing, counseling, and support groups for affected individuals. We partner with local clinics to ensure access to antiretroviral therapy and work to reduce stigma through community education.</p>
-                <p>In Kampala's informal settlements, our mobile testing units provided HIV screening to over 500 individuals in 2024. For those testing positive, we established support networks and ensured linkage to care, with a 70% retention rate in treatment programs.</p>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+    </main>
 
     <!-- Case Studies -->
     <section class="case-studies">
@@ -138,17 +145,17 @@
             <div class="case-card">
                 <h3>Maria Namukasa - Mubende</h3>
                 <p>Maria was pregnant with her third child when complications developed. Thanks to our first maternal waiting home, she received timely care during a difficult delivery. Today, both Maria and her baby boy are healthy.</p>
-                <img src="./assets/images/maria.png" alt="Maria with her healthy baby" class="image-placeholder">            </div>
+                <img src="./assets/images/maria.png" alt="Maria with her healthy baby" class="image-placeholder">
+            </div>
             <div class="case-card">
                 <h3>Brenda Ochieng - Soroti</h3>
-                <p>Sixteen-year-year-old Brenda suffered from recurring malaria until her family received insecticide-treated nets through our program. Now malaria-free for over six months, she's thriving in school and her parents have become active participants in our community health education sessions.</p>
-                <img src="./assets/images/mosquito-net.png" alt="Brenda with her mosquito net" class="image-placeholder">            </div>
-
+                <p>Sixteen-year-old Brenda suffered from recurring malaria until her family received insecticide-treated nets through our program. Now malaria-free for over six months, she's thriving in school and her parents have become active participants in our community health education sessions.</p>
+                <img src="./assets/images/mosquito-net.png" alt="Brenda with her mosquito net" class="image-placeholder">
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-   
     <footer class="footer" role="contentinfo">
         <div class="footer-container">
             <div class="footer-column">
@@ -157,21 +164,11 @@
                 </a>
                 <p class="footer-tagline">Transforming lives with compassion and hope</p>
                 <div class="social-links">
-                    <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://linkedin.com/company/touchedhearts" aria-label="LinkedIn" class="social-link">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://youtube.com/touchedhearts" aria-label="YouTube" class="social-link">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                    <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/touchedhearts" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://youtube.com/touchedhearts" aria-label="YouTube" class="social-link"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-column">
@@ -202,11 +199,10 @@
                     <p><i class="fas fa-phone"></i> +256 700 834 733</p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:touchedheartsug12@gmail.com">touchedheartsug12@gmail.com</a></p>
                 </address>
-
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="copyright">&copy; 2025 Touched Hearts. All rights reserved.</p>
+            <p class="copyright">© 2025 Touched Hearts. All rights reserved.</p>
             <ul class="legal-links">
                 <li><a href="privacy.html" class="legal-link">Privacy Policy</a></li>
                 <li><a href="terms.html" class="legal-link">Terms of Service</a></li>
@@ -215,12 +211,12 @@
         </div>
     </footer>
 
-
     <!-- JavaScript -->
-   
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/footer.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Navbar Toggle (unchanged)
+            // Navbar Toggle
             const navToggle = document.querySelector('.nav-toggle');
             const navMenu = document.querySelector('.nav-menu');
             navToggle.addEventListener('click', () => {
@@ -229,26 +225,40 @@
                 navToggle.setAttribute('aria-expanded', !isExpanded);
             });
 
-            // Accordion Functionality (Updated)
+            // Accordion Functionality with Smooth Animation
             const accordionButtons = document.querySelectorAll('.accordion-button');
             accordionButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const content = button.nextElementSibling;
                     const isActive = content.classList.contains('active');
+                    
                     // Close all other accordions
                     accordionButtons.forEach(btn => {
-                        btn.nextElementSibling.classList.remove('active');
-                        btn.classList.remove('active');
+                        const otherContent = btn.nextElementSibling;
+                        if (btn !== button && otherContent.classList.contains('active')) {
+                            otherContent.style.maxHeight = null;
+                            otherContent.classList.remove('active');
+                            btn.classList.remove('active');
+                            btn.setAttribute('aria-expanded', 'false');
+                        }
                     });
-                    // Toggle the clicked one
-                    if (!isActive) {
+
+                    // Toggle the clicked accordion
+                    if (isActive) {
+                        content.style.maxHeight = null;
+                        content.classList.remove('active');
+                        button.classList.remove('active');
+                        button.setAttribute('aria-expanded', 'false');
+                    } else {
                         content.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + 'px';
                         button.classList.add('active');
+                        button.setAttribute('aria-expanded', 'true');
                     }
                 });
             });
 
-            // Scroll Animation (unchanged)
+            // Scroll Animation with Intersection Observer
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -258,7 +268,7 @@
                 });
             }, { threshold: 0.2 });
 
-            document.querySelectorAll('.program-item, .case-card, .stat-card').forEach(item => {
+            document.querySelectorAll('.stat-card, .case-card, .accordion-item').forEach(item => {
                 item.style.opacity = '0';
                 item.style.transform = 'translateY(20px)';
                 item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -271,7 +281,5 @@
             });
         });
     </script>
-        <script src="./assets/js/main.js"></script>
-        <script src="./assets/js/footer.js"></script>
 </body>
 </html>
