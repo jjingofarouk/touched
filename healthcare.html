@@ -10,8 +10,244 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/home.css">
-<link rel="stylesheet" href="./assets/css/healthcare.css"> 
-  
+
+   <style>
+        /* Embedded Modern CSS */
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+
+        /* Main Content */
+        .healthcare-hero {
+            background: linear-gradient(135deg, #d4e6fd 0%, #b6ddff 100%);
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .healthcare-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+            animation: pulse 15s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.2; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        .healthcare-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .healthcare-hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Healthcare Content */
+        .healthcare-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .healthcare-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.5rem;
+        }
+
+        .healthcare-content p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: #ddd;
+            border-radius: 10px;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+        }
+
+        /* Programs Accordion */
+        .programs-list {
+            margin: 2rem 0;
+        }
+
+        .program-item {
+            border-bottom: 1px solid #eee;
+        }
+
+        .program-header {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .program-header:hover {
+            background: #f0f4ff;
+        }
+
+        .program-header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            color: #2a5298;
+        }
+
+        .program-header .toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .program-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .program-details {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1.5rem;
+            background: #fff;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .program-details.active {
+            max-height: 500px; /* Adjust based on content */
+            padding: 1.5rem;
+        }
+
+        .program-details p {
+            margin-bottom: 1rem;
+        }
+
+        /* Impact Stats */
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            padding: 4rem 2rem;
+        }
+
+        .case-studies h2 {
+            color: #fff;
+            border-bottom-color: #fff;
+        }
+
+        .case-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .case-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .case-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+    
+        @media (max-width: 480px) {
+            .healthcare-content {
+                padding: 2rem 1rem;
+            }
+
+            .healthcare-hero {
+                padding: 2rem 1rem;
+            }
+
+            .case-studies {
+                padding: 2rem 1rem;
+            }
+
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -64,27 +300,28 @@
     <!-- Main Content -->
     <section class="healthcare-content">
         <h2>Our Healthcare Mission</h2>
-        <p>Since 2021, Touched Hearts has been committed to addressing the healthcare challenges facing vulnerable communities across Uganda. With limited access to medical facilities, inadequate resources, and preventable diseases causing significant suffering, we've implemented comprehensive healthcare programs that bring vital services directly to those in need.</p>
+        <p>Since 2010, Touched Hearts has been committed to addressing the healthcare challenges facing vulnerable communities across Uganda. With limited access to medical facilities, inadequate resources, and preventable diseases causing significant suffering, we've implemented comprehensive healthcare programs that bring vital services directly to those in need.</p>
         <p>Working alongside local health professionals, government health departments, and international partners, we deliver sustainable healthcare solutions that create lasting impact. Our holistic approach combines immediate medical care with preventive education and community empowerment.</p>
         
-        <img src="./assets/images/clinic.png" alt="Mobile clinic in rural Karamoja" class="image-placeholder">
+        <div class="image-placeholder">Image: [Mobile clinic in rural Karamoja]</div>
+
         <!-- Impact Stats -->
         <h2>Our Impact</h2>
         <div class="impact-stats">
             <div class="stat-card">
-                <div class="stat-number">5,000+</div>
+                <div class="stat-number">25,000+</div>
                 <div class="stat-label">Patients Treated (2024)</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">4</div>
+                <div class="stat-number">42</div>
                 <div class="stat-label">Rural Communities Served</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">45%</div>
+                <div class="stat-number">95%</div>
                 <div class="stat-label">Vaccination Rate Achieved</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">150</div>
+                <div class="stat-number">4,500</div>
                 <div class="stat-label">Safe Births Facilitated</div>
             </div>
         </div>
@@ -118,8 +355,8 @@
                     <span class="toggle-icon">▼</span>
                 </div>
                 <div class="program-details">
-                    <p>We conduct vaccination campaigns targeting preventable diseases like measles, polio, and tetanus. Our growing community of health workers go door-to-door to ensure all children receive their essential immunizations, while also distributing mosquito nets to prevent malaria.</p>
-                    <p>In 2023-2024, our vaccination drive in Katete parish reached over 100 children, achieving a 65% immunization rate. We also distributed 1,000 insecticide-treated mosquito nets to families with children under five and pregnant women, hoping for a 60% reduction in reported malaria cases.</p>
+                    <p>We conduct comprehensive vaccination campaigns targeting preventable diseases like measles, polio, and tetanus. Our community health workers go door-to-door to ensure all children receive their essential immunizations, while also distributing mosquito nets to prevent malaria.</p>
+                    <p>In 2023-2024, our vaccination drive in Soroti District reached over 8,000 children, achieving a 95% immunization rate. Additionally, we distributed 15,000 insecticide-treated mosquito nets to families with children under five and pregnant women, resulting in a 60% reduction in reported malaria cases.</p>
                 </div>
             </div>
             <div class="program-item">
@@ -129,7 +366,7 @@
                 </div>
                 <div class="program-details">
                     <p>Knowledge is power in disease prevention. We train community health workers and conduct public health education campaigns on nutrition, hygiene, family planning, and disease prevention.</p>
-                    <p>Our "Healthy Villages" initiative in Mbarara District trains local volunteers to become health educators within their communities. These volunteers hold regular sessions on handwashing, safe water handling, balanced diets, and early disease recognition. In 2024, we trained 20 community health workers who now serve as the first point of contact for health information in their villages.</p>
+                    <p>Our "Healthy Villages" initiative in Jinja District trains local volunteers to become health educators within their communities. These volunteers hold regular sessions on handwashing, safe water handling, balanced diets, and early disease recognition. In 2024, we trained 120 community health workers who now serve as the first point of contact for health information in their villages.</p>
                 </div>
             </div>
             <div class="program-item">
@@ -139,7 +376,7 @@
                 </div>
                 <div class="program-details">
                     <p>Our HIV/AIDS program provides confidential testing, counseling, and support groups for affected individuals. We partner with local clinics to ensure access to antiretroviral therapy and work to reduce stigma through community education.</p>
-                    <p>In Kampala's informal settlements, our mobile testing units provided HIV screening to over 500 individuals in 2024. For those testing positive, we established support networks and ensured linkage to care, with a 70% retention rate in treatment programs.</p>
+                    <p>In Kampala's informal settlements, our mobile testing units provided HIV screening to over 5,000 individuals in 2024. For those testing positive, we established support networks and ensured linkage to care, with a 90% retention rate in treatment programs.</p>
                 </div>
             </div>
         </div>
@@ -151,13 +388,19 @@
         <div class="case-container">
             <div class="case-card">
                 <h3>Maria Namukasa - Mubende</h3>
-                <p>Maria was pregnant with her third child when complications developed. Thanks to our first maternal waiting home, she received timely care during a difficult delivery. Today, both Maria and her baby boy are healthy.</p>
-                <img src="./assets/images/maria.png" alt="Maria with her healthy baby" class="image-placeholder">            </div>
+                <p>Maria was pregnant with her third child when complications developed. Thanks to our maternal waiting home, she received timely care during a difficult delivery. Today, both Maria and her baby boy are healthy, and she volunteers as a maternal health advocate in her community.</p>
+                <div class="image-placeholder">Image: [Maria with her healthy baby]</div>
+            </div>
             <div class="case-card">
-                <h3>Brenda Ochieng - Soroti</h3>
-                <p>Sixteen-year-year-old Brenda suffered from recurring malaria until her family received insecticide-treated nets through our program. Now malaria-free for over six months, she's thriving in school and her parents have become active participants in our community health education sessions.</p>
-                <img src="./assets/images/mosquito-net.png" alt="Brenda with her mosquito net" class="image-placeholder">            </div>
-
+                <h3>Karim Ochieng - Soroti</h3>
+                <p>Six-year-old Karim suffered from recurring malaria until his family received insecticide-treated nets through our program. Now malaria-free for over a year, he's thriving in school and his parents have become active participants in our community health education sessions.</p>
+                <div class="image-placeholder">Image: [Karim with his mosquito net]</div>
+            </div>
+            <div class="case-card">
+                <h3>Village of Nakaseke</h3>
+                <p>Before our intervention, Nakaseke village had no access to clean water, leading to frequent cholera outbreaks. Through our WASH (Water, Sanitation, and Hygiene) program, we installed water filters, built latrines, and educated residents on hygiene practices. The village has reported zero cholera cases in the past two years.</p>
+                <div class="image-placeholder">Image: [Community water point in Nakaseke]</div>
+            </div>
         </div>
     </section>
 
@@ -213,7 +456,7 @@
                 <h3 class="footer-heading">Contact Us</h3>
                 <address class="contact-info">
                     <p><i class="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
-                    <p><i class="fas fa-phone"></i> +256 700 834 733</p>
+                    <p><i class="fas fa-phone"></i> +256 712 345 678</p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:touchedheartsug12@gmail.com">touchedheartsug12@gmail.com</a></p>
                 </address>
 
@@ -236,8 +479,54 @@
 
     <!-- Embedded JavaScript -->
     <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script> <!-- Replace with your Font Awesome Kit ID -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar Toggle
+            const navbarToggle = document.querySelector('.navbar-toggle');
+            const navbarMenu = document.querySelector('.navbar-menu');
+            navbarToggle.addEventListener('click', () => {
+                navbarMenu.classList.toggle('active');
+                const isExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+                navbarToggle.setAttribute('aria-expanded', !isExpanded);
+            });
 
-        <script src="./assets/js/main.js"></script>
-        <script src="./assets/js/footer.js"></script>
+            // Accordion Functionality
+            const programHeaders = document.querySelectorAll('.program-header');
+            programHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const details = header.nextElementSibling;
+                    const isActive = details.classList.contains('active');
+                    programHeaders.forEach(h => h.nextElementSibling.classList.remove('active'));
+                    programHeaders.forEach(h => h.classList.remove('active'));
+                    if (!isActive) {
+                        details.classList.add('active');
+                        header.classList.add('active');
+                    }
+                });
+            });
+
+            // Scroll Animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.program-item, .case-card, .stat-card').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(item);
+            });
+
+            document.querySelectorAll('.show').forEach(item => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
