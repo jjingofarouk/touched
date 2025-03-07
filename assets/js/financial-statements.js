@@ -1,122 +1,93 @@
 // assets/js/financial-statements.js
-document.addEventListener('DOMContentLoaded', async () => {
-    // Fetch dummy data (replace with real API in production)
-    const response = await fetch('./assets/data/financial-data.json');
-    const data = await response.json();
-    const financials = data.financials;
+document.addEventListener('DOMContentLoaded', () => {
+  // Sample financial data
+  const financialData = [
+    { year: 2024, revenue: 50000000, expenses: 42000000, netIncome: 8000000 },
+    { year: 2023, revenue: 45000000, expenses: 40000000, netIncome: 5000000 },
+    { year: 2022, revenue: 40000000, expenses: 38000000, netIncome: 2000000 },
+  ];
 
-    const tableBody = document.getElementById('financialTableBody');
-    const yearFilter = document.getElementById('yearFilter');
-    const downloadBtn = document.getElementById('downloadBtn');
-    const ctx = document.getElementById('financialChart').getContext('2d');
+  // Populate year filter
+  const yearFilter = document.getElementById('yearFilter');
+  financialData.forEach(data => {
+    const option = document.createElement('option');
+    option.value = data.year;
+    option.textContent = data.year;
+    yearFilter.appendChild(option);
+  });
 
-    // Format UGX currency
-    const formatUGX = (amount) => {
-        return new Intl.NumberFormat('en-UG', { style: 'currency', currency: 'UGX' }).format(amount);
-    };
+  // Populate table
+  const tableBody = document.getElementById('financialTableBody');
+  const formatNumber = (num) => num.toLocaleString('en-UG', { style: 'currency', currency: 'UGX' });
 
-    // Populate year filter
-    financials.forEach(f => {
-        const option = document.createElement('option');
-        option.value = f.year;
-        option.textContent = f.year;
-        yearFilter.appendChild(option);
+  function updateTable(data) {
+    tableBody.innerHTML = '';
+    data.forEach(row => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${row.year}</td>
+        <td>${formatNumber(row.revenue)}</td>
+        <td>${formatNumber(row.expenses)}</td>
+        <td>${formatNumber(row.netIncome)}</td>
+      `;
+      tableBody.appendChild(tr);
     });
+  }
 
-    // Render table
-    function renderTable(year = 'all') {
-        tableBody.innerHTML = '';
-        const filteredFinancials = year === 'all' ? financials : financials.filter(f => f.year === parseInt(year));
-        
-        filteredFinancials.forEach((f, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${f.year}</td>
-                <td>${formatUGX(f.revenue)}</td>
-                <td>${formatUGX(f.expenses)}</td>
-                <td>${formatUGX(f.netIncome)}</td>
-            `;
-            row.style.opacity = '0';
-            tableBody.appendChild(row);
-            setTimeout(() => row.style.opacity = '1', index * 100); // Fade-in animation
-        });
-    }
+  updateTable(financialData);
 
-    // Chart.js visualization
-    const financialChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: financials.map(f => f.year),
-            datasets: [
-                {
-                    label: 'Revenue (UGX)',
-                    data: financials.map(f => f.revenue / 1000000), // In millions for scaling
-                    borderColor: '#36A2EB',
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    fill: true,
-                    tension: 0.4
-                },
-                {
-                    label: 'Expenses (UGX)',
-                    data: financials.map(f => f.expenses / 1000000), // In millions
-                    borderColor: '#FF6384',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    fill: true,
-                    tension: 0.4
-                },
-                {
-                    label: 'Net Income (UGX)',
-                    data: financials.map(f => f.netIncome / 1000000), // In millions
-                    borderColor: '#4BC0C0',
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    fill: true,
-                    tension: 0.4
-                }
-            ]
+  // Filter table by year
+  yearFilter.addEventListener('change', () => {
+    const selectedYear = yearFilter.value;
+    const filteredData = selectedYear === 'all' 
+      ? financialData 
+      : financialData.filter(data => data.year == selectedYear);
+    updateTable(filteredData);
+    updateChart(filteredData);
+  });
+
+  // Chart.js setup
+  const ctx = document.getElementById('financialChart').getContext('2d');
+  let chart;
+
+  function updateChart(data) {
+    if (chart) chart.destroy(); // Destroy previous chart instance
+    chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: data.map(d => d.year),
+        datasets: [
+          {
+            label: 'Revenue (UGX)',
+            data: data.map(d => d.revenue),
+            backgroundColor: 'var(--primary-color)',
+          },
+          {
+            label: 'Expenses (UGX)',
+            data: data.map(d => d.expenses),
+            backgroundColor: 'var(--secondary-color)',
+          },
+          {
+            label: 'Net Income (UGX)',
+            data: data.map(d => d.netIncome),
+            backgroundColor: 'var(--success)',
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true, ticks: { callback: (value) => value.toLocaleString('en-UG') } },
         },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: { display: true, text: 'Amount (Millions UGX)' }
-                },
-                x: { title: { display: true, text: 'Year' } }
-            },
-            plugins: {
-                legend: { position: 'top' },
-                title: { display: true, text: 'Financial Overview', font: { size: 20 } }
-            }
-        }
+      },
     });
+  }
 
-    // Filter event listener
-    yearFilter.addEventListener('change', (e) => {
-        renderTable(e.target.value);
-    });
+  updateChart(financialData);
 
-    // Download button (simulated PDF download)
-    downloadBtn.addEventListener('click', () => {
-        const selectedYear = yearFilter.value;
-        const file = selectedYear === 'all' ? './assets/financials/all-years-summary.pdf' : financials.find(f => f.year === parseInt(selectedYear)).pdf;
-        const a = document.createElement('a');
-        a.href = file;
-        a.download = `TouchedHearts_Financial_${selectedYear === 'all' ? 'AllYears' : selectedYear}.pdf`;
-        a.click();
-    });
-
-    // Initial render
-    renderTable();
-
-    // Animation on scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.financial-table, .financial-chart').forEach(el => observer.observe(el));
+  // Download button (placeholder functionality)
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    alert('Download functionality to be implemented (e.g., generate PDF)');
+    // Future: Use a library like jsPDF to generate a PDF
+  });
 });
