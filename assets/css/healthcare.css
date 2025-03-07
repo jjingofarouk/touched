@@ -1,29 +1,4 @@
-/* assets/css/healthcare.css */
-:root {
-  /* Primary color palette - Warm Teal/Sage */
-  --primary-color: #3a8f85;   /* Sophisticated teal */
-  --primary-dark: #2c7269;    /* Deeper teal for emphasis */
-  --primary-light: #8cc5bf;   /* Softer teal for accents */
-  --secondary-color: #d68c45; /* Warm terracotta orange */
-  --secondary-dark: #b87339;  /* Deeper terracotta */
-  --secondary-light: #e9b384; /* Soft peach accent */
-  
-  /* Neutral colors - Warmer and organic */
-  --dark: #2d3a3a;            /* Charcoal with hint of teal */
-  --dark-gray: #4d5c5c;       /* Warmer dark gray */
-  --medium-gray: #7e8c8c;     /* Sophisticated medium gray */
-  --light-gray: #d2d8d8;      /* Warmer light gray */
-  --off-white: #f8f7f5;       /* Cream off-white */
-  --white: #ffffff;
-  
-  /* Accent colors */
-  --success: #739e73;         /* Sage green */
-  --warning: #e6b86a;         /* Subdued gold */
-  --error: #c17b7b;           /* Muted brick red */
-  --info: #6a91ab;            /* Subtle blue */
-}
-
-/* Reset and Base Styles */
+/* Reset and Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -32,101 +7,168 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: var(--off-white);
-  color: var(--dark);
   line-height: 1.6;
-  font-size: 16px; /* Consistent base size */
+  color: #333;
+  background-color: #f9f9f9;
 }
 
-/* Typography Base */
+/* Typography */
 h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
-  color: var(--primary-dark);
+  font-weight: 600;
 }
 
-p {
-  font-family: 'Open Sans', sans-serif;
-  color: var(--dark-gray);
-  margin-bottom: 1.25rem; /* Consistent spacing */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-/* Healthcare Hero Section */
-.healthcare-hero {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-  text-align: center;
-  padding: 4rem 2rem;
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Navigation */
+header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+
+.nav-menu li {
   position: relative;
-  overflow: hidden;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #2c3e50;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #e74c3c;
+}
+
+.nav-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  min-width: 150px;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li a {
+  padding: 0.5rem 1rem;
+  display: block;
+  color: #2c3e50;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f1f1f1;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #2c3e50;
+  margin: 5px 0;
+  transition: all 0.3s;
+}
+
+/* Hero Section */
+.healthcare-hero {
+  background: url('./assets/images/healthcare-hero.jpg') no-repeat center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
 }
 
 .healthcare-hero::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
-  animation: pulse 15s infinite;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.2); opacity: 0.2; }
-  100% { transform: scale(1); opacity: 0.5; }
-}
-
-.healthcare-hero h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 1.25rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.hero-content {
   position: relative;
-  z-index: 1;
-}
-
-.healthcare-hero p {
-  font-size: 1.125rem;
-  color: var(--off-white);
   max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-  opacity: 0.9;
+  padding: 2rem;
 }
 
-/* Healthcare Content Section */
+.hero-content p {
+  font-size: 1.2rem;
+}
+
+/* Main Content */
 .healthcare-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 3rem 1rem;
 }
 
-.healthcare-content h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--primary-dark);
-  margin-bottom: 1.5rem;
-  text-align: center;
-  border-bottom: 2px solid var(--primary-light);
-  padding-bottom: 0.5rem;
+.healthcare-content section {
+  margin-bottom: 4rem;
 }
 
-.healthcare-content p {
-  font-size: 1rem;
-}
-
-/* Image Placeholder */
 .image-placeholder {
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   height: auto;
-  border-radius: 10px;
-  margin: 2rem auto;
+  margin: 1rem auto;
   display: block;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 /* Impact Stats */
@@ -134,236 +176,257 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-  margin: 3rem 0;
+  padding: 2rem 0;
 }
 
 .stat-card {
-  background: var(--white);
-  border-radius: 10px;
+  background-color: #fff;
   padding: 2rem;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* For animation */
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+.stat-card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .stat-number {
   font-size: 2.5rem;
-  font-weight: 600;
-  color: var(--secondary-color);
-  margin-bottom: 0.75rem;
+  color: #e74c3c;
+  font-weight: bold;
 }
 
 .stat-label {
   font-size: 1rem;
-  color: var(--medium-gray);
+  color: #7f8c8d;
 }
 
-/* Accordion Styling */
+/* Accordion */
 .accordion {
-  max-width: 900px; /* Slightly wider for readability */
-  margin: 2rem auto;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .accordion-item {
   margin-bottom: 1rem;
-  border: 1px solid var(--light-gray);
-  border-radius: 8px;
-  overflow: hidden; /* Cleaner edges */
-  background: var(--white);
+  opacity: 0; /* For animation */
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.accordion-item.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .accordion-button {
   width: 100%;
-  text-align: left;
-  padding: 1.25rem 1.5rem;
-  background-color: var(--off-white);
+  padding: 1rem;
+  background-color: #2c3e50;
+  color: #fff;
   border: none;
-  font-size: 1.25rem;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  color: var(--primary-dark);
+  text-align: left;
+  font-size: 1.1rem;
   cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  position: relative;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
-.accordion-button:hover {
-  background-color: var(--primary-light);
-  color: var(--primary-dark);
-}
-
-.accordion-button.active {
-  background-color: var(--primary-color);
-  color: var(--white);
-}
-
-.accordion-button::after {
-  content: '▼';
-  position: absolute;
-  right: 1.5rem;
-  font-size: 1rem;
-  color: var(--secondary-color);
-  transition: transform 0.3s ease;
-}
-
-.accordion-button.active::after {
-  transform: rotate(180deg);
-  color: var(--white);
-}
-
-.accordion-button:focus {
-  outline: 2px solid var(--secondary-light);
-  outline-offset: 2px;
+.accordion-button:hover, .accordion-button.active {
+  background-color: #e74c3c;
 }
 
 .accordion-content {
-  display: block;
-  padding: 1.5rem;
-  background-color: var(--white);
-  font-size: 1rem;
-  color: var(--dark-gray);
   max-height: 0;
   overflow: hidden;
+  background-color: #fff;
+  padding: 0 1rem;
+  border-radius: 0 0 4px 4px;
   transition: max-height 0.3s ease;
 }
 
 .accordion-content.active {
-  display: block;
+  padding: 1rem;
 }
 
-/* Case Studies Section */
+/* Case Studies */
 .case-studies {
-  background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
-  color: var(--white);
-  padding: 4rem 2rem;
-}
-
-.case-studies h2 {
-  color: var(--white);
-  border-bottom: 2px solid var(--secondary-light);
-  margin-bottom: 2rem;
-  text-align: center;
+  background-color: #ecf0f1;
+  padding: 3rem 1rem;
 }
 
 .case-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .case-card {
-  background: rgba(255, 255, 255, 0.1);
+  background-color: #fff;
   padding: 2rem;
-  border-radius: 15px;
-  backdrop-filter: blur(5px);
-  transition: transform 0.3s ease, background 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* For animation */
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.case-card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.2);
+.case-card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.case-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--secondary-light);
+/* Footer */
+.footer {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 3rem 1rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-logo img {
+  height: 60px;
+}
+
+.footer-tagline {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #e74c3c;
+}
+
+.footer-heading {
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-.case-card p {
-  color: var(--off-white);
+.footer-links {
+  list-style: none;
+}
+
+.footer-link {
+  color: #ecf0f1;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.footer-link:hover {
+  color: #e74c3c;
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: #e74c3c;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #34495e;
+}
+
+.legal-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.legal-link {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+.legal-link:hover {
+  color: #e74c3c;
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {
-  .healthcare-hero {
-    padding: 3rem 1.5rem;
-  }
-
-  .healthcare-hero h1 {
-    font-size: 2rem;
-  }
-
-  .healthcare-hero p {
-    font-size: 1rem;
-  }
-
-  .healthcare-content {
-    padding: 3rem 1.5rem;
-  }
-
-  .case-container {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 768px) {
+  .nav-toggle {
+      display: block;
+  }
+
+  .nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      flex-direction: column;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+      display: flex;
+  }
+
+  .nav-dropdown .dropdown-menu {
+      position: static;
+      box-shadow: none;
+      display: none;
+  }
+
+  .nav-dropdown:hover .dropdown-menu {
+      display: none;
+  }
+
+  .nav-dropdown.active .dropdown-menu {
+      display: block;
+  }
+
   .healthcare-hero {
-    padding: 2.5rem 1rem;
+      height: 50vh;
   }
 
-  .healthcare-content h2 {
-    font-size: 1.75rem;
+  h1 {
+      font-size: 2rem;
   }
 
-  .accordion-button {
-    font-size: 1.125rem;
-    padding: 1rem 1.25rem;
+  h2 {
+      font-size: 1.5rem;
   }
 
-  .accordion-content {
-    padding: 1.25rem;
-  }
-
-  .impact-stats {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-
-  .stat-number {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .healthcare-hero {
-    padding: 2rem 1rem;
-  }
-
-  .healthcare-hero h1 {
-    font-size: 1.75rem;
-  }
-
-  .healthcare-hero p {
-    font-size: 0.875rem;
-  }
-
-  .healthcare-content {
-    padding: 2rem 1rem;
-  }
-
-  .healthcare-content h2 {
-    font-size: 1.5rem;
-  }
-
-  .accordion-button {
-    font-size: 1rem;
-    padding: 0.875rem 1rem;
-  }
-
-  .accordion-content {
-    padding: 1rem;
-  }
-
-  .case-card h3 {
-    font-size: 1.25rem;
+  .impact-stats, .case-container {
+      grid-template-columns: 1fr;
   }
 }
