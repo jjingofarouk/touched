@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="./assets/css/blog.css">
     <script defer src="./assets/js/main.js"></script>
-        <script defer src="./assets/js/footer.js"></script>
-    <script defer src="./assets/js/blog.js"></script>
+    <script defer src="./assets/js/footer.js"></script>
 </head>
 <body>
 <header>
@@ -50,121 +49,139 @@
     </nav>
 </header>
 
-    <!-- Main Content -->
-    <main>
-        <div class="container">
-            <!-- Blog Post Grid -->
-            <section class="blog-posts">
-                <div id="loading-indicator" class="loading">
-                    <p>Loading stories...</p>
-                </div>
-                
-                <div id="blog-grid" class="grid">
-                    <!-- Blog posts will be loaded dynamically here -->
-                </div>
-
-                <!-- Pagination -->
-                <div class="pagination" id="pagination">
-                    <!-- Pagination links will be generated dynamically -->
-                </div>
-            </section>
-
-            <!-- Sidebar -->
-            <aside class="sidebar">
-                <h3>Categories</h3>
-                <ul id="categories-list">
-                    <!-- Categories will be loaded dynamically -->
-                </ul>
-
-                <h3>Search</h3>
-                <form id="search-form">
-                    <input type="text" name="search" id="search-input" placeholder="Search...">
-                    <button type="submit">Search</button>
-                </form>
-            </aside>
-        </div>
-    </main>
-
-    <!-- Blog Post Template (hidden) -->
-    <template id="blog-post-template">
-        <div class="blog-post">
-            <img src="" alt="Blog Post Image" class="post-image">
-            <h2><a href="#" class="post-title"></a></h2>
-            <div class="post-content">
-                <p class="excerpt"></p>
-                <div class="full-content"></div>
+<main>
+    <div class="container">
+        <section class="blog-posts">
+            <div id="loading-indicator" class="loading">
+                <p>Loading stories...</p>
             </div>
-            <button class="read-more-btn">Read More</button>
-            <p class="post-meta"></p>
-            <p class="category-tag"></p>
-        </div>
-    </template>
-<!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="footer-container">
-            <div class="footer-column">
-                <a href="index.html" class="footer-logo">
-                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
+            <div id="blog-grid" class="grid">
+                <!-- Blog posts will be inserted here by JavaScript -->
+            </div>
+            <div class="pagination" id="pagination">
+                <p>Page 1 of 2</p> <!-- Static for simplicity -->
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <h3>Categories</h3>
+            <ul id="categories-list">
+                <!-- Categories will be loaded dynamically -->
+            </ul>
+
+            <h3>Search</h3>
+            <form id="search-form">
+                <input type="text" name="search" id="search-input" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </aside>
+    </div>
+</main>
+
+<footer class="footer" role="contentinfo">
+    <div class="footer-container">
+        <div class="footer-column">
+            <a href="index.html" class="footer-logo">
+                <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
+            </a>
+            <p class="footer-tagline">Transforming lives with compassion and hope</p>
+            <div class="social-links">
+                <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link">
+                    <i class="fab fa-facebook-f"></i>
                 </a>
-                <p class="footer-tagline">Transforming lives with compassion and hope</p>
-                <div class="social-links">
-                    <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://linkedin.com/company/touchedhearts" aria-label="LinkedIn" class="social-link">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://youtube.com/touchedhearts" aria-label="YouTube" class="social-link">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h3 class="footer-heading">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="about.html" class="footer-link">About Us</a></li>
-                    <li><a href="programs.html" class="footer-link">Our Programs</a></li>
-                    <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
-                    <li><a href="donate.html" class="footer-link">Donate</a></li>
-                    <li><a href="events.html" class="footer-link">Events</a></li>
-                    <li><a href="blog.html" class="footer-link">News & Updates</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3 class="footer-heading">Resources</h3>
-                <ul class="footer-links">
-                    <li><a href="annual-reports.html" class="footer-link">Annual Reports</a></li>
-                    <li><a href="financial-statements.html" class="footer-link">Financial Statements</a></li>
-                    <li><a href="media.html" class="footer-link">Media Resources</a></li>
-                    <li><a href="stories.html" class="footer-link">Success Stories</a></li>
-                    <li><a href="faq.html" class="footer-link">FAQs</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3 class="footer-heading">Contact Us</h3>
-                <address class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
-                    <p><i class="fas fa-phone"></i> +256 700 834 733</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:touchedheartsug12@gmail.com">touchedheartsug12@gmail.com</a></p>
-                </address>
-
+                <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://linkedin.com/company/touchedhearts" aria-label="LinkedIn" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://youtube.com/touchedhearts" aria-label="YouTube" class="social-link">
+                    <i class="fab fa-youtube"></i>
+                </a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p class="copyright">&copy; 2025 Touched Hearts. All rights reserved.</p>
-            <ul class="legal-links">
-                <li><a href="privacy.html" class="legal-link">Privacy Policy</a></li>
-                <li><a href="terms.html" class="legal-link">Terms of Service</a></li>
-                <li><a href="accessibility.html" class="legal-link">Accessibility</a></li>
+        <div class="footer-column">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="about.html" class="footer-link">About Us</a></li>
+                <li><a href="programs.html" class="footer-link">Our Programs</a></li>
+                <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
+                <li><a href="donate.html" class="footer-link">Donate</a></li>
+                <li><a href="events.html" class="footer-link">Events</a></li>
+                <li><a href="blog.html" class="footer-link">News & Updates</a></li>
             </ul>
         </div>
-    </footer>
+        <div class="footer-column">
+            <h3 class="footer-heading">Resources</h3>
+            <ul class="footer-links">
+                <li><a href="annual-reports.html" class="footer-link">Annual Reports</a></li>
+                <li><a href="financial-statements.html" class="footer-link">Financial Statements</a></li>
+                <li><a href="media.html" class="footer-link">Media Resources</a></li>
+                <li><a href="stories.html" class="footer-link">Success Stories</a></li>
+                <li><a href="faq.html" class="footer-link">FAQs</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3 class="footer-heading">Contact Us</h3>
+            <address class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
+                <p><i class="fas fa-phone"></i> +256 700 834 733</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:touchedheartsug12@gmail.com">touchedheartsug12@gmail.com</a></p>
+            </address>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p class="copyright">© 2025 Touched Hearts. All rights reserved.</p>
+        <ul class="legal-links">
+            <li><a href="privacy.html" class="legal-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="legal-link">Terms of Service</a></li>
+            <li><a href="accessibility.html" class="legal-link">Accessibility</a></li>
+        </ul>
+    </div>
+</footer>
 
+<script>
+    // Fetch and display blog posts from external JSON file
+    fetch('./blog-posts.json')
+        .then(response => response.json())
+        .then(data => {
+            // Display blog posts
+            const blogGrid = document.getElementById('blog-grid');
+            let blogHtml = '';
+            data.posts.forEach(post => {
+                blogHtml += `
+                    <div class="blog-post">
+                        <img src="${post.image}" alt="${post.title}" class="post-image">
+                        <h2><a href="#" class="post-title">${post.title}</a></h2>
+                        <div class="post-content">
+                            <p class="excerpt">${post.excerpt}</p>
+                            <div class="full-content">${post.content}</div>
+                        </div>
+                        <p class="post-meta">Posted on ${post.date}</p>
+                        <p class="category-tag">${post.category}</p>
+                    </div>
+                `;
+            });
+            blogGrid.innerHTML = blogHtml;
+
+            // Display categories
+            const categoriesList = document.getElementById('categories-list');
+            let categoriesHtml = '';
+            data.categories.forEach(category => {
+                categoriesHtml += `<li><a href="#">${category}</a></li>`;
+            });
+            categoriesList.innerHTML = categoriesHtml;
+
+            // Hide loading indicator
+            document.getElementById('loading-indicator').style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Error loading blog posts:', error);
+            document.getElementById('loading-indicator').innerHTML = '<p>Error loading stories. Please try again later.</p>';
+        });
+</script>
 </body>
 </html>
