@@ -1,165 +1,79 @@
+<!-- blog.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest News & Updates</title>
+    <title>Stories & Updates - Touched Hearts</title>
     <link rel="stylesheet" href="./assets/css/home.css">
-        <link rel="stylesheet" href="./assets/css/news.css">
-
+    <link rel="stylesheet" href="./assets/css/news.css">
+    <script defer src="./assets/js/main.js"></script>
+    <script defer src="./assets/js/blog.js"></script>
 </head>
 <body>
-
+    <!-- Page Header -->
     <header>
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="index.html" class="nav-logo">
-                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
-                </a>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About Us</a></li>
-                    <li class="nav-dropdown">
-                        <a href="programs.html" class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="education.html">Education</a></li>
-                            <li><a href="healthcare.html">Healthcare</a></li>
-                            <li><a href="disabilities.html">Disability Support</a></li>
-                            <li><a href="community.html">Community Development</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="stories.html" class="nav-link">Stories</a></li>
-                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                    <li><a href="news.html" class="nav-link">Blog</a></li>
-                    <li class="nav-dropdown">
-                        <a href="get-involved.html" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="volunteers.html">Volunteers</a></li>
-                            <li><a href="partners.html">Partners</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="donate.html" class="nav-link btn-donate">Donate Now</a></li>
-                </ul>
-            </div>
-        </nav>
+        <div class="container">
+            <h1>Stories & Updates</h1>
+            <p>Stay updated with the latest news, stories, and impact from Touched Hearts.</p>
+        </div>
     </header>
 
-    <main class="news-page">
-        <section class="news-header">
-            <h1>Latest News & Updates</h1>
-            <p>Stay updated with our latest initiatives and community efforts.</p>
-        </section>
-
-        <section class="news-articles">
-            <article class="news-item">
-                <img src="./assets/images/E9.jpg" alt="Children receiving scholastic materials">
-                <div class="news-text">
-                    <h2>Scholastic Materials Given to School Children</h2>
-                    <span class="news-date">February 20, 2025</span>
-                    <p>During our recent community outreach, we provided essential school supplies to hundreds of children. Many families in underserved areas struggle to afford basic learning materials, affecting children's education.</p>
-                    <p>Through generous donations, we distributed books, pencils, school bags, and uniforms to support their education and encourage school attendance. Parents expressed gratitude, noting how these materials will ease the financial burden.</p>
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Blog Post Grid -->
+            <section class="blog-posts">
+                <div id="loading-indicator" class="loading">
+                    <p>Loading stories...</p>
                 </div>
-            </article>
-
-            <article class="news-item">
-                <img src="./assets/images/H29.jpg" alt="Doctors attending to patients at medical camp">
-                <div class="news-text">
-                    <h2>Medical Camp Brings Healthcare to Karamoja</h2>
-                    <span class="news-date">February 10, 2025</span>
-                    <p>Our recent medical camp in Karamoja provided free medical services to hundreds of people who lack access to quality healthcare.</p>
-                    <p>A dedicated team of doctors, nurses, and volunteers offered general check-ups, maternal care, immunizations, and health education. Many patients, including the elderly and children, received the treatment they urgently needed.</p>
-                    <p>We plan to hold more medical camps in remote regions to ensure healthcare reaches those who need it the most.</p>
+                
+                <div id="blog-grid" class="grid">
+                    <!-- Blog posts will be loaded dynamically here -->
                 </div>
-            </article>
 
-            <article class="news-item">
-                <img src="./assets/images/community-skilling.jpg" alt="Women receiving sewing machines">
-                <div class="news-text">
-                    <h2>Empowering Women Through Skills & Tools</h2>
-                    <span class="news-date">January 28, 2025</span>
-                    <p>Our community skilling program provided training and tools to widows, young mothers, and marginalized groups, helping them build sustainable livelihoods.</p>
-                    <p>Participants were trained in tailoring, handicrafts, and entrepreneurship, followed by the distribution of sewing machines and other essential tools.</p>
-                    <p>This initiative aims to create economic opportunities and financial independence for vulnerable women, empowering them to provide for their families.</p>
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                    <!-- Pagination links will be generated dynamically -->
                 </div>
-            </article>
-        </section>
+            </section>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <h3>Categories</h3>
+                <ul id="categories-list">
+                    <!-- Categories will be loaded dynamically -->
+                </ul>
+
+                <h3>Search</h3>
+                <form id="search-form">
+                    <input type="text" name="search" id="search-input" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </form>
+            </aside>
+        </div>
     </main>
 
-    <footer class="footer" role="contentinfo">
-        <div class="footer-container">
-            <div class="footer-column">
-                <a href="index.html" class="footer-logo">
-                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
-                </a>
-                <p class="footer-tagline">Transforming lives with compassion and hope</p>
-                <div class="social-links">
-                    <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://linkedin.com/company/touchedhearts" aria-label="LinkedIn" class="social-link">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://youtube.com/touchedhearts" aria-label="YouTube" class="social-link">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
+    <!-- Blog Post Template (hidden) -->
+    <template id="blog-post-template">
+        <div class="blog-post">
+            <img src="" alt="Blog Post Image" class="post-image">
+            <h2><a href="#" class="post-title"></a></h2>
+            <div class="post-content">
+                <p class="excerpt"></p>
+                <div class="full-content"></div>
             </div>
-            <div class="footer-column">
-                <h3 class="footer-heading">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="about.html" class="footer-link">About Us</a></li>
-                    <li><a href="programs.html" class="footer-link">Our Programs</a></li>
-                    <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
-                    <li><a href="donate.html" class="footer-link">Donate</a></li>
-                    <li><a href="events.html" class="footer-link">Events</a></li>
-                    <li><a href="news.html" class="footer-link">News & Updates</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3 class="footer-heading">Resources</h3>
-                <ul class="footer-links">
-                    <li><a href="annual-reports.html" class="footer-link">Annual Reports</a></li>
-                    <li><a href="financial-statements.html" class="footer-link">Financial Statements</a></li>
-                    <li><a href="media.html" class="footer-link">Media Resources</a></li>
-                    <li><a href="stories.html" class="footer-link">Success Stories</a></li>
-                    <li><a href="faq.html" class="footer-link">FAQs</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3 class="footer-heading">Contact Us</h3>
-                <address class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
-                    <p><i class="fas fa-phone"></i> +256 700 834 733</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:touchedheartsug12@gmail.com">touchedheartsug12@gmail.com</a></p>
-                </address>
-
-            </div>
+            <button class="read-more-btn">Read More</button>
+            <p class="post-meta"></p>
+            <p class="category-tag"></p>
         </div>
-        <div class="footer-bottom">
-            <p class="copyright">&copy; 2025 Touched Hearts. All rights reserved.</p>
-            <ul class="legal-links">
-                <li><a href="privacy.html" class="legal-link">Privacy Policy</a></li>
-                <li><a href="terms.html" class="legal-link">Terms of Service</a></li>
-                <li><a href="accessibility.html" class="legal-link">Accessibility</a></li>
-            </ul>
+    </template>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Touched Hearts. All Rights Reserved.</p>
         </div>
     </footer>
-
-
-    <!-- JavaScript -->
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/footer.js"></script>
-
 </body>
 </html>
