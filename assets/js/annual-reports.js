@@ -4,21 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const reports = [
         {
             year: 2024,
-            summary: "Supported 10,000 children with education and healthcare initiatives.",
+            summary: "Supported 5,000+ children with education and healthcare initiatives.",
             pdf: "./assets/reports/annual-report-2024.pdf",
-            stats: { children: 10000, women: 3000, funds: 500000 }
+            stats: { children: 5000, women: 4928, funds: 500000 }
         },
         {
             year: 2023,
-            summary: "Expanded healthcare outreach to 15 rural communities.",
+            summary: "Expanded healthcare outreach to 4 rural communities.",
             pdf: "./assets/reports/annual-report-2023.pdf",
-            stats: { children: 8000, women: 2500, funds: 450000 }
+            stats: { children: 3850, women: 3121, funds: 450000 }
         },
         {
             year: 2022,
             summary: "Launched women's vocational training programs.",
             pdf: "./assets/reports/annual-report-2022.pdf",
-            stats: { children: 6000, women: 2000, funds: 400000 }
+            stats: { children: 4782, women: 2118, funds: 400000 }
         }
     ];
 
