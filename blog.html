@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/blog.css">
     <script defer src="./assets/js/main.js"></script>
+    <script defer src="./assets/js/blog.js"></script>
 </head>
 <body>
     <!-- Page Header -->
@@ -24,59 +25,50 @@
         <div class="container">
             <!-- Blog Post Grid -->
             <section class="blog-posts">
-                <div class="grid">
-                    <!-- Blog Post 1 -->
-                    <div class="blog-post">
-                        <img src="../assets/images/testimonials/post1.jpg" alt="Post 1 Image">
-                        <h2><a href="#">Education for All: Empowering Uganda's Future</a></h2>
-                        <p class="excerpt">We are working hard to ensure that every child in Uganda has access to quality education...</p>
-                        <p class="post-meta">Posted on January 10, 2025</p>
-                    </div>
-                    <!-- Blog Post 2 -->
-                    <div class="blog-post">
-                        <img src="./assets/images/D3.jpg" alt="Post 2 Image">
-                        <h2><a href="#">Disability Support: Breaking Barriers</a></h2>
-                        <p class="excerpt">Tackling the challenges faced by persons with disabilities is at the heart of our mission...</p>
-                        <p class="post-meta">Posted on February 1, 2024</p>
-                    </div>
-                    <!-- Blog Post 3 -->
-                    <div class="blog-post">
-                        <img src="./assets/images/H13.jpg" alt="Post 3 Image">
-                        <h2><a href="#">Health and Wellness: A Community Approach</a></h2>
-                        <p class="excerpt">Our health initiatives are changing the lives of many through community-driven programs...</p>
-                        <p class="post-meta">Posted on September 5, 2025</p>
-                    </div>
-                    <!-- Add more blog posts as needed -->
+                <div id="loading-indicator" class="loading">
+                    <p>Loading stories...</p>
+                </div>
+                
+                <div id="blog-grid" class="grid">
+                    <!-- Blog posts will be loaded dynamically here -->
                 </div>
 
                 <!-- Pagination -->
-                <div class="pagination">
-                    <a href="#" class="prev">&laquo; Previous</a>
-                    <a href="#" class="page-number">1</a>
-                    <a href="#" class="page-number">2</a>
-                    <a href="#" class="page-number">3</a>
-                    <a href="#" class="next">Next &raquo;</a>
+                <div class="pagination" id="pagination">
+                    <!-- Pagination links will be generated dynamically -->
                 </div>
             </section>
 
             <!-- Sidebar -->
             <aside class="sidebar">
                 <h3>Categories</h3>
-                <ul>
-                    <li><a href="#">Education</a></li>
-                    <li><a href="#">Disability Support</a></li>
-                    <li><a href="#">Community Health</a></li>
-                    <li><a href="#">Fundraising</a></li>
+                <ul id="categories-list">
+                    <!-- Categories will be loaded dynamically -->
                 </ul>
 
                 <h3>Search</h3>
-                <form action="#" method="get">
-                    <input type="text" name="search" placeholder="Search...">
+                <form id="search-form">
+                    <input type="text" name="search" id="search-input" placeholder="Search...">
                     <button type="submit">Search</button>
                 </form>
             </aside>
         </div>
     </main>
+
+    <!-- Blog Post Template (hidden) -->
+    <template id="blog-post-template">
+        <div class="blog-post">
+            <img src="" alt="Blog Post Image" class="post-image">
+            <h2><a href="#" class="post-title"></a></h2>
+            <div class="post-content">
+                <p class="excerpt"></p>
+                <div class="full-content"></div>
+            </div>
+            <button class="read-more-btn">Read More</button>
+            <p class="post-meta"></p>
+            <p class="category-tag"></p>
+        </div>
+    </template>
 
     <!-- Footer -->
     <footer>
