@@ -39,27 +39,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3 class="report-year">${report.year}</h3>
                     <p class="report-summary">${report.summary}</p>
                 </div>
-                <div class="report-connector"></div>
             `;
             timeline.appendChild(reportItem);
-
-            // Animation on scroll
-            setTimeout(() => reportItem.classList.add('show'), index * 200);
 
             // Click event for modal
             reportItem.querySelector('.report-card').addEventListener('click', () => {
                 modalTitle.textContent = `${report.year} Annual Report`;
                 modalSummary.textContent = report.summary;
                 modalDownload.href = report.pdf;
-                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false'); // Update ARIA for accessibility
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
             });
         });
     }
 
-    // Close modal
-    modalClose.addEventListener('click', () => modal.classList.remove('active'));
+    // Modal close functionality
+    modalClose.addEventListener('click', () => {
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = ''; // Restore scrolling
+    });
+
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) modal.classList.remove('active');
+        if (e.target === modal) {
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
     });
 
     // Chart.js for impact visualization
@@ -72,22 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     label: 'Children Supported',
                     data: reports.map(r => r.stats.children),
-                    backgroundColor: 'rgba(54, 162, 235, 0.8)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
+                    backgroundColor: 'var(--primary-color)', // Teal from root
+                    borderColor: 'var(--primary-dark)',
                     borderWidth: 1
                 },
                 {
                     label: 'Women Empowered',
                     data: reports.map(r => r.stats.women),
-                    backgroundColor: 'rgba(255, 99, 132, 0.8)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'var(--secondary-color)', // Terracotta from root
+                    borderColor: 'var(--secondary-dark)',
                     borderWidth: 1
                 },
                 {
-                    label: 'Funds Raised (USD)',
+                    label: 'Funds Raised (USD in thousands)',
                     data: reports.map(r => r.stats.funds / 1000),
-                    backgroundColor: 'rgba(75, 192, 192, 0.8)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'var(--success)', // Sage green from root
+                    borderColor: 'var(--success)',
                     borderWidth: 1,
                     yAxisID: 'y1'
                 }
@@ -95,22 +99,52 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     beginAtZero: true,
-                    title: { display: true, text: 'People Impacted', color: '#fff' }
+                    title: {
+                        display: true,
+                        text: 'People Impacted',
+                        color: 'var(--dark)',
+                        font: { size: 14 }
+                    },
+                    grid: { color: 'var(--light-gray)' }
                 },
                 y1: {
                     position: 'right',
                     beginAtZero: true,
-                    title: { display: true, text: 'Funds (in thousands USD)', color: '#fff' },
+                    title: {
+                        display: true,
+                        text: 'Funds (in thousands USD)',
+                        color: 'var(--dark)',
+                        font: { size: 14 }
+                    },
                     grid: { drawOnChartArea: false }
                 },
-                x: { title: { display: true, text: 'Year', color: '#fff' } }
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Year',
+                        color: 'var(--dark)',
+                        font: { size: 14 }
+                    },
+                    grid: { display: false }
+                }
             },
             plugins: {
-                legend: { labels: { color: '#fff' } },
-                title: { display: true, text: 'Our Impact Over the Years', color: '#fff', font: { size: 20 } }
+                legend: {
+                    labels: {
+                        color: 'var(--dark)',
+                        font: { size: 12 }
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Our Impact Over the Years',
+                    color: 'var(--primary-dark)',
+                    font: { size: 20, family: 'Playfair Display, serif' }
+                }
             }
         }
     });
@@ -120,11 +154,11 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
-                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.2 });
 
+    // Initialize
     renderReports();
     document.querySelectorAll('.report-item').forEach(item => observer.observe(item));
 });
