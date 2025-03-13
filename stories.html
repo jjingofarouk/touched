@@ -60,11 +60,26 @@
 
     <!-- Stories Section -->
     <section class="stories-section" aria-label="Impact Stories">
+        <div class="stories-controls">
+            <input type="text" id="search-input" placeholder="Search stories..." aria-label="Search stories">
+            <select id="category-filter" aria-label="Filter by category">
+                <option value="all">All Categories</option>
+                <option value="healthcare">Healthcare</option>
+                <option value="education">Education</option>
+                <option value="disability">Disability Support</option>
+                <option value="community">Community Development</option>
+            </select>
+        </div>
         <div id="stories-container" class="stories-grid">
             <div class="loading-message">Loading stories...</div>
         </div>
         <div id="no-stories" class="no-stories-message" style="display: none;">
-            <p>Sorry, no stories are available at the moment. Please check back later!</p>
+            <p>No stories match your criteria. Try adjusting your search or filter!</p>
+        </div>
+        <div class="pagination" id="pagination-controls" style="display: none;">
+            <button id="prev-page" aria-label="Previous page" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+            <span id="page-info"></span>
+            <button id="next-page" aria-label="Next page"><i class="fas fa-chevron-right"></i> Next</button>
         </div>
     </section>
 
@@ -151,24 +166,38 @@
                 : '<span></span><span></span><span></span>';
         });
 
+        // Stories Management
+        let allStories = [];
+        let filteredStories = [];
+        const storiesPerPage = 6; // Adjustable number of stories per page
+        let currentPage = 1;
 
-
-        // Display Stories
+        // Function to display stories
         function displayStories(stories) {
             const container = document.getElementById('stories-container');
-            const loadingMessage = container.querySelector('.loading-message');
             const noStoriesMessage = document.getElementById('no-stories');
+            const paginationControls = document.getElementById('pagination-controls');
+            const pageInfo = document.getElementById('page-info');
 
-            // Remove loading message
-            if (loadingMessage) loadingMessage.remove();
+            container.innerHTML = ''; // Clear previous content
 
             if (!stories || stories.length === 0) {
                 noStoriesMessage.style.display = 'block';
+                paginationControls.style.display = 'none';
                 return;
             }
 
-            container.innerHTML = ''; // Clear container before adding stories
-            stories.forEach(story => {
+            noStoriesMessage.style.display = 'none';
+            paginationControls.style.display = 'block';
+
+            // Calculate pagination
+            const totalPages = Math.ceil(stories.length / storiesPerPage);
+            const startIndex = (currentPage - 1) * storiesPerPage;
+            const endIndex = Math.min(startIndex + storiesPerPage, stories.length);
+            const paginatedStories = stories.slice(startIndex, endIndex);
+
+            // Render stories
+            paginatedStories.forEach(story => {
                 const storyHTML = `
                     <article class="story-card" tabindex="0">
                         <img src="${story.image}" alt="${story.title}" class="story-image" loading="lazy">
@@ -181,30 +210,77 @@
                 `;
                 container.insertAdjacentHTML('beforeend', storyHTML);
             });
+
+            // Update pagination controls
+            pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+            document.getElementById('prev-page').disabled = currentPage === 1;
+            document.getElementById('next-page').disabled = currentPage === totalPages;
+
+            // Scroll to top of stories section after pagination
+            document.querySelector('.stories-section').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Load stories (using embedded data for this example)
-        try {
-            displayStories(storiesData);
-        } catch (error) {
-            console.error('Error displaying stories:', error);
-            const container = document.getElementById('stories-container');
-            container.innerHTML = '<p class="error-message">Failed to load stories. Please try again later.</p>';
+        // Pagination event listeners
+        document.getElementById('prev-page').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayStories(filteredStories);
+            }
+        });
+
+        document.getElementById('next-page').addEventListener('click', () => {
+            const totalPages = Math.ceil(filteredStories.length / storiesPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayStories(filteredStories);
+            }
+        });
+
+        // Filter and search functionality
+        function filterStories() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const category = document.getElementById('category-filter').value;
+
+            filteredStories = allStories.filter(story => {
+                const matchesSearch = 
+                    story.title.toLowerCase().includes(searchTerm) ||
+                    story.quote.toLowerCase().includes(searchTerm) ||
+                    story.story.toLowerCase().includes(searchTerm);
+                const matchesCategory = 
+                    category === 'all' || 
+                    (category === 'healthcare' && story.story.includes('health') || story.story.includes('clinic')) ||
+                    (category === 'education' && story.story.includes('school') || story.story.includes('learn')) ||
+                    (category === 'disability' && story.story.includes('disability') || story.story.includes('wheelchair')) ||
+                    (category === 'community' && story.story.includes('village') || story.story.includes('community'));
+                return matchesSearch && matchesCategory;
+            });
+
+            currentPage = 1; // Reset to first page on filter
+            displayStories(filteredStories);
         }
 
-        
+        // Event listeners for search and filter
+        document.getElementById('search-input').addEventListener('input', filterStories);
+        document.getElementById('category-filter').addEventListener('change', filterStories);
+
+        // Fetch and load stories from stories.json
         fetch('./stories.json')
             .then(response => {
                 if (!response.ok) throw new Error('Network response was not ok');
                 return response.json();
             })
-            .then(stories => displayStories(stories))
+            .then(stories => {
+                allStories = stories;
+                filteredStories = [...allStories]; // Initial copy of all stories
+                document.getElementById('stories-container').querySelector('.loading-message').remove();
+                displayStories(filteredStories);
+            })
             .catch(error => {
                 console.error('Error loading stories:', error);
                 const container = document.getElementById('stories-container');
                 container.innerHTML = '<p class="error-message">Failed to load stories. Please try again later.</p>';
+                document.getElementById('no-stories').style.display = 'none';
             });
-        */
     </script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/footer.js"></script>
