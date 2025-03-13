@@ -3,185 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stories & Updates - Touched Hearts</title>
+    <meta name="description" content="Read inspiring impact stories from Touched Hearts, showcasing transformed lives through compassion and support.">
+    <title>Impact Stories | Touched Hearts</title>
     <link rel="stylesheet" href="./assets/css/home.css">
-    <link rel="stylesheet" href="./assets/css/blog.css">
-    <script defer src="./assets/js/main.js"></script>
-    <script defer src="./assets/js/footer.js"></script>
+    <link rel="stylesheet" href="./assets/css/stories.css">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<header>
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
-            </a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li class="nav-dropdown">
-                    <a href="programs.html" class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="education.html">Education</a></li>
-                        <li><a href="healthcare.html">Healthcare</a></li>
-                        <li><a href="disabilities.html">Disability Support</a></li>
-                        <li><a href="community.html">Community Development</a></li>
-                    </ul>
-                </li>
-                <li><a href="stories.html" class="nav-link">Stories</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-dropdown">
-                    <a href="get-involved.html" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="volunteers.html">Volunteers</a></li>
-                        <li><a href="partners.html">Partners</a></li>
-                    </ul>
-                </li>
-                <li><a href="donate.html" class="nav-link btn-donate">Donate Now</a></li>
+    <!-- Navigation -->
+    <header>
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="nav-dropdown">
+                        <a href="programs.html" class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="healthcare.html">Healthcare</a></li>
+                            <li><a href="disabilities.html">Disability Support</a></li>
+                            <li><a href="community.html">Community Development</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="stories.html" class="nav-link active">Stories</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-dropdown">
+                        <a href="get-involved.html" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="volunteers.html">Volunteers</a></li>
+                            <li><a href="partners.html">Partners</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="donate.html" class="nav-link btn-donate">Donate Now</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="header-content">
+            <h1>Impact Stories</h1>
+            <p>Discover the real-life journeys of hope, healing, and transformation made possible by Touched Hearts.</p>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section class="stories-section" aria-label="Impact Stories">
+        <div class="stories-controls">
+            <input type="text" id="search-input" placeholder="Search stories..." aria-label="Search stories">
+            <select id="category-filter" aria-label="Filter by category">
+                <option value="all">All Categories</option>
+                <option value="healthcare">Healthcare</option>
+                <option value="education">Education</option>
+                <option value="disability">Disability Support</option>
+                <option value="community">Community Development</option>
+            </select>
+        </div>
+        <div id="stories-container" class="stories-grid">
+            <div class="loading-message">Loading stories...</div>
+        </div>
+        <div id="no-stories" class="no-stories-message" style="display: none;">
+            <p>No stories match your criteria. Try adjusting your search or filter!</p>
+        </div>
+        <div class="pagination" id="pagination-controls" style="display: none;">
+            <button id="prev-page" aria-label="Previous page" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+            <span id="page-info"></span>
+            <button id="next-page" aria-label="Next page"><i class="fas fa-chevron-right"></i> Next</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-column">
+                <a href="index.html" class="footer-logo">
+                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
+                </a>
+                <p class="footer-tagline">Transforming lives with compassion and hope</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/touchedhearts" aria-label="LinkedIn" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://youtube.com/touchedhearts" aria-label="YouTube" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="programs.html" class="footer-link">Our Programs</a></li>
+                    <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
+                    <li><a href="donate.html" class="footer-link">Donate</a></li>
+                    <li><a href="events.html" class="footer-link">Events</a></li>
+                    <li><a href="blog.html" class="footer-link">News & Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="annual-reports.html" class="footer-link">Annual Reports</a></li>
+                    <li><a href="financial-statements.html" class="footer-link">Financial Statements</a></li>
+                    <li><a href="media.html" class="footer-link">Media Resources</a></li>
+                    <li><a href="stories.html" class="footer-link">Success Stories</a></li>
+                    <li><a href="faq.html" class="footer-link">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Contact Us</h3>
+                <address class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
+                    <p><i class="fas fa-phone"></i> +256 700 834 733</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:touchedheartsug12@gmail.com">touchedheartsug12@gmail.com</a></p>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© <span id="current-year">2025</span> Touched Hearts. All rights reserved.</p>
+            <ul class="legal-links">
+                <li><a href="privacy.html" class="legal-link">Privacy Policy</a></li>
+                <li><a href="terms.html" class="legal-link">Terms of Service</a></li>
+                <li><a href="accessibility.html" class="legal-link">Accessibility</a></li>
             </ul>
         </div>
-    </nav>
-</header>
+    </footer>
 
-<main>
-    <div class="container">
-        <section class="blog-posts">
-            <div id="loading-indicator" class="loading">
-                <p>Loading stories...</p>
-            </div>
-            <div id="blog-grid" class="grid">
-                <!-- Blog posts will be inserted here by JavaScript -->
-            </div>
-            <div class="pagination" id="pagination">
-                <p>Page 1 of 2</p> <!-- Static for simplicity -->
-            </div>
-        </section>
+    <!-- JavaScript -->
+    <script>
+        // Dynamic Year in Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        <aside class="sidebar">
-            <h3>Categories</h3>
-            <ul id="categories-list">
-                <!-- Categories will be loaded dynamically -->
-            </ul>
-
-            <h3>Search</h3>
-            <form id="search-form">
-                <input type="text" name="search" id="search-input" placeholder="Search...">
-                <button type="submit">Search</button>
-            </form>
-        </aside>
-    </div>
-</main>
-
-<footer class="footer" role="contentinfo">
-    <div class="footer-container">
-        <div class="footer-column">
-            <a href="index.html" class="footer-logo">
-                <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
-            </a>
-            <p class="footer-tagline">Transforming lives with compassion and hope</p>
-            <div class="social-links">
-                <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://linkedin.com/company/touchedhearts" aria-label="LinkedIn" class="social-link">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://youtube.com/touchedhearts" aria-label="YouTube" class="social-link">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </div>
-        </div>
-        <div class="footer-column">
-            <h3 class="footer-heading">Quick Links</h3>
-            <ul class="footer-links">
-                <li><a href="about.html" class="footer-link">About Us</a></li>
-                <li><a href="programs.html" class="footer-link">Our Programs</a></li>
-                <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
-                <li><a href="donate.html" class="footer-link">Donate</a></li>
-                <li><a href="events.html" class="footer-link">Events</a></li>
-                <li><a href="blog.html" class="footer-link">News & Updates</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3 class="footer-heading">Resources</h3>
-            <ul class="footer-links">
-                <li><a href="annual-reports.html" class="footer-link">Annual Reports</a></li>
-                <li><a href="financial-statements.html" class="footer-link">Financial Statements</a></li>
-                <li><a href="media.html" class="footer-link">Media Resources</a></li>
-                <li><a href="stories.html" class="footer-link">Success Stories</a></li>
-                <li><a href="faq.html" class="footer-link">FAQs</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3 class="footer-heading">Contact Us</h3>
-            <address class="contact-info">
-                <p><i class="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
-                <p><i class="fas fa-phone"></i> +256 700 834 733</p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:touchedheartsug12@gmail.com">touchedheartsug12@gmail.com</a></p>
-            </address>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p class="copyright">© 2025 Touched Hearts. All rights reserved.</p>
-        <ul class="legal-links">
-            <li><a href="privacy.html" class="legal-link">Privacy Policy</a></li>
-            <li><a href="terms.html" class="legal-link">Terms of Service</a></li>
-            <li><a href="accessibility.html" class="legal-link">Accessibility</a></li>
-        </ul>
-    </div>
-</footer>
-
-<script>
-    // Fetch and display blog posts from external JSON file
-    fetch('./blog-posts.json')
-        .then(response => response.json())
-        .then(data => {
-            // Display blog posts
-            const blogGrid = document.getElementById('blog-grid');
-            let blogHtml = '';
-            data.posts.forEach(post => {
-                blogHtml += `
-                    <div class="blog-post">
-                        <img src="${post.image}" alt="${post.title}" class="post-image">
-                        <h2><a href="#" class="post-title">${post.title}</a></h2>
-                        <div class="post-content">
-                            <p class="excerpt">${post.excerpt}</p>
-                            <div class="full-content">${post.content}</div>
-                        </div>
-                        <p class="post-meta">Posted on ${post.date}</p>
-                        <p class="category-tag">${post.category}</p>
-                    </div>
-                `;
-            });
-            blogGrid.innerHTML = blogHtml;
-
-            // Display categories
-            const categoriesList = document.getElementById('categories-list');
-            let categoriesHtml = '';
-            data.categories.forEach(category => {
-                categoriesHtml += `<li><a href="#">${category}</a></li>`;
-            });
-            categoriesList.innerHTML = categoriesHtml;
-
-            // Hide loading indicator
-            document.getElementById('loading-indicator').style.display = 'none';
-        })
-        .catch(error => {
-            console.error('Error loading blog posts:', error);
-            document.getElementById('loading-indicator').innerHTML = '<p>Error loading stories. Please try again later.</p>';
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('nav-open');
+            const isOpen = navMenu.classList.contains('nav-open');
+            navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Toggle navigation');
+            navToggle.innerHTML = isOpen 
+                ? '<i class="fas fa-times"></i>' 
+                : '<span></span><span></span><span></span>';
         });
-</script>
+
+        // Stories Management
+        let allStories = [];
+        let filteredStories = [];
+        const storiesPerPage = 6; // Adjustable number of stories per page
+        let currentPage = 1;
+
+        // Function to display stories
+        function displayStories(stories) {
+            const container = document.getElementById('stories-container');
+            const noStoriesMessage = document.getElementById('no-stories');
+            const paginationControls = document.getElementById('pagination-controls');
+            const pageInfo = document.getElementById('page-info');
+
+            container.innerHTML = ''; // Clear previous content
+
+            if (!stories || stories.length === 0) {
+                noStoriesMessage.style.display = 'block';
+                paginationControls.style.display = 'none';
+                return;
+            }
+
+            noStoriesMessage.style.display = 'none';
+            paginationControls.style.display = 'block';
+
+            // Calculate pagination
+            const totalPages = Math.ceil(stories.length / storiesPerPage);
+            const startIndex = (currentPage - 1) * storiesPerPage;
+            const endIndex = Math.min(startIndex + storiesPerPage, stories.length);
+            const paginatedStories = stories.slice(startIndex, endIndex);
+
+            // Render stories
+            paginatedStories.forEach(story => {
+                const storyHTML = `
+                    <article class="story-card" tabindex="0">
+                        <img src="${story.image}" alt="${story.title}" class="story-image" loading="lazy">
+                        <div class="story-content">
+                            <h2 class="story-title">${story.title}</h2>
+                            <blockquote class="story-quote">"${story.quote}"</blockquote>
+                            <p class="story-text">${story.story}</p>
+                        </div>
+                    </article>
+                `;
+                container.insertAdjacentHTML('beforeend', storyHTML);
+            });
+
+            // Update pagination controls
+            pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+            document.getElementById('prev-page').disabled = currentPage === 1;
+            document.getElementById('next-page').disabled = currentPage === totalPages;
+
+            // Scroll to top of stories section after pagination
+            document.querySelector('.stories-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Pagination event listeners
+        document.getElementById('prev-page').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayStories(filteredStories);
+            }
+        });
+
+        document.getElementById('next-page').addEventListener('click', () => {
+            const totalPages = Math.ceil(filteredStories.length / storiesPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayStories(filteredStories);
+            }
+        });
+
+        // Filter and search functionality
+        function filterStories() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const category = document.getElementById('category-filter').value;
+
+            filteredStories = allStories.filter(story => {
+                const matchesSearch = 
+                    story.title.toLowerCase().includes(searchTerm) ||
+                    story.quote.toLowerCase().includes(searchTerm) ||
+                    story.story.toLowerCase().includes(searchTerm);
+                const matchesCategory = 
+                    category === 'all' || 
+                    (category === 'healthcare' && story.story.includes('health') || story.story.includes('clinic')) ||
+                    (category === 'education' && story.story.includes('school') || story.story.includes('learn')) ||
+                    (category === 'disability' && story.story.includes('disability') || story.story.includes('wheelchair')) ||
+                    (category === 'community' && story.story.includes('village') || story.story.includes('community'));
+                return matchesSearch && matchesCategory;
+            });
+
+            currentPage = 1; // Reset to first page on filter
+            displayStories(filteredStories);
+        }
+
+        // Event listeners for search and filter
+        document.getElementById('search-input').addEventListener('input', filterStories);
+        document.getElementById('category-filter').addEventListener('change', filterStories);
+
+        // Fetch and load stories from stories.json
+        fetch('./stories.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(stories => {
+                allStories = stories;
+                filteredStories = [...allStories]; // Initial copy of all stories
+                document.getElementById('stories-container').querySelector('.loading-message').remove();
+                displayStories(filteredStories);
+            })
+            .catch(error => {
+                console.error('Error loading stories:', error);
+                const container = document.getElementById('stories-container');
+                container.innerHTML = '<p class="error-message">Failed to load stories. Please try again later.</p>';
+                document.getElementById('no-stories').style.display = 'none';
+            });
+    </script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/footer.js"></script>
 </body>
 </html>
