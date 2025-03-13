@@ -1,364 +1,222 @@
-// blog.js - Script to handle blog post loading and display
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize variables
-    let allPosts = [];
-    let currentPage = 1;
-    let postsPerPage = 3;
-    let filteredPosts = [];
-    let activeCategory = null;
-    let searchTerm = '';
-
-    // Fetch blog posts from JSON file
-    async function fetchBlogPosts() {
-        try {
-            const response = await fetch('./assets/blog-posts.json');
-            if (!response.ok) {
-                throw new Error('Failed to fetch blog posts');
-            }
-            const data = await response.json();
-            allPosts = data.posts;
-            filteredPosts = [...allPosts];
-            postsPerPage = data.pagination.postsPerPage;
-
-            // Initialize the page
-            displayCategories(data.categories);
-            displayPosts();
-            setupSearch();
-            hideLoading();
-        } catch (error) {
-            console.error('Error loading blog posts:', error);
-            document.getElementById('loading-indicator').innerHTML = 
-                '<p>Error loading content. Please try again later.</p>';
-        }
+The html must be complete the way I have it to you without abridging footer and header. Also it should be able to display the blog stories in a super modern way from blog-posts.json which is in assets {
+  "posts": [
+    {
+      "id": 1,
+      "title": "Education for All: Empowering Uganda's Future",
+      "image": "./assets/images/testimonials/post1.jpg",
+      "excerpt": "We are working hard to ensure that every child in Uganda has access to quality education. Our recent initiatives have reached over 500 children in rural communities, providing them with educational materials and supporting dedicated teachers.",
+      "content": "<p>Education is a fundamental right that opens doors to countless opportunities. At Touched Hearts, we believe every child deserves access to quality education regardless of their background or circumstances.</p><p>Our Education for All initiative focuses on:</p><ul><li>Building and renovating classrooms in underserved areas</li><li>Providing essential learning materials to students</li><li>Training and supporting dedicated teachers</li><li>Implementing inclusive education practices for children with disabilities</li></ul><p>Through partnerships with local communities and government agencies, we're creating sustainable education models that will benefit generations to come.</p>",
+      "date": "January 10, 2025",
+      "category": "Education"
+    },
+    {
+      "id": 2,
+      "title": "Disability Support: Breaking Barriers",
+      "image": "./assets/images/D3.jpg",
+      "excerpt": "Tackling the challenges faced by persons with disabilities is at the heart of our mission. Our inclusive programs are designed to empower individuals and create more accessible communities.",
+      "content": "<p>People with disabilities in Uganda often face significant barriers to education, employment, and social inclusion. Our disability support programs aim to break down these barriers through advocacy, direct support, and community education.</p><p>Key achievements in the past year include:</p><ul><li>Distributing mobility aids to over 200 individuals</li><li>Conducting accessibility audits in 15 public buildings</li><li>Training 50 community health workers on disability inclusion</li><li>Launching vocational training programs specifically designed for persons with disabilities</li></ul><p>We're committed to creating a world where disability is never a barrier to achieving one's full potential.</p>",
+      "date": "February 1, 2024",
+      "category": "Disability Support"
+    },
+    {
+      "id": 3,
+      "title": "Health and Wellness: A Community Approach",
+      "image": "./assets/images/H13.jpg",
+      "excerpt": "Our health initiatives are changing the lives of many through community-driven programs. By empowering local health workers and providing essential resources, we're building healthier communities.",
+      "content": "<p>Access to healthcare remains a challenge in many parts of Uganda, particularly in rural areas. Our community approach to health and wellness focuses on prevention, education, and building local capacity.</p><p>Recent health initiatives include:</p><ul><li>Monthly mobile health clinics serving 5 remote communities</li><li>Maternal health education programs for expectant mothers</li><li>Clean water projects reducing waterborne diseases</li><li>Training community health volunteers in basic first aid and health monitoring</li></ul><p>By working directly with communities to identify their unique health challenges, we're able to implement solutions that are both effective and sustainable.</p>",
+      "date": "September 5, 2025",
+      "category": "Community Health"
+    },
+    {
+      "id": 4,
+      "title": "Annual Fundraising Gala Exceeds Expectations",
+      "image": "./assets/images/fundraising.jpg",
+      "excerpt": "Our recent fundraising gala was a tremendous success, raising over $50,000 for our programs. We're grateful to all supporters who made this possible.",
+      "content": "<p>Last month's annual gala exceeded all expectations, bringing together supporters, partners, and community members for an evening of celebration and giving.</p><p>The night featured:</p><ul><li>Inspiring testimonials from program beneficiaries</li><li>Live music from local artists</li><li>A silent auction with items donated by local businesses</li><li>Recognition of our outstanding volunteers and donors</li></ul><p>The funds raised will directly support our education, health, and disability programs throughout Uganda. We're deeply grateful to everyone who contributed to making this event such a success.</p>",
+      "date": "March 15, 2024",
+      "category": "Fundraising"
     }
+  ],
+  "categories": [
+    "Education",
+    "Disability Support",
+    "Community Health",
+    "Fundraising"
+  ],
+  "pagination": {
+    "totalPosts": 4,
+    "postsPerPage": 3,
+    "totalPages": 2
+  }
+}
 
-    // Display blog posts
-    function displayPosts() {
-        const blogGrid = document.getElementById('blog-grid');
-        blogGrid.innerHTML = '';
-        
-        // Get current posts for this page
-        const startIndex = (currentPage - 1) * postsPerPage;
-        const postsToShow = filteredPosts.slice(startIndex, startIndex + postsPerPage);
-        
-        if (postsToShow.length === 0) {
-            blogGrid.innerHTML = '<div class="no-results"><p>No posts match your criteria.</p></div>';
-            hidePagination();
-            return;
-        }
+Here is the html <!-- blog.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories & Updates - Touched Hearts</title>
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/news.css">
+    <script defer src="./assets/js/main.js"></script>
+    <script defer src="./assets/js/blog.js"></script>
+</head>
+<body>
+<header>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li class="nav-dropdown">
+                    <a href="programs.html" class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="healthcare.html">Healthcare</a></li>
+                        <li><a href="disabilities.html">Disability Support</a></li>
+                        <li><a href="community.html">Community Development</a></li>
+                    </ul>
+                </li>
+                <li><a href="stories.html" class="nav-link">Stories</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="news.html" class="nav-link">Blog</a></li>
+                <li class="nav-dropdown">
+                    <a href="get-involved.html" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="volunteers.html">Volunteers</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                    </ul>
+                </li>
+                <li><a href="donate.html" class="nav-link btn-donate">Donate Now</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
-        // Get the template
-        const template = document.getElementById('blog-post-template');
-        
-        // Create blog post elements
-        postsToShow.forEach(post => {
-            // Clone the template
-            const postElement = document.importNode(template.content, true);
-            
-            // Set content
-            postElement.querySelector('.post-image').src = post.image;
-            postElement.querySelector('.post-image').alt = post.title;
-            
-            const titleLink = postElement.querySelector('.post-title');
-            titleLink.textContent = post.title;
-            titleLink.href = `blog-detail.html?id=${post.id}`;
-            
-            postElement.querySelector('.excerpt').textContent = post.excerpt;
-            postElement.querySelector('.full-content').innerHTML = post.content;
-            postElement.querySelector('.full-content').style.display = 'none';
-            
-            postElement.querySelector('.post-meta').textContent = `Posted on ${post.date}`;
-            postElement.querySelector('.category-tag').textContent = post.category;
-            
-            // Set up read more functionality
-            const readMoreBtn = postElement.querySelector('.read-more-btn');
-            readMoreBtn.addEventListener('click', function() {
-                const content = this.parentNode.querySelector('.full-content');
-                const excerpt = this.parentNode.querySelector('.excerpt');
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Blog Post Grid -->
+            <section class="blog-posts">
+                <div id="loading-indicator" class="loading">
+                    <p>Loading stories...</p>
+                </div>
                 
-                if (content.style.display === 'none') {
-                    content.style.display = 'block';
-                    excerpt.style.display = 'none';
-                    this.textContent = 'Read Less';
-                } else {
-                    content.style.display = 'none';
-                    excerpt.style.display = 'block';
-                    this.textContent = 'Read More';
-                }
-            });
-            
-            // Add to the grid
-            blogGrid.appendChild(postElement);
-        });
-        
-        // Update pagination
-        updatePagination();
-    }
+                <div id="blog-grid" class="grid">
+                    <!-- Blog posts will be loaded dynamically here -->
+                </div>
 
-    // Display categories in the sidebar
-    function displayCategories(categories) {
-        const categoriesList = document.getElementById('categories-list');
-        
-        // Add "All" category
-        const allItem = document.createElement('li');
-        const allLink = document.createElement('a');
-        allLink.href = '#';
-        allLink.textContent = 'All Categories';
-        allLink.classList.add('active-category');
-        allLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            filterByCategory(null);
-            updateActiveCategoryLink(this);
-        });
-        allItem.appendChild(allLink);
-        categoriesList.appendChild(allItem);
-        
-        // Add other categories
-        categories.forEach(category => {
-            const item = document.createElement('li');
-            const link = document.createElement('a');
-            link.href = '#';
-            link.textContent = category;
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                filterByCategory(category);
-                updateActiveCategoryLink(this);
-            });
-            item.appendChild(link);
-            categoriesList.appendChild(item);
-        });
-    }
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                    <!-- Pagination links will be generated dynamically -->
+                </div>
+            </section>
 
-    // Update active category link
-    function updateActiveCategoryLink(activeLink) {
-        // Remove active class from all links
-        document.querySelectorAll('#categories-list a').forEach(link => {
-            link.classList.remove('active-category');
-        });
-        
-        // Add active class to current link
-        activeLink.classList.add('active-category');
-    }
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <h3>Categories</h3>
+                <ul id="categories-list">
+                    <!-- Categories will be loaded dynamically -->
+                </ul>
 
-    // Filter posts by category
-    function filterByCategory(category) {
-        activeCategory = category;
-        applyFilters();
-    }
+                <h3>Search</h3>
+                <form id="search-form">
+                    <input type="text" name="search" id="search-input" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </form>
+            </aside>
+        </div>
+    </main>
 
-    // Set up search functionality
-    function setupSearch() {
-        const searchForm = document.getElementById('search-form');
-        const searchInput = document.getElementById('search-input');
-        
-        searchForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            searchTerm = searchInput.value.trim().toLowerCase();
-            applyFilters();
-        });
-        
-        // Add real-time search (optional)
-        searchInput.addEventListener('input', function() {
-            searchTerm = this.value.trim().toLowerCase();
-            applyFilters();
-        });
-    }
+    <!-- Blog Post Template (hidden) -->
+    <template id="blog-post-template">
+        <div class="blog-post">
+            <img src="" alt="Blog Post Image" class="post-image">
+            <h2><a href="#" class="post-title"></a></h2>
+            <div class="post-content">
+                <p class="excerpt"></p>
+                <div class="full-content"></div>
+            </div>
+            <button class="read-more-btn">Read More</button>
+            <p class="post-meta"></p>
+            <p class="category-tag"></p>
+        </div>
+    </template>
+<!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-column">
+                <a href="index.html" class="footer-logo">
+                    <img src="./assets/images/logo.jpg" alt="Touched Hearts Logo" class="logo">
+                </a>
+                <p class="footer-tagline">Transforming lives with compassion and hope</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/touchedhearts" aria-label="Facebook" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/touchedhearts" aria-label="Twitter" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/touchedhearts" aria-label="Instagram" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/touchedhearts" aria-label="LinkedIn" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://youtube.com/touchedhearts" aria-label="YouTube" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="programs.html" class="footer-link">Our Programs</a></li>
+                    <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
+                    <li><a href="donate.html" class="footer-link">Donate</a></li>
+                    <li><a href="events.html" class="footer-link">Events</a></li>
+                    <li><a href="news.html" class="footer-link">News & Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="annual-reports.html" class="footer-link">Annual Reports</a></li>
+                    <li><a href="financial-statements.html" class="footer-link">Financial Statements</a></li>
+                    <li><a href="media.html" class="footer-link">Media Resources</a></li>
+                    <li><a href="stories.html" class="footer-link">Success Stories</a></li>
+                    <li><a href="faq.html" class="footer-link">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Contact Us</h3>
+                <address class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
+                    <p><i class="fas fa-phone"></i> +256 700 834 733</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:touchedheartsug12@gmail.com">touchedheartsug12@gmail.com</a></p>
+                </address>
 
-    // Apply filters (category and search)
-    function applyFilters() {
-        filteredPosts = allPosts.filter(post => {
-            // Category filter
-            const categoryMatch = !activeCategory || post.category === activeCategory;
-            
-            // Search filter
-            const searchMatch = !searchTerm || 
-                post.title.toLowerCase().includes(searchTerm) || 
-                post.excerpt.toLowerCase().includes(searchTerm) || 
-                post.content.toLowerCase().includes(searchTerm);
-            
-            return categoryMatch && searchMatch;
-        });
-        
-        // Reset to first page and display
-        currentPage = 1;
-        displayPosts();
-    }
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2025 Touched Hearts. All rights reserved.</p>
+            <ul class="legal-links">
+                <li><a href="privacy.html" class="legal-link">Privacy Policy</a></li>
+                <li><a href="terms.html" class="legal-link">Terms of Service</a></li>
+                <li><a href="accessibility.html" class="legal-link">Accessibility</a></li>
+            </ul>
+        </div>
+    </footer>
 
-    // Update pagination controls
-    function updatePagination() {
-        const paginationElement = document.getElementById('pagination');
-        const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-        
-        if (totalPages <= 1) {
-            hidePagination();
-            return;
-        }
-        
-        // Show pagination
-        paginationElement.style.display = 'flex';
-        paginationElement.innerHTML = '';
-        
-        // Previous button
-        const prevButton = document.createElement('a');
-        prevButton.href = '#';
-        prevButton.classList.add('pagination-item');
-        prevButton.innerHTML = '&laquo; Previous';
-        prevButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (currentPage > 1) {
-                currentPage--;
-                displayPosts();
-                scrollToTop();
-            }
-        });
-        if (currentPage === 1) {
-            prevButton.classList.add('disabled');
-        }
-        paginationElement.appendChild(prevButton);
-        
-        // Page numbers
-        // Show only a limited number of page links
-        const maxVisiblePages = 5;
-        let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-        let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
-        
-        // Adjust start if we're at the end
-        if (endPage - startPage + 1 < maxVisiblePages) {
-            startPage = Math.max(1, endPage - maxVisiblePages + 1);
-        }
-        
-        // First page link if needed
-        if (startPage > 1) {
-            const firstPageLink = document.createElement('a');
-            firstPageLink.href = '#';
-            firstPageLink.classList.add('pagination-item');
-            firstPageLink.textContent = '1';
-            firstPageLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                currentPage = 1;
-                displayPosts();
-                scrollToTop();
-            });
-            paginationElement.appendChild(firstPageLink);
-            
-            if (startPage > 2) {
-                const ellipsis = document.createElement('span');
-                ellipsis.classList.add('pagination-item', 'ellipsis');
-                ellipsis.textContent = '...';
-                paginationElement.appendChild(ellipsis);
-            }
-        }
-        
-        // Page numbers
-        for (let i = startPage; i <= endPage; i++) {
-            const pageLink = document.createElement('a');
-            pageLink.href = '#';
-            pageLink.classList.add('pagination-item');
-            pageLink.textContent = i;
-            if (i === currentPage) {
-                pageLink.classList.add('active');
-            }
-            pageLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                currentPage = i;
-                displayPosts();
-                scrollToTop();
-            });
-            paginationElement.appendChild(pageLink);
-        }
-        
-        // Last page link if needed
-        if (endPage < totalPages) {
-            if (endPage < totalPages - 1) {
-                const ellipsis = document.createElement('span');
-                ellipsis.classList.add('pagination-item', 'ellipsis');
-                ellipsis.textContent = '...';
-                paginationElement.appendChild(ellipsis);
-            }
-            
-            const lastPageLink = document.createElement('a');
-            lastPageLink.href = '#';
-            lastPageLink.classList.add('pagination-item');
-            lastPageLink.textContent = totalPages;
-            lastPageLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                currentPage = totalPages;
-                displayPosts();
-                scrollToTop();
-            });
-            paginationElement.appendChild(lastPageLink);
-        }
-        
-        // Next button
-        const nextButton = document.createElement('a');
-        nextButton.href = '#';
-        nextButton.classList.add('pagination-item');
-        nextButton.innerHTML = 'Next &raquo;';
-        nextButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (currentPage < totalPages) {
-                currentPage++;
-                displayPosts();
-                scrollToTop();
-            }
-        });
-        if (currentPage === totalPages) {
-            nextButton.classList.add('disabled');
-        }
-        paginationElement.appendChild(nextButton);
-    }
-
-    // Hide pagination
-    function hidePagination() {
-        document.getElementById('pagination').style.display = 'none';
-    }
-
-    // Hide loading indicator
-    function hideLoading() {
-        document.getElementById('loading-indicator').style.display = 'none';
-    }
-
-    // Scroll to top of the page
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-
-    // Check for URL parameters (for filtering directly from URL)
-    function checkUrlParams() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const categoryParam = urlParams.get('category');
-        const searchParam = urlParams.get('search');
-        
-        if (categoryParam) {
-            // Filter by category if specified in URL
-            const categoryLinks = document.querySelectorAll('#categories-list a');
-            categoryLinks.forEach(link => {
-                if (link.textContent === categoryParam) {
-                    activeCategory = categoryParam;
-                    updateActiveCategoryLink(link);
-                }
-            });
-        }
-        
-        if (searchParam) {
-            // Apply search if specified in URL
-            document.getElementById('search-input').value = searchParam;
-            searchTerm = searchParam.toLowerCase();
-        }
-        
-        // Apply any filters from URL
-        if (categoryParam || searchParam) {
-            applyFilters();
-        }
-    }
-
-    // Initialize the blog page
-    fetchBlogPosts().then(() => {
-        // Check URL parameters after posts are loaded
-        checkUrlParams();
-    });
-});
+</body>
+</html>
