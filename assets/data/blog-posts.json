@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Education for All: Empowering Uganda's Future",
+      "image": "./assets/images/testimonials/post1.jpg",
+      "excerpt": "We are working hard to ensure that every child in Uganda has access to quality education. Our recent initiatives have reached over 500 children in rural communities, providing them with educational materials and supporting dedicated teachers.",
+      "content": "<p>Education is a fundamental right that opens doors to countless opportunities. At Touched Hearts, we believe every child deserves access to quality education regardless of their background or circumstances.</p><p>Our Education for All initiative focuses on:</p><ul><li>Building and renovating classrooms in underserved areas</li><li>Providing essential learning materials to students</li><li>Training and supporting dedicated teachers</li><li>Implementing inclusive education practices for children with disabilities</li></ul><p>Through partnerships with local communities and government agencies, we're creating sustainable education models that will benefit generations to come.</p>",
+      "date": "January 10, 2025",
+      "category": "Education"
+    },
+    {
+      "id": 2,
+      "title": "Disability Support: Breaking Barriers",
+      "image": "./assets/images/D3.jpg",
+      "excerpt": "Tackling the challenges faced by persons with disabilities is at the heart of our mission. Our inclusive programs are designed to empower individuals and create more accessible communities.",
+      "content": "<p>People with disabilities in Uganda often face significant barriers to education, employment, and social inclusion. Our disability support programs aim to break down these barriers through advocacy, direct support, and community education.</p><p>Key achievements in the past year include:</p><ul><li>Distributing mobility aids to over 200 individuals</li><li>Conducting accessibility audits in 15 public buildings</li><li>Training 50 community health workers on disability inclusion</li><li>Launching vocational training programs specifically designed for persons with disabilities</li></ul><p>We're committed to creating a world where disability is never a barrier to achieving one's full potential.</p>",
+      "date": "February 1, 2024",
+      "category": "Disability Support"
+    },
+    {
+      "id": 3,
+      "title": "Health and Wellness: A Community Approach",
+      "image": "./assets/images/H13.jpg",
+      "excerpt": "Our health initiatives are changing the lives of many through community-driven programs. By empowering local health workers and providing essential resources, we're building healthier communities.",
+      "content": "<p>Access to healthcare remains a challenge in many parts of Uganda, particularly in rural areas. Our community approach to health and wellness focuses on prevention, education, and building local capacity.</p><p>Recent health initiatives include:</p><ul><li>Monthly mobile health clinics serving 5 remote communities</li><li>Maternal health education programs for expectant mothers</li><li>Clean water projects reducing waterborne diseases</li><li>Training community health volunteers in basic first aid and health monitoring</li></ul><p>By working directly with communities to identify their unique health challenges, we're able to implement solutions that are both effective and sustainable.</p>",
+      "date": "September 5, 2025",
+      "category": "Community Health"
+    },
+    {
+      "id": 4,
+      "title": "Annual Fundraising Gala Exceeds Expectations",
+      "image": "./assets/images/fundraising.jpg",
+      "excerpt": "Our recent fundraising gala was a tremendous success, raising over $50,000 for our programs. We're grateful to all supporters who made this possible.",
+      "content": "<p>Last month's annual gala exceeded all expectations, bringing together supporters, partners, and community members for an evening of celebration and giving.</p><p>The night featured:</p><ul><li>Inspiring testimonials from program beneficiaries</li><li>Live music from local artists</li><li>A silent auction with items donated by local businesses</li><li>Recognition of our outstanding volunteers and donors</li></ul><p>The funds raised will directly support our education, health, and disability programs throughout Uganda. We're deeply grateful to everyone who contributed to making this event such a success.</p>",
+      "date": "March 15, 2024",
+      "category": "Fundraising"
+    }
+  ],
+  "categories": [
+    "Education",
+    "Disability Support",
+    "Community Health",
+    "Fundraising"
+  ],
+  "pagination": {
+    "totalPosts": 4,
+    "postsPerPage": 3,
+    "totalPages": 2
+  }
+}
