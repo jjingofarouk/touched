@@ -1,6 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 import TeamCard from "../components/TeamCard";
 import teamData from "../data/team.json"; // Team member data
 

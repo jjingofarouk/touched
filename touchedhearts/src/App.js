@@ -35,6 +35,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Accessibility from './pages/Accessibility';
 import Fundraise from './pages/Fundraise';
+import Team from './pages/Team';
 
 // Global styles
 
@@ -71,6 +72,7 @@ const App = () => {
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/accessibility" element={<Accessibility />} />
             <Route path="/fundraise" element={<Fundraise />} />
+            <Route path="/team" element={<Team />} />
           </Routes>
         </div>
         <Footer />
