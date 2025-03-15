@@ -43,7 +43,7 @@ const App = () => {
     <Router>
       <div className="app-container">
         <Navbar />
-        <main className="main-content">
+        <div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -72,7 +72,7 @@ const App = () => {
             <Route path="/accessibility" element={<Accessibility />} />
             <Route path="/fundraise" element={<Fundraise />} />
           </Routes>
-        </main>
+        </div>
         <Footer />
       </div>
     </Router>

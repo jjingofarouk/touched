@@ -12,6 +12,8 @@
     var(--primary-dark) 100%
   );
   overflow: hidden;
+  max-width: 1400px;
+  width: 100%;
 }
 
 .hero-content {
