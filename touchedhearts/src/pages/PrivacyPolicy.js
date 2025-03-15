@@ -3,7 +3,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import './privacy-policy.css';  // Add styles specific to this page
+import '../styles/privacy-policy.css';  // Add styles specific to this page
 
 const PrivacyPolicy = () => {
   return (

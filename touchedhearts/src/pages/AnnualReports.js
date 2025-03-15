@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Header'; // Assuming you have a separate Header component
-import Footer from './Footer'; // Assuming you have a separate Footer component
+import Navbar from '../components/Navbar'; // Assuming you have a separate Header component
+import Footer from '../components/Footer'; // Assuming you have a separate Footer component
 import { Line } from 'react-chartjs-2'; // If you're using a chart library like Chart.js
 
 const AnnualReports = () => {
@@ -55,7 +55,7 @@ const AnnualReports = () => {
 
     return (
         <div>
-            <Header />
+            <Navbar />
             
             {/* Page Header */}
             <section className="page-header" role="banner">

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./assets/css/home.css";
-import "./assets/css/gallery.css";
+import "../styles/gallery.css";
 import { FaChevronDown, FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 
 const Gallery = () => {

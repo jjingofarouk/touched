@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { jsPDF } from "jspdf";
 import Chart from "chart.js/auto";
-import Header from "../components/Header";
+import Navbar from '../components/Navbar'; // Assuming you have a separate Header component
 import Footer from "../components/Footer";
 import "../assets/css/financial-statements.css";
 
@@ -63,7 +63,7 @@ const FinancialStatementsPage = () => {
 
   return (
     <>
-      <Header />
+      <Navbar />
       <section className="page-header">
         <h1>Financial Statements</h1>
         <p className="header-subtitle">Transparency in every shilling</p>

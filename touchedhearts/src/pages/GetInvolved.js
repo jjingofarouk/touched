@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import "../assets/css/home.css";
-import "../assets/css/get-involved.css";
+import "../styles/get-involved.css";
+import VolunteerForm from "../components/VolunteerForm";
 
 const GetInvolved = () => {
   return (
