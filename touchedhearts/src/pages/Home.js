@@ -1,36 +1,26 @@
 // src/pages/Home.js
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import ImpactCards from '../components/ImpactCards';
 import TestimonialSlider from '../components/TestimonialSlider';
 import Partners from '../components/Partners';
 import DonationWidget from '../components/DonationWidget';
+import ContactForm from '../components/ContactForm';
 
 // Assets
 import educationImage from '../assets/images/education.jpg';
 import healthcareImage from '../assets/images/healthcare.jpg';
 import disabilityImage from '../assets/images/disability.jpg';
 import communityImage from '../assets/images/community.jpg';
-import eminatiImage from '../assets/images/eminati.jpg';
-import batwaImage from '../assets/images/batwa.jpg';
-import skillingImage from '../assets/images/skilling.jpg';
 import campImage from '../assets/images/camp.png';
-import videoSource from '../assets/images/V1.mp4';
+import skillingImage from '../assets/images/skilling.jpg';
+import videoSource from '../assets/V1.mp4';
 
 const Home = () => {
-  const [selectedAmount, setSelectedAmount] = useState('$100');
-
-  const handleAmountClick = (amount) => {
-    setSelectedAmount(amount);
-  };
-
   return (
     <main className="main-content">
-      {/* Hero Section */}
       <HeroSection />
-
-      {/* Impact Numbers */}
       <ImpactCards />
 
       {/* Mission Section */}
@@ -121,7 +111,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Success Stories */}
       <TestimonialSlider />
 
       {/* Latest News & Updates */}
@@ -178,40 +167,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Donation Section */}
       <DonationWidget />
 
-      {/* Newsletter Signup */}
-      <section className="newsletter" aria-labelledby="newsletter-title">
-        <div className="newsletter-container">
-          <h2 id="newsletter-title" className="section-title">Stay Connected</h2>
-          <p className="newsletter-text">
-            Subscribe to our newsletter to receive updates on our projects, success stories, and
-            upcoming events.
-          </p>
-          <form className="newsletter-form" action="subscribe.php" method="post">
-            <div className="form-group">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Your email address"
-                required
-              />
-              <button type="submit" className="cta-button primary">Subscribe</button>
-            </div>
-            <label className="checkbox-container">
-              <input type="checkbox" name="consent" required />
-              <span className="checkbox-label">
-                I agree to receive communications from Touched Hearts. View our{' '}
-                <NavLink to="/privacy">Privacy Policy</NavLink>.
-              </span>
-            </label>
-          </form>
-        </div>
-      </section>
+      <ContactForm />
 
-      {/* Partners & Sponsors */}
       <Partners />
 
       {/* Call to Action Section */}
