@@ -5,6 +5,7 @@ import StoryCard from "../components/StoryCard";
 import Pagination from "../components/Pagination";
 import SearchFilter from "../components/SearchFilter";
 import storiesData from "../data/stories.json"; // Assuming stories.json is in the data folder
+import '../styles/stories.css';
 
 const Stories = () => {
   const [stories, setStories] = useState(storiesData);
