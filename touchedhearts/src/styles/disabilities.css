@@ -1,218 +1,299 @@
-/* =============================
-   Global Styles & Typography
-   ============================= */
-   :root {
-    /* Primary color palette - Warm Teal/Sage */
-    --primary-color: #3a8f85;
-    --primary-dark: #2c7269;
-    --primary-light: #8cc5bf;
-    --secondary-color: #d68c45;
-    --secondary-dark: #b87339;
-    --secondary-light: #e9b384;
-  
-    /* Neutral colors - Warmer and more organic */
-    --dark: #2d3a3a;
-    --dark-gray: #4d5c5c;
-    --medium-gray: #7e8c8c;
-    --light-gray: #d2d8d8;
-    --off-white: #f8f7f5;
-    --white: #ffffff;
-  
-    /* Accent colors - More earthy and harmonious */
-    --success: #739e73;
-    --warning: #e6b86a;
-    --error: #c17b7b;
-    --info: #6a91ab;
-  
-    /* Font styles */
-    --font-body: 'Inter', sans-serif;
-    --font-heading: 'Playfair Display', serif;
-  }
-  
-  body {
-    font-family: var(--font-body);
-    color: var(--dark);
-    background-color: var(--off-white);
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* =============================
-     Header Section
-     ============================= */
-  .disabilities-header {
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-align: center;
-    padding: 60px 20px;
-    border-bottom: 5px solid var(--primary-dark);
-  }
-  
+/* disabilities.css - Modern and classy styling for Disabilities page */
+
+/* Base styles */
+.disabilities-page {
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  color: var(--dark);
+  background-color: var(--off-white);
+  line-height: 1.6;
+  padding-bottom: 4rem;
+}
+
+/* Header styles */
+.disabilities-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: var(--white);
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.disabilities-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.disabilities-header p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* Content section */
+.disabilities-content {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.disabilities-content h2 {
+  color: var(--primary-dark);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.disabilities-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+}
+
+.disabilities-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 400px;
+  background-color: var(--light-gray);
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Programs list styling */
+.programs-list {
+  margin: 3rem 0;
+}
+
+.program-item {
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.program-header {
+  padding: 1.25rem 1.5rem;
+  background-color: var(--white);
+  color: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-left: 4px solid var(--primary-light);
+}
+
+.program-header.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-left: 4px solid var(--secondary-color);
+}
+
+.program-header h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.toggle-icon {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+  color: var(--primary-color);
+}
+
+.program-header.active .toggle-icon {
+  transform: rotate(180deg);
+  color: var(--white);
+}
+
+.program-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 1.5rem;
+  background-color: var(--white);
+}
+
+.program-details.active {
+  max-height: 500px;
+  padding: 1.5rem;
+  border-top: 1px solid var(--light-gray);
+}
+
+.program-details p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.program-details p:last-child {
+  margin-bottom: 0;
+}
+
+/* Case studies section */
+.case-studies {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+}
+
+.case-studies h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--white);
+  position: relative;
+  padding-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.case-studies h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+}
+
+.case-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.case-card {
+  background-color: var(--dark-gray);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.case-card h3 {
+  color: var(--secondary-light);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.case-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+}
+
+.case-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  flex-grow: 1;
+}
+
+.case-card .image-placeholder {
+  height: 200px;
+  background-color: var(--medium-gray);
+  margin-top: auto;
+}
+
+/* Animation classes */
+.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
   .disabilities-header h1 {
-    font-family: var(--font-heading);
-    font-size: 2.8rem;
-    margin-bottom: 15px;
+    font-size: 2rem;
   }
   
   .disabilities-header p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
+    font-size: 1rem;
   }
   
-  /* =============================
-     Section Styling
-     ============================= */
-  .disabilities-content, 
-  .case-studies {
-    max-width: 1100px;
-    margin: 60px auto;
-    padding: 20px;
+  .case-container {
+    grid-template-columns: 1fr;
   }
   
   .disabilities-content h2,
   .case-studies h2 {
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    color: var(--primary-dark);
-    border-left: 5px solid var(--secondary-color);
-    padding-left: 15px;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
   }
   
-  .disabilities-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--dark-gray);
-  }
-  
-  /* =============================
-     Image Styling
-     ============================= */
   .image-placeholder {
-    text-align: center;
-    margin: 30px 0;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .disabilities-header {
+    padding: 3rem 1rem;
   }
   
-  .image-placeholder img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* =============================
-     Programs Section
-     ============================= */
-  .programs-list {
-    margin-top: 40px;
-  }
-  
-  .program-item {
-    background: var(--white);
-    border-radius: 8px;
-    padding: 15px 20px;
-    margin-bottom: 15px;
-    border-left: 5px solid var(--primary-color);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .program-item:hover {
-    transform: translateY(-5px);
-  }
-  
-  .program-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
+  .disabilities-header h1 {
+    font-size: 1.8rem;
   }
   
   .program-header h3 {
-    font-size: 1.4rem;
-    color: var(--primary-dark);
-    margin: 0;
+    font-size: 1.1rem;
   }
   
-  .program-header .toggle-icon {
-    font-size: 1.5rem;
-    color: var(--secondary-dark);
+  .image-placeholder {
+    height: 250px;
   }
   
-  .program-details {
-    display: none;
-    padding-top: 10px;
+  .disabilities-content,
+  .case-studies {
+    padding: 2rem 1rem;
   }
-  
-  .program-details p {
-    font-size: 1rem;
-    color: var(--medium-gray);
-    line-height: 1.6;
-  }
-  
-  /* Active state for accordion */
-  .program-details.active {
-    display: block;
-  }
-  
-  /* =============================
-     Case Studies Section
-     ============================= */
-  .case-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
-  .case-card {
-    background: var(--white);
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 5px solid var(--secondary-color);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .case-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .case-card h3 {
-    font-size: 1.4rem;
-    color: var(--secondary-dark);
-    margin-bottom: 10px;
-  }
-  
-  .case-card p {
-    font-size: 1rem;
-    color: var(--medium-gray);
-    line-height: 1.6;
-  }
-  
-  /* =============================
-     Responsive Design
-     ============================= */
-  @media (max-width: 768px) {
-    .disabilities-header h1 {
-      font-size: 2.2rem;
-    }
-  
-    .disabilities-header p {
-      font-size: 1rem;
-    }
-  
-    .disabilities-content h2,
-    .case-studies h2 {
-      font-size: 1.8rem;
-    }
-  
-    .program-header h3 {
-      font-size: 1.2rem;
-    }
-  
-    .case-card h3 {
-      font-size: 1.2rem;
-    }
-  }
+}
