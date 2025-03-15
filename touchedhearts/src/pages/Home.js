@@ -6,10 +6,8 @@ import ImpactCards from '../components/ImpactCards';
 import TestimonialSlider from '../components/TestimonialSlider';
 import Partners from '../components/Partners';
 import DonationWidget from '../components/DonationWidget';
-import ContactForm from '../components/ContactForm';
 
 // Assets
-import homeImage from '../assets/images/home.jpg';
 import educationImage from '../assets/images/education.jpg';
 import healthcareImage from '../assets/images/healthcare.jpg';
 import disabilityImage from '../assets/images/disability.jpg';
@@ -18,7 +16,7 @@ import eminatiImage from '../assets/images/eminati.jpg';
 import batwaImage from '../assets/images/batwa.jpg';
 import skillingImage from '../assets/images/skilling.jpg';
 import campImage from '../assets/images/camp.png';
-import videoSource from '../assets/V1.mp4';
+import videoSource from '../assets/images/V1.mp4';
 
 const Home = () => {
   const [selectedAmount, setSelectedAmount] = useState('$100');

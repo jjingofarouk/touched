@@ -5,12 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import HeroSection from './components/HeroSection';
-import ImpactCards from './components/ImpactCards';
-import TestimonialSlider from './components/TestimonialSlider';
-import Partners from './components/Partners';
-import ContactForm from './components/ContactForm';
-import DonationWidget from './components/DonationWidget';
+
 
 // Pages
 import Home from './pages/Home';
