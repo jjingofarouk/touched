@@ -57,7 +57,7 @@ const Events = () => {
   return (
     <div className="events-page">
       {/* Navigation */}
-      <Navbar />
+
 
       {/* Page Header */}
       <section className="page-header" role="banner">
@@ -103,7 +103,7 @@ const Events = () => {
       </section>
 
       {/* Footer */}
-      <Footer />
+      
     </div>
   );
 };

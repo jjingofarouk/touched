@@ -6,7 +6,7 @@ const TermsOfService = () => {
   return (
     <div className="terms-page">
       {/* Navbar */}
-      <Navbar />
+
 
       {/* Terms Section */}
       <main>
@@ -70,7 +70,7 @@ const TermsOfService = () => {
       </main>
 
       {/* Footer */}
-      <Footer />
+      
     </div>
   );
 };

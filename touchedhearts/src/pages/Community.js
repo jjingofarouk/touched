@@ -85,7 +85,7 @@ const Community = () => {
 
   return (
     <div className="community-page">
-      <Navbar />
+
       
       <HeroSection
         title="Empowering Communities"
@@ -146,7 +146,7 @@ const Community = () => {
         </div>
       </section>
 
-      <Footer />
+      
     </div>
   );
 };

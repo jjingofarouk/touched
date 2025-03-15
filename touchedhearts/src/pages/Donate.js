@@ -33,7 +33,7 @@ const Donate = () => {
   return (
     <div className="donate-page">
       {/* Navigation */}
-      <Navbar />
+
 
       {/* Page Header */}
       <section className="page-header">
@@ -141,7 +141,7 @@ const Donate = () => {
       </div>
 
       {/* Footer */}
-      <Footer />
+      
     </div>
   );
 };

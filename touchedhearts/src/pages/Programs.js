@@ -8,7 +8,7 @@ const Programs = () => {
     return (
         <div>
             {/* Navbar */}
-            <Navbar />
+      
 
             {/* Hero Section */}
             <section className="programs-hero">
@@ -51,7 +51,7 @@ const Programs = () => {
             </section>
 
             {/* Footer */}
-            <Footer />
+            
         </div>
     );
 };

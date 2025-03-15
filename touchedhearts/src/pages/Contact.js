@@ -8,7 +8,7 @@ import '../styles/components.css'; // Adjust based on your CSS setup
 const Contact = () => {
   return (
     <div className="contact-page">
-      <Navbar />
+
 
       <main>
         {/* Contact Form Section */}
@@ -60,7 +60,7 @@ const Contact = () => {
         </section>
       </main>
 
-      <Footer />
+      
     </div>
   );
 };

@@ -55,7 +55,7 @@ const AnnualReports = () => {
 
     return (
         <div>
-            <Navbar />
+      
             
             {/* Page Header */}
             <section className="page-header" role="banner">
@@ -91,7 +91,7 @@ const AnnualReports = () => {
                 </div>
             </div>
 
-            <Footer />
+            
         </div>
     );
 };

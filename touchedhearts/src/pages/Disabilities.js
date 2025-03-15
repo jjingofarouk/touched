@@ -94,7 +94,7 @@ const Disabilities = () => {
 
   return (
     <div className="disabilities-page">
-      <Navbar />
+
 
       <HeroSection
         title="Supporting Persons with Disabilities"
@@ -144,7 +144,7 @@ const Disabilities = () => {
         </div>
       </section>
 
-      <Footer />
+      
     </div>
   );
 };

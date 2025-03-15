@@ -7,7 +7,7 @@ import VolunteerForm from "../components/VolunteerForm";
 const GetInvolved = () => {
   return (
     <div>
-      <Navbar />
+
 
       {/* Page Header */}
       <section className="page-header">
@@ -72,7 +72,7 @@ const GetInvolved = () => {
 
       </div>
 
-      <Footer />
+      
     </div>
   );
 };

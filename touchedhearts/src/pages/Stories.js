@@ -41,7 +41,7 @@ const Stories = () => {
   return (
     <div className="stories-page">
       {/* Navbar */}
-      <Navbar />
+
 
       {/* Page Header */}
       <section className="page-header">
@@ -77,7 +77,7 @@ const Stories = () => {
       </section>
 
       {/* Footer */}
-      <Footer />
+      
     </div>
   );
 };

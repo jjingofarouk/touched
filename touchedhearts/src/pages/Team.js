@@ -8,7 +8,7 @@ const Team = () => {
   return (
     <div className="team-page">
       {/* Navbar */}
-      <Navbar />
+
 
       {/* Team Section */}
       <main>
@@ -23,7 +23,7 @@ const Team = () => {
       </main>
 
       {/* Footer */}
-      <Footer />
+      
     </div>
   );
 };

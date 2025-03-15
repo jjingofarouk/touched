@@ -88,7 +88,7 @@ const Media = () => {
 
   return (
     <div className="media-page">
-      <Navbar />
+
 
       {/* Page Header */}
       <section className="page-header">
@@ -241,7 +241,7 @@ const Media = () => {
         </div>
       )}
 
-      <Footer />
+      
     </div>
   );
 };

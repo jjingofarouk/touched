@@ -32,7 +32,7 @@ const Volunteers = () => {
   return (
     <div className="volunteers-page">
       {/* Navbar */}
-      <Navbar />
+
 
       {/* Page Header */}
       <section className="page-header">
@@ -101,7 +101,7 @@ const Volunteers = () => {
       </div>
 
       {/* Footer */}
-      <Footer />
+      
     </div>
   );
 };

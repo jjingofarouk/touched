@@ -70,7 +70,7 @@ const Education = () => {
   return (
     <div className="education-page">
       {/* Navigation */}
-      <Navbar />
+
 
       {/* Page Header */}
       <section className="page-header">
@@ -160,7 +160,7 @@ const Education = () => {
       </section>
 
       {/* Footer */}
-      <Footer />
+      
     </div>
   );
 };

@@ -31,7 +31,7 @@ const Mission = () => {
 
   return (
     <div className="mission-page">
-      <Navbar />
+
 
       {/* Hero Section */}
       <section className="mission-hero">
@@ -93,7 +93,7 @@ const Mission = () => {
         </div>
       </section>
 
-      <Footer />
+      
     </div>
   );
 };

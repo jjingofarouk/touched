@@ -39,7 +39,7 @@ const Healthcare = () => {
 
   return (
     <div className="healthcare-page">
-      <Navbar />
+
 
       {/* Hero Section */}
       <section className="healthcare-hero">
@@ -160,7 +160,7 @@ const Healthcare = () => {
         </div>
       </section>
 
-      <Footer />
+      
     </div>
   );
 };

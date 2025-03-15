@@ -63,7 +63,7 @@ const FinancialStatementsPage = () => {
 
   return (
     <>
-      <Navbar />
+
       <section className="page-header">
         <h1>Financial Statements</h1>
         <p className="header-subtitle">Transparency in every shilling</p>
@@ -115,7 +115,7 @@ const FinancialStatementsPage = () => {
         </div>
       </section>
 
-      <Footer />
+      
     </>
   );
 };

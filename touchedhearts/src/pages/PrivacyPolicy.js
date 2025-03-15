@@ -8,7 +8,7 @@ import '../styles/privacy-policy.css';  // Add styles specific to this page
 const PrivacyPolicy = () => {
   return (
     <div>
-      <Navbar />
+
       
       <main>
         <section className="privacy-policy-section">
@@ -55,7 +55,7 @@ const PrivacyPolicy = () => {
         </section>
       </main>
       
-      <Footer />
+      
     </div>
   );
 };
