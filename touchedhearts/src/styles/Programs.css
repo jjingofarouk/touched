@@ -1,0 +1,279 @@
+/* Programs.css - Modern styles for Touched Hearts Programs page */
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark);
+  background-color: var(--off-white);
+  line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--primary-dark);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* Hero Section */
+.programs-hero {
+  background: linear-gradient(rgba(58, 143, 133, 0.85), rgba(44, 114, 105, 0.95)), 
+              url('../assets/images/uganda-landscape.jpg') no-repeat center center/cover;
+  color: var(--white);
+  padding: 8rem 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.programs-hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.programs-hero p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+/* Programs Overview Section */
+.programs-overview {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.programs-overview h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.programs-overview h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.program-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2rem;
+  position: relative;
+  border-top: 5px solid var(--primary-color);
+}
+
+.program-card:nth-child(2) {
+  border-top-color: var(--secondary-color);
+}
+
+.program-card:nth-child(3) {
+  border-top-color: var(--info);
+}
+
+.program-card:nth-child(4) {
+  border-top-color: var(--success);
+}
+
+.program-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.program-card h3 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.program-card p {
+  color: var(--dark-gray);
+  margin-bottom: 2rem;
+}
+
+.program-card a {
+  display: inline-block;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 5px;
+  font-size: 1rem;
+}
+
+.program-card a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.program-card a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Call to Action Section */
+.cta-section {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 5rem 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.cta-section h2 {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.cta-section p {
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.2rem;
+}
+
+.cta-section a {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.cta-section a:hover {
+  background-color: var(--secondary-light);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.2rem;
+  }
+  
+  .programs-hero {
+    padding: 6rem 2rem;
+  }
+  
+  .programs-hero p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .programs-hero {
+    padding: 5rem 1.5rem;
+  }
+  
+  .programs-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .programs-overview {
+    padding: 3rem 1.5rem;
+  }
+  
+  .program-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .programs-hero {
+    padding: 4rem 1rem;
+  }
+  
+  .programs-hero p {
+    font-size: 1rem;
+  }
+  
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-section a {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
