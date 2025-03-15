@@ -38,9 +38,10 @@
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(142, 197, 191, 0.2);
   padding: 1rem 0;
-  z-index: 1000;
+  z-index: 1001;
   box-shadow: 0 10px 30px rgba(45, 58, 58, 0.1);
   transition: all 0.3s ease;
+  min-height: 70px;
 }
 
 /* Logo */
