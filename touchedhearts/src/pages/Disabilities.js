@@ -5,10 +5,10 @@ import HeroSection from '../components/HeroSection';
 import '../styles/disabilities.css';
 
 // Importing real images from the assets folder
-import wheelchairGulu from '../assets/images/wheelchair-gulu.jpg';
-import peterOkello from '../assets/images/peter-okello.jpg';
-import sarahAtim from '../assets/images/sarah-atim.jpg';
-import emmanuelOuma from '../assets/images/emmanuel-ouma.jpg';
+import eminati from '../assets/images/eminati.jpg';
+import wheels from '../assets/images/wheels.jpg';
+import sarah from '../assets/images/sarah.jpg';
+import emma from '../assets/images/emma.jpg';
 
 const Disabilities = () => {
   const programs = [
@@ -42,19 +42,19 @@ const Disabilities = () => {
 
   const caseStudies = [
     {
-      title: 'Peter Okello - Gulu',
-      description: 'Peter, a father of three, lost his leg in a 2019 accident. Without resources for a wheelchair, he struggled to farm. Our 2023 Gulu outreach provided him with a wheelchair, restoring his ability to work and support his family.',
-      image: peterOkello, // Actual image
+      title: 'Eminati Robert - Gulu',
+      description: 'Eminati, a father of three, lost his leg in a 2019 accident. Without resources for a wheelchair, he struggled to farm. Our 2023 outreach in Gulu city provided him with a wheelchair, restoring his ability to work and support his family.',
+      image: eminati, // Actual image
     },
     {
       title: 'Sarah Atim - Lira',
-      description: 'Blind since childhood, Sarah faced exclusion until she joined our tailoring program. Now, she earns a living stitching uniforms, proving that disability is not inability.',
-      image: sarahAtim, // Actual image
+      description: 'Visually impaired since childhood, Sarah faced exclusion until she joined our tailoring program. Now, she earns a living stitching uniforms, proving that disability is not inability.',
+      image: sarah, // Actual image
     },
     {
       title: 'Emmanuel Ouma - Tororo',
       description: 'Deaf since birth, Emmanuel struggled in school until our education support provided hearing aids and teacher training. He’s now a top student with big dreams.',
-      image: emmanuelOuma, // Actual image
+      image: emma, // Actual image
     },
   ];
 
@@ -113,7 +113,7 @@ const Disabilities = () => {
         
         {/* Image Section */}
         <div className="image-placeholder">
-          <img src={wheelchairGulu} alt="Wheelchair distribution in Gulu" />
+          <img src={wheels} alt="Wheelchair distribution in Gulu" />
         </div>
 
         {/* Programs Section */}
