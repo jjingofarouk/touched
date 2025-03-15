@@ -67,18 +67,11 @@ const Navbar = () => {
                 Gallery
               </NavLink>
             </li>
-            <li className="nav-dropdown">
+            <li>
               <NavLink to="/get-involved" className="nav-link" activeClassName="active">
-                Get Involved <i className="fas fa-chevron-down"></i>
+                Get Involved 
               </NavLink>
-              <ul className="dropdown-menu">
-                <li>
-                  <NavLink to="/volunteers">Volunteers</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/partners">Partners</NavLink>
-                </li>
-              </ul>
+             
             </li>
             <li>
               <NavLink to="/donate" className="nav-link btn-donate" activeClassName="active">

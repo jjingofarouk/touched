@@ -1,0 +1,190 @@
+/* stories.css */
+:root {
+    /* Color Theme */
+    --primary-color: #3a8f85;
+    --primary-dark: #2c7269;
+    --primary-light: #8cc5bf;
+    --secondary-color: #d68c45;
+    --secondary-dark: #b87339;
+    --secondary-light: #e9b384;
+    --dark: #2d3a3a;
+    --dark-gray: #4d5c5c;
+    --medium-gray: #7e8c8c;
+    --light-gray: #d2d8d8;
+    --off-white: #f8f7f5;
+    --white: #ffffff;
+    --success: #739e73;
+    --warning: #e6b86a;
+    --error: #c17b7b;
+    --info: #6a91ab;
+  }
+  
+  .stories-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--off-white) 0%, var(--light-gray) 100%);
+    font-family: 'Inter', sans-serif;
+    color: var(--dark);
+  }
+  
+  /* Page Header */
+  .page-header {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      to bottom,
+      rgba(58, 143, 133, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+    text-align: center;
+  }
+  
+  .header-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .header-content p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--medium-gray);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+  }
+  
+  /* Stories Section */
+  .stories-section {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  /* Stories Grid */
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  
+  /* Story Card Styling (Assuming StoryCard component uses these classes) */
+  .story-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--light-gray);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+  
+  .story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(58, 143, 133, 0.1);
+  }
+  
+  .story-card h3 {
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .story-card p {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  /* No Stories Message */
+  .no-stories-message {
+    text-align: center;
+    padding: 2rem;
+    color: var(--medium-gray);
+    font-size: 1.125rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 1rem;
+    margin: 2rem 0;
+  }
+  
+  /* Pagination (Assuming Pagination component uses these classes) */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 2rem 0;
+  }
+  
+  .pagination button {
+    background: var(--white);
+    border: 1px solid var(--primary-light);
+    color: var(--primary-dark);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .pagination button:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+  }
+  
+  .pagination button.active {
+    background: var(--primary-dark);
+    color: var(--white);
+    border-color: var(--primary-dark);
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .page-header {
+      padding: 3rem 1.5rem;
+    }
+  
+    .stories-section {
+      padding: 1.5rem;
+    }
+  
+    .stories-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .pagination button {
+      padding: 0.5rem 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header-content h1 {
+      font-size: 2rem;
+    }
+  
+    .header-content p {
+      font-size: 0.9rem;
+    }
+  
+    .story-card {
+      padding: 1rem;
+    }
+  
+    .story-card h3 {
+      font-size: 1.25rem;
+    }
+  }
