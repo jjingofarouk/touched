@@ -1,0 +1,2925 @@
+[
+    {
+        "src": "./assets/images/E12.jpg",
+        "caption": "Annual Charity Event 2024",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/H15.jpg",
+        "caption": "Community Outreach in Karamoja",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/H3.jpg",
+        "caption": "Healthcare Program Launch",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/E1.jpg",
+        "caption": "School Supplies Donation Event",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/h1.jpg",
+        "caption": "Medical Camp Providing Free Checkups",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image6.jpg",
+        "caption": "Disability Support Group Meeting",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/C1.jpg",
+        "caption": "Clean Water Initiative in Rural Areas",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/E2.jpg",
+        "caption": "Vocational Training for Youth",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image9.jpg",
+        "caption": "Emergency Relief Distribution",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image10.jpg",
+        "caption": "Special Needs Children Art Workshop",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H2.jpg",
+        "caption": "Blood Donation Drive",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/C2.jpg",
+        "caption": "Tree Planting Campaign",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/H3.jpg",
+        "caption": "Free Eye Screening for the Elderly",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/E3.jpg",
+        "caption": "School Renovation Project",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image15.jpg",
+        "caption": "First Aid Training for Volunteers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image16.jpg",
+        "caption": "Wheelchair Donation to Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/E4.jpg",
+        "caption": "STEM Workshop for Underprivileged Kids",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H4.jpg",
+        "caption": "Elderly Care Awareness Program",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/C3.jpg",
+        "caption": "Food Drive for Displaced Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image20.jpg",
+        "caption": "Mental Health Awareness Walk",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image21.jpg",
+        "caption": "Sign Language Workshop for Volunteers",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/C4.jpg",
+        "caption": "Hygiene and Sanitation Workshop",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/E5.jpg",
+        "caption": "Back-to-School Campaign",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H5.jpg",
+        "caption": "Women's Health and Wellness Seminar",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image25.jpg",
+        "caption": "Fundraising Gala for Special Needs",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image26.jpg",
+        "caption": "Job Fair for Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image27.jpg",
+        "caption": "Sports Day for Orphans and Vulnerable Kids",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/E6.jpg",
+        "caption": "Digital Literacy Program for Teens",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H6jpg",
+        "caption": "Nutrition Awareness and Cooking Demo",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/C5.jpg",
+        "caption": "Disaster Preparedness Training",
+        "category": "community"
+    },
+    
+    {
+        "src": "./assets/images/image1.jpg",
+        "caption": "Annual Charity Event 2024",
+        "category’s": "events"
+    },
+    {
+        "src": "./assets/images/image2.jpg",
+        "caption": "Community Outreach in Karamoja",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image3.jpg",
+        "caption": "Healthcare Program Launch",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/E7.jpg",
+        "caption": "School Supplies Donation Event",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H6.jpg",
+        "caption": "Medical Camp Providing Free Checkups",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image6.jpg",
+        "caption": "Disability Support Group Meeting",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image7.jpg",
+        "caption": "Clean Water Initiative in Rural Areas",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/E8.jpg",
+        "caption": "Vocational Training for Youth",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image9.jpg",
+        "caption": "Emergency Relief Distribution",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image10.jpg",
+        "caption": "Special Needs Children Art Workshop",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H7.jpg",
+        "caption": "Blood Donation Drive",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image12.jpg",
+        "caption": "Tree Planting Campaign",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/H8.jpg",
+        "caption": "Free Eye Screening for the Elderly",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/E9.jpg",
+        "caption": "School Renovation Project",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image15.jpg",
+        "caption": "First Aid Training for Volunteers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/D1.jpg",
+        "caption": "Wheelchair Donation to Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/E10.jpg",
+        "caption": "STEM Workshop for Underprivileged Kids",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H9.jpg",
+        "caption": "Elderly Care Awareness Program",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image19.jpg",
+        "caption": "Food Drive for Displaced Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image20.jpg",
+        "caption": "Mental Health Awareness Walk",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/D2.jpg",
+        "caption": "Sign Language Workshop for Volunteers",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image22.jpg",
+        "caption": "Hygiene and Sanitation Workshop",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/E11.jpg",
+        "caption": "Back-to-School Campaign",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H10.jpg",
+        "caption": "Women's Health and Wellness Seminar",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image25.jpg",
+        "caption": "Fundraising Gala for Special Needs",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/D3.jpg",
+        "caption": "Job Fair for Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image27.jpg",
+        "caption": "Sports Day for Orphans and Vulnerable Kids",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/E12.jpg",
+        "caption": "Digital Literacy Program for Teens",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H11.jpg",
+        "caption": "Nutrition Awareness and Cooking Demo",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image30.jpg",
+        "caption": "Disaster Preparedness Training",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image31.jpg",
+        "caption": "Winter Clothing Drive for Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image32.jpg",
+        "caption": "Annual Volunteer Appreciation Night",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/E13.jpg",
+        "caption": "Reading Program for Young Children",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H12.jpg",
+        "caption": "Dental Checkup Camp in Rural Schools",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/D4.jpg",
+        "caption": "Accessibility Ramp Installation Project",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image36.jpg",
+        "caption": "Youth Leadership Summit",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image37.jpg",
+        "caption": "Community Garden Opening Ceremony",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/E14.jpg",
+        "caption": "Scholarship Award Ceremony 2025",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image39.jpg",
+        "caption": "Charity Marathon for Cancer Research",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/D5.jpg",
+        "caption": "Hearing Aid Distribution Event",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H13.jpg",
+        "caption": "Mobile Clinic Visiting Remote Villages",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image42.jpg",
+        "caption": "Environmental Cleanup Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/E15.jpg",
+        "caption": "Coding Bootcamp for Girls",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image44.jpg",
+        "caption": "Health and Safety Workshop for Workers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/H14.jpg",
+        "caption": "Therapy Dog Visit for Seniors",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image46.jpg",
+        "caption": "Braille Book Donation to Libraries",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image47.jpg",
+        "caption": "Soup Kitchen Volunteer Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/E15.jpg",
+        "caption": "Teacher Training Seminar",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image49.jpg",
+        "caption": "Annual Health Fair for Families",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/H15.jpg",
+        "caption": "Vaccination Drive for Children",
+        "category": "healthcare"
+    },
+    
+    {
+        "src": "./assets/images/image1.jpg",
+        "caption": "Annual Charity Event 2024",
+        "category’s": "events"
+    },
+    {
+        "src": "./assets/images/image2.jpg",
+        "caption": "Community Outreach in Karamoja",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image3.jpg",
+        "caption": "Healthcare Program Launch",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/E15.jpg",
+        "caption": "School Supplies Donation Event",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H16.jpg",
+        "caption": "Medical Camp Providing Free Checkups",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image6.jpg",
+        "caption": "Disability Support Group Meeting",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image7.jpg",
+        "caption": "Clean Water Initiative in Rural Areas",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/E16.jpg",
+        "caption": "Vocational Training for Youth",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image9.jpg",
+        "caption": "Emergency Relief Distribution",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image10.jpg",
+        "caption": "Special Needs Children Art Workshop",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H17.jpg",
+        "caption": "Blood Donation Drive",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image12.jpg",
+        "caption": "Tree Planting Campaign",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/H18.jpg",
+        "caption": "Free Eye Screening for the Elderly",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image14.jpg",
+        "caption": "School Renovation Project",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image15.jpg",
+        "caption": "First Aid Training for Volunteers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image16.jpg",
+        "caption": "Wheelchair Donation to Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image17.jpg",
+        "caption": "STEM Workshop for Underprivileged Kids",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H20.jpg",
+        "caption": "Elderly Care Awareness Program",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image19.jpg",
+        "caption": "Food Drive for Displaced Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image20.jpg",
+        "caption": "Mental Health Awareness Walk",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image21.jpg",
+        "caption": "Sign Language Workshop for Volunteers",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image22.jpg",
+        "caption": "Hygiene and Sanitation Workshop",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image23.jpg",
+        "caption": "Back-to-School Campaign",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H21.jpg",
+        "caption": "Women's Health and Wellness Seminar",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image25.jpg",
+        "caption": "Fundraising Gala for Special Needs",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image26.jpg",
+        "caption": "Job Fair for Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image27.jpg",
+        "caption": "Sports Day for Orphans and Vulnerable Kids",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image28.jpg",
+        "caption": "Digital Literacy Program for Teens",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H22.jpg",
+        "caption": "Nutrition Awareness and Cooking Demo",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image30.jpg",
+        "caption": "Disaster Preparedness Training",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image31.jpg",
+        "caption": "Winter Clothing Drive for Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image32.jpg",
+        "caption": "Annual Volunteer Appreciation Night",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image33.jpg",
+        "caption": "Reading Program for Young Children",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H23.jpg",
+        "caption": "Dental Checkup Camp in Rural Schools",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image35.jpg",
+        "caption": "Accessibility Ramp Installation Project",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image36.jpg",
+        "caption": "Youth Leadership Summit",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image37.jpg",
+        "caption": "Community Garden Opening Ceremony",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image38.jpg",
+        "caption": "Scholarship Award Ceremony 2025",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image39.jpg",
+        "caption": "Charity Marathon for Cancer Research",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image40.jpg",
+        "caption": "Hearing Aid Distribution Event",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H24.jpg",
+        "caption": "Mobile Clinic Visiting Remote Villages",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image42.jpg",
+        "caption": "Environmental Cleanup Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image43.jpg",
+        "caption": "Coding Bootcamp for Girls",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image44.jpg",
+        "caption": "Health and Safety Workshop for Workers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/H25.jpg",
+        "caption": "Therapy Dog Visit for Seniors",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image46.jpg",
+        "caption": "Braille Book Donation to Libraries",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image47.jpg",
+        "caption": "Soup Kitchen Volunteer Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image48.jpg",
+        "caption": "Teacher Training Seminar",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image49.jpg",
+        "caption": "Annual Health Fair for Families",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/H26.jpg",
+        "caption": "Vaccination Drive for Children",
+        "category": "healthcare"
+    },
+    
+    {
+        "src": "./assets/images/image1.jpg",
+        "caption": "Annual Charity Event 2024",
+        "category’s": "events"
+    },
+    {
+        "src": "./assets/images/image2.jpg",
+        "caption": "Community Outreach in Karamoja",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image3.jpg",
+        "caption": "Healthcare Program Launch",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image4.jpg",
+        "caption": "School Supplies Donation Event",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H27.jpg",
+        "caption": "Medical Camp Providing Free Checkups",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image6.jpg",
+        "caption": "Disability Support Group Meeting",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image7.jpg",
+        "caption": "Clean Water Initiative in Rural Areas",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image8.jpg",
+        "caption": "Vocational Training for Youth",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image9.jpg",
+        "caption": "Emergency Relief Distribution",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image10.jpg",
+        "caption": "Special Needs Children Art Workshop",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H28.jpg",
+        "caption": "Blood Donation Drive",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image12.jpg",
+        "caption": "Tree Planting Campaign",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/H29.jpg",
+        "caption": "Free Eye Screening for the Elderly",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image14.jpg",
+        "caption": "School Renovation Project",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image15.jpg",
+        "caption": "First Aid Training for Volunteers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image16.jpg",
+        "caption": "Wheelchair Donation to Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image17.jpg",
+        "caption": "STEM Workshop for Underprivileged Kids",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H30.jpg",
+        "caption": "Elderly Care Awareness Program",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image19.jpg",
+        "caption": "Food Drive for Displaced Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image20.jpg",
+        "caption": "Mental Health Awareness Walk",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image21.jpg",
+        "caption": "Sign Language Workshop for Volunteers",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image22.jpg",
+        "caption": "Hygiene and Sanitation Workshop",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image23.jpg",
+        "caption": "Back-to-School Campaign",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H31.jpg",
+        "caption": "Women's Health and Wellness Seminar",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image25.jpg",
+        "caption": "Fundraising Gala for Special Needs",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image26.jpg",
+        "caption": "Job Fair for Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image27.jpg",
+        "caption": "Sports Day for Orphans and Vulnerable Kids",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image28.jpg",
+        "caption": "Digital Literacy Program for Teens",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H32.jpg",
+        "caption": "Nutrition Awareness and Cooking Demo",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image30.jpg",
+        "caption": "Disaster Preparedness Training",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image31.jpg",
+        "caption": "Winter Clothing Drive for Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image32.jpg",
+        "caption": "Annual Volunteer Appreciation Night",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image33.jpg",
+        "caption": "Reading Program for Young Children",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H33.jpg",
+        "caption": "Dental Checkup Camp in Rural Schools",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image35.jpg",
+        "caption": "Accessibility Ramp Installation Project",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image36.jpg",
+        "caption": "Youth Leadership Summit",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image37.jpg",
+        "caption": "Community Garden Opening Ceremony",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image38.jpg",
+        "caption": "Scholarship Award Ceremony 2025",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image39.jpg",
+        "caption": "Charity Marathon for Cancer Research",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image40.jpg",
+        "caption": "Hearing Aid Distribution Event",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H34jpg",
+        "caption": "Mobile Clinic Visiting Remote Villages",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image42.jpg",
+        "caption": "Environmental Cleanup Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image43.jpg",
+        "caption": "Coding Bootcamp for Girls",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image44.jpg",
+        "caption": "Health and Safety Workshop for Workers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/H35.jpg",
+        "caption": "Therapy Dog Visit for Seniors",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image46.jpg",
+        "caption": "Braille Book Donation to Libraries",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image47.jpg",
+        "caption": "Soup Kitchen Volunteer Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image48.jpg",
+        "caption": "Teacher Training Seminar",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image49.jpg",
+        "caption": "Annual Health Fair for Families",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/H36.jpg",
+        "caption": "Vaccination Drive for Children",
+        "category": "healthcare"
+    },
+    
+    {
+        "src": "./assets/images/image1.jpg",
+        "caption": "Annual Charity Event 2024",
+        "category’s": "events"
+    },
+    {
+        "src": "./assets/images/image2.jpg",
+        "caption": "Community Outreach in Karamoja",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image3.jpg",
+        "caption": "Healthcare Program Launch",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image4.jpg",
+        "caption": "School Supplies Donation Event",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H37.jpg",
+        "caption": "Medical Camp Providing Free Checkups",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image6.jpg",
+        "caption": "Disability Support Group Meeting",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image7.jpg",
+        "caption": "Clean Water Initiative in Rural Areas",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image8.jpg",
+        "caption": "Vocational Training for Youth",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image9.jpg",
+        "caption": "Emergency Relief Distribution",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image10.jpg",
+        "caption": "Special Needs Children Art Workshop",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H38.jpg",
+        "caption": "Blood Donation Drive",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image12.jpg",
+        "caption": "Tree Planting Campaign",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/H39.jpg",
+        "caption": "Free Eye Screening for the Elderly",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image14.jpg",
+        "caption": "School Renovation Project",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image15.jpg",
+        "caption": "First Aid Training for Volunteers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image16.jpg",
+        "caption": "Wheelchair Donation to Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image17.jpg",
+        "caption": "STEM Workshop for Underprivileged Kids",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H40.jpg",
+        "caption": "Elderly Care Awareness Program",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image19.jpg",
+        "caption": "Food Drive for Displaced Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image20.jpg",
+        "caption": "Mental Health Awareness Walk",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image21.jpg",
+        "caption": "Sign Language Workshop for Volunteers",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image22.jpg",
+        "caption": "Hygiene and Sanitation Workshop",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image23.jpg",
+        "caption": "Back-to-School Campaign",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H41.jpg",
+        "caption": "Women's Health and Wellness Seminar",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image25.jpg",
+        "caption": "Fundraising Gala for Special Needs",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image26.jpg",
+        "caption": "Job Fair for Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image27.jpg",
+        "caption": "Sports Day for Orphans and Vulnerable Kids",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image28.jpg",
+        "caption": "Digital Literacy Program for Teens",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H42.jpg",
+        "caption": "Nutrition Awareness and Cooking Demo",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image30.jpg",
+        "caption": "Disaster Preparedness Training",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image31.jpg",
+        "caption": "Winter Clothing Drive for Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image32.jpg",
+        "caption": "Annual Volunteer Appreciation Night",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image33.jpg",
+        "caption": "Reading Program for Young Children",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H43.jpg",
+        "caption": "Dental Checkup Camp in Rural Schools",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image35.jpg",
+        "caption": "Accessibility Ramp Installation Project",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image36.jpg",
+        "caption": "Youth Leadership Summit",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image37.jpg",
+        "caption": "Community Garden Opening Ceremony",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image38.jpg",
+        "caption": "Scholarship Award Ceremony 2025",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image39.jpg",
+        "caption": "Charity Marathon for Cancer Research",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image40.jpg",
+        "caption": "Hearing Aid Distribution Event",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H44.jpg",
+        "caption": "Mobile Clinic Visiting Remote Villages",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image42.jpg",
+        "caption": "Environmental Cleanup Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image43.jpg",
+        "caption": "Coding Bootcamp for Girls",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image44.jpg",
+        "caption": "Health and Safety Workshop for Workers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/H45.jpg",
+        "caption": "Therapy Dog Visit for Seniors",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image46.jpg",
+        "caption": "Braille Book Donation to Libraries",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image47.jpg",
+        "caption": "Soup Kitchen Volunteer Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image48.jpg",
+        "caption": "Teacher Training Seminar",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image49.jpg",
+        "caption": "Annual Health Fair for Families",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/H46.jpg",
+        "caption": "Vaccination Drive for Children",
+        "category": "healthcare"
+    },
+    
+    {
+        "src": "./assets/images/image1.jpg",
+        "caption": "Annual Charity Event 2024",
+        "category’s": "events"
+    },
+    {
+        "src": "./assets/images/image2.jpg",
+        "caption": "Community Outreach in Karamoja",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image3.jpg",
+        "caption": "Healthcare Program Launch",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image4.jpg",
+        "caption": "School Supplies Donation Event",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H47.jpg",
+        "caption": "Medical Camp Providing Free Checkups",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image6.jpg",
+        "caption": "Disability Support Group Meeting",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image7.jpg",
+        "caption": "Clean Water Initiative in Rural Areas",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image8.jpg",
+        "caption": "Vocational Training for Youth",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image9.jpg",
+        "caption": "Emergency Relief Distribution",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image10.jpg",
+        "caption": "Special Needs Children Art Workshop",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H48.jpg",
+        "caption": "Blood Donation Drive",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image12.jpg",
+        "caption": "Tree Planting Campaign",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image13.jpg",
+        "caption": "Free Eye Screening for the Elderly",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image14.jpg",
+        "caption": "School Renovation Project",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image15.jpg",
+        "caption": "First Aid Training for Volunteers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image16.jpg",
+        "caption": "Wheelchair Donation to Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image17.jpg",
+        "caption": "STEM Workshop for Underprivileged Kids",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H50.jpg",
+        "caption": "Elderly Care Awareness Program",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image19.jpg",
+        "caption": "Food Drive for Displaced Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image20.jpg",
+        "caption": "Mental Health Awareness Walk",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image21.jpg",
+        "caption": "Sign Language Workshop for Volunteers",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image22.jpg",
+        "caption": "Hygiene and Sanitation Workshop",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image23.jpg",
+        "caption": "Back-to-School Campaign",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H51.jpg",
+        "caption": "Women's Health and Wellness Seminar",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image25.jpg",
+        "caption": "Fundraising Gala for Special Needs",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image26.jpg",
+        "caption": "Job Fair for Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image27.jpg",
+        "caption": "Sports Day for Orphans and Vulnerable Kids",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image28.jpg",
+        "caption": "Digital Literacy Program for Teens",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H52.jpg",
+        "caption": "Nutrition Awareness and Cooking Demo",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image30.jpg",
+        "caption": "Disaster Preparedness Training",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image31.jpg",
+        "caption": "Winter Clothing Drive for Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image32.jpg",
+        "caption": "Annual Volunteer Appreciation Night",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image33.jpg",
+        "caption": "Reading Program for Young Children",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H53.jpg",
+        "caption": "Dental Checkup Camp in Rural Schools",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image35.jpg",
+        "caption": "Accessibility Ramp Installation Project",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image36.jpg",
+        "caption": "Youth Leadership Summit",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image37.jpg",
+        "caption": "Community Garden Opening Ceremony",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image38.jpg",
+        "caption": "Scholarship Award Ceremony 2025",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image39.jpg",
+        "caption": "Charity Marathon for Cancer Research",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image40.jpg",
+        "caption": "Hearing Aid Distribution Event",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H54.jpg",
+        "caption": "Mobile Clinic Visiting Remote Villages",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image42.jpg",
+        "caption": "Environmental Cleanup Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image43.jpg",
+        "caption": "Coding Bootcamp for Girls",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image44.jpg",
+        "caption": "Health and Safety Workshop for Workers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/H55.jpg",
+        "caption": "Therapy Dog Visit for Seniors",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image46.jpg",
+        "caption": "Braille Book Donation to Libraries",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image47.jpg",
+        "caption": "Soup Kitchen Volunteer Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image48.jpg",
+        "caption": "Teacher Training Seminar",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image49.jpg",
+        "caption": "Annual Health Fair for Families",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/H56.jpg",
+        "caption": "Vaccination Drive for Children",
+        "category": "healthcare"
+    },
+    
+    {
+        "src": "./assets/images/image1.jpg",
+        "caption": "Annual Charity Event 2024",
+        "category’s": "events"
+    },
+    {
+        "src": "./assets/images/image2.jpg",
+        "caption": "Community Outreach in Karamoja",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image3.jpg",
+        "caption": "Healthcare Program Launch",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image4.jpg",
+        "caption": "School Supplies Donation Event",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H58.jpg",
+        "caption": "Medical Camp Providing Free Checkups",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image6.jpg",
+        "caption": "Disability Support Group Meeting",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image7.jpg",
+        "caption": "Clean Water Initiative in Rural Areas",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image8.jpg",
+        "caption": "Vocational Training for Youth",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image9.jpg",
+        "caption": "Emergency Relief Distribution",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image10.jpg",
+        "caption": "Special Needs Children Art Workshop",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H59.jpg",
+        "caption": "Blood Donation Drive",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image12.jpg",
+        "caption": "Tree Planting Campaign",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image13.jpg",
+        "caption": "Free Eye Screening for the Elderly",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image14.jpg",
+        "caption": "School Renovation Project",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image15.jpg",
+        "caption": "First Aid Training for Volunteers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image16.jpg",
+        "caption": "Wheelchair Donation to Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image17.jpg",
+        "caption": "STEM Workshop for Underprivileged Kids",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H60.jpg",
+        "caption": "Elderly Care Awareness Program",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image19.jpg",
+        "caption": "Food Drive for Displaced Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image20.jpg",
+        "caption": "Mental Health Awareness Walk",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image21.jpg",
+        "caption": "Sign Language Workshop for Volunteers",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image22.jpg",
+        "caption": "Hygiene and Sanitation Workshop",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image23.jpg",
+        "caption": "Back-to-School Campaign",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H61.jpg",
+        "caption": "Women's Health and Wellness Seminar",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image25.jpg",
+        "caption": "Fundraising Gala for Special Needs",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image26.jpg",
+        "caption": "Job Fair for Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image27.jpg",
+        "caption": "Sports Day for Orphans and Vulnerable Kids",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image28.jpg",
+        "caption": "Digital Literacy Program for Teens",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H62.jpg",
+        "caption": "Nutrition Awareness and Cooking Demo",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image30.jpg",
+        "caption": "Disaster Preparedness Training",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image31.jpg",
+        "caption": "Winter Clothing Drive for Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image32.jpg",
+        "caption": "Annual Volunteer Appreciation Night",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image33.jpg",
+        "caption": "Reading Program for Young Children",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H63.jpg",
+        "caption": "Dental Checkup Camp in Rural Schools",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image35.jpg",
+        "caption": "Accessibility Ramp Installation Project",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image36.jpg",
+        "caption": "Youth Leadership Summit",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image37.jpg",
+        "caption": "Community Garden Opening Ceremony",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image38.jpg",
+        "caption": "Scholarship Award Ceremony 2025",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image39.jpg",
+        "caption": "Charity Marathon for Cancer Research",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image40.jpg",
+        "caption": "Hearing Aid Distribution Event",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H64.jpg",
+        "caption": "Mobile Clinic Visiting Remote Villages",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image42.jpg",
+        "caption": "Environmental Cleanup Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image43.jpg",
+        "caption": "Coding Bootcamp for Girls",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image44.jpg",
+        "caption": "Health and Safety Workshop for Workers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/H65.jpg",
+        "caption": "Therapy Dog Visit for Seniors",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image46.jpg",
+        "caption": "Braille Book Donation to Libraries",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image47.jpg",
+        "caption": "Soup Kitchen Volunteer Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image48.jpg",
+        "caption": "Teacher Training Seminar",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image49.jpg",
+        "caption": "Annual Health Fair for Families",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/H66.jpg",
+        "caption": "Vaccination Drive for Children",
+        "category": "healthcare"
+    },
+    
+    {
+        "src": "./assets/images/image1.jpg",
+        "caption": "Annual Charity Event 2024",
+        "category’s": "events"
+    },
+    {
+        "src": "./assets/images/image2.jpg",
+        "caption": "Community Outreach in Karamoja",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image3.jpg",
+        "caption": "Healthcare Program Launch",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image4.jpg",
+        "caption": "School Supplies Donation Event",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H67.jpg",
+        "caption": "Medical Camp Providing Free Checkups",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image6.jpg",
+        "caption": "Disability Support Group Meeting",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image7.jpg",
+        "caption": "Clean Water Initiative in Rural Areas",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image8.jpg",
+        "caption": "Vocational Training for Youth",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image9.jpg",
+        "caption": "Emergency Relief Distribution",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image10.jpg",
+        "caption": "Special Needs Children Art Workshop",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/H68.jpg",
+        "caption": "Blood Donation Drive",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image12.jpg",
+        "caption": "Tree Planting Campaign",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/H69.jpg",
+        "caption": "Free Eye Screening for the Elderly",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image14.jpg",
+        "caption": "School Renovation Project",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image15.jpg",
+        "caption": "First Aid Training for Volunteers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image16.jpg",
+        "caption": "Wheelchair Donation to Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image17.jpg",
+        "caption": "STEM Workshop for Underprivileged Kids",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H70.jpg",
+        "caption": "Elderly Care Awareness Program",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image19.jpg",
+        "caption": "Food Drive for Displaced Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image20.jpg",
+        "caption": "Mental Health Awareness Walk",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image21.jpg",
+        "caption": "Sign Language Workshop for Volunteers",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image22.jpg",
+        "caption": "Hygiene and Sanitation Workshop",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image23.jpg",
+        "caption": "Back-to-School Campaign",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H71.jpg",
+        "caption": "Women's Health and Wellness Seminar",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image25.jpg",
+        "caption": "Fundraising Gala for Special Needs",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image26.jpg",
+        "caption": "Job Fair for Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image27.jpg",
+        "caption": "Sports Day for Orphans and Vulnerable Kids",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image28.jpg",
+        "caption": "Digital Literacy Program for Teens",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/H72.jpg",
+        "caption": "Nutrition Awareness and Cooking Demo",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image30.jpg",
+        "caption": "Disaster Preparedness Training",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image31.jpg",
+        "caption": "Winter Clothing Drive for Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image32.jpg",
+        "caption": "Annual Volunteer Appreciation Night",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image33.jpg",
+        "caption": "Reading Program for Young Children",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image34.jpg",
+        "caption": "Dental Checkup Camp in Rural Schools",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image35.jpg",
+        "caption": "Accessibility Ramp Installation Project",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image36.jpg",
+        "caption": "Youth Leadership Summit",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image37.jpg",
+        "caption": "Community Garden Opening Ceremony",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image38.jpg",
+        "caption": "Scholarship Award Ceremony 2025",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image39.jpg",
+        "caption": "Charity Marathon for Cancer Research",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image40.jpg",
+        "caption": "Hearing Aid Distribution Event",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image41.jpg",
+        "caption": "Mobile Clinic Visiting Remote Villages",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image42.jpg",
+        "caption": "Environmental Cleanup Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image43.jpg",
+        "caption": "Coding Bootcamp for Girls",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image44.jpg",
+        "caption": "Health and Safety Workshop for Workers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image45.jpg",
+        "caption": "Therapy Dog Visit for Seniors",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image46.jpg",
+        "caption": "Braille Book Donation to Libraries",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image47.jpg",
+        "caption": "Soup Kitchen Volunteer Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image48.jpg",
+        "caption": "Teacher Training Seminar",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image49.jpg",
+        "caption": "Annual Health Fair for Families",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image50.jpg",
+        "caption": "Vaccination Drive for Children",
+        "category": "healthcare"
+    },
+    
+    {
+        "src": "./assets/images/image1.jpg",
+        "caption": "Annual Charity Event 2024",
+        "category’s": "events"
+    },
+    {
+        "src": "./assets/images/image2.jpg",
+        "caption": "Community Outreach in Karamoja",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image3.jpg",
+        "caption": "Healthcare Program Launch",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image4.jpg",
+        "caption": "School Supplies Donation Event",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image5.jpg",
+        "caption": "Medical Camp Providing Free Checkups",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image6.jpg",
+        "caption": "Disability Support Group Meeting",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image7.jpg",
+        "caption": "Clean Water Initiative in Rural Areas",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image8.jpg",
+        "caption": "Vocational Training for Youth",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image9.jpg",
+        "caption": "Emergency Relief Distribution",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image10.jpg",
+        "caption": "Special Needs Children Art Workshop",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image11.jpg",
+        "caption": "Blood Donation Drive",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image12.jpg",
+        "caption": "Tree Planting Campaign",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image13.jpg",
+        "caption": "Free Eye Screening for the Elderly",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image14.jpg",
+        "caption": "School Renovation Project",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image15.jpg",
+        "caption": "First Aid Training for Volunteers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image16.jpg",
+        "caption": "Wheelchair Donation to Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image17.jpg",
+        "caption": "STEM Workshop for Underprivileged Kids",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image18.jpg",
+        "caption": "Elderly Care Awareness Program",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image19.jpg",
+        "caption": "Food Drive for Displaced Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image20.jpg",
+        "caption": "Mental Health Awareness Walk",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image21.jpg",
+        "caption": "Sign Language Workshop for Volunteers",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image22.jpg",
+        "caption": "Hygiene and Sanitation Workshop",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image23.jpg",
+        "caption": "Back-to-School Campaign",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image24.jpg",
+        "caption": "Women's Health and Wellness Seminar",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image25.jpg",
+        "caption": "Fundraising Gala for Special Needs",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image26.jpg",
+        "caption": "Job Fair for Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image27.jpg",
+        "caption": "Sports Day for Orphans and Vulnerable Kids",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image28.jpg",
+        "caption": "Digital Literacy Program for Teens",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image29.jpg",
+        "caption": "Nutrition Awareness and Cooking Demo",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image30.jpg",
+        "caption": "Disaster Preparedness Training",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image31.jpg",
+        "caption": "Winter Clothing Drive for Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image32.jpg",
+        "caption": "Annual Volunteer Appreciation Night",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image33.jpg",
+        "caption": "Reading Program for Young Children",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image34.jpg",
+        "caption": "Dental Checkup Camp in Rural Schools",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image35.jpg",
+        "caption": "Accessibility Ramp Installation Project",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image36.jpg",
+        "caption": "Youth Leadership Summit",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image37.jpg",
+        "caption": "Community Garden Opening Ceremony",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image38.jpg",
+        "caption": "Scholarship Award Ceremony 2025",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image39.jpg",
+        "caption": "Charity Marathon for Cancer Research",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image40.jpg",
+        "caption": "Hearing Aid Distribution Event",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image41.jpg",
+        "caption": "Mobile Clinic Visiting Remote Villages",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image42.jpg",
+        "caption": "Environmental Cleanup Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image43.jpg",
+        "caption": "Coding Bootcamp for Girls",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image44.jpg",
+        "caption": "Health and Safety Workshop for Workers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image45.jpg",
+        "caption": "Therapy Dog Visit for Seniors",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image46.jpg",
+        "caption": "Braille Book Donation to Libraries",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image47.jpg",
+        "caption": "Soup Kitchen Volunteer Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image48.jpg",
+        "caption": "Teacher Training Seminar",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image49.jpg",
+        "caption": "Annual Health Fair for Families",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image50.jpg",
+        "caption": "Vaccination Drive for Children",
+        "category": "healthcare"
+    },
+    
+    {
+        "src": "./assets/images/image1.jpg",
+        "caption": "Annual Charity Event 2024",
+        "category’s": "events"
+    },
+    {
+        "src": "./assets/images/image2.jpg",
+        "caption": "Community Outreach in Karamoja",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image3.jpg",
+        "caption": "Healthcare Program Launch",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image4.jpg",
+        "caption": "School Supplies Donation Event",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image5.jpg",
+        "caption": "Medical Camp Providing Free Checkups",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image6.jpg",
+        "caption": "Disability Support Group Meeting",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image7.jpg",
+        "caption": "Clean Water Initiative in Rural Areas",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image8.jpg",
+        "caption": "Vocational Training for Youth",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image9.jpg",
+        "caption": "Emergency Relief Distribution",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image10.jpg",
+        "caption": "Special Needs Children Art Workshop",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image11.jpg",
+        "caption": "Blood Donation Drive",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image12.jpg",
+        "caption": "Tree Planting Campaign",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image13.jpg",
+        "caption": "Free Eye Screening for the Elderly",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image14.jpg",
+        "caption": "School Renovation Project",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image15.jpg",
+        "caption": "First Aid Training for Volunteers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image16.jpg",
+        "caption": "Wheelchair Donation to Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image17.jpg",
+        "caption": "STEM Workshop for Underprivileged Kids",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image18.jpg",
+        "caption": "Elderly Care Awareness Program",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image19.jpg",
+        "caption": "Food Drive for Displaced Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image20.jpg",
+        "caption": "Mental Health Awareness Walk",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image21.jpg",
+        "caption": "Sign Language Workshop for Volunteers",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image22.jpg",
+        "caption": "Hygiene and Sanitation Workshop",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image23.jpg",
+        "caption": "Back-to-School Campaign",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image24.jpg",
+        "caption": "Women's Health and Wellness Seminar",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image25.jpg",
+        "caption": "Fundraising Gala for Special Needs",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image26.jpg",
+        "caption": "Job Fair for Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image27.jpg",
+        "caption": "Sports Day for Orphans and Vulnerable Kids",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image28.jpg",
+        "caption": "Digital Literacy Program for Teens",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image29.jpg",
+        "caption": "Nutrition Awareness and Cooking Demo",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image30.jpg",
+        "caption": "Disaster Preparedness Training",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image31.jpg",
+        "caption": "Winter Clothing Drive for Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image32.jpg",
+        "caption": "Annual Volunteer Appreciation Night",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image33.jpg",
+        "caption": "Reading Program for Young Children",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image34.jpg",
+        "caption": "Dental Checkup Camp in Rural Schools",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image35.jpg",
+        "caption": "Accessibility Ramp Installation Project",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image36.jpg",
+        "caption": "Youth Leadership Summit",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image37.jpg",
+        "caption": "Community Garden Opening Ceremony",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image38.jpg",
+        "caption": "Scholarship Award Ceremony 2025",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image39.jpg",
+        "caption": "Charity Marathon for Cancer Research",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image40.jpg",
+        "caption": "Hearing Aid Distribution Event",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image41.jpg",
+        "caption": "Mobile Clinic Visiting Remote Villages",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image42.jpg",
+        "caption": "Environmental Cleanup Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image43.jpg",
+        "caption": "Coding Bootcamp for Girls",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image44.jpg",
+        "caption": "Health and Safety Workshop for Workers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image45.jpg",
+        "caption": "Therapy Dog Visit for Seniors",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image46.jpg",
+        "caption": "Braille Book Donation to Libraries",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image47.jpg",
+        "caption": "Soup Kitchen Volunteer Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image48.jpg",
+        "caption": "Teacher Training Seminar",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image49.jpg",
+        "caption": "Annual Health Fair for Families",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image50.jpg",
+        "caption": "Vaccination Drive for Children",
+        "category": "healthcare"
+    },
+    
+    {
+        "src": "./assets/images/image1.jpg",
+        "caption": "Annual Charity Event 2024",
+        "category’s": "events"
+    },
+    {
+        "src": "./assets/images/image2.jpg",
+        "caption": "Community Outreach in Karamoja",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image3.jpg",
+        "caption": "Healthcare Program Launch",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image4.jpg",
+        "caption": "School Supplies Donation Event",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image5.jpg",
+        "caption": "Medical Camp Providing Free Checkups",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image6.jpg",
+        "caption": "Disability Support Group Meeting",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image7.jpg",
+        "caption": "Clean Water Initiative in Rural Areas",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image8.jpg",
+        "caption": "Vocational Training for Youth",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image9.jpg",
+        "caption": "Emergency Relief Distribution",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image10.jpg",
+        "caption": "Special Needs Children Art Workshop",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image11.jpg",
+        "caption": "Blood Donation Drive",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image12.jpg",
+        "caption": "Tree Planting Campaign",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image13.jpg",
+        "caption": "Free Eye Screening for the Elderly",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image14.jpg",
+        "caption": "School Renovation Project",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image15.jpg",
+        "caption": "First Aid Training for Volunteers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image16.jpg",
+        "caption": "Wheelchair Donation to Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image17.jpg",
+        "caption": "STEM Workshop for Underprivileged Kids",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image18.jpg",
+        "caption": "Elderly Care Awareness Program",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image19.jpg",
+        "caption": "Food Drive for Displaced Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image20.jpg",
+        "caption": "Mental Health Awareness Walk",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image21.jpg",
+        "caption": "Sign Language Workshop for Volunteers",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image22.jpg",
+        "caption": "Hygiene and Sanitation Workshop",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image23.jpg",
+        "caption": "Back-to-School Campaign",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image24.jpg",
+        "caption": "Women's Health and Wellness Seminar",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image25.jpg",
+        "caption": "Fundraising Gala for Special Needs",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image26.jpg",
+        "caption": "Job Fair for Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image27.jpg",
+        "caption": "Sports Day for Orphans and Vulnerable Kids",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image28.jpg",
+        "caption": "Digital Literacy Program for Teens",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image29.jpg",
+        "caption": "Nutrition Awareness and Cooking Demo",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image30.jpg",
+        "caption": "Disaster Preparedness Training",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image31.jpg",
+        "caption": "Winter Clothing Drive for Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image32.jpg",
+        "caption": "Annual Volunteer Appreciation Night",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image33.jpg",
+        "caption": "Reading Program for Young Children",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image34.jpg",
+        "caption": "Dental Checkup Camp in Rural Schools",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image35.jpg",
+        "caption": "Accessibility Ramp Installation Project",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image36.jpg",
+        "caption": "Youth Leadership Summit",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image37.jpg",
+        "caption": "Community Garden Opening Ceremony",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image38.jpg",
+        "caption": "Scholarship Award Ceremony 2025",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image39.jpg",
+        "caption": "Charity Marathon for Cancer Research",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image40.jpg",
+        "caption": "Hearing Aid Distribution Event",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image41.jpg",
+        "caption": "Mobile Clinic Visiting Remote Villages",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image42.jpg",
+        "caption": "Environmental Cleanup Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image43.jpg",
+        "caption": "Coding Bootcamp for Girls",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image44.jpg",
+        "caption": "Health and Safety Workshop for Workers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image45.jpg",
+        "caption": "Therapy Dog Visit for Seniors",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image46.jpg",
+        "caption": "Braille Book Donation to Libraries",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image47.jpg",
+        "caption": "Soup Kitchen Volunteer Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image48.jpg",
+        "caption": "Teacher Training Seminar",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image49.jpg",
+        "caption": "Annual Health Fair for Families",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image50.jpg",
+        "caption": "Vaccination Drive for Children",
+        "category": "healthcare"
+    },
+    
+    {
+        "src": "./assets/images/image1.jpg",
+        "caption": "Annual Charity Event 2024",
+        "category’s": "events"
+    },
+    {
+        "src": "./assets/images/image2.jpg",
+        "caption": "Community Outreach in Karamoja",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image3.jpg",
+        "caption": "Healthcare Program Launch",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image4.jpg",
+        "caption": "School Supplies Donation Event",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image5.jpg",
+        "caption": "Medical Camp Providing Free Checkups",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image6.jpg",
+        "caption": "Disability Support Group Meeting",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image7.jpg",
+        "caption": "Clean Water Initiative in Rural Areas",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image8.jpg",
+        "caption": "Vocational Training for Youth",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image9.jpg",
+        "caption": "Emergency Relief Distribution",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image10.jpg",
+        "caption": "Special Needs Children Art Workshop",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image11.jpg",
+        "caption": "Blood Donation Drive",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image12.jpg",
+        "caption": "Tree Planting Campaign",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image13.jpg",
+        "caption": "Free Eye Screening for the Elderly",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image14.jpg",
+        "caption": "School Renovation Project",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image15.jpg",
+        "caption": "First Aid Training for Volunteers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image16.jpg",
+        "caption": "Wheelchair Donation to Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image17.jpg",
+        "caption": "STEM Workshop for Underprivileged Kids",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image18.jpg",
+        "caption": "Elderly Care Awareness Program",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image19.jpg",
+        "caption": "Food Drive for Displaced Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image20.jpg",
+        "caption": "Mental Health Awareness Walk",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image21.jpg",
+        "caption": "Sign Language Workshop for Volunteers",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image22.jpg",
+        "caption": "Hygiene and Sanitation Workshop",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image23.jpg",
+        "caption": "Back-to-School Campaign",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image24.jpg",
+        "caption": "Women's Health and Wellness Seminar",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image25.jpg",
+        "caption": "Fundraising Gala for Special Needs",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image26.jpg",
+        "caption": "Job Fair for Persons with Disabilities",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image27.jpg",
+        "caption": "Sports Day for Orphans and Vulnerable Kids",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image28.jpg",
+        "caption": "Digital Literacy Program for Teens",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image29.jpg",
+        "caption": "Nutrition Awareness and Cooking Demo",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image30.jpg",
+        "caption": "Disaster Preparedness Training",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image31.jpg",
+        "caption": "Winter Clothing Drive for Families",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image32.jpg",
+        "caption": "Annual Volunteer Appreciation Night",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image33.jpg",
+        "caption": "Reading Program for Young Children",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image34.jpg",
+        "caption": "Dental Checkup Camp in Rural Schools",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image35.jpg",
+        "caption": "Accessibility Ramp Installation Project",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image36.jpg",
+        "caption": "Youth Leadership Summit",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image37.jpg",
+        "caption": "Community Garden Opening Ceremony",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image38.jpg",
+        "caption": "Scholarship Award Ceremony 2025",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image39.jpg",
+        "caption": "Charity Marathon for Cancer Research",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image40.jpg",
+        "caption": "Hearing Aid Distribution Event",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image41.jpg",
+        "caption": "Mobile Clinic Visiting Remote Villages",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image42.jpg",
+        "caption": "Environmental Cleanup Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image43.jpg",
+        "caption": "Coding Bootcamp for Girls",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image44.jpg",
+        "caption": "Health and Safety Workshop for Workers",
+        "category": "programs"
+    },
+    {
+        "src": "./assets/images/image45.jpg",
+        "caption": "Therapy Dog Visit for Seniors",
+        "category": "healthcare"
+    },
+    {
+        "src": "./assets/images/image46.jpg",
+        "caption": "Braille Book Donation to Libraries",
+        "category": "disabilities"
+    },
+    {
+        "src": "./assets/images/image47.jpg",
+        "caption": "Soup Kitchen Volunteer Day",
+        "category": "community"
+    },
+    {
+        "src": "./assets/images/image48.jpg",
+        "caption": "Teacher Training Seminar",
+        "category": "education"
+    },
+    {
+        "src": "./assets/images/image49.jpg",
+        "caption": "Annual Health Fair for Families",
+        "category": "events"
+    },
+    {
+        "src": "./assets/images/image50.jpg",
+        "caption": "Vaccination Drive for Children",
+        "category": "healthcare"
+    }
+
+
+
+
+
+
+
+
+
+
+
+    
+]

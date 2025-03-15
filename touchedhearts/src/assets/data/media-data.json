@@ -1,0 +1,110 @@
+{
+    "pressReleases": [
+        {
+            "title": "2025 Education Fundraiser Success",
+            "date": "2025-02-15",
+            "category": "Education",
+            "summary": "Raised 500 million UGX to build new schools in rural Uganda.",
+            "pdf": "./assets/media/press/education-fundraiser-2025.pdf"
+        },
+        {
+            "title": "Healthcare Milestone Achieved",
+            "date": "2024-11-10",
+            "category": "Healthcare",
+            "summary": "Provided free healthcare to over 10,000 patients in 2024.",
+            "pdf": "./assets/media/press/healthcare-milestone-2024.pdf"
+        },
+        {
+            "title": "Community Empowerment Event",
+            "date": "2024-08-20",
+            "category": "Community",
+            "summary": "Hosted workshops for 500 women in vocational skills.",
+            "pdf": "./assets/media/press/community-empowerment-2024.pdf"
+        }
+    ],
+    "gallery": [
+        {
+            "src": "./assets/images/school-opening.jpg",
+            "category": "Education",
+            "caption": "New school opening in rural Uganda, 2024"
+        },
+        {
+            "src": "./assets/images/healthcare-clinic.jpg",
+            "category": "Healthcare",
+            "caption": "Mobile clinic serving remote communities"
+        },
+        {
+            "src": "./assets/images/women-training.jpg",
+            "category": "Community",
+            "caption": "Vocational training for women, 2024"
+        },
+        {
+            "src": "./assets/images/charity-run.jpg",
+            "category": "Events",
+            "caption": "Annual Charity Run participants"
+        }
+    ],
+    "videos": [
+        {
+            "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+            "title": "Success Story: Jane’s Journey",
+            "tags": ["Success Stories"]
+        },
+        {
+            "url": "https://www.youtube.com/embed/9bZkp7q19f0",
+            "title": "2024 Highlights",
+            "tags": ["Events"]
+        }
+    ],
+    "mediaKit": [
+        {
+            "name": "Logo",
+            "preview": "./assets/media/kit/logo-preview.png"
+        },
+        {
+            "name": "Brand Guidelines",
+            "preview": "./assets/media/kit/guidelines-preview.png"
+        },
+        {
+            "name": "High-Res Photo",
+            "preview": "./assets/media/kit/photo-preview.jpg"
+        }
+    ],
+    "mediaKitZip": "./assets/media/kit/TouchedHearts_MediaKit.zip",
+    "news": [
+        {
+            "source": "New Vision",
+            "title": "Touched Hearts Expands Education Reach",
+            "date": "2024-10-05",
+            "url": "https://newvision.co.ug/article",
+            "logo": "./assets/media/news/new-vision-logo.png"
+        },
+        {
+            "source": "Daily Monitor",
+            "title": "NGO Boosts Healthcare in Uganda",
+            "date": "2024-09-15",
+            "url": "https://dailymonitor.co.ug/article",
+            "logo": "./assets/media/news/daily-monitor-logo.png"
+        }
+    ],
+    "infographics": [
+        {
+            "year": 2024,
+            "children": 10000,
+            "women": 3000,
+            "funds": 1850000000
+        },
+        {
+            "year": 2023,
+            "children": 8000,
+            "women": 2500,
+            "funds": 1700000000
+        },
+        {
+            "year": 2022,
+            "children": 6000,
+            "women": 2000,
+            "funds": 1500000000
+        }
+    ]
+}

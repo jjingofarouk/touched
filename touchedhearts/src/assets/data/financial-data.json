@@ -1,0 +1,25 @@
+{
+    "financials": [
+        {
+            "year": 2024,
+            "revenue": 1850000000,
+            "expenses": 1650000000,
+            "netIncome": 200000000,
+            "pdf": "./assets/financials/financial-statement-2024.pdf"
+        },
+        {
+            "year": 2023,
+            "revenue": 1700000000,
+            "expenses": 1550000000,
+            "netIncome": 150000000,
+            "pdf": "./assets/financials/financial-statement-2023.pdf"
+        },
+        {
+            "year": 2022,
+            "revenue": 1500000000,
+            "expenses": 1400000000,
+            "netIncome": 100000000,
+            "pdf": "./assets/financials/financial-statement-2022.pdf"
+        }
+    ]
+}
