@@ -5,6 +5,8 @@ import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
  // Assuming styles are managed here
 
+import '../styles/components.css'; // Assuming styles are managed here
+
 const Disabilities = () => {
   // Programs data
   const programs = [
@@ -94,13 +96,13 @@ const Disabilities = () => {
 
   return (
     <div className="disabilities-page">
-
-
-      <HeroSection
-        title="Supporting Persons with Disabilities"
-        description="At Touched Hearts, we empower individuals with disabilities in Uganda through inclusive programs, healthcare access, and community integration, ensuring they live with dignity and opportunity."
-        className="disabilities-hero"
-      />
+      {/* New Header Section */}
+      <header className="disabilities-header">
+        <h1>Supporting Persons with Disabilities</h1>
+        <p>
+          At Touched Hearts, we empower individuals with disabilities in Uganda through inclusive programs, healthcare access, and community integration, ensuring they live with dignity and opportunity.
+        </p>
+      </header>
 
       <section className="disabilities-content">
         <h2>Our Commitment to Disability Support</h2>
@@ -144,7 +146,6 @@ const Disabilities = () => {
         </div>
       </section>
 
-      
     </div>
   );
 };
