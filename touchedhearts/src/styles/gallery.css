@@ -539,9 +539,157 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
   .nav-menu {
     display: none; /* Mobile menu toggle would be implemented with JS */
   }
   
   .gallery-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .filter-bar {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .filter-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-logo img {
+    margin: 0 auto 1rem;
+  }
+
+  .footer-tagline {
+    margin: 0 auto;
+  }
+
+  .contact-info p {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0.5rem 1rem;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .gallery-title {
+    font-size: 1.75rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .gallery-item-caption {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .pagination {
+    gap: 0.75rem;
+  }
+
+  .pagination button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .lightbox-content p {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .close-btn {
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .footer {
+    padding: 2rem 0 0;
+  }
+
+  .footer-container {
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+
+  .footer-heading {
+    font-size: 1.1rem;
+  }
+
+  .footer-bottom {
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
+  }
+}
+
+/* Accessibility enhancements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #006666;
+    --primary-dark: #004d4d;
+    --primary-light: #b3ffff;
+    --secondary-color: #cc6600;
+    --secondary-dark: #994d00;
+    --secondary-light: #ffcc99;
+    --dark: #000000;
+    --dark-gray: #333333;
+    --medium-gray: #666666;
+    --light-gray: #cccccc;
+    --off-white: #ffffff;
+    --white: #ffffff;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    text-decoration: underline;
+  }
+
+  .btn-donate {
+    border: 2px solid var(--dark);
+  }
+
+  .filter-btn {
+    border-width: 2px;
+  }
+
+  .gallery-item-caption {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
