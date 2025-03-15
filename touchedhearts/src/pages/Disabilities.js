@@ -1,10 +1,5 @@
 // src/pages/Disabilities.js
 import React, { useEffect } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import HeroSection from '../components/HeroSection';
- // Assuming styles are managed here
-
 import '../styles/disabilities.css'; // Assuming styles are managed here
 
 const Disabilities = () => {
