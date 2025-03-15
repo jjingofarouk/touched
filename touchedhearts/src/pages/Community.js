@@ -5,8 +5,7 @@ import ImpactCards from '../components/ImpactCards';
 import '../styles/community.css';
 
 // Import images
-import communityMeeting from '../assets/images/community-meeting.jpg';
-import judithStory from '../assets/images/judith.jpg';
+import judithStory from '../assets/images/nalem.jpg';
 
 const Community = () => {
   // Impact statistics
@@ -48,7 +47,7 @@ const Community = () => {
     {
       title: 'Nalem Judith’s Journey to Health',
       quote: '"If it were not for Touched Hearts, I would never have known what was wrong with me..."',
-      text: 'Nalem Judith, a resident of Nakapirimen in Moroto District, suffered from undiagnosed health issues for years. Our outreach program connected her with specialists who provided treatment, allowing her to regain her strength and resume work.',
+      text: 'Nalem Judith, a resident of Moroto District, suffered from undiagnosed health issues for years. Our outreach program connected her with specialists who provided treatment, allowing her to regain her strength and resume work.',
       image: judithStory,
     },
   ];
