@@ -1,0 +1,345 @@
+/* src/styles/responsive.css */
+
+/* Large Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  /* App Container */
+  .app-container {
+    padding: 0 1.5rem;
+  }
+
+  /* Navbar */
+  .navbar .nav-container {
+    padding: 0 1rem;
+  }
+
+  .navbar .nav-menu {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .navbar .nav-link {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 3rem 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 80%;
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Impact Cards */
+  .impact-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .impact-number {
+    font-size: 2rem;
+  }
+
+  /* Footer */
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Partners */
+  .partners-grid {
+    gap: 1.5rem;
+  }
+
+  .partner-logo img {
+    max-width: 120px;
+  }
+
+  /* Donation Widget */
+  .donation-options {
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile Devices (480px - 768px) */
+@media (max-width: 768px) {
+  /* App Container */
+  .app-container {
+    padding: 0 1rem;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar .nav-toggle {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .navbar .nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--white);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+
+  .navbar .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--primary-dark);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem;
+  }
+
+  .navbar .nav-menu.active {
+    display: flex;
+  }
+
+  .navbar .nav-link {
+    padding: 0.75rem;
+    font-size: 1rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-image-container img {
+    margin-top: 1.5rem;
+  }
+
+  /* Impact Cards */
+  .impact-container {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+
+  .impact-item {
+    padding: 1rem;
+  }
+
+  /* Testimonial Slider */
+  .stories-slider {
+    padding: 1.5rem;
+  }
+
+  .story-card {
+    flex-direction: column;
+  }
+
+  .story-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .story-content {
+    padding: 1rem;
+  }
+
+  /* Partners */
+  .partners-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .partner-logo img {
+    max-width: 100px;
+  }
+
+  /* Contact Form */
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  /* Donation Widget */
+  .donation-container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .donation-options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .donation-amount {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* Small Mobile Devices (<480px) */
+@media (max-width: 480px) {
+  /* App Container */
+  .app-container {
+    padding: 0 0.5rem;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 0.75rem;
+  }
+
+  .navbar .nav-link {
+    font-size: 0.9rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-cta button {
+    width: 100%;
+  }
+
+  /* Impact Cards */
+  .impact-container {
+    padding: 1rem;
+  }
+
+  .impact-number {
+    font-size: 1.75rem;
+  }
+
+  .impact-item p {
+    font-size: 0.9rem;
+  }
+
+  /* Testimonial Slider */
+  .story-title {
+    font-size: 1.25rem;
+  }
+
+  .story-quote {
+    font-size: 0.9rem;
+  }
+
+  /* Partners */
+  .partner-logo img {
+    max-width: 80px;
+  }
+
+  /* Contact Form */
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  /* Donation Widget */
+  .donation-container {
+    padding: 1rem;
+  }
+
+  .donation-amount {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .footer-column h3 {
+    font-size: 1.25rem;
+  }
+
+  .footer-link {
+    font-size: 0.9rem;
+  }
+
+  .contact-info p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Ensure smooth transitions for navbar toggle */
+.navbar .nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar .nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar .nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
