@@ -1,8 +1,8 @@
 // src/pages/Programs.js
 
 import React from 'react';
-import Navbar from '../components/Navbar';  // Import Navbar component
-import Footer from '../components/Footer';  // Import Footer component
+import '../styles/Programs.css'; // Assuming you have this CSS file
+
 
 const Programs = () => {
     return (
