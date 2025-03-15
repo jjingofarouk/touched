@@ -15,7 +15,9 @@ import disabilityImage from '../assets/images/disability.jpg';
 import communityImage from '../assets/images/community.jpg';
 import campImage from '../assets/images/camp.png';
 import skillingImage from '../assets/images/skilling.jpg';
-import videoSource from '../assets/V1.mp4';
+import videoSource from '../assets/images/V1.mp4';
+
+import '../styles/Home.css';
 
 const Home = () => {
   return (

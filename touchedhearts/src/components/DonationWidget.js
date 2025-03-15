@@ -1,6 +1,7 @@
 // src/components/DonationWidget.js
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import '../styles/DonationWidget.css';
 
 const DonationWidget = () => {
   const [selectedAmount, setSelectedAmount] = useState('$100');

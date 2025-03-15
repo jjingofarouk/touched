@@ -3,6 +3,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import homeImage from '../assets/images/home.jpg';
 
+import '../styles/HeroSection.css';
+
 const HeroSection = () => {
   return (
     <section className="hero" role="banner">

@@ -1,6 +1,7 @@
 // src/components/ContactForm.js
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../styles/ContactForm.css';
 
 const ContactForm = ({ title = 'Stay Connected', text = 'Subscribe to our newsletter to receive updates on our projects, success stories, and upcoming events.', action = 'subscribe.php', method = 'post' }) => {
   const handleSubmit = (e) => {

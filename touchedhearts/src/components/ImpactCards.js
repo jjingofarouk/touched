@@ -1,5 +1,6 @@
 // src/components/ImpactCards.js
 import React from 'react';
+import '../styles/ImpactCards.css';
 
 const ImpactCards = () => {
   const impactData = [

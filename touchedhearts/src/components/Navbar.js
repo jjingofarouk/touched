@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.jpg'; // Adjust path as needed
+import '../styles/Navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

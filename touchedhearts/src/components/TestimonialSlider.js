@@ -1,5 +1,7 @@
 // src/components/TestimonialSlider.js
 import React, { useState } from 'react';
+import '../styles/TestimonialSlider.css'; 
+
 
 const testimonials = [
   {
