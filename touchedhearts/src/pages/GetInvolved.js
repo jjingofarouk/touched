@@ -1,6 +1,9 @@
 import React from "react";
 import "../styles/get-involved.css";
 import VolunteerForm from "../components/VolunteerForm";
+import Partners from "../components/Partners";
+import Fundraise from "./Fundraise";
+import DonationWidget from "../components/DonationWidget";
 
 const GetInvolved = () => {
   return (
@@ -50,6 +53,8 @@ const GetInvolved = () => {
           <h2>Make a Donation</h2>
           <p>Your financial support fuels our programs and allows us to reach more individuals in need.</p>
           <a href="/donate" className="btn">Donate Now</a>
+          <DonationWidget />
+
         </section>
 
         {/* Fundraise Section */}
@@ -58,6 +63,7 @@ const GetInvolved = () => {
           <h2>Start a Fundraiser</h2>
           <p>Turn your passion into action by organizing a fundraising campaign for Touched Hearts.</p>
           <a href="/fundraising-guide.pdf" className="btn" download>Download Fundraising Guide</a>
+          <Fundraise />
         </section>
 
         {/* Partner Section */}
@@ -66,6 +72,8 @@ const GetInvolved = () => {
           <h2>Become a Partner</h2>
           <p>We collaborate with businesses, organizations, and institutions to amplify our impact.</p>
           <a href="mailto:touchedheartsug12@gmail.com" className="btn">Contact Us</a>
+          <Partners />
+
         </section>
 
       </div>
