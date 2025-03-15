@@ -1,49 +1,56 @@
-// src/pages/Community.js
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import HeroSection from '../components/HeroSection';
 import ImpactCards from '../components/ImpactCards';
- // Assuming styles are handled here
+import '../styles/community.css';
+
+// Import images
+import communityMeeting from '../assets/images/community-meeting.jpg';
+import judithStory from '../assets/images/judith.jpg';
 
 const Community = () => {
-  // Impact data
+  // Impact statistics
   const impactData = [
     { number: '8+', label: 'Communities Served' },
     { number: '8,000+', label: 'Lives Touched' },
     { number: '2', label: 'Water Projects Completed' },
-    { number: '4+', label: 'Women\'s Groups Supported' },
+    { number: '4+', label: "Women's Groups Supported" },
     { number: '1,000+', label: 'Trees Planted' },
   ];
 
-  // Initiatives data
+  // Community initiatives
   const initiatives = [
     {
-      title: 'What We’ve Done So Far',
+      title: 'Providing Clean Water',
       details: [
-        'We’ve already made a quiet mark in these villages. Over the past year, we handed out sanitary pads to 300 girls in Kabale District, giving them a chance to stay in school without worry. It’s a small thing, but their smiles say it’s big.',
-        'We also fixed up a rusty spring with local help to bring clean water to 100 people who used to walk miles. And in Masaka District, we gave 20 women a little seed money and tools to start weaving mats together—now they sell them at the market.',
+        'Many families in Kisoro District still walk miles for water. We’re working to change that by installing a borehole and improving existing springs.',
+        'By 2026, our gravity-flow system will bring clean water to 300 homes, reducing waterborne diseases and freeing children from long walks to fetch water.',
       ],
     },
     {
-      title: 'Clean Water for Families',
+      title: 'Women’s Economic Empowerment',
       details: [
-        'We dream of a day when no one here hauls water over long, dusty paths. By 2026, we hope to install 1 borehole and patch up a few springs in Kisoro District. Picture a simple gravity-flow system flowing clean water to 300 homes—folks who’ve never had it so close.',
-        'We’ll train a handful of villagers to keep it running, who will also collect a few coins for repairs and teach kids to wash their hands. If it works, we could cut sickness in this area nearly in half.',
+        'In Masaka District, 20 women received seed funding and training to start a cooperative mat-weaving business. Today, their work supports their families and strengthens their community.',
+        'We continue to provide mentorship, financial literacy training, and market access to expand their reach and impact.',
       ],
     },
-    // Add other initiatives similarly...
+    {
+      title: 'Keeping Girls in School',
+      details: [
+        'In many rural areas, lack of sanitary pads forces girls to miss school. We’ve provided reusable sanitary kits to 300 girls in Kabale District, ensuring they can continue their education with dignity.',
+        'Our goal is to expand this program to more schools, reducing dropout rates among adolescent girls.',
+      ],
+    },
   ];
 
-  // Success stories data
+  // Success stories
   const stories = [
     {
-      title: 'A New Hope for Nalem Judith',
+      title: 'Nalem Judith’s Journey to Health',
       quote: '"If it were not for Touched Hearts, I would never have known what was wrong with me..."',
-      text: 'Nalem Judith, a resident of Nakapirimen in Moroto District...',
-      image: '/assets/images/judith.jpg',
+      text: 'Nalem Judith, a resident of Nakapirimen in Moroto District, suffered from undiagnosed health issues for years. Our outreach program connected her with specialists who provided treatment, allowing her to regain her strength and resume work.',
+      image: judithStory,
     },
-    // Add other stories similarly...
   ];
 
   useEffect(() => {
@@ -62,7 +69,7 @@ const Community = () => {
       });
     });
 
-    // Scroll animation
+    // Scroll animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -85,25 +92,23 @@ const Community = () => {
 
   return (
     <div className="community-page">
+      {/* Header Section */}
+      <header className="community-header">
+        <h1>Building Stronger Communities</h1>
+        <p>
+          Since 2010, Touched Hearts has partnered with communities across Uganda to create lasting, sustainable change. 
+          From clean water to economic empowerment, our work is driven by local needs and solutions.
+        </p>
+      </header>
 
-      
-      <HeroSection
-        title="Empowering Communities"
-        description="Touched Hearts builds sustainable, resilient communities across Uganda through holistic development initiatives that address fundamental needs while preserving local culture and promoting self-reliance."
-        className="community-hero"
-      />
-
-      <section className="community-content">
-        <h2>Our Community Development Approach</h2>
-        <p>Since 2010, Touched Hearts has partnered with over 35 communities across Uganda to create lasting positive change...</p>
-        <p>Our community development work focuses on addressing fundamental needs—clean water, food security, economic empowerment, and infrastructure...</p>
-        <div className="image-placeholder">
-          <img src="/assets/images/D5.jpg" alt="Community meeting in Kabale village" />
-        </div>
-
-        <h2>Our Impact by the Numbers</h2>
+      {/* Impact Statistics */}
+      <section className="impact-section">
+        <h2>Our Impact in Numbers</h2>
         <ImpactCards data={impactData} />
+      </section>
 
+      {/* Community Initiatives */}
+      <section className="community-initiatives">
         <h2>Key Community Initiatives</h2>
         <div className="initiatives-list">
           {initiatives.map((initiative, index) => (
@@ -120,33 +125,36 @@ const Community = () => {
             </div>
           ))}
         </div>
-
-        <section className="success-stories">
-          <h2>Community Transformation Stories</h2>
-          <div className="stories-container">
-            {stories.map((story, index) => (
-              <div className="story-card" key={index}>
-                <h3>{story.title}</h3>
-                <p className="story-quote">{story.quote}</p>
-                <p className="story-text">{story.text}</p>
-                <div className="image-placeholder">
-                  <img src={story.image} alt={`${story.title} story`} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
       </section>
 
-      <section className="cta-section">
-        <div className="cta-container">
-          <h2>Join Our Community Development Efforts</h2>
-          <p>Through volunteering, donating, or partnering with us, your contribution can help transform more communities across Uganda.</p>
-          <a href="/get-involved" className="cta-button">Get Involved Today</a>
+      {/* Success Stories */}
+      <section className="success-stories">
+        <h2>Community Transformation Stories</h2>
+        <div className="stories-container">
+          {stories.map((story, index) => (
+            <div className="story-card" key={index}>
+              <h3>{story.title}</h3>
+              <p className="story-quote">{story.quote}</p>
+              <p className="story-text">{story.text}</p>
+              <div className="image-placeholder">
+                <img src={story.image} alt={`${story.title} story`} />
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      
+      {/* Call to Action */}
+      <section className="cta-section">
+        <div className="cta-container">
+          <h2>Be Part of the Change</h2>
+          <p>
+            Your support can help bring clean water, education, and economic opportunities to even more communities. 
+            Whether you donate, volunteer, or spread the word—every action makes a difference.
+          </p>
+          <a href="/get-involved" className="cta-button">Get Involved</a>
+        </div>
+      </section>
     </div>
   );
 };
