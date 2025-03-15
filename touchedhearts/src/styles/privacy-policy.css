@@ -472,4 +472,50 @@
 }
 
 .cta-button {
-  display:
+  display:  inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background-color: var(--white);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-light);
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .community-header {
+    padding: 6rem 1.5rem;
+    clip-path: none;
+  }
+
+  .impact-section, 
+  .community-initiatives, 
+  .success-stories, 
+  .cta-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .impact-cards-container,
+  .stories-container {
+    grid-template-columns: 1fr;
+  }
+
+  .initiative-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+}
+  
+  
+  
