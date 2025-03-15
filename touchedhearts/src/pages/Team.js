@@ -2,6 +2,7 @@ import React from "react";
 
 import TeamCard from "../components/TeamCard";
 import teamData from "../data/team.json"; // Team member data
+import '../styles/team.css';
 
 const Team = () => {
   return (
