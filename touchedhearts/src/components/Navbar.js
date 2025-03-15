@@ -1,5 +1,4 @@
-// src/components/Navbar.js
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -8,51 +7,73 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../assets/images/logo.jpg'; // Adjust path as needed
 import '../styles/Navbar.css';
 
-const CustomNavLink = ({ to, children, ...props }) => (
-  <Nav.Link as={NavLink} to={to} activeClassName="active" {...props}>
-    {children}
-  </Nav.Link>
-);
+function Navbar() {
+  const [expanded, setExpanded] = useState(false);
 
-const CustomDropdownItem = ({ to, children }) => (
-  <NavDropdown.Item as={NavLink} to={to} activeClassName="active">
-    {children}
-  </NavDropdown.Item>
-);
+  const toggleMenu = () => {
+    setExpanded(!expanded);
+  };
 
-const NavbarComponent = () => {
   return (
     <header>
-      <Navbar expand="lg" className="navbar-custom">
-        <Container>
+      <Navbar expand="lg" expanded={expanded} className="navbar">
+        <Container className="nav-container">
           <Navbar.Brand as={NavLink} to="/" className="nav-logo">
             <img src={logo} alt="Touched Hearts Logo" className="logo" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" className="nav-toggle" />
+          
+          <Navbar.Toggle 
+            aria-controls="basic-navbar-nav" 
+            onClick={toggleMenu}
+            className={expanded ? 'active' : ''}
+          />
+          
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto nav-menu">
-              <CustomNavLink to="/" exact>Home</CustomNavLink>
-              <CustomNavLink to="/about">About Us</CustomNavLink>
-              <NavDropdown
-                title={<>Programs <i className="fas fa-chevron-down"></i></>}
-                id="programs-dropdown"
-                className="nav-dropdown"
-              >
-                <CustomDropdownItem to="/education">Education</CustomDropdownItem>
-                <CustomDropdownItem to="/healthcare">Healthcare</CustomDropdownItem>
-                <CustomDropdownItem to="/disabilities">Disability Support</CustomDropdownItem>
-                <CustomDropdownItem to="/community">Community Development</CustomDropdownItem>
+            <Nav className="ms-auto">
+              <Nav.Link as={NavLink} to="/" exact className="nav-link">
+                Home
+              </Nav.Link>
+              
+              <Nav.Link as={NavLink} to="/about" className="nav-link">
+                About Us
+              </Nav.Link>
+              
+              <NavDropdown title="Programs" id="programs-dropdown" className="nav-dropdown">
+                <NavDropdown.Item as={NavLink} to="/education">
+                  Education
+                </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/healthcare">
+                  Healthcare
+                </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/disabilities">
+                  Disability Support
+                </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/community">
+                  Community Development
+                </NavDropdown.Item>
               </NavDropdown>
-              <CustomNavLink to="/stories">Stories</CustomNavLink>
-              <CustomNavLink to="/gallery">Gallery</CustomNavLink>
-              <CustomNavLink to="/get-involved">Get Involved</CustomNavLink>
-              <CustomNavLink to="/donate" className="btn-donate">Donate Now</CustomNavLink>
+              
+              <Nav.Link as={NavLink} to="/stories" className="nav-link">
+                Stories
+              </Nav.Link>
+              
+              <Nav.Link as={NavLink} to="/gallery" className="nav-link">
+                Gallery
+              </Nav.Link>
+              
+              <Nav.Link as={NavLink} to="/get-involved" className="nav-link">
+                Get Involved
+              </Nav.Link>
+              
+              <Nav.Link as={NavLink} to="/donate" className="nav-link btn-donate">
+                Donate Now
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     </header>
   );
-};
+}
 
 export default Navbar;
