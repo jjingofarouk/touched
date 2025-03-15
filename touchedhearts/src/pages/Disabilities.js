@@ -1,9 +1,16 @@
-// src/pages/Disabilities.js
 import React, { useEffect } from 'react';
-import '../styles/disabilities.css'; // Assuming styles are managed here
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import HeroSection from '../components/HeroSection';
+import '../styles/disabilities.css';
+
+// Importing real images from the assets folder
+import wheelchairGulu from '../assets/images/wheelchair-gulu.jpg';
+import peterOkello from '../assets/images/peter-okello.jpg';
+import sarahAtim from '../assets/images/sarah-atim.jpg';
+import emmanuelOuma from '../assets/images/emmanuel-ouma.jpg';
 
 const Disabilities = () => {
-  // Programs data
   const programs = [
     {
       title: 'Assistive Devices Outreach',
@@ -33,27 +40,25 @@ const Disabilities = () => {
     },
   ];
 
-  // Case studies data
   const caseStudies = [
     {
       title: 'Peter Okello - Gulu',
       description: 'Peter, a father of three, lost his leg in a 2019 accident. Without resources for a wheelchair, he struggled to farm. Our 2023 Gulu outreach provided him with a wheelchair, restoring his ability to work and support his family.',
-      image: 'Image: [Peter with his wheelchair]', // Replace with actual path when available
+      image: peterOkello, // Actual image
     },
     {
       title: 'Sarah Atim - Lira',
       description: 'Blind since childhood, Sarah faced exclusion until she joined our tailoring program. Now, she earns a living stitching uniforms, proving that disability is not inability.',
-      image: 'Image: [Sarah at her sewing machine]',
+      image: sarahAtim, // Actual image
     },
     {
       title: 'Emmanuel Ouma - Tororo',
       description: 'Deaf since birth, Emmanuel struggled in school until our education support provided hearing aids and teacher training. He’s now a top student with big dreams.',
-      image: 'Image: [Emmanuel in class]',
+      image: emmanuelOuma, // Actual image
     },
   ];
 
   useEffect(() => {
-    // Accordion Functionality
     const programHeaders = document.querySelectorAll('.program-header');
     programHeaders.forEach(header => {
       header.addEventListener('click', () => {
@@ -68,7 +73,6 @@ const Disabilities = () => {
       });
     });
 
-    // Scroll Animation
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -91,7 +95,6 @@ const Disabilities = () => {
 
   return (
     <div className="disabilities-page">
-      {/* New Header Section */}
       <header className="disabilities-header">
         <h1>Supporting Persons with Disabilities</h1>
         <p>
@@ -107,10 +110,13 @@ const Disabilities = () => {
         <p>
           Our approach combines direct support with advocacy, partnering with local communities, government bodies, and international organizations to create sustainable change. Below are some of the key programs and outreaches we’ve undertaken to uplift PWDs across Uganda.
         </p>
+        
+        {/* Image Section */}
         <div className="image-placeholder">
-          <img src="/assets/images/wheelchair-gulu.jpg" alt="Wheelchair distribution in Gulu" />
+          <img src={wheelchairGulu} alt="Wheelchair distribution in Gulu" />
         </div>
 
+        {/* Programs Section */}
         <div className="programs-list">
           {programs.map((program, index) => (
             <div className="program-item" key={index}>
@@ -128,6 +134,7 @@ const Disabilities = () => {
         </div>
       </section>
 
+      {/* Case Studies Section */}
       <section className="case-studies">
         <h2>Real Lives, Real Impact</h2>
         <div className="case-container">
@@ -135,12 +142,13 @@ const Disabilities = () => {
             <div className="case-card" key={index}>
               <h3>{study.title}</h3>
               <p>{study.description}</p>
-              <div className="image-placeholder">{study.image}</div>
+              <div className="image-placeholder">
+                <img src={study.image} alt={study.title} />
+              </div>
             </div>
           ))}
         </div>
       </section>
-
     </div>
   );
 };
