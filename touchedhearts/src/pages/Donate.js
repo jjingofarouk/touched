@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'; // Reusing Navbar component
 import Footer from '../components/Footer'; // Reusing Footer component
 import DonationWidget from '../components/DonationWidget'; // Assuming this handles donation form logic
 import '../styles/index.css'; // Global styles
-import '../styles/components.css'; // Component-specific styles
+ // Component-specific styles
 
 const Donate = () => {
   const [formData, setFormData] = useState({

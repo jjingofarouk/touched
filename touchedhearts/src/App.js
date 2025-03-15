@@ -36,7 +36,6 @@ import Accessibility from './pages/Accessibility';
 import Fundraise from './pages/Fundraise';
 
 // Global styles
-import './styles/index.css';
 
 const App = () => {
   return (

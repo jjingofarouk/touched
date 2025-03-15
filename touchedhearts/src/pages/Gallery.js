@@ -51,34 +51,6 @@ const Gallery = () => {
 
   return (
     <div>
-      {/* Header */}
-      <header>
-        <nav className="nav">
-          <div className="nav-container">
-            <a href="/" className="nav-logo">
-              <img src="/assets/images/logo.jpg" alt="Touched Hearts Logo" className="logo" />
-            </a>
-            <ul className="nav-menu">
-              <li><a href="/" className="nav-link">Home</a></li>
-              <li><a href="/about" className="nav-link">About Us</a></li>
-              <li className="nav-dropdown">
-                <a href="/programs" className="nav-link">
-                  Programs <FaChevronDown />
-                </a>
-                <ul className="dropdown-menu">
-                  <li><a href="/education">Education</a></li>
-                  <li><a href="/healthcare">Healthcare</a></li>
-                  <li><a href="/disabilities">Disability Support</a></li>
-                  <li><a href="/community">Community Development</a></li>
-                </ul>
-              </li>
-              <li><a href="/gallery" className="nav-link active">Gallery</a></li>
-              <li><a href="/donate" className="nav-link btn-donate">Donate Now</a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-
       {/* Main Content */}
       <main className="gallery-main">
         <div className="container">

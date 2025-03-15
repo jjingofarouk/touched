@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'; // For navigation
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/index.css'; // Global styles
-import '../styles/components.css'; // Component-specific styles
+ // Component-specific styles
 
 const Events = () => {
   const [filter, setFilter] = useState('upcoming');

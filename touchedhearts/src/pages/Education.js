@@ -1,10 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom'; // Assuming you're using react-router-dom for navigation
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import ImpactCards from '../components/ImpactCards'; // Assuming this can handle the stats section
-import '../styles/index.css'; // Global styles
-import '../styles/components.css'; // Component-specific styles
+import '../styles/Education.css'; // Component-specific styles
 
 const Education = () => {
   const initiativeRefs = useRef([]);
@@ -159,7 +156,6 @@ const Education = () => {
         <Link to="/donate" className="cta-button" style={{ marginLeft: '1rem' }}>Donate Now</Link>
       </section>
 
-      {/* Footer */}
       
     </div>
   );

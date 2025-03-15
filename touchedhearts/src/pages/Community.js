@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import ImpactCards from '../components/ImpactCards';
-import '../styles/components.css'; // Assuming styles are handled here
+ // Assuming styles are handled here
 
 const Community = () => {
   // Impact data

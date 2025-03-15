@@ -53,7 +53,7 @@ a:hover {
 /* Hero Section */
 .programs-hero {
   background: linear-gradient(rgba(58, 143, 133, 0.85), rgba(44, 114, 105, 0.95)), 
-              url('../assets/images/uganda-landscape.jpg') no-repeat center center/cover;
+              url('../assets/images/uganda-landscape.png') no-repeat center center/cover;
   color: var(--white);
   padding: 8rem 2rem;
   text-align: center;
