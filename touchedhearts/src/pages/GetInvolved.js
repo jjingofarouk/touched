@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import "../styles/get-involved.css";
 import VolunteerForm from "../components/VolunteerForm";
 
