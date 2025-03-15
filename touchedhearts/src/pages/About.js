@@ -1,6 +1,7 @@
 // src/pages/About.js
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../styles/About.css';
 
 // Assets
 import aboutImage from '../assets/images/D1.jpg';
