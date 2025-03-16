@@ -54,7 +54,7 @@ const StoryCard = ({ story }) => {
           style={{
             fontSize: "1.5rem",
             fontWeight: "600",
-            color: "#2c7269", // --primary-dark
+            color: "#2c7269",
             margin: "0",
             lineHeight: "1.2",
             animation: "fadeIn 0.5s ease-out",
@@ -67,10 +67,10 @@ const StoryCard = ({ story }) => {
           style={{
             fontSize: "1.125rem",
             fontStyle: "italic",
-            color: "#4d5c5c", // --dark-gray
+            color: "#4d5c5c",
             margin: "0",
             paddingLeft: "1rem",
-            borderLeft: "3px solid #3a8f85", // --primary-color
+            borderLeft: "3px solid #3a8f85",
             lineHeight: "1.5",
             animation: "fadeIn 0.6s ease-out 0.1s backwards",
           }}
@@ -81,7 +81,7 @@ const StoryCard = ({ story }) => {
           className="story-text"
           style={{
             fontSize: "1rem",
-            color: "#7e8c8c", // --medium-gray
+            color: "#7e8c8c",
             lineHeight: "1.6",
             margin: "0",
             overflow: "hidden",
