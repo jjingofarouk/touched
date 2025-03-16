@@ -140,47 +140,30 @@
                 "quote": "I gave birth safely because of this kit. Touched Hearts made me feel cared for.",
                 "story": "In Wakiso District, 19-year-old Esther faced childbirth alone, with no supplies or clinic nearby. Touched Hearts distributed maternity kits—gloves, blankets, and sterile tools—to 80 expectant mothers. When labor came, a trained midwife used Esther’s kit, delivering a healthy boy. Esther named him Hope, grateful for the support that saved them both. Touched Hearts ensured motherhood began with safety."
             },
-            {
-                "title": "The Power of Play",
-                "image": "./assets/images/sports_equipment.jpg",
-                "quote": "This ball lets us run and laugh together. Touched Hearts brought joy back to our school.",
-                "story": "In Bundibugyo, 200 children at a rural school kicked stones for fun, lacking proper playthings. Touched Hearts arrived with soccer balls, nets, and jump ropes. Eleven-year-old David scored his first goal, his shy grin lighting up the field. Teachers saw teamwork and energy soar. By fostering play, Touched Hearts built healthier bodies and happier hearts."
-            },
+
             {
                 "title": "Steps of Strength",
-                "image": "./assets/images/physiotherapy.jpg",
+                "image": "./assets/images/beatrice.jpg",
                 "quote": "I couldn’t stand after the accident, but Touched Hearts helped me walk again.",
                 "story": "After a fall in Rukungiri, 40-year-old Beatrice lay bedridden, her legs weak from injury. Touched Hearts brought a physiotherapy team to her village, guiding 30 patients through exercises. Beatrice gripped a walker, taking slow steps as her strength returned. Weeks later, she fetched water herself, pride in her stride. Touched Hearts turned recovery into triumph for those once sidelined."
             },
             {
-                "title": "Wells of Wisdom",
-                "image": "./assets/images/water_tank.jpg",
-                "quote": "This tank means I don’t miss school to fetch water. Now I can study and dream.",
-                "story": "In Kumi, 13-year-old Janet spent mornings hauling water, arriving late and tired to class. Touched Hearts installed a rainwater tank at her school, serving 250 students. Janet stayed in lessons, her hands free of buckets and her mind on books. Attendance rose, and girls like her thrived. Touched Hearts proved clean water fuels education."
-            },
-            {
                 "title": "A Cure in Reach",
-                "image": "./assets/images/medicine_drive.jpg",
+                "image": "./assets/images/medicine.jpg",
                 "quote": "I couldn’t afford the pills, but Touched Hearts brought them to me. Now I’m getting better.",
                 "story": "In Nwoya, 55-year-old Joseph battled hypertension, his savings gone and clinic far. Touched Hearts held a medicine drive, supplying free drugs to 150 patients. Joseph swallowed his first dose, his headaches fading over weeks. He tended his garden again, thanking the team that bridged the gap. Healthcare from Touched Hearts became a lifeline for the forgotten."
             },
             {
                 "title": "Threads of Skill",
-                "image": "./assets/images/sewing_machine.jpg",
+                "image": "./assets/images/sewing.jpg",
                 "quote": "This machine lets me earn a living. Touched Hearts gave me a way to stand tall.",
-                "story": "In Kamuli, 30-year-old Fatuma, a single mother with a limp, struggled to feed her kids. Touched Hearts donated sewing machines to 20 disabled women, training them in tailoring. Fatuma stitched dresses, her first sale lighting up her face. She saved for school fees, her disability no longer a limit. Touched Hearts wove independence into every thread."
-            },
-            {
-                "title": "Songs of Solidarity",
-                "image": "./assets/images/music_program.jpg",
-                "quote": "Singing with my friends makes me feel strong. Touched Hearts gave us a voice.",
-                "story": "In Pakwach, 50 teens gathered weekly, their spirits low after floods displaced them. Touched Hearts launched a music program, supplying drums and a teacher. Sixteen-year-old Bosco beat rhythms, his grief easing in song. The group performed at a festival, earning cheers and unity. Touched Hearts turned notes into healing for a wounded community."
+                "story": "In Kamuli, 39-year-old Fatuma, a single mother with a limp, struggled to feed her kids. Touched Hearts donated sewing machines to 20 disabled women, training them in tailoring. Fatuma stitched dresses, her first sale lighting up her face. She saved for school fees, her disability no longer a limit. Touched Hearts wove independence into every thread."
             },
             {
                 "title": "Feet on the Path",
                 "image": "./assets/images/school_shoes.jpg",
                 "quote": "These shoes mean I can walk to school without pain. Touched Hearts kept me going.",
-                "story": "In Zombo, 11-year-old Amina trekked barefoot to school, her soles blistered. Touched Hearts gave sturdy shoes to 300 students, fitting Amina’s feet perfectly. She skipped along the path, arriving fresh for lessons. Her parents saw her focus sharpen. A pair of shoes from Touched Hearts stepped her closer to her dreams."
+                "story": "In Zombo, 7-year-old Amina trekked barefoot to school, her soles blistered. Touched Hearts gave sturdy shoes to 300 students, fitting Amina’s feet perfectly. She skipped along the path, arriving fresh for lessons. Her parents saw her focus sharpen. A pair of shoes from Touched Hearts stepped her closer to her dreams."
             },
             {
                 "title": "Breathing Easy",
@@ -189,76 +172,16 @@
                 "story": "In Amolatar, 38-year-old Peter hid his worsening cough, fearing tuberculosis but unable to pay for tests. Touched Hearts set up a TB screening camp, testing 200 people. Peter’s diagnosis came fast, and treatment started free. Months later, his lungs cleared, and he hugged his kids without worry. Touched Hearts snuffed out a silent killer."
             },
             {
-                "title": "Fields of Learning",
-                "image": "./assets/images/agri_training.jpg",
-                "quote": "I learned to farm better and feed my family. Touched Hearts grew my hope.",
-                "story": "In Otuke, 45-year-old Moses scratched a living from dry soil, his yields shrinking. Touched Hearts trained 70 farmers in crop rotation and irrigation. Moses planted millet with new methods, his harvest doubling. He sold surplus, buying schoolbooks for his son. Touched Hearts cultivated knowledge that fed both body and future."
-            },
-            {
-                "title": "Wheels for Work",
-                "image": "./assets/images/tricycle_donation.jpg",
-                "quote": "This tricycle lets me sell my goods. Touched Hearts turned my disability into strength.",
-                "story": "In Hoima, 27-year-old Isaac, paralyzed from the waist down, begged by the roadside. Touched Hearts gave him a hand-powered tricycle, perfect for mobility. He pedaled to market, selling maize and earning steady cash. His family ate better, and he smiled wider. Touched Hearts rolled opportunity into his life."
-            },
-            {
                 "title": "A Shot at Health",
-                "image": "./assets/images/vaccination_drive.jpg",
+                "image": "./assets/images/vaccination.jpg",
                 "quote": "My baby won’t get sick like I did. Touched Hearts brought the needles that protect us.",
                 "story": "In Budaka, 23-year-old Miriam queued with her infant at a Touched Hearts vaccination drive, immunizing 400 kids against measles and polio. Her son giggled through the shot, safe from diseases that scarred her childhood. Nurses taught her about follow-ups. Touched Hearts built a shield for the next generation."
-            },
-            {
-                "title": "Walls of Welcome",
-                "image": "./assets/images/community_hall.jpg",
-                "quote": "This hall is ours now—meetings, weddings, everything. Touched Hearts gave us a home.",
-                "story": "In Isingiro, villagers met under trees, rain or shine, with no gathering space. Touched Hearts built a community hall, brick by brick, for 500 residents. The first event—a youth dance—filled it with laughter. Leaders planned projects inside, unity growing. Touched Hearts raised a roof for connection."
-            },
-            {
-                "title": "Eyes That Teach",
-                "image": "./assets/images/teacher_glasses.jpg",
-                "quote": "I can read my notes again and teach better. Touched Hearts sharpened my sight.",
-                "story": "In Moyo, 50-year-old Teacher Agnes strained through cloudy vision, her lessons faltering. Touched Hearts’ eye camp fitted her with glasses, serving 60 educators. She chalked equations clearly, her students thriving. A pair of lenses from Touched Hearts kept knowledge flowing."
             },
             {
                 "title": "Hands of Healing",
                 "image": "./assets/images/wound_care.jpg",
                 "quote": "My leg wouldn’t heal until Touched Hearts came. Now I can work again.",
-                "story": "In Dokolo, 33-year-old Grace limped on an infected foot, untreated for weeks. Touched Hearts’ wound care team cleaned and bandaged 90 patients, including her. Grace’s swelling faded, and she hoed her garden again. Simple care from Touched Hearts restored her livelihood."
-            },
-            {
-                "title": "Keys to Knowledge",
-                "image": "./assets/images/computer_lab.jpg",
-                "quote": "I touched a computer for the first time. Touched Hearts opened a new world for me.",
-                "story": "In Wakiso, 15-year-old Brian dreamed of tech but had no access. Touched Hearts set up a computer lab with 10 machines for his school. Brian typed his first email, eyes wide at the screen. His coding skills grew, aiming for a career. Touched Hearts plugged him into the future."
-            },
-            {
-                "title": "Arms of Comfort",
-                "image": "./assets/images/prosthetic_arm.jpg",
-                "quote": "I can hold my daughter now. This arm from Touched Hearts made me whole again.",
-                "story": "In Kitgum, 29-year-old Paul lost his arm in a fire, feeling useless at home. Touched Hearts fitted him with a prosthetic limb after months of therapy. He scooped up his girl, laughing through tears. Work became possible again. Touched Hearts rebuilt more than his body."
-            },
-            {
-                "title": "Fires of Safety",
-                "image": "./assets/images/stove_donation.jpg",
-                "quote": "This stove cooks fast and keeps smoke out. Touched Hearts warmed our home.",
-                "story": "In Koboko, Mama Ruth coughed over an open fire, her kids’ eyes red from smoke. Touched Hearts gave 50 families fuel-efficient stoves. Ruth boiled millet easily, her lungs clearer. Health improved, and wood lasted longer. Touched Hearts sparked safer days."
-            },
-            {
-                "title": "Wings of Words",
-                "image": "./assets/images/radio_education.jpg",
-                "quote": "I learn from the radio now, even far from school. Touched Hearts brought lessons to me.",
-                "story": "In Kaabong, 12-year-old Esther missed class during rains, her village isolated. Touched Hearts distributed radios with educational broadcasts to 200 homes. Esther tuned in, reciting math drills. Her mind stayed sharp despite distance. Touched Hearts flew knowledge to the unreachable."
-            },
-            {
-                "title": "Steps to Safety",
-                "image": "./assets/images/road_signs.jpg",
-                "quote": "These signs stop accidents. Touched Hearts made our paths safer.",
-                "story": "In Kapchorwa, crashes plagued a busy road, kids at risk. Touched Hearts installed signs and speed bumps, teaching 300 residents safety rules. Twelve-year-old Joel crossed confidently, no longer dodging bikes. Injuries dropped, and peace settled. Touched Hearts paved protection."
-            },
-            {
-                "title": "Hands That Feed",
-                "image": "./assets/images/goat_project.jpg",
-                "quote": "This goat gives us milk and money. Touched Hearts lifted us up.",
-                "story": "In Moroto, 40-year-old Esther’s family ate once daily, hunger constant. Touched Hearts gave 50 goats to vulnerable households, training them in care. Esther’s goat birthed twins, milk flowing and kids sold. Her table filled, gratitude deep. Touched Hearts bred sustenance."
+                "story": "In Dokolo, 10-year-old Grace limped on an infected foot, untreated for weeks. Touched Hearts’ wound care team cleaned and bandaged 90 patients, including her. Grace’s swelling faded, and she hoed her garden again. Simple care from Touched Hearts restored her livelihood."
             },
             {
                 "title": "Eyes of Courage",
@@ -273,117 +196,21 @@
                 "story": "In Gulu, 47-year-old David tired easily, brushing it off. Touched Hearts’ heart health camp screened 150 adults, finding his arrhythmia. Meds and advice followed, his energy rebounding. He danced at a wedding, thanking the team. Touched Hearts kept his pulse steady."
             },
             {
-                "title": "Roofs of Refuge",
-                "image": "./assets/images/shelter_repair.jpg",
-                "quote": "Storms don’t scare us anymore. Touched Hearts fixed our home.",
-                "story": "In Abim, Mama Lydia’s hut collapsed in a gale, her five kids exposed. Touched Hearts rebuilt 30 homes with iron sheets and nails. Lydia’s family slept dry, fear gone. Stability returned, and they thrived. Touched Hearts sheltered their spirits."
-            },
-            {
                 "title": "Lines of Learning",
                 "image": "./assets/images/adult_literacy.jpg",
                 "quote": "I can write my name now. Touched Hearts gave me a second chance.",
                 "story": "In Nakapiripirit, 35-year-old Mary never attended school, illiterate and shy. Touched Hearts started an adult literacy class for 50 women. Mary traced letters, signing her name proudly. She read shop signs, confidence blooming. Touched Hearts wrote her into the world."
             },
             {
-                "title": "Wheels of Joy",
-                "image": "./assets/images/kids_wheelchair.jpg",
-                "quote": "I can race my friends now. Touched Hearts made me feel like a kid again.",
-                "story": "In Jinja, 9-year-old Sam, wheelchair-bound, watched playtime from afar. Touched Hearts gave him a lightweight chair built for fun. He zoomed across the yard, laughing with pals. Inclusion replaced isolation. Touched Hearts spun happiness into his days."
-            },
-            {
-                "title": "Drops of Dignity",
-                "image": "./assets/images/water_filters.jpg",
-                "quote": "This filter keeps us healthy. Touched Hearts cleaned our lives.",
-                "story": "In Bugiri, Mama Jane’s family drank murky water, sickness routine. Touched Hearts gave 100 households water filters. Jane poured clear cups, her kids’ fevers rare now. Time once spent boiling was hers again. Touched Hearts purified more than water."
-            },
-            {
-                "title": "Notes of Hope",
-                "image": "./assets/images/music_therapy.jpg",
-                "quote": "Playing this drum heals my heart. Touched Hearts helped me smile again.",
-                "story": "In Arua, 17-year-old Grace withdrew after losing her parents. Touched Hearts brought music therapy to 60 teens, with drums and flutes. Grace tapped rhythms, her sadness lifting. She joined a band, finding family. Touched Hearts drummed joy back into her life."
-            },
-            {
-                "title": "Steps to School",
-                "image": "./assets/images/bridge_build.jpg",
-                "quote": "This bridge means I don’t miss class in the rain. Touched Hearts crossed my fears.",
-                "story": "In Kyegegwa, floods cut off 14-year-old Peter’s school route, days lost. Touched Hearts built a wooden bridge for 200 villagers. Peter walked dry-shod, his books safe. Attendance steadied, and he aimed higher. Touched Hearts spanned opportunity."
-            },
-            {
-                "title": "Hands of Harvest",
-                "image": "./assets/images/tool_donation.jpg",
-                "quote": "These tools doubled my crop. Touched Hearts dug us out of hunger.",
-                "story": "In Maracha, 50-year-old James hoed with a broken stick, yields slim. Touched Hearts gave 70 farmers hoes and machetes. James cleared land fast, his cassava thriving. His family ate well, surplus sold. Touched Hearts planted prosperity."
-            },
-            {
-                "title": "A Voice Restored",
-                "image": "./assets/images/speech_therapy.jpg",
-                "quote": "I can talk to my sister now. Touched Hearts gave me words again.",
-                "story": "In Soroti, 7-year-old Anna stammered after a fever, shunned by peers. Touched Hearts brought a speech therapist to 30 kids. Anna practiced sounds, her ‘hello’ clear at last. She chattered happily, friends returning. Touched Hearts spoke inclusion."
-            },
-            {
-                "title": "Lights of Care",
-                "image": "./assets/images/clinic_solar.jpg",
-                "quote": "The clinic runs at night now. Touched Hearts lit up our health.",
-                "story": "In Alebtong, a clinic closed at dusk, no power for emergencies. Touched Hearts installed solar panels, serving 500 patients. Nurse Betty delivered a baby by steady light, lives saved. Nighttime care became real. Touched Hearts powered healing."
-            },
-            {
-                "title": "Fields of Friendship",
-                "image": "./assets/images/coop_farming.jpg",
-                "quote": "We farm together now and share the profits. Touched Hearts united us.",
-                "story": "In Kibaale, 40 villagers worked alone, harvests small. Touched Hearts formed a co-op, pooling 50 plots and tools. Mama Rose reaped maize with neighbors, her income tripling. Bonds grew with every sack. Touched Hearts harvested community."
-            },
-            {
-                "title": "Legs of Labor",
-                "image": "./assets/images/leg_brace.jpg",
-                "quote": "This brace lets me fetch water. Touched Hearts straightened my path.",
-                "story": "In Napak, 25-year-old Susan dragged a twisted leg, chores agony. Touched Hearts fitted her with a brace after therapy. She stood tall, buckets balanced. Work resumed, and she felt useful. Touched Hearts braced her for life."
-            },
-            {
-                "title": "Breath of Fresh Air",
-                "image": "./assets/images/air_purifier.jpg",
-                "quote": "My lungs feel clean now. Touched Hearts cleared the dust from my days.",
-                "story": "In Kampala’s slums, 60-year-old Ruth wheezed in dusty air, asthma worsening. Touched Hearts gave air purifiers to 50 homes. Ruth breathed easier, sleeping through nights. Her cough softened, vitality back. Touched Hearts filtered her hope."
-            },
-            {
                 "title": "Pens of Power",
-                "image": "./assets/images/exam_kits.jpg",
+                "image": "./assets/images/storybooks.jpg",
                 "quote": "This kit got me through my exams. Touched Hearts wrote my success.",
                 "story": "In Mukono, 16-year-old David faced finals with no pens or calculator. Touched Hearts gave exam kits to 200 students. David solved math confidently, passing with honors. His college dream neared. Touched Hearts equipped his victory."
-            },
-            {
-                "title": "Wheels of Trade",
-                "image": "./assets/images/cart_donation.jpg",
-                "quote": "This cart carries my fruits to market. Touched Hearts rolled me into business.",
-                "story": "In Masaka, 45-year-old John, lame from polio, sold little, stuck at home. Touched Hearts gave him a hand-pushed cart. He wheeled mangoes to buyers, earnings soaring. His kids ate better, pride restored. Touched Hearts carted him to dignity."
-            },
-            {
-                "title": "Seeds of Health",
-                "image": "./assets/images/herb_garden.jpg",
-                "quote": "These herbs cure my cough. Touched Hearts grew medicine for us.",
-                "story": "In Bushenyi, 50-year-old Agnes relied on costly drugs for colds. Touched Hearts taught 60 families to grow medicinal herbs. Agnes brewed tea from her plot, symptoms fading. Clinic trips dropped, savings rose. Touched Hearts rooted wellness."
             },
             {
                 "title": "Voices of Vision",
                 "image": "./assets/images/leadership_training.jpg",
                 "quote": "I lead my village now. Touched Hearts showed me I’m enough.",
                 "story": "In Yumbe, 32-year-old Fatuma doubted her worth, voiceless in meetings. Touched Hearts trained 50 women in leadership. Fatuma spoke up, organizing a water project. Respect grew, and she stood tall. Touched Hearts amplified her strength."
-            },
-            {
-                "title": "Steps of Pride",
-                "image": "./assets/images/orthopedic_shoes.jpg",
-                "quote": "These shoes fit my feet right. Touched Hearts walked me into confidence.",
-                "story": "In Tororo, 15-year-old Bosco limped in ill-fitting shoes, his clubfoot aching. Touched Hearts gave orthopedic shoes to 40 kids. Bosco strode smoothly, joining football games. Pain eased, and he shone. Touched Hearts stepped him forward."
-            },
-            {
-                "title": "Hearths of Harmony",
-                "image": "./assets/images/cooking_training.jpg",
-                "quote": "I cook for my neighbors now. Touched Hearts baked us into a family.",
-                "story": "In Kisoro, 28-year-old Jane cooked alone, community distant. Touched Hearts held a cooking class for 50 women, sharing recipes. Jane hosted a meal, laughter filling her hut. Bonds tightened, isolation gone. Touched Hearts stirred unity."
-            },
-            {
-                "title": "Eyes of Tomorrow",
-                "image": "./assets/images/eye_drops.jpg",
-                "quote": "My eyes don’t hurt anymore. Touched Hearts cleared my sight for school.",
-                "story": "In Pallisa, 13-year-old Sarah rubbed itchy eyes, infections blurring her books. Touched Hearts gave eye drops and hygiene tips to 200 kids. Sarah’s vision cleared, her reading steady. She aimed for teaching. Touched Hearts focused her future."
             }
         ]
