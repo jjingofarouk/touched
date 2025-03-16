@@ -7,7 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../assets/images/logo.jpg'; // Adjust path as needed
 import '../styles/Navbar.css';
 
-function Navbar() {
+function TouchedNavbar() {
   const [expanded, setExpanded] = useState(false);
 
   const toggleMenu = () => {
@@ -76,4 +76,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default TouchedNavbar;

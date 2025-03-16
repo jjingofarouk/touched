@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Components
-import Navbar from './components/Navbar';
+import TouchedNavbar from './components/Navbar';
 import Footer from './components/Footer';
 
 
@@ -43,7 +43,7 @@ const App = () => {
   return (
     <Router>
       <div className="app-container">
-        <Navbar />
+        <TouchedNavbar />
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
