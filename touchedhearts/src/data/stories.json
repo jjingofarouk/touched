@@ -82,11 +82,11 @@
             "title": "A Voice for the Silent",
             "image": "./assets/images/hearing_aid.jpg",
             "quote": "I heard my mother’s voice for the first time today. This hearing aid changed everything for me.",
-            "story": "Eleven-year-old Lydia from Tororo was born deaf, isolated from conversations and school lessons. During a Touched Hearts disability camp, audiologists fitted her with a hearing aid. As it clicked on, Lydia’s eyes widened—she giggled at the sound of birds, then cried hearing her mother say her name. With follow-up support, she began learning spoken words, catching up with peers. Touched Hearts didn’t just give her a device—they gave her a chance to connect, proving disability support can break barriers."
+            "story": "Eleven-year-old Halima from Tororo was born deaf, isolated from conversations and school lessons. During a Touched Hearts disability camp, audiologists fitted her with a hearing aid. As it clicked on, Lydia’s eyes widened—she giggled at the sound of birds, then cried hearing her mother say her name. With follow-up support, she began learning spoken words, catching up with peers. Touched Hearts didn’t just give her a device—they gave her a chance to connect, proving disability support can break barriers."
         },
         {
             "title": "Healing Hands in Apac",
-            "image": "./assets/images/mobile_clinic.jpg",
+            "image": "./assets/images/ruth.jpg",
             "quote": "The clinic came to us when we couldn’t reach it. Touched Hearts saved my baby’s life.",
             "story": "In Apac District, 22-year-old Ruth cradled her feverish infant, miles from the nearest health center. A Touched Hearts mobile clinic rolled into her village just in time, equipped with nurses and medicine. They diagnosed malaria and started treatment immediately. Ruth watched her baby’s breathing steady, relief washing over her. The clinic served 200 others that day, from vaccinations to check-ups. By bringing healthcare to the doorstep, Touched Hearts turned desperation into gratitude."
         },
@@ -110,7 +110,7 @@
         },
         {
             "title": "A Classroom Reborn",
-            "image": "./assets/images/school_renovation.jpg",
+            "image": "./assets/images/school_building.png",
             "quote": "Our school was falling apart, but now it’s a place we’re proud of. Touched Hearts gave us more than walls—they gave us a future.",
             "story": "In Pader District, a crumbling school housed 200 students under a roof that leaked and walls that cracked. Touched Hearts rallied volunteers to renovate it—new bricks, windows, and a fresh coat of paint. The children returned to a bright, safe space, their chatter echoing off sturdy walls. Attendance jumped, and teachers felt renewed pride. Touched Hearts turned a dilapidated building into a foundation for learning and community."
         },
@@ -119,32 +119,8 @@
             "image": "./assets/images/prosthetic_leg.jpg",
             "quote": "I thought I’d never walk again, but this leg from Touched Hearts gave me back my life.",
             "story": "After losing her leg in a landmine accident in Agago, 19-year-old Florence felt her dreams slip away. Touched Hearts partnered with a prosthetics team to fit her with an artificial limb. She practiced daily, her first steps shaky but triumphant. Soon, she walked to the market, head high. Florence now plans to train as a tailor, her confidence restored. Touched Hearts showed that disability support can rebuild both bodies and spirits."
-        },
-        {
-            "title": "Breath of Life",
-            "image": "./assets/images/asthma_care.jpg",
-            "quote": "I couldn’t breathe without fear. Now, with this inhaler, I can play with my friends again.",
-            "story": "Eight-year-old Kevin from Busia gasped through asthma attacks, his parents unable to afford consistent treatment. At a Touched Hearts health camp, doctors diagnosed him and provided an inhaler with a year’s supply of refills. Kevin’s wheezing faded, and he ran with classmates for the first time. His mother cried, grateful for a solution that fit their budget. Touched Hearts turned a chronic struggle into a manageable hope."
-        },
-        {
-            "title": "Roots of Unity",
-            "image": "./assets/images/tree_planting.jpg",
-            "quote": "These trees will shade our children and clean our air. Touched Hearts planted a future for us all.",
-            "story": "In the heat of Yumbe, deforestation left the land bare and the air thick. Touched Hearts mobilized 300 villagers for a tree-planting day, distributing 1,000 saplings. Young and old dug together, laughing as they rooted mango and acacia trees. Over months, green patches emerged, cooling homes and sparking pride. The community bonded over the effort, and Touched Hearts showed that collective work can heal both land and spirits."
-        },
-        {
-            "title": "Light in the Darkness",
-            "image": "./assets/images/solar_lamps.jpg",
-            "quote": "I can study at night now, and my parents don’t worry about kerosene. This lamp is my ticket to college.",
-            "story": "In off-grid Lamwo, 16-year-old Esther strained to read by dim kerosene light, her eyes burning and grades slipping. Touched Hearts distributed solar lamps to 100 households, illuminating her evenings. She studied late, acing her exams and aiming for university. Her parents saved money and breathed easier without fumes. A small light from Touched Hearts brightened Esther’s path to a bigger future."
-        },
-        
-          {
-                "title": "A Heartbeat Heard",
-                "image": "./assets/images/prenatal_care.jpg",
-                "quote": "I didn’t know if my baby was okay until Touched Hearts brought the ultrasound. Now I feel ready to be a mother.",
-                "story": "In the remote hills of Kabale, 24-year-old Lillian carried her first child with no access to prenatal care. Fear gnawed at her—miscarriages were common in her village. Touched Hearts arrived with a portable ultrasound machine, screening 50 expectant mothers. Lillian heard her baby’s heartbeat for the first time, tears streaming as a nurse explained everything was fine. With vitamins and check-up schedules, Touched Hearts eased her worries, ensuring a healthier start for mother and child."
-            },
+        },        
+
             {
                 "title": "Pages of Promise",
                 "image": "./assets/images/storybooks.jpg",
@@ -153,33 +129,16 @@
             },
             {
                 "title": "Hands That Build",
-                "image": "./assets/images/wheelchair_ramp.jpg",
+                "image": "./assets/images/wheelchair.jpg",
                 "quote": "I can roll into church now without help. This ramp gave me back my community.",
-                "story": "In Adjumani, 35-year-old Patrick, a wheelchair user, missed Sunday services because the church steps barred his way. Touched Hearts collaborated with locals to build ramps at key buildings—church, market, and clinic. Patrick wheeled in proudly, greeted by friends he hadn’t seen in months. The ramps didn’t just ease access; they wove him back into village life. Touched Hearts showed that disability support can bridge gaps."
+                "story": "In Adjumani, 35-year-old Jane, a wheelchair user, missed Sunday services because the church steps barred her way. Touched Hearts collaborated with locals to build ramps at key buildings—church, market, and clinic. Patrick wheeled in proudly, greeted by friends she hadn’t seen in months. The ramps didn’t just ease access; they wove him back into village life. Touched Hearts showed that disability support can bridge gaps."
             },
-            {
-                "title": "Farming for Health",
-                "image": "./assets/images/nutrition_garden.jpg",
-                "quote": "These vegetables keep my kids strong. Touched Hearts taught us how to grow our own medicine.",
-                "story": "In Katakwi, malnutrition weakened Mama Alice’s three children, their small frames prone to illness. Touched Hearts introduced a nutrition program, teaching 60 families to plant vegetable gardens. Alice tended spinach and carrots, her kids growing taller and livelier with every harvest. Nurses noted fewer clinic visits. By blending agriculture and healthcare, Touched Hearts sowed resilience in a hungry community."
-            },
-            {
-                "title": "Blackboards of Belief",
-                "image": "./assets/images/classroom_supplies.jpg",
-                "quote": "With a new blackboard, I can see the lessons clearly. It’s like Touched Hearts gave us a bigger world.",
-                "story": "At a school in Oyam, 150 students squinted at a cracked, faded blackboard, missing half the lessons. Touched Hearts delivered new boards, chalk, and erasers, transforming dim classrooms. Twelve-year-old Simon traced math problems with ease, his confidence rising with every solved equation. Teachers smiled as engagement spiked. A simple fix from Touched Hearts sharpened young minds for a brighter future."
-            },
-            {
-                "title": "Eyes on the Prize",
-                "image": "./assets/images/glasses_donation.jpg",
-                "quote": "I couldn’t read the board before. These glasses from Touched Hearts made school fun again.",
-                "story": "Fourteen-year-old Rose from Masindi sat at the back of class, her blurry vision hiding the teacher’s notes. During a Touched Hearts vision camp, optometrists tested 200 students and gave Rose her first pair of glasses. She marveled at crisp letters, her grades climbing as she joined debates. Touched Hearts turned a small lens into a big opportunity, keeping her in the race for education."
-            },
+
             {
                 "title": "A Safe Delivery",
                 "image": "./assets/images/maternity_kit.jpg",
                 "quote": "I gave birth safely because of this kit. Touched Hearts made me feel cared for.",
-                "story": "In Kole District, 19-year-old Esther faced childbirth alone, with no supplies or clinic nearby. Touched Hearts distributed maternity kits—gloves, blankets, and sterile tools—to 80 expectant mothers. When labor came, a trained midwife used Esther’s kit, delivering a healthy boy. Esther named him Hope, grateful for the support that saved them both. Touched Hearts ensured motherhood began with safety."
+                "story": "In Wakiso District, 19-year-old Esther faced childbirth alone, with no supplies or clinic nearby. Touched Hearts distributed maternity kits—gloves, blankets, and sterile tools—to 80 expectant mothers. When labor came, a trained midwife used Esther’s kit, delivering a healthy boy. Esther named him Hope, grateful for the support that saved them both. Touched Hearts ensured motherhood began with safety."
             },
             {
                 "title": "The Power of Play",
