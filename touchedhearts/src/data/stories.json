@@ -62,7 +62,7 @@
         },
         {
             "title": "Steps to Freedom",
-            "image": "./assets/images/crutch.jpg",
+            "image": "./assets/images/crutch.JPG",
             "quote": "These crutches mean I can go to the market and see my friends again. Touched Hearts gave me my legs back.",
             "story": "After a motorcycle accident in Soroti, 28-year-old James lost the use of his left leg. Confined to his hut, he watched life pass by, unable to work or socialize. Touched Hearts heard his story during a community outreach and delivered a sturdy pair of crutches. James took his first steps outside in months, grinning as neighbors waved. With mobility restored, he began selling vegetables at the market, rebuilding his life. Touched Hearts’ small gift became a bridge to independence, showing disability support can spark new beginnings."
         },
@@ -74,13 +74,13 @@
         },
         {
             "title": "Books Open Doors",
-            "image": "./assets/images/books.jpg",
+            "image": "./assets/images/books.JPG",
             "quote": "I want to be a doctor, and these books make me feel closer to that dream. Thank you, Touched Hearts.",
             "story": "At a rural school in Mbale, 14-year-old Isaac dreamed of studying medicine, but the library was just a shelf of tattered books. Touched Hearts arrived with a donation of 500 textbooks—science, math, and literature—transforming a dusty room into a vibrant resource hub. Isaac spent hours poring over biology pages, his ambition fueled by every word. Teachers noted a surge in curiosity among students. With this gift, Touched Hearts opened a world of knowledge, paving the way for future leaders."
         },
         {
             "title": "A Voice for the Silent",
-            "image": "./assets/images/hearing_aid.jpg",
+            "image": "./assets/images/hearing_aid.JPG",
             "quote": "I heard my mother’s voice for the first time today. This hearing aid changed everything for me.",
             "story": "Eleven-year-old Halima from Tororo was born deaf, isolated from conversations and school lessons. During a Touched Hearts disability camp, audiologists fitted her with a hearing aid. As it clicked on, Lydia’s eyes widened—she giggled at the sound of birds, then cried hearing her mother say her name. With follow-up support, she began learning spoken words, catching up with peers. Touched Hearts didn’t just give her a device—they gave her a chance to connect, proving disability support can break barriers."
         },
@@ -98,13 +98,13 @@
         },
         {
             "title": "Wheels of Opportunity",
-            "image": "./assets/images/bicycle_donation.jpg",
+            "image": "./assets/images/bicycle_donation.JPG",
             "quote": "This bicycle means I can get to school and help my family. It’s a gift of time and freedom.",
             "story": "Thirteen-year-old Musa from Nebbi walked two hours each way to school, arriving tired and late. Touched Hearts identified students like him and donated 50 bicycles to ease their journeys. Musa pedaled to class in minutes, with energy to learn and time to help his parents farm. His grades climbed, and he dreamed of becoming an engineer. A simple bike from Touched Hearts became a vehicle for education and ambition."
         },
         {
             "title": "Stitches of Care",
-            "image": "./assets/images/surgery_camp.jpg",
+            "image": "./assets/images/surgery_camp.JPG",
             "quote": "I lived with pain for years because I couldn’t afford surgery. Touched Hearts took that burden away.",
             "story": "Forty-year-old David from Iganga suffered from a hernia that made work agonizing. With no money for an operation, he endured in silence. Touched Hearts’ surgical camp arrived, offering free procedures to 75 patients. David’s surgery was a success—he walked home pain-free, ready to farm again. His family celebrated his recovery, thanking the team that stitched hope back into their lives. Healthcare became a reality, not a dream, thanks to Touched Hearts."
         },
@@ -116,7 +116,7 @@
         },
         {
             "title": "Legs to Stand On",
-            "image": "./assets/images/prosthetic_leg.jpg",
+            "image": "./assets/images/prosthetic_leg.JPG",
             "quote": "I thought I’d never walk again, but this leg from Touched Hearts gave me back my life.",
             "story": "After losing her leg in a landmine accident in Agago, 19-year-old Florence felt her dreams slip away. Touched Hearts partnered with a prosthetics team to fit her with an artificial limb. She practiced daily, her first steps shaky but triumphant. Soon, she walked to the market, head high. Florence now plans to train as a tailor, her confidence restored. Touched Hearts showed that disability support can rebuild both bodies and spirits."
         },        
@@ -143,7 +143,7 @@
 
             {
                 "title": "Steps of Strength",
-                "image": "./assets/images/beatrice.jpg",
+                "image": "./assets/images/beatrice.JPG",
                 "quote": "I couldn’t stand after the accident, but Touched Hearts helped me walk again.",
                 "story": "After a fall in Rukungiri, 40-year-old Beatrice lay bedridden, her legs weak from injury. Touched Hearts brought a physiotherapy team to her village, guiding 30 patients through exercises. Beatrice gripped a walker, taking slow steps as her strength returned. Weeks later, she fetched water herself, pride in her stride. Touched Hearts turned recovery into triumph for those once sidelined."
             },
@@ -161,13 +161,13 @@
             },
             {
                 "title": "Feet on the Path",
-                "image": "./assets/images/school_shoes.jpg",
+                "image": "./assets/images/school_shoes.JPG",
                 "quote": "These shoes mean I can walk to school without pain. Touched Hearts kept me going.",
                 "story": "In Zombo, 7-year-old Amina trekked barefoot to school, her soles blistered. Touched Hearts gave sturdy shoes to 300 students, fitting Amina’s feet perfectly. She skipped along the path, arriving fresh for lessons. Her parents saw her focus sharpen. A pair of shoes from Touched Hearts stepped her closer to her dreams."
             },
             {
                 "title": "Breathing Easy",
-                "image": "./assets/images/tb_screening.jpg",
+                "image": "./assets/images/tb_screening.JPG",
                 "quote": "I coughed for months, but Touched Hearts found the problem and helped me heal.",
                 "story": "In Amolatar, 38-year-old Peter hid his worsening cough, fearing tuberculosis but unable to pay for tests. Touched Hearts set up a TB screening camp, testing 200 people. Peter’s diagnosis came fast, and treatment started free. Months later, his lungs cleared, and he hugged his kids without worry. Touched Hearts snuffed out a silent killer."
             },
@@ -179,7 +179,7 @@
             },
             {
                 "title": "Hands of Healing",
-                "image": "./assets/images/wound_care.jpg",
+                "image": "./assets/images/wound_care.JPG",
                 "quote": "My leg wouldn’t heal until Touched Hearts came. Now I can work again.",
                 "story": "In Dokolo, 10-year-old Grace limped on an infected foot, untreated for weeks. Touched Hearts’ wound care team cleaned and bandaged 90 patients, including her. Grace’s swelling faded, and she hoed her garden again. Simple care from Touched Hearts restored her livelihood."
             },
