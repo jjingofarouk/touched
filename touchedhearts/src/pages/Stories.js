@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import React, { useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import StoryCard from "../components/StoryCard";
+import StoryPage from "../components/StoryPage";
 import Pagination from "../components/Pagination";
 import SearchFilter from "../components/SearchFilter";
-import storiesData from "../data/stories.json"; // Assuming stories.json is in the data folder
-import '../styles/stories.css';
+import storiesData from "../data/stories.json";
+import "../styles/stories.css";
 
 const Stories = () => {
   const [stories, setStories] = useState(storiesData);
@@ -13,7 +13,6 @@ const Stories = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const storiesPerPage = 6;
 
-  // Handle search and filter
   const handleSearchFilter = (searchTerm, category) => {
     const filtered = stories.filter((story) => {
       const matchesSearch =
@@ -29,10 +28,9 @@ const Stories = () => {
       return matchesSearch && matchesCategory;
     });
     setFilteredStories(filtered);
-    setCurrentPage(1); // Reset to first page after filtering
+    setCurrentPage(1);
   };
 
-  // Pagination logic
   const indexOfLastStory = currentPage * storiesPerPage;
   const indexOfFirstStory = indexOfLastStory - storiesPerPage;
   const currentStories = filteredStories.slice(indexOfFirstStory, indexOfLastStory);
@@ -41,10 +39,6 @@ const Stories = () => {
 
   return (
     <div className="stories-page">
-      {/* Navbar */}
-
-
-      {/* Page Header */}
       <section className="page-header">
         <div className="header-content">
           <h1>Impact Stories</h1>
@@ -52,33 +46,41 @@ const Stories = () => {
         </div>
       </section>
 
-      {/* Stories Section */}
-      <section className="stories-section" aria-label="Impact Stories">
-        {/* Search and Filter */}
-        <SearchFilter onSearchFilter={handleSearchFilter} />
-
-        {/* Stories Grid */}
-        <div className="stories-grid">
-          {currentStories.length > 0 ? (
-            currentStories.map((story, index) => (
-              <StoryCard key={index} story={story} />
-            ))
-          ) : (
-            <p className="no-stories-message">No stories match your criteria. Try adjusting your search or filter!</p>
-          )}
-        </div>
-
-        {/* Pagination */}
-        <Pagination
-          storiesPerPage={storiesPerPage}
-          totalStories={filteredStories.length}
-          currentPage={currentPage}
-          paginate={paginate}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <section className="stories-section" aria-label="Impact Stories">
+              <SearchFilter onSearchFilter={handleSearchFilter} />
+              <div className="stories-grid">
+                {currentStories.length > 0 ? (
+                  currentStories.map((story, index) => (
+                    <Link
+                      to={`/story/${filteredStories.indexOf(story)}`}
+                      key={index}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <StoryCard story={story} />
+                    </Link>
+                  ))
+                ) : (
+                  <p className="no-stories-message">No stories match your criteria. Try adjusting your search or filter!</p>
+                )}
+              </div>
+              <Pagination
+                storiesPerPage={storiesPerPage}
+                totalStories={filteredStories.length}
+                currentPage={currentPage}
+                paginate={paginate}
+              />
+            </section>
+          }
         />
-      </section>
-
-      {/* Footer */}
-      
+        <Route
+          path="/story/:id"
+          element={<StoryPage stories={filteredStories} />}
+        />
+      </Routes>
     </div>
   );
 };
