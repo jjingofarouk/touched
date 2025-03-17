@@ -10,11 +10,12 @@ const HeroSection = () => {
         className="hero"
         style={{
           backgroundImage: `url(${homeImage})`,
-          height: 400,
+          height: 600,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
-          marginBottom: '2rem' // Adds space below the hero section
+          marginBottom: '2rem', // Adds space below the hero section
+          marginTop: '0' // Adds space below the hero section
         }}
       >
         <div 
