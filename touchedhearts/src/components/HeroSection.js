@@ -5,26 +5,63 @@ import homeImage from '../assets/images/home.jpg';
 
 const HeroSection = () => {
   return (
-    <section className="hero" role="banner">
-      <div className="hero-content">
-        <h1 className="hero-title">Transforming Lives in Uganda</h1>
-        <p className="hero-subtitle">
-          Supporting persons with disabilities, children, and vulnerable communities with
-          compassion and hope.
-        </p>
-        <div className="hero-cta">
-          <NavLink to="/donate" className="cta-button primary" role="button">
-            Donate Now
-          </NavLink>
-          <NavLink to="/get-involved" className="cta-button secondary" role="button">
-            Get Involved
-          </NavLink>
+    <header style={{ paddingLeft: 0 }}>
+      <div
+        className="hero"
+        style={{
+          backgroundImage: `url(${homeImage})`,
+          height: 400,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div 
+          className="mask" 
+          style={{ 
+            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            height: '100%'
+          }}
+        >
+          <div 
+            className="d-flex justify-content-center align-items-center h-100"
+          >
+            <div className="text-white text-center">
+              <h1 
+                className="hero-title mb-3"
+                style={{ 
+                  color: '#ffffff',
+                  fontSize: '2.5rem'
+                }}
+              >
+                Transforming Lives in Uganda
+              </h1>
+              <NavLink
+                to="/donate"
+                className="btn btn-lg"
+                style={{
+                  backgroundColor: 'transparent',
+                  borderColor: '#d68c45', // secondary-color
+                  color: '#d68c45',
+                  marginTop: '1rem'
+                }}
+                onMouseOver={(e) => {
+                  e.target.style.backgroundColor = '#d68c45';
+                  e.target.style.color = '#ffffff';
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = '#d68c45';
+                }}
+                role="button"
+              >
+                Donate Now
+              </NavLink>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="hero-image-container">
-        <img src={homeImage} alt="Children smiling in Uganda" className="hero-image" />
-      </div>
-    </section>
+    </header>
   );
 };
 
