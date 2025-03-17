@@ -4,20 +4,20 @@ import homeImage from '../assets/images/home.jpg';
 
 const HeroSection = () => {
   return (
-    <section className="hero" role="banner" aria-label="Hero section with mission statement">
+    <section className="hero">
       <div className="hero-container">
         {/* Left Content */}
         <div className="hero-content">
           <h1 className="hero-title">Transforming Lives in Uganda</h1>
           <p className="hero-subtitle">
-            Supporting persons with disabilities, children, and vulnerable communities with
-            compassion and hope.
+            Supporting persons with disabilities, children, and vulnerable communities 
+            with compassion and hope.
           </p>
           <div className="hero-cta">
-            <NavLink to="/donate" className="cta-button primary" role="button">
+            <NavLink to="/donate" className="cta-button primary">
               Donate Now
             </NavLink>
-            <NavLink to="/get-involved" className="cta-button secondary" role="button">
+            <NavLink to="/get-involved" className="cta-button secondary">
               Get Involved
             </NavLink>
           </div>
@@ -28,7 +28,7 @@ const HeroSection = () => {
           <img 
             src={homeImage} 
             alt="Children smiling in Uganda" 
-            className="hero-image" 
+            className="hero-image"
             loading="lazy"
           />
         </div>
