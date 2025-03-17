@@ -1,272 +1,76 @@
-/* Navbar.css - Modern responsive navbar with mobile-first approach */
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
+import logo from '../assets/images/logo.jpg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles//navbar.css'; // Make sure to create this file with the CSS below
 
-/* Base styles and reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+const Navbars = () => {
+  // Helper function to determine if a link is active (for react-router-dom v6)
+  const getLinkClassName = ({ isActive }) => isActive ? "nav-link active" : "nav-link";
 
-:root {
-  --primary: #3a86ff;
-  --primary-hover: #2978f8;
-  --text: #333333;
-  --text-light: #555555;
-  --background: #ffffff;
-  --nav-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --transition: all 0.3s ease;
-  --border-radius: 8px;
-  --donate-color: #ff6b6b;
-  --donate-hover: #ff5252;
-}
+  return (
+    <Navbar expand="lg" className="custom-navbar" variant="dark">
+      <Container>
+        <Navbar.Brand as={NavLink} to="/">
+          <img
+            src={logo}
+            alt="Touched Hearts Logo"
+            height="25"
+            width="50"
+            className="d-inline-block align-top"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={NavLink} to="/" className={getLinkClassName}>
+              Home
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/about" className={getLinkClassName}>
+              About Us
+            </Nav.Link>
+            
+            {/* Programs links directly in the navbar */}
+            <Nav.Link as={NavLink} to="/education" className={getLinkClassName}>
+              Education
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/healthcare" className={getLinkClassName}>
+              Healthcare
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/disabilities" className={getLinkClassName}>
+              Disability Support
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/community" className={getLinkClassName}>
+              Community Dev
+            </Nav.Link>
+            
+            <Nav.Link as={NavLink} to="/stories" className={getLinkClassName}>
+              Stories
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/gallery" className={getLinkClassName}>
+              Gallery
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/get-involved" className={getLinkClassName}>
+              Get Involved
+            </Nav.Link>
+          </Nav>
+          <Nav className="ms-auto align-items-center">
+            <Button
+              as={NavLink}
+              to="/donate"
+              className="donate-button ms-2"
+            >
+              Donate Now
+            </Button>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
 
-/* Base navbar styles */
-.navbar {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background-color: var(--background);
-  box-shadow: var(--nav-shadow);
-  z-index: 1000;
-  padding: 1rem 0;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-/* Logo */
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  z-index: 1001;
-}
-
-.logo {
-  height: 40px;
-  width: auto;
-  border-radius: var(--border-radius);
-}
-
-/* Mobile toggle button */
-.navbar-toggle {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 24px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-  padding: 0;
-}
-
-.navbar-toggle span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: var(--text);
-  transition: var(--transition);
-}
-
-.navbar-toggle.active span:nth-child(1) {
-  transform: translateY(11px) rotate(45deg);
-}
-
-.navbar-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.navbar-toggle.active span:nth-child(3) {
-  transform: translateY(-11px) rotate(-45deg);
-}
-
-/* Mobile menu */
-.navbar-collapse {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: var(--background);
-  transform: translateX(-100%);
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 1000;
-  padding: 2rem;
-}
-
-.navbar-collapse.active {
-  transform: translateX(0);
-}
-
-.nav {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-}
-
-.nav-item {
-  position: relative;
-}
-
-.nav-link {
-  color: var(--text);
-  text-decoration: none;
-  font-size: 1.125rem;
-  font-weight: 500;
-  transition: var(--transition);
-  display: block;
-  padding: 0.5rem 0;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--primary);
-}
-
-/* Dropdown styles */
-.nav-dropdown {
-  position: relative;
-}
-
-.dropdown-toggle::after {
-  content: "▼";
-  font-size: 0.7rem;
-  margin-left: 0.5rem;
-  transition: var(--transition);
-}
-
-.dropdown-menu {
-  list-style: none;
-  background-color: var(--background);
-  padding: 0.5rem 0;
-  margin: 0.5rem 0 0.5rem 1rem;
-  display: none;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.nav-dropdown:hover .dropdown-menu,
-.nav-dropdown:focus-within .dropdown-menu {
-  display: flex;
-}
-
-.dropdown-item {
-  color: var(--text-light);
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 0.5rem 0;
-  transition: var(--transition);
-}
-
-.dropdown-item:hover {
-  color: var(--primary);
-}
-
-/* Donate button */
-.btn-donate {
-  background-color: var(--donate-color);
-  color: white !important;
-  padding: 0.75rem 1.5rem !important;
-  border-radius: var(--border-radius);
-  font-weight: 600;
-  text-align: center;
-  margin-top: 1rem;
-  transition: var(--transition);
-}
-
-.btn-donate:hover {
-  background-color: var(--donate-hover);
-  transform: translateY(-2px);
-}
-
-/* Tablet and desktop styles */
-@media (min-width: 768px) {
-  .navbar-toggle {
-    display: none;
-  }
-  
-  .navbar-collapse {
-    position: static;
-    transform: translateX(0);
-    height: auto;
-    padding: 0;
-    width: auto;
-  }
-  
-  .nav {
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 200px;
-    box-shadow: var(--nav-shadow);
-    border-radius: var(--border-radius);
-    margin: 0.5rem 0 0;
-    padding: 0.75rem;
-    z-index: 100;
-  }
-  
-  .btn-donate {
-    margin-top: 0;
-    margin-left: 1rem;
-  }
-}
-
-/* Large desktop styles */
-@media (min-width: 1024px) {
-  .nav {
-    gap: 1.5rem;
-  }
-  
-  .navbar {
-    padding: 1.25rem 0;
-  }
-  
-  .logo {
-    height: 48px;
-  }
-  
-  .nav-link {
-    position: relative;
-  }
-  
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary);
-    transition: var(--transition);
-  }
-  
-  .nav-link:hover::after,
-  .nav-link.active::after {
-    width: 100%;
-  }
-  
-  .dropdown-toggle::after {
-    position: relative;
-    top: -1px;
-  }
-}
+export default Navbars;
