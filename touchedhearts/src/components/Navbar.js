@@ -8,7 +8,7 @@ import logo from '../assets/images/logo.jpg';
 
 const Navbars = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" bg="dark" data-bs-theme="dark" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand as={NavLink} to="/">
           <img
