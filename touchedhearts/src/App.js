@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Components
-import TouchedNavbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
+import BasicExample from './components/BasicExample';
 
 // Pages
 import Home from './pages/Home';
@@ -38,16 +38,17 @@ import Fundraise from './pages/Fundraise';
 import Team from './pages/Team';
 
 // Global styles
+import './App.css';
 
 const App = () => {
   return (
     <Router>
       <div className="app-container">
-        <TouchedNavbar />
-        <div>
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/basic" element={<BasicExample />} />
             <Route path="/programs" element={<Programs />} />
             <Route path="/education" element={<Education />} />
             <Route path="/healthcare" element={<Healthcare />} />
@@ -74,7 +75,7 @@ const App = () => {
             <Route path="/fundraise" element={<Fundraise />} />
             <Route path="/team" element={<Team />} />
           </Routes>
-        </div>
+        </main>
         <Footer />
       </div>
     </Router>
