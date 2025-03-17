@@ -1,81 +1,84 @@
-/* Navbar.css */
-:root {
-  --primary-color: #3a8f85;
-  --primary-dark: #2c7269;
-  --secondary-color: #d68c45;
-  --secondary-dark: #b87339;
-  --dark: #2d3a3a;
-  --dark-gray: #4d5c5c;
-  --light-gray: #d2d8d8;
-  --off-white: #f8f7f5;
-  --white: #ffffff;
-  --gray-700: #495057; /* Bootstrap's link color */
-  --gray-900: #212529; /* Bootstrap's dark text */
-  --transition-speed: 0.25s;
+/* Navbar.css - Modern responsive navbar with mobile-first approach */
+
+/* Base styles and reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Navbar Base */
+:root {
+  --primary: #3a86ff;
+  --primary-hover: #2978f8;
+  --text: #333333;
+  --text-light: #555555;
+  --background: #ffffff;
+  --nav-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+  --border-radius: 8px;
+  --donate-color: #ff6b6b;
+  --donate-hover: #ff5252;
+}
+
+/* Base navbar styles */
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 1000;
   width: 100%;
-  padding: 0; /* Bootstrap uses container padding */
+  background-color: var(--background);
+  box-shadow: var(--nav-shadow);
+  z-index: 1000;
+  padding: 1rem 0;
 }
 
-/* Bootstrap's bg-body-tertiary */
-.bg-body-tertiary {
-  background-color: #f8f9fa; /* Light gray */
-}
-
-/* Container (Bootstrap-like) */
 .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1140px; /* Bootstrap's lg container width */
-  margin: 0 auto;
-  padding: 1rem;
+  position: relative;
 }
 
-/* Brand/Logo */
+/* Logo */
 .navbar-brand {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  color: var(--gray-900);
-  font-size: 1.25rem;
-  font-weight: 700;
+  z-index: 1001;
 }
 
 .logo {
   height: 40px;
-  margin-right: 0.75rem;
+  width: auto;
+  border-radius: var(--border-radius);
 }
 
-/* Toggle Button */
+/* Mobile toggle button */
 .navbar-toggle {
-  display: none;
-  background: none;
-  border: none;
-  padding: 0.5rem;
-  cursor: pointer;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 24px;
   width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
 }
 
 .navbar-toggle span {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--gray-700);
-  transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+  background-color: var(--text);
+  transition: var(--transition);
 }
 
 .navbar-toggle.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(11px) rotate(45deg);
 }
 
 .navbar-toggle.active span:nth-child(2) {
@@ -83,24 +86,36 @@
 }
 
 .navbar-toggle.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-11px) rotate(-45deg);
 }
 
-/* Collapsible Menu */
+/* Mobile menu */
 .navbar-collapse {
-  flex-grow: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background);
+  transform: translateX(-100%);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.navbar-collapse.active {
+  transform: translateX(0);
 }
 
 .nav {
-  display: flex;
-  align-items: center;
   list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.me-auto {
-  margin-right: auto; /* Pushes nav to the left */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .nav-item {
@@ -108,140 +123,150 @@
 }
 
 .nav-link {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: var(--gray-700);
+  color: var(--text);
   text-decoration: none;
-  font-size: 1rem;
-  transition: color var(--transition-speed) ease;
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: var(--transition);
+  display: block;
+  padding: 0.5rem 0;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--gray-900);
+  color: var(--primary);
 }
 
-/* Dropdown */
-.nav-dropdown .nav-link.dropdown-toggle {
-  display: flex;
-  align-items: center;
+/* Dropdown styles */
+.nav-dropdown {
+  position: relative;
 }
 
-.nav-dropdown .nav-link.dropdown-toggle::after {
-  content: '\25BC'; /* Down arrow */
+.dropdown-toggle::after {
+  content: "▼";
+  font-size: 0.7rem;
   margin-left: 0.5rem;
-  font-size: 0.75rem;
-  transition: transform var(--transition-speed) ease;
-}
-
-.nav-dropdown:hover .nav-link.dropdown-toggle::after {
-  transform: rotate(180deg);
+  transition: var(--transition);
 }
 
 .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--white);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.25rem;
-  min-width: 10rem;
-  padding: 0.5rem 0;
   list-style: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(5px);
-  transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+  background-color: var(--background);
+  padding: 0.5rem 0;
+  margin: 0.5rem 0 0.5rem 1rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.nav-dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  display: flex;
 }
 
 .dropdown-item {
-  display: block;
-  padding: 0.25rem 1rem;
-  color: var(--gray-700);
+  color: var(--text-light);
   text-decoration: none;
-  white-space: nowrap;
-  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  transition: var(--transition);
 }
 
 .dropdown-item:hover {
-  background-color: var(--light-gray);
-  color: var(--gray-900);
+  color: var(--primary);
 }
 
-/* Donate Button */
+/* Donate button */
 .btn-donate {
-  background-color: var(--secondary-color);
-  color: var(--white);
-  border-radius: 0.25rem;
-  padding: 0.375rem 0.75rem;
-  transition: background-color var(--transition-speed) ease;
+  background-color: var(--donate-color);
+  color: white !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  transition: var(--transition);
 }
 
 .btn-donate:hover {
-  background-color: var(--secondary-dark);
-  color: var(--white);
+  background-color: var(--donate-hover);
+  transform: translateY(-2px);
 }
 
-/* Mobile Responsive Styles */
-@media screen and (max-width: 991px) { /* Bootstrap's lg breakpoint */
+/* Tablet and desktop styles */
+@media (min-width: 768px) {
   .navbar-toggle {
-    display: flex;
-  }
-
-  .navbar-collapse {
     display: none;
+  }
+  
+  .navbar-collapse {
+    position: static;
+    transform: translateX(0);
+    height: auto;
+    padding: 0;
+    width: auto;
+  }
+  
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
-    background-color: var(--white);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    padding: 1rem;
+    min-width: 200px;
+    box-shadow: var(--nav-shadow);
+    border-radius: var(--border-radius);
+    margin: 0.5rem 0 0;
+    padding: 0.75rem;
+    z-index: 100;
   }
-
-  .navbar-collapse.active {
-    display: block;
-  }
-
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-item {
-    width: 100%;
-  }
-
-  .nav-link {
-    padding: 0.5rem 1rem;
-  }
-
-  .dropdown-menu {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    border: none;
-    padding: 0.5rem 0 0 1rem;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    display: none;
-  }
-
-  .nav-dropdown:hover .dropdown-menu {
-    display: block;
-  }
-
+  
   .btn-donate {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+}
+
+/* Large desktop styles */
+@media (min-width: 1024px) {
+  .nav {
+    gap: 1.5rem;
+  }
+  
+  .navbar {
+    padding: 1.25rem 0;
+  }
+  
+  .logo {
+    height: 48px;
+  }
+  
+  .nav-link {
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: var(--transition);
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
     width: 100%;
-    text-align: center;
-    margin-top: 0.5rem;
+  }
+  
+  .dropdown-toggle::after {
+    position: relative;
+    top: -1px;
   }
 }
