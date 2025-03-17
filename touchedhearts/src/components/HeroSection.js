@@ -5,7 +5,7 @@ import homeImage from '../assets/images/home.jpg';
 
 const HeroSection = () => {
   return (
-    <header style={{ paddingLeft: 0 }}>
+    <header style={{ paddingLeft: 0, marginTop: 0 }}>
       <div
         className="hero"
         style={{
@@ -13,7 +13,8 @@ const HeroSection = () => {
           height: 400,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          marginBottom: '2rem' // Adds space below the hero section
         }}
       >
         <div 
