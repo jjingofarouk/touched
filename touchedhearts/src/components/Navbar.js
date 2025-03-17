@@ -14,8 +14,8 @@ const Navbars = () => {
           <img
             src={logo}
             alt="Touched Hearts Logo"
-            height="30" // Bootstrap default logo height
-            width="60" // Bootstrap default logo height
+            height="25" // Bootstrap default logo height
+            width="50" // Bootstrap default logo height
             className="d-inline-block align-top"
           />
         </Navbar.Brand>
