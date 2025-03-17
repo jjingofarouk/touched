@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1002;
+  z-index: 1000;
   background-color: var(--white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -19,7 +19,7 @@ header.scrolled .navbar {
 
 .nav-container {
   display: flex;
-  align-items: right;
+  align-items: center;
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
@@ -34,7 +34,7 @@ header.scrolled .nav-container {
 /* Logo styles */
 .nav-logo {
   display: flex;
-  align-items: left;
+  align-items: center;
   height: 100%;
 }
 
@@ -51,7 +51,7 @@ header.scrolled .logo {
 /* Menu styles */
 .nav-menu {
   display: flex;
-  align-items: right;
+  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -62,12 +62,12 @@ header.scrolled .logo {
   position: relative;
   height: 100%;
   display: flex;
-  align-items: right;
+  align-items: center;
 }
 
 .nav-link {
   display: flex;
-  align-items: right;
+  align-items: center;
   padding: 0 1rem;
   height: 100%;
   color: var(--dark);
@@ -98,7 +98,7 @@ header.scrolled .logo {
   padding: 0 1rem;
   height: 100%;
   display: flex;
-  align-items: right;
+  align-items: center;
   color: var(--dark);
 }
 
@@ -124,7 +124,7 @@ header.scrolled .logo {
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.3s ease;
-  z-index: 1003;
+  z-index: 100;
 }
 
 .dropdown-menu.show {
@@ -177,7 +177,7 @@ header.scrolled .logo {
   border: none;
   cursor: pointer;
   padding: 0.5rem;
-  z-index: 1003;
+  z-index: 1010; /* Increased z-index to ensure it's always on top */
 }
 
 .nav-toggle span {
@@ -210,7 +210,7 @@ header.scrolled .logo {
   .nav-menu {
     position: fixed;
     top: 0;
-    right: -300px;
+    right: -100%; /* Changed from -300px to -100% for better responsiveness */
     width: 280px;
     height: 100vh;
     background-color: var(--white);
@@ -218,12 +218,14 @@ header.scrolled .logo {
     align-items: flex-start;
     padding: 90px 20px 30px;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease;
+    transition: right 0.4s ease; /* Simplified transition */
     overflow-y: auto;
+    z-index: 1005; /* Increased z-index */
   }
 
   .nav-menu.active {
     right: 0;
+    visibility: visible; /* Explicitly set visibility */
   }
 
   .nav-menu li {
@@ -262,6 +264,7 @@ header.scrolled .logo {
     max-height: 500px;
     padding: 0.5rem 0;
     margin: 0.5rem 0;
+    visibility: visible; /* Explicitly set visibility */
   }
 
   .dropdown-menu a {
@@ -277,6 +280,11 @@ header.scrolled .logo {
     display: inline-block;
     width: 100%;
     text-align: center;
+  }
+
+  /* Mobile toggle button color changes when active */
+  .nav-toggle.active span {
+    background-color: var(--primary-dark); /* Changed color when menu is active */
   }
 }
 
@@ -318,4 +326,9 @@ header.scrolled .logo {
 /* Animation for dropdown chevron */
 .dropdown-toggle[aria-expanded="true"] i {
   transform: rotate(180deg);
+}
+
+/* Added for debugging - can be removed after fixing */
+.nav-menu.active {
+  display: flex !important;
 }
