@@ -39,11 +39,11 @@ import Team from './pages/Team';
 
 // Global styles
 import './App.css';
-
 const App = () => {
   return (
     <Router>
       <div className="app-container">
+        <Navbar />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
