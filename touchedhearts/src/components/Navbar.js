@@ -127,7 +127,7 @@ const Navbars = () => {
               style={styles.navLink}
               className="nav-link-custom"
             >
-              Community Dev
+              Community Development
             </Nav.Link>
             
             <Nav.Link 
