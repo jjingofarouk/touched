@@ -1,11 +1,20 @@
 // src/components/HeroSection.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import homeImage from '../assets/images/home.jpg';
-
+import homeImageDesktop from '../assets/images/home-desktop.jpg'; // Larger image for desktop
+import homeImageMobile from '../assets/images/home-mobile.jpg'; // Optimized for mobile
 import '../styles/HeroSection.css';
 
 const HeroSection = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  // Handle window resize to toggle mobile state
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <section className="hero" role="banner">
       <div className="hero-content">
@@ -24,7 +33,12 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="hero-image-container">
-        <img src={homeImage} alt="Children smiling in Uganda" className="hero-image" />
+        <img
+          src={isMobile ? homeImageMobile : homeImageDesktop}
+          alt="Children smiling in Uganda"
+          className="hero-image"
+          loading="lazy" // Improve performance
+        />
       </div>
     </section>
   );
