@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './custom-navbar.css'; // Make sure to create this file with the CSS below
+import '../styles/navbar.css'; // Make sure to create this file with the CSS below
 
 const Navbars = () => {
   // Helper function to determine if a link is active (for react-router-dom v6)
