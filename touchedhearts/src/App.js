@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
   import "bootstrap/dist/css/bootstrap.min.css";
   
 // Components
-import Navbar from './components/Navbar';
+import Navbars from './components/Navbar';
 import Footer from './components/Footer';
 import BasicExample from './components/BasicExample';
 
@@ -43,7 +43,7 @@ const App = () => {
   return (
     <Router>
       <div className="app-container">
-        <Navbar />
+        <Navbars />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

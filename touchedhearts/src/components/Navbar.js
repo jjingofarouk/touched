@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../assets/images/logo.jpg';
 
-const Navbar = () => {
+const Navbars = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -15,6 +15,7 @@ const Navbar = () => {
             src={logo}
             alt="Touched Hearts Logo"
             height="30" // Bootstrap default logo height
+            width="60" // Bootstrap default logo height
             className="d-inline-block align-top"
           />
         </Navbar.Brand>
@@ -60,4 +61,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbars;
