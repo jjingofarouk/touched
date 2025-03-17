@@ -6,8 +6,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/Navbar.css'; // Make sure to create this file with the CSS below
-
 
 const Navbars = () => {
   // Helper function to determine if a link is active (for react-router-dom v6)
@@ -18,7 +16,7 @@ const Navbars = () => {
     // CSS variables
     vars: {
       /* Primary color palette - Warm Teal/Sage */
-      primaryColor: '#d68c45',
+      primaryColor: '#3a8f85',
       primaryDark: '#2c7269',
       primaryLight: '#8cc5bf',
       secondaryColor: '#d68c45',
