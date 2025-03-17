@@ -2,10 +2,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import '../styles/HeroSection.css'; // Ensure CSS is imported
+import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS
+import '../styles/HeroSection.css'; // Custom CSS
 
-// Import your 5 images
+// Import your 5 images (ensure paths are correct)
 import photo1 from '../assets/images/photo1.jpg';
 import photo2 from '../assets/images/photo2.jpg';
 import photo3 from '../assets/images/photo3.jpg';
@@ -16,19 +16,19 @@ const HeroSection = () => {
   const images = [photo1, photo2, photo3, photo4, photo5];
 
   return (
-    <header style={{ paddingLeft: 0, marginTop: 0, position: 'relative' }}>
+    <header className="hero-header">
       <Carousel
         controls={true}
         indicators={true}
         interval={5000}
         pause="hover"
         keyboard={true}
-        style={{ marginBottom: '2rem' }} // Height controlled by CSS
+        className="hero-carousel"
       >
         {images.map((image, index) => (
           <Carousel.Item key={index}>
             <div
-              className="hero"
+              className="hero-image"
               style={{
                 backgroundImage: `url(${image})`,
                 backgroundPosition: 'center',
@@ -36,28 +36,21 @@ const HeroSection = () => {
                 backgroundRepeat: 'no-repeat'
               }}
             >
-              <div
-                className="mask"
-                style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', height: '100%' }}
-              ></div>
+              <div className="hero-mask"></div>
             </div>
           </Carousel.Item>
         ))}
       </Carousel>
-      <div className="content-overlay d-flex justify-content-center align-items-center" style={{ position: 'absolute', top: 0, left: 0, zIndex: 2 }}>
-        <div className="text-white text-center">
-          <h1 className="hero-title mb-3">Touched Hearts</h1>
-          <h4 className="mb-3">Transforming Lives in Uganda</h4>
+      <div className="hero-overlay d-flex justify-content-center align-items-center">
+        <div className="hero-content">
+          <h1 className="hero-title">Touched Hearts</h1>
+          <h4 className="hero-subtitle">Transforming Lives in Uganda</h4>
           <NavLink
             to="/donate"
-            className="btn btn-lg"
+            className="hero-button"
             style={{
               backgroundColor: '#d68c45',
-              borderColor: '#d68c45',
-              color: '#ffffff',
-              fontWeight: 'bold',
-              marginTop: '1rem',
-              display: 'inline-block'
+              borderColor: '#d68c45'
             }}
             onMouseOver={(e) => {
               e.target.style.backgroundColor = '#b87339';
