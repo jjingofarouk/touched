@@ -1,28 +1,69 @@
-/* src/styles/HeroSection.css or your global stylesheet */
-.hero {
+/* src/styles/HeroSection.css */
+.hero-header {
+  padding-left: 0;
+  margin-top: 0;
   position: relative;
-  width: 100%; /* Full width for all devices */
-  height: 70vh; /* Default height: 70% of viewport height for laptops */
-  min-height: 400px; /* Minimum height to prevent it from being too small */
-  max-height: 800px; /* Maximum height to avoid overwhelming large screens */
+  margin-bottom: 2rem; /* Space below hero */
 }
 
-.content-overlay {
-  height: 100%; /* Matches the hero/carousel height dynamically */
-  width: 100%; /* Full width to align with hero */
+.hero-carousel {
+  height: 70vh; /* Default for laptops */
+  min-height: 400px;
+  max-height: 800px;
 }
 
-.btn {
-  padding: 10px 20px;
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* Matches carousel */
+  min-height: 400px;
+  max-height: 800px;
+}
+
+.hero-mask {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.hero-content {
+  text-align: center;
+  color: #ffffff; /* Bold white base for all text */
+}
+
+.hero-title {
+  color: #ffffff !important; /* Very bold white */
+  font-weight: bold !important;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.hero-subtitle {
+  color: #ffffff !important; /* Very white */
+  font-weight: normal;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.hero-button {
+  color: #ffffff !important; /* Very bold white */
+  font-weight: bold !important;
+  padding: 12px 30px;
   text-decoration: none;
   border-radius: 5px;
   border: 2px solid;
   transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.mb-3 {
-  margin-bottom: 1rem;
+  display: inline-block;
+  font-size: 1.1rem;
 }
 
 .d-flex {
@@ -37,116 +78,98 @@
   align-items: center;
 }
 
-.text-center {
-  text-align: center;
-}
-
-/* Ensure carousel controls are visible */
+/* Carousel controls */
 .carousel-control-prev,
 .carousel-control-next {
-  z-index: 2;
+  z-index: 3; /* Above overlay */
+  width: 5%;
 }
 
 .carousel-indicators {
-  z-index: 2;
-  bottom: 10px; /* Adjust position for better visibility */
+  z-index: 3;
+  bottom: 10px;
 }
 
-/* Media Queries for Responsive Design */
+/* Media Queries for Responsiveness */
 
-/* Larger screens (laptops, desktops: 1024px and up) */
+/* Laptops (1024px and up) */
 @media (min-width: 1024px) {
-  .hero {
-    height: 70vh; /* Maintain prominent height for laptops */
+  .hero-carousel,
+  .hero-image {
+    height: 70vh;
   }
-
-  .btn {
-    padding: 12px 30px; /* Slightly larger button for desktop */
-    font-size: 1.1rem;
-  }
-
   .hero-title {
-    font-size: 3rem; /* Matches your JSX styling, ensuring consistency */
+    font-size: 3rem;
   }
-
-  .mb-3 h4 {
-    font-size: 1.25rem; /* Matches your JSX styling */
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  .hero-button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
   }
 }
 
 /* Tablets (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .hero {
-    height: 60vh; /* Slightly shorter for tablets */
+  .hero-carousel,
+  .hero-image {
+    height: 60vh;
     min-height: 350px;
   }
-
-  .btn {
-    padding: 10px 25px; /* Adjusted for tablet */
-    font-size: 1rem;
-  }
-
   .hero-title {
-    font-size: 2.5rem; /* Slightly smaller title */
+    font-size: 2.5rem;
   }
-
-  .mb-3 h4 {
-    font-size: 1.1rem; /* Slightly smaller subtitle */
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .hero-button {
+    padding: 10px 25px;
+    font-size: 1rem;
   }
 }
 
 /* Phones (up to 767px) */
 @media (max-width: 767px) {
-  .hero {
-    height: 50vh; /* Shorter height for phones */
-    min-height: 300px; /* Ensure it’s still prominent */
+  .hero-carousel,
+  .hero-image {
+    height: 50vh;
+    min-height: 300px;
   }
-
-  .content-overlay {
-    padding: 0 10px; /* Add padding to prevent text from touching edges */
+  .hero-content {
+    padding: 0 10px; /* Prevent text from touching edges */
   }
-
-  .btn {
-    padding: 8px 20px; /* Smaller button for phones */
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-button {
+    padding: 8px 20px;
     font-size: 0.9rem;
   }
-
-  .hero-title {
-    font-size: 2rem; /* Smaller title for phones */
-  }
-
-  .mb-3 h4 {
-    font-size: 1rem; /* Smaller subtitle */
-  }
-
-  /* Adjust carousel controls for smaller screens */
   .carousel-control-prev,
   .carousel-control-next {
-    width: 10%; /* Narrower controls */
-  }
-
-  .carousel-indicators {
-    margin-bottom: 5px; /* Closer to bottom edge */
+    width: 10%;
   }
 }
 
 /* Very small phones (up to 576px) */
 @media (max-width: 576px) {
-  .hero {
-    height: 45vh; /* Even shorter for very small screens */
+  .hero-carousel,
+  .hero-image {
+    height: 45vh;
     min-height: 250px;
   }
-
-  .btn {
-    padding: 6px 15px; /* Compact button */
-    font-size: 0.85rem;
-  }
-
   .hero-title {
-    font-size: 1.5rem; /* Compact title */
+    font-size: 1.5rem;
   }
-
-  .mb-3 h4 {
-    font-size: 0.9rem; /* Compact subtitle */
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  .hero-button {
+    padding: 6px 15px;
+    font-size: 0.85rem;
   }
 }
