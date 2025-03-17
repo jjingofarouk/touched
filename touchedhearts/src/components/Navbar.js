@@ -16,7 +16,7 @@ const Navbars = () => {
     // CSS variables
     vars: {
       /* Primary color palette - Warm Teal/Sage */
-      primaryColor: '#3a8f85',
+      primaryColor: '#d68c45',
       primaryDark: '#2c7269',
       primaryLight: '#8cc5bf',
       secondaryColor: '#d68c45',
