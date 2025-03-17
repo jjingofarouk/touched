@@ -46,7 +46,7 @@
 
 /* Donate button styling */
 .donate-button {
-  background-color: var(--secondary-color);
+  background-color: #d68c45;
   border-color: var(--secondary-color);
   color: var(--white);
   font-weight: 600;
