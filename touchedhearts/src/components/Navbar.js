@@ -1,79 +1,95 @@
+// src/components/Navbar.js
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../assets/images/logo.jpg'; // Adjust path as needed
 import '../styles/Navbar.css';
 
-function TouchedNavbar() {
-  const [expanded, setExpanded] = useState(false);
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setExpanded(!expanded);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <header>
-      <Navbar expand="lg" expanded={expanded} className="navbar">
-        <Container className="nav-container">
-          <Navbar.Brand as={NavLink} to="/" className="nav-logo">
+      <nav className="navbar">
+        <div className="nav-container">
+          <NavLink to="/" className="nav-logo">
             <img src={logo} alt="Touched Hearts Logo" className="logo" />
-          </Navbar.Brand>
-          
-          <Navbar.Toggle 
-            aria-controls="basic-navbar-nav" 
+          </NavLink>
+          <button
+            className={`nav-toggle ${isMenuOpen ? 'active' : ''}`}
+            aria-label="Toggle navigation"
             onClick={toggleMenu}
-            className={expanded ? 'active' : ''}
-          />
-          
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link as={NavLink} to="/" exact className="nav-link">
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+            <li>
+              <NavLink to="/" className="nav-link" activeClassName="active" exact>
                 Home
-              </Nav.Link>
-              
-              <Nav.Link as={NavLink} to="/about" className="nav-link">
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" className="nav-link" activeClassName="active">
                 About Us
-              </Nav.Link>
-              
-              <NavDropdown title="Programs" id="programs-dropdown" className="nav-dropdown">
-                <NavDropdown.Item as={NavLink} to="/education">
-                  Education
-                </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to="/healthcare">
-                  Healthcare
-                </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to="/disabilities">
-                  Disability Support
-                </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to="/community">
-                  Community Development
-                </NavDropdown.Item>
-              </NavDropdown>
-              
-              <Nav.Link as={NavLink} to="/stories" className="nav-link">
+              </NavLink>
+            </li>
+            <li className="nav-dropdown">
+              <NavLink to="/programs" className="nav-link" activeClassName="active">
+                Programs <i className="fas fa-chevron-down"></i>
+              </NavLink>
+              <ul className="dropdown-menu">
+                <li>
+                  <NavLink to="/education">Education</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/healthcare">Healthcare</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/disabilities">Disability Support</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/community">Community Development</NavLink>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <NavLink to="/stories" className="nav-link" activeClassName="active">
                 Stories
-              </Nav.Link>
-              
-              <Nav.Link as={NavLink} to="/gallery" className="nav-link">
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/gallery" className="nav-link" activeClassName="active">
                 Gallery
-              </Nav.Link>
-              
-              <Nav.Link as={NavLink} to="/get-involved" className="nav-link">
-                Get Involved
-              </Nav.Link>
-              
-              <Nav.Link as={NavLink} to="/donate" className="nav-link btn-donate">
+              </NavLink>
+            </li>
+            <li className="nav-dropdown">
+              <NavLink to="/" className="nav-link" activeClassName="active">
+                Get Involved <i className="fas fa-chevron-down"></i>
+              </NavLink>
+              <ul className="dropdown-menu">
+                <li>
+                  <NavLink to="/volunteers">Volunteers</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/partners">Partners</NavLink>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <NavLink to="/donate" className="nav-link btn-donate" activeClassName="active">
                 Donate Now
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
   );
-}
+};
 
-export default TouchedNavbar;
+export default Navbar;
