@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
-// Import your 5 images
+// Import your 5 images (ensure these paths are correct)
 import photo1 from '../assets/images/photo1.jpg';
 import photo2 from '../assets/images/photo2.jpg';
 import photo3 from '../assets/images/photo3.jpg';
@@ -16,12 +16,13 @@ const HeroSection = () => {
 
   return (
     <header style={{ paddingLeft: 0, marginTop: 0, position: 'relative' }}>
-      <Carousel 
-        controls={true} 
-        indicators={true} 
+      <Carousel
+        controls={true}
+        indicators={true}
         interval={5000} // 5 seconds per slide
         pause="hover" // Pauses on hover
-        style={{ marginBottom: '2rem' }}
+        keyboard={true} // Adds keyboard navigation
+        style={{ marginBottom: '2rem', height: '400px' }} // Explicit height
       >
         {images.map((image, index) => (
           <Carousel.Item key={index}>
@@ -29,15 +30,15 @@ const HeroSection = () => {
               className="hero"
               style={{
                 backgroundImage: `url(${image})`,
-                height: 400,
+                height: '400px', // Explicit pixels
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
               }}
             >
-              <div 
-                className="mask" 
-                style={{ 
+              <div
+                className="mask"
+                style={{
                   backgroundColor: 'rgba(0, 0, 0, 0.6)',
                   height: '100%'
                 }}
@@ -47,21 +48,21 @@ const HeroSection = () => {
         ))}
       </Carousel>
       {/* Static content overlay */}
-      <div 
+      <div
         className="content-overlay d-flex justify-content-center align-items-center"
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
-          height: '100%',
-          zIndex: 1
+          height: '400px', // Matches carousel height
+          zIndex: 2 // Higher than carousel default
         }}
       >
         <div className="text-white text-center">
-          <h1 
+          <h1
             className="hero-title mb-3"
-            style={{ 
+            style={{
               color: '#ffffff',
               fontSize: '3rem',
               fontWeight: 'bold'
@@ -99,6 +100,7 @@ const HeroSection = () => {
               e.target.style.borderColor = '#d68c45';
             }}
             role="button"
+            aria-label="Donate Now to Support Our Cause" // Accessibility
           >
             Donate Now
           </NavLink>
