@@ -34,14 +34,7 @@ const Navbars = () => {
     navLink: {
       color: '#f8f7f5',
     },
-    activeLink: {
-      color: '#ffffff',
-      fontWeight: 600,
-      // Removed borderBottom here, but it wasn’t applied anyway
-    },
-    navLinkHover: {
-      color: '#8cc5bf',
-    },
+
     donateButton: {
       backgroundColor: '#d68c45',
       borderColor: '#d68c45',
@@ -114,12 +107,7 @@ const Navbars = () => {
           color: ${styles.vars.primaryLight} !important;
           transition: color 0.2s ease;
         }
-        
-        .nav-link-custom.active {
-          color: ${styles.vars.white} !important;
-          font-weight: 600;
-          /* Removed border-bottom: 2px solid ${styles.vars.primaryLight}; */
-        }
+
         
         .donate-button-custom {
           background-color: ${styles.vars.secondaryColor} !important;
