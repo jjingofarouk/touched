@@ -38,7 +38,7 @@ import Fundraise from './pages/Fundraise';
 import Team from './pages/Team';
 
 // Global styles
-import './App.css';
+
 const App = () => {
   return (
     <Router>
