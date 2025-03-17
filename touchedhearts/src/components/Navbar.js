@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -8,8 +8,19 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import logo from '../assets/images/logo.jpg';
+import 'bootstrap/dist/css/bootstrap.min.css'; // CSS loaded statically
 
 const Navbars = () => {
+  useEffect(() => {
+    // Dynamically import Bootstrap JS when the component mounts
+    import('bootstrap/dist/js/bootstrap.bundle.min.js')
+      .then(() => {
+        // Ensure dropdowns are initialized
+        // Bootstrap JS auto-initializes dropdowns when loaded, so no extra steps needed here
+      })
+      .catch((err) => console.error('Failed to load Bootstrap JS:', err));
+  }, []); // Empty dependency array: runs once on mount
+
   return (
     <Navbar expand="lg" bg="dark" data-bs-theme="dark">
       <Container>
@@ -55,30 +66,30 @@ const Navbars = () => {
               Get Involved
             </Nav.Link>
           </Nav>
-          {/* Search Bar */}
-          <Form className="d-flex me-3">
-            <InputGroup>
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                className="bg-dark text-light border-secondary"
-              />
-              <Button variant="outline-light" type="submit">
-                <i className="fas fa-search" /> {/* Font Awesome icon */}
-              </Button>
-            </InputGroup>
-          </Form>
-          {/* Donate Now Button */}
-          <Button
-            as={NavLink}
-            to="/donate"
-            variant="warning" // Colorful option (yellow-orange)
-            className="ms-2"
-            activeClassName="active"
-          >
-            Donate Now
-          </Button>
+          <Nav className="ms-auto align-items-center">
+            <Form className="d-flex me-3">
+              <InputGroup>
+                <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  className="bg-dark text-light border-secondary"
+                />
+                <Button variant="outline-light" type="submit">
+                  <i className="fas fa-search" />
+                </Button>
+              </InputGroup>
+            </Form>
+            <Button
+              as={NavLink}
+              to="/donate"
+              variant="warning"
+              className="ms-2"
+              activeClassName="active"
+            >
+              Donate Now
+            </Button>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
