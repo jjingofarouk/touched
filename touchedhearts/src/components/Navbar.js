@@ -37,7 +37,6 @@ const Navbars = () => {
     activeLink: {
       color: '#ffffff',
       fontWeight: 600,
-      // Removed borderBottom here, but it wasn’t applied anyway
     },
     navLinkHover: {
       color: '#8cc5bf',
@@ -108,7 +107,7 @@ const Navbars = () => {
         </Navbar.Collapse>
       </Container>
 
-      {/* Inline styles with underline removed */}
+      {/* Inline styles with underline removed and pseudo-element disabled */}
       <style jsx>{`
         .nav-link-custom:hover {
           color: ${styles.vars.primaryLight} !important;
@@ -118,7 +117,11 @@ const Navbars = () => {
         .nav-link-custom.active {
           color: ${styles.vars.white} !important;
           font-weight: 600;
-          /* Removed border-bottom: 2px solid ${styles.vars.primaryLight}; */
+          border-bottom: none !important; /* Explicitly remove border */
+        }
+        
+        .nav-link-custom.active::after {
+          content: none !important; /* Disable any ::after pseudo-element */
         }
         
         .donate-button-custom {
