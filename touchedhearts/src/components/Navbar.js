@@ -55,17 +55,12 @@ const Navbars = () => {
       color: '#8cc5bf', // primaryLight
     },
     donateButton: {
-      backgroundColor: '#d68c45', // secondaryColor
-      borderColor: '#d68c45', // secondaryColor
+      backgroundColor: '#d68c45', // secondaryColor - corrected
+      borderColor: '#d68c45', // secondaryColor - corrected
       color: '#ffffff', // white
       fontWeight: 600,
       padding: '0.5rem 1rem',
       transition: 'all 0.2s ease',
-    },
-    donateButtonHover: {
-      backgroundColor: '#b87339', // secondaryDark
-      borderColor: '#b87339', // secondaryDark
-      transform: 'scale(1.05)',
     }
   };
 
@@ -184,6 +179,11 @@ const Navbars = () => {
           color: ${styles.vars.white} !important;
           font-weight: 600;
           border-bottom: 2px solid ${styles.vars.primaryLight};
+        }
+        
+        .donate-button-custom {
+          background-color: ${styles.vars.secondaryColor} !important;
+          border-color: ${styles.vars.secondaryColor} !important;
         }
         
         .donate-button-custom:hover {
