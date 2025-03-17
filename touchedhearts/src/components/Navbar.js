@@ -4,18 +4,21 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import InputGroup from 'react-bootstrap/InputGroup';
 import logo from '../assets/images/logo.jpg';
 
 const Navbars = () => {
   return (
-    <Navbar expand="lg" bg="dark" data-bs-theme="dark" className="bg-body-tertiary">
+    <Navbar expand="lg" bg="dark" data-bs-theme="dark">
       <Container>
         <Navbar.Brand as={NavLink} to="/">
           <img
             src={logo}
             alt="Touched Hearts Logo"
-            height="25" // Bootstrap default logo height
-            width="50" // Bootstrap default logo height
+            height="25"
+            width="50"
             className="d-inline-block align-top"
           />
         </Navbar.Brand>
@@ -51,10 +54,31 @@ const Navbars = () => {
             <Nav.Link as={NavLink} to="/get-involved" activeClassName="active">
               Get Involved
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/donate" activeClassName="active">
-              Donate Now
-            </Nav.Link>
           </Nav>
+          {/* Search Bar */}
+          <Form className="d-flex me-3">
+            <InputGroup>
+              <Form.Control
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                className="bg-dark text-light border-secondary"
+              />
+              <Button variant="outline-light" type="submit">
+                <i className="fas fa-search" /> {/* Font Awesome icon */}
+              </Button>
+            </InputGroup>
+          </Form>
+          {/* Donate Now Button */}
+          <Button
+            as={NavLink}
+            to="/donate"
+            variant="warning" // Colorful option (yellow-orange)
+            className="ms-2"
+            activeClassName="active"
+          >
+            Donate Now
+          </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
