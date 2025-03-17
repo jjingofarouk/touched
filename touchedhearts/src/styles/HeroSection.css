@@ -1,6 +1,3 @@
-/* HeroSection.css */
-
-/* Modern Color Palette with OKLCH for richer, adaptive colors */
 :root {
   /* Primary - Vibrant Teal */
   --primary: oklch(65% 0.15 180); /* Bright teal */
@@ -22,224 +19,112 @@
   --spacing-unit: clamp(1rem, 2vw, 2rem);
 }
 
-/* Reset and Base */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* Hero Section */
+/* ---- Hero Section ---- */
 .hero {
-  --hero-height: 100dvh; /* Dynamic viewport height */
-  position: relative;
-  display: grid;
-  grid-template-areas: 
-    "content image"
-    "cta image";
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  grid-template-rows: 1fr auto;
-  min-height: var(--hero-height);
-  overflow: hidden;
-  background: linear-gradient(145deg, var(--primary-light) 0%, var(--light) 100%);
-  container-type: inline-size; /* Enable container queries */
-  isolation: isolate; /* Prevent z-index bleed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: var(--spacing-unit);
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
 }
 
-/* Hero Content */
-.hero-content {
-  grid-area: content;
+.hero-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: var(--spacing-unit);
+}
+
+/* ---- Left Content ---- */
+.hero-content {
+  flex: 1;
+  text-align: left;
   padding: var(--spacing-unit);
-  background: linear-gradient(to right, var(--light) 50%, transparent);
-  backdrop-filter: blur(12px) saturate(1.2);
-  z-index: 2;
-  mask-image: linear-gradient(to right, #000 70%, transparent);
-  -webkit-mask-image: linear-gradient(to right, #000 70%, transparent);
 }
 
 .hero-title {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(2.5rem, 6cqi, 5rem); /* Container-query units */
-  font-weight: 900;
-  line-height: 1.1;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
   color: var(--dark);
-  text-wrap: balance; /* Modern text wrapping */
-  animation: slide-in 0.8s var(--transition) both;
-}
-
-.hero-title span {
-  display: block;
-  color: var(--primary);
-  font-size: 0.9em;
-  animation-delay: 0.2s;
+  margin-bottom: 10px;
 }
 
 .hero-subtitle {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(1rem, 2cqi, 1.5rem);
-  font-weight: 400;
-  line-height: 1.6;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--dark);
-  max-width: 40ch;
-  opacity: 0.9;
-  margin-top: 1.5rem;
-  animation: slide-in 0.8s var(--transition) 0.2s both;
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
-/* Hero Image */
-.hero-image-container {
-  grid-area: image;
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(0.9) contrast(1.1);
-  transform: scale(1.05);
-  transition: transform var(--transition);
-  will-change: transform;
-}
-
-.hero:hover .hero-image {
-  transform: scale(1);
-}
-
-/* CTA Buttons */
+/* ---- CTA Buttons ---- */
 .hero-cta {
-  grid-area: cta;
   display: flex;
-  gap: var(--spacing-unit);
-  padding: var(--spacing-unit);
-  z-index: 2;
-  animation: slide-in 0.8s var(--transition) 0.4s both;
+  gap: 1rem;
 }
 
 .cta-button {
-  --button-bg: var(--primary);
-  --button-hover: var(--primary-dark);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(0.75rem, 1.5cqi, 1rem) clamp(1.5rem, 3cqi, 2.5rem);
-  border-radius: 100vmax; /* Fully rounded */
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(0.875rem, 1.5cqi, 1.125rem);
-  font-weight: 700;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
-  color: var(--light);
-  background: var(--button-bg);
-  border: 2px solid transparent;
-  transition: all var(--transition);
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  border-radius: 8px;
+  transition: var(--transition);
+  display: inline-block;
 }
 
-.cta-button::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transform: translateX(-100%);
+.primary {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.secondary {
+  background-color: var(--secondary);
+  color: var(--light);
+}
+
+.secondary:hover {
+  background-color: var(--secondary-dark);
+}
+
+/* ---- Right Image ---- */
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px var(--overlay);
   transition: transform var(--transition);
-  z-index: 0;
 }
 
-.cta-button:hover::before {
-  transform: translateX(100%);
+.hero-image:hover {
+  transform: scale(1.05);
 }
 
-.cta-button:hover {
-  background: var(--button-hover);
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 20px oklch(0% 0 0 / 0.2);
-}
-
-.cta-button.secondary {
-  --button-bg: transparent;
-  --button-hover: var(--secondary);
-  color: var(--secondary);
-  border-color: var(--secondary);
-}
-
-.cta-button.secondary:hover {
-  color: var(--light);
-}
-
-/* Scroll-Driven Animation for Parallax Effect */
-@supports (animation-timeline: scroll()) {
-  .hero-image {
-    animation: parallax linear both;
-    animation-timeline: scroll(root block);
-    animation-range: 0 50vh;
-  }
-
-  @keyframes parallax {
-    to { transform: scale(1.05) translateY(10%); }
-  }
-}
-
-/* Animations */
-@keyframes slide-in {
-  from {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Design with Container Queries */
-@container (max-width: 50rem) {
-  .hero {
-    grid-template-areas: 
-      "image"
-      "content"
-      "cta";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    min-height: unset;
-  }
-
-  .hero-content {
-    padding: calc(var(--spacing-unit) * 0.75);
-    background: linear-gradient(to bottom, var(--light) 70%, transparent);
-    mask-image: none;
-    -webkit-mask-image: none;
-  }
-
-  .hero-image-container {
-    height: 50vh;
-    clip-path: none;
+/* ---- Responsive Design ---- */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
   }
 
   .hero-cta {
     flex-direction: column;
-    align-items: stretch;
   }
 
-  .cta-button {
-    width: 100%;
-  }
-}
-
-/* Fine-Tune for Smaller Screens */
-@media (max-width: 768px) {
-  .hero-image-container {
-    height: clamp(30vh, 40vw, 50vh);
+  .hero-image {
+    max-width: 90%;
   }
 }
-
-/* Font Import (Add to HTML or CSS) */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap'); */
