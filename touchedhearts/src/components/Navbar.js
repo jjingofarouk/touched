@@ -1,88 +1,34 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import logo from '../assets/images/logo.jpg';
-import '../styles/Navbar.css';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
+function BasicExample() {
   return (
-    <header>
-      <nav className="navbar bg-body-tertiary">
-        <div className="container">
-          <NavLink to="/" className="navbar-brand">
-            <img src={logo} alt="Touched Hearts Logo" className="logo" />
-          </NavLink>
-          <button
-            className={`navbar-toggle ${isMenuOpen ? 'active' : ''}`}
-            aria-label="Toggle navigation"
-            onClick={toggleMenu}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <div className={`navbar-collapse ${isMenuOpen ? 'active' : ''}`}>
-            <ul className="nav me-auto">
-              <li className="nav-item">
-                <NavLink to="/" className="nav-link" activeClassName="active" exact>
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/about" className="nav-link" activeClassName="active">
-                  About Us
-                </NavLink>
-              </li>
-              <li className="nav-item nav-dropdown">
-                <NavLink to="/programs" className="nav-link dropdown-toggle" activeClassName="active">
-                  Programs
-                </NavLink>
-                <ul className="dropdown-menu">
-                  <li>
-                    <NavLink to="/education" className="dropdown-item">Education</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/healthcare" className="dropdown-item">Healthcare</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/disabilities" className="dropdown-item">Disability Support</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/community" className="dropdown-item">Community Development</NavLink>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/stories" className="nav-link" activeClassName="active">
-                  Stories
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/gallery" className="nav-link" activeClassName="active">
-                  Gallery
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/get-involved" className="nav-link" activeClassName="active">
-                  Get Involved
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/donate" className="nav-link btn-donate" activeClassName="active">
-                  Donate Now
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
-};
+}
 
-export default Navbar;
+export default BasicExample;
