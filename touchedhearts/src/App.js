@@ -38,6 +38,7 @@ import TermsOfService from './pages/TermsOfService';
 import Accessibility from './pages/Accessibility';
 import Fundraise from './pages/Fundraise';
 import Team from './pages/Team';
+import './App.css';
 
 // Global styles
 

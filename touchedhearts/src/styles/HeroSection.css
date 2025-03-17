@@ -1,11 +1,11 @@
 /* src/styles/HeroSection.css or your global stylesheet */
 .hero {
   position: relative;
-  width: 100%;
+  width: 70vh;
 }
 
 .content-overlay {
-  height: 400px; /* Matches carousel height */
+  height: 600px; /* Matches carousel height */
 }
 
 .btn {

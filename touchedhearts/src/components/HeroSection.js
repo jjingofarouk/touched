@@ -104,9 +104,9 @@ const HeroSection = () => {
           >
             Donate Now
           </NavLink>
-        </div> {/* Closing text div */}
-      </div> {/* Closing overlay div */}
-    </header> {/* Closing header */}
+        </div> 
+      </div> 
+    </header> 
   );
 };
 
