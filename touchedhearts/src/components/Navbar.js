@@ -83,7 +83,7 @@ const Navbars = () => {
               Disability Support
             </Nav.Link>
             <Nav.Link as={NavLink} to="/community" style={styles.navLink} className="nav-link-custom">
-              Community Development
+              Community
             </Nav.Link>
             <Nav.Link as={NavLink} to="/stories" style={styles.navLink} className="nav-link-custom">
               Stories
