@@ -6,13 +6,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './custom-navbar.css'; // Make sure to create this file with the CSS below
 
 const Navbars = () => {
   // Helper function to determine if a link is active (for react-router-dom v6)
   const getLinkClassName = ({ isActive }) => isActive ? "nav-link active" : "nav-link";
 
   return (
-    <Navbar expand="lg" style={{backgroundColor: '#b0c4de'}} variant="light">
+    <Navbar expand="lg" className="custom-navbar" variant="dark">
       <Container>
         <Navbar.Brand as={NavLink} to="/">
           <img
@@ -61,12 +62,7 @@ const Navbars = () => {
             <Button
               as={NavLink}
               to="/donate"
-              style={{
-                backgroundColor: '#FF6D42',
-                borderColor: '#FF6D42',
-                fontWeight: '600'
-              }}
-              className="ms-2"
+              className="donate-button ms-2"
             >
               Donate Now
             </Button>
