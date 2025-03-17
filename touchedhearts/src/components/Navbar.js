@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,10 +10,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Navbars = () => {
   // Helper function to determine if a link is active (for react-router-dom v6)
   const getLinkClassName = ({ isActive }) => isActive ? "nav-link active" : "nav-link";
-  const getDropdownItemClassName = ({ isActive }) => isActive ? "dropdown-item active" : "dropdown-item";
 
   return (
-    <Navbar expand="lg" bg="dark" variant="dark">
+    <Navbar expand="lg" style={{backgroundColor: '#b0c4de'}} variant="light">
       <Container>
         <Navbar.Brand as={NavLink} to="/">
           <img
@@ -34,20 +32,21 @@ const Navbars = () => {
             <Nav.Link as={NavLink} to="/about" className={getLinkClassName}>
               About Us
             </Nav.Link>
-            <NavDropdown title="Programs" id="programs-nav-dropdown">
-              <NavDropdown.Item as={NavLink} to="/education" className={getDropdownItemClassName}>
-                Education
-              </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/healthcare" className={getDropdownItemClassName}>
-                Healthcare
-              </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/disabilities" className={getDropdownItemClassName}>
-                Disability Support
-              </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/community" className={getDropdownItemClassName}>
-                Community Development
-              </NavDropdown.Item>
-            </NavDropdown>
+            
+            {/* Programs links directly in the navbar */}
+            <Nav.Link as={NavLink} to="/education" className={getLinkClassName}>
+              Education
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/healthcare" className={getLinkClassName}>
+              Healthcare
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/disabilities" className={getLinkClassName}>
+              Disability Support
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/community" className={getLinkClassName}>
+              Community Dev
+            </Nav.Link>
+            
             <Nav.Link as={NavLink} to="/stories" className={getLinkClassName}>
               Stories
             </Nav.Link>
@@ -62,7 +61,11 @@ const Navbars = () => {
             <Button
               as={NavLink}
               to="/donate"
-              variant="warning"
+              style={{
+                backgroundColor: '#FF6D42',
+                borderColor: '#FF6D42',
+                fontWeight: '600'
+              }}
               className="ms-2"
             >
               Donate Now
