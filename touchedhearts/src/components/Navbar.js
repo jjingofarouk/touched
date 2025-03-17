@@ -8,14 +8,68 @@ import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Navbar.css'; // Make sure to create this file with the CSS below
 
+
 const Navbars = () => {
   // Helper function to determine if a link is active (for react-router-dom v6)
   const getLinkClassName = ({ isActive }) => isActive ? "nav-link active" : "nav-link";
 
+  // CSS variables and styles
+  const styles = {
+    // CSS variables
+    vars: {
+      /* Primary color palette - Warm Teal/Sage */
+      primaryColor: '#d68c45',
+      primaryDark: '#2c7269',
+      primaryLight: '#8cc5bf',
+      secondaryColor: '#d68c45',
+      secondaryDark: '#b87339',
+      secondaryLight: '#e9b384',
+
+      /* Neutral colors - Warmer and more organic */
+      dark: '#2d3a3a',
+      darkGray: '#4d5c5c',
+      mediumGray: '#7e8c8c',
+      lightGray: '#d2d8d8',
+      offWhite: '#f8f7f5',
+      white: '#ffffff',
+
+      /* Accent colors - More earthy and harmonious */
+      success: '#739e73',
+      warning: '#e6b86a',
+      error: '#c17b7b',
+      info: '#6a91ab',
+    },
+
+    // Component styles
+    navbar: {
+      backgroundColor: '#2d3a3a', // dark
+      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+    },
+    navLink: {
+      color: '#f8f7f5', // offWhite
+    },
+    activeLink: {
+      color: '#ffffff', // white
+      fontWeight: 600,
+      borderBottom: '2px solid #8cc5bf', // primaryLight
+    },
+    navLinkHover: {
+      color: '#8cc5bf', // primaryLight
+    },
+    donateButton: {
+      backgroundColor: '#d68c45', // secondaryColor - corrected
+      borderColor: '#d68c45', // secondaryColor - corrected
+      color: '#ffffff', // white
+      fontWeight: 600,
+      padding: '0.5rem 1rem',
+      transition: 'all 0.2s ease',
+    }
+  };
+
   return (
-    <Navbar expand="lg" className="custom-navbar" variant="dark">
+    <Navbar expand="lg" style={styles.navbar} variant="dark">
       <Container>
-        <Navbar.Brand as={NavLink} to="/">
+        <Navbar.Brand as={NavLink} to="/" style={styles.navLink}>
           <img
             src={logo}
             alt="Touched Hearts Logo"
@@ -27,34 +81,79 @@ const Navbars = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/" className={getLinkClassName}>
+            <Nav.Link 
+              as={NavLink} 
+              to="/" 
+              style={styles.navLink}
+              className="nav-link-custom"
+            >
               Home
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/about" className={getLinkClassName}>
+            <Nav.Link 
+              as={NavLink} 
+              to="/about" 
+              style={styles.navLink}
+              className="nav-link-custom"
+            >
               About Us
             </Nav.Link>
             
             {/* Programs links directly in the navbar */}
-            <Nav.Link as={NavLink} to="/education" className={getLinkClassName}>
+            <Nav.Link 
+              as={NavLink} 
+              to="/education" 
+              style={styles.navLink}
+              className="nav-link-custom"
+            >
               Education
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/healthcare" className={getLinkClassName}>
+            <Nav.Link 
+              as={NavLink} 
+              to="/healthcare" 
+              style={styles.navLink}
+              className="nav-link-custom"
+            >
               Healthcare
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/disabilities" className={getLinkClassName}>
+            <Nav.Link 
+              as={NavLink} 
+              to="/disabilities" 
+              style={styles.navLink}
+              className="nav-link-custom"
+            >
               Disability Support
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/community" className={getLinkClassName}>
+            <Nav.Link 
+              as={NavLink} 
+              to="/community" 
+              style={styles.navLink}
+              className="nav-link-custom"
+            >
               Community Dev
             </Nav.Link>
             
-            <Nav.Link as={NavLink} to="/stories" className={getLinkClassName}>
+            <Nav.Link 
+              as={NavLink} 
+              to="/stories" 
+              style={styles.navLink}
+              className="nav-link-custom"
+            >
               Stories
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/gallery" className={getLinkClassName}>
+            <Nav.Link 
+              as={NavLink} 
+              to="/gallery" 
+              style={styles.navLink}
+              className="nav-link-custom"
+            >
               Gallery
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/get-involved" className={getLinkClassName}>
+            <Nav.Link 
+              as={NavLink} 
+              to="/get-involved" 
+              style={styles.navLink}
+              className="nav-link-custom"
+            >
               Get Involved
             </Nav.Link>
           </Nav>
@@ -62,13 +161,39 @@ const Navbars = () => {
             <Button
               as={NavLink}
               to="/donate"
-              className="donate-button ms-2"
+              style={styles.donateButton}
+              className="donate-button-custom ms-2"
             >
               Donate Now
             </Button>
           </Nav>
         </Navbar.Collapse>
       </Container>
+
+      {/* Inline styles for hover effects */}
+      <style jsx>{`
+        .nav-link-custom:hover {
+          color: ${styles.vars.primaryLight} !important;
+          transition: color 0.2s ease;
+        }
+        
+        .nav-link-custom.active {
+          color: ${styles.vars.white} !important;
+          font-weight: 600;
+          border-bottom: 2px solid ${styles.vars.primaryLight};
+        }
+        
+        .donate-button-custom {
+          background-color: ${styles.vars.secondaryColor} !important;
+          border-color: ${styles.vars.secondaryColor} !important;
+        }
+        
+        .donate-button-custom:hover {
+          background-color: ${styles.vars.secondaryDark} !important;
+          border-color: ${styles.vars.secondaryDark} !important;
+          transform: scale(1.05);
+        }
+      `}</style>
     </Navbar>
   );
 };
