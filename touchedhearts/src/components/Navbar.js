@@ -67,19 +67,7 @@ const Navbars = () => {
             </Nav.Link>
           </Nav>
           <Nav className="ms-auto align-items-center">
-            <Form className="d-flex me-3">
-              <InputGroup>
-                <Form.Control
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  className="bg-dark text-light border-secondary"
-                />
-                <Button variant="outline-light" type="submit">
-                  <i className="fas fa-search" />
-                </Button>
-              </InputGroup>
-            </Form>
+
             <Button
               as={NavLink}
               to="/donate"
