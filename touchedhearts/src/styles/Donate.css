@@ -558,7 +558,7 @@ input:focus, select:focus {
 }
 
 .testimonial blockquote::before {
-  content: """;
+  content: "";
   font-size: 4rem;
   font-family: serif;
   color: var(--primary-light);
