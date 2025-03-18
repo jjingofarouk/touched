@@ -1,15 +1,10 @@
+// GetInvolved.jsx
 import React from "react";
 import "../styles/get-involved.css";
-import VolunteerForm from "../components/VolunteerForm";
-import Partners from "../components/Partners";
-import Fundraise from "./Fundraise";
-import DonationWidget from "../components/DonationWidget";
 
 const GetInvolved = () => {
   return (
     <div>
-
-
       {/* Page Header */}
       <section className="page-header">
         <h1>Get Involved</h1>
@@ -34,7 +29,6 @@ const GetInvolved = () => {
           <i className="fas fa-hands-helping"></i>
           <h2>Volunteer with Us</h2>
           <p>Volunteering with Touched Hearts is a rewarding way to make a direct impact.</p>
-
           <h3>Opportunities Include:</h3>
           <ul>
             <li><strong>Education Support:</strong> Tutor students or assist with school supply drives.</li>
@@ -42,9 +36,7 @@ const GetInvolved = () => {
             <li><strong>Community Building:</strong> Participate in construction projects or skill-building programs.</li>
             <li><strong>Event Support:</strong> Organize or assist at fundraising and awareness events.</li>
           </ul>
-
-          {/* Volunteer Form */}
-          <VolunteerForm />
+          <a href="/volunteer" className="btn">Join as a Volunteer</a>
         </section>
 
         {/* Donation Section */}
@@ -53,8 +45,6 @@ const GetInvolved = () => {
           <h2>Make a Donation</h2>
           <p>Your financial support fuels our programs and allows us to reach more individuals in need.</p>
           <a href="/donate" className="btn">Donate Now</a>
-          <DonationWidget />
-
         </section>
 
         {/* Fundraise Section */}
@@ -62,8 +52,8 @@ const GetInvolved = () => {
           <i className="fas fa-chart-line"></i>
           <h2>Start a Fundraiser</h2>
           <p>Turn your passion into action by organizing a fundraising campaign for Touched Hearts.</p>
-          <a href="/fundraising-guide.pdf" className="btn" download>Download Fundraising Guide</a>
-          <Fundraise />
+          <a href="/fundraise" className="btn">Learn How to Fundraise</a>
+          <a href="/fundraising-guide.pdf" className="btn btn-secondary" download>Download Guide</a>
         </section>
 
         {/* Partner Section */}
@@ -71,14 +61,9 @@ const GetInvolved = () => {
           <i className="fas fa-handshake"></i>
           <h2>Become a Partner</h2>
           <p>We collaborate with businesses, organizations, and institutions to amplify our impact.</p>
-          <a href="mailto:touchedheartsug12@gmail.com" className="btn">Contact Us</a>
-          <Partners />
-
+          <a href="/partners" className="btn">Explore Partnerships</a>
         </section>
-
       </div>
-
-      
     </div>
   );
 };
