@@ -1,6 +1,24 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Donate.css'
+import '../styles/Donate.css';
+
+// Import payment images from your project directory
+import visaImage from '../assets/images/visa.png';        // Replace with your actual file path
+import mastercardImage from '../assets/images/mastercard.png'; // Replace with your actual file path
+import mtnImage from '../assets/images/mtn.png';         // Replace with your actual file path
+import airtelImage from '../assets/images/airtel.png';    // Replace with your actual file path
+import paypalImage from '../assets/images/paypal.png';    // Replace with your actual file path
+import chipperImage from '../assets/images/chipper.png';  // Replace with your actual file path
+
+// Define payment images object with imported images
+const paymentImages = {
+  visa: visaImage,
+  mastercard: mastercardImage,
+  mtn: mtnImage,
+  airtel: airtelImage,
+  paypal: paypalImage,
+  chipper: chipperImage,
+};
 
 const Donate = () => {
   const navigate = useNavigate();
@@ -16,7 +34,6 @@ const Donate = () => {
     cardNumber: '',
     cardExpiry: '',
     cardCVC: '',
-    mobileProvider: '',
     mobileNumber: '',
   });
 
@@ -24,7 +41,7 @@ const Donate = () => {
     setFormData((prev) => ({
       ...prev,
       amount,
-      customAmount: ''
+      customAmount: '',
     }));
   };
 
@@ -33,7 +50,7 @@ const Donate = () => {
     setFormData((prev) => ({
       ...prev,
       amount: 'custom',
-      customAmount: value
+      customAmount: value,
     }));
   };
 
@@ -65,7 +82,7 @@ const Donate = () => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
-      minimumFractionDigits: 0
+      minimumFractionDigits: 0,
     }).format(amount);
   };
 
@@ -91,7 +108,9 @@ const Donate = () => {
         <div className="donation-progress-container">
           <div className="progress-stats">
             <h3>Help us reach our goal</h3>
-            <p className="progress-text">Raised: {formatCurrency(4000)} of {formatCurrency(10000)} Goal</p>
+            <p className="progress-text">
+              Raised: {formatCurrency(4000)} of {formatCurrency(10000)} Goal
+            </p>
           </div>
           <div className="progress-container">
             <div className="progress-bar" style={{ width: '40%' }}></div>
@@ -126,14 +145,14 @@ const Donate = () => {
               <div className="form-step">
                 <h2>Select Your Donation Amount</h2>
                 <div className="donation-frequency">
-                  <button 
+                  <button
                     type="button"
                     className={`frequency-btn ${formData.frequency === 'one-time' ? 'active' : ''}`}
                     onClick={() => handleChange({ target: { name: 'frequency', value: 'one-time' } })}
                   >
                     One-time
                   </button>
-                  <button 
+                  <button
                     type="button"
                     className={`frequency-btn ${formData.frequency === 'monthly' ? 'active' : ''}`}
                     onClick={() => handleChange({ target: { name: 'frequency', value: 'monthly' } })}
@@ -198,7 +217,9 @@ const Donate = () => {
                 </div>
 
                 <div className="form-buttons">
-                  <button type="button" className="btn-primary" onClick={nextStep}>Continue</button>
+                  <button type="button" className="btn-primary" onClick={nextStep}>
+                    Continue
+                  </button>
                 </div>
               </div>
             )}
@@ -248,8 +269,12 @@ const Donate = () => {
                 </div>
 
                 <div className="form-buttons">
-                  <button type="button" className="btn-primary" onClick={prevStep}>Back</button>
-                  <button type="button" className="btn-primary" onClick={nextStep}>Continue to Payment</button>
+                  <button type="button" className="btn-primary" onClick={prevStep}>
+                    Back
+                  </button>
+                  <button type="button" className="btn-primary" onClick={nextStep}>
+                    Continue to Payment
+                  </button>
                 </div>
               </div>
             )}
@@ -265,7 +290,11 @@ const Donate = () => {
                   <div className="summary-content">
                     <div className="summary-item">
                       <span>Amount:</span>
-                      <span>{formData.amount === 'custom' ? formatCurrency(formData.customAmount) : formatCurrency(formData.amount)}</span>
+                      <span>
+                        {formData.amount === 'custom'
+                          ? formatCurrency(formData.customAmount)
+                          : formatCurrency(formData.amount)}
+                      </span>
                     </div>
                     <div className="summary-item">
                       <span>Frequency:</span>
@@ -277,39 +306,84 @@ const Donate = () => {
                 <div className="payment-methods">
                   <h3>Select Payment Method</h3>
                   <div className="payment-options">
-                    <div 
+                    <div
                       className={`payment-option ${formData.paymentMethod === 'card' ? 'active' : ''}`}
                       onClick={() => handleChange({ target: { name: 'paymentMethod', value: 'card' } })}
                     >
-                      <div className="payment-option-icon">💳</div>
+                      <img
+                        src={paymentImages.visa}
+                        alt="Visa"
+                        style={{
+                          width: '50px',
+                          height: '30px',
+                          objectFit: 'contain',
+                          marginRight: '8px',
+                        }}
+                      />
                       <div className="payment-option-text">Credit/Debit Card</div>
                     </div>
-                    <div 
+                    <div
                       className={`payment-option ${formData.paymentMethod === 'paypal' ? 'active' : ''}`}
                       onClick={() => handleChange({ target: { name: 'paymentMethod', value: 'paypal' } })}
                     >
-                      <div className="payment-option-icon">🅿️</div>
+                      <img
+                        src={paymentImages.paypal}
+                        alt="PayPal"
+                        style={{
+                          width: '50px',
+                          height: '30px',
+                          objectFit: 'contain',
+                          marginRight: '8px',
+                        }}
+                      />
                       <div className="payment-option-text">PayPal</div>
                     </div>
-                    <div 
+                    <div
                       className={`payment-option ${formData.paymentMethod === 'mtn' ? 'active' : ''}`}
                       onClick={() => handleChange({ target: { name: 'paymentMethod', value: 'mtn' } })}
                     >
-                      <div className="payment-option-icon">📱</div>
+                      <img
+                        src={paymentImages.mtn}
+                        alt="MTN Mobile Money"
+                        style={{
+                          width: '50px',
+                          height: '30px',
+                          objectFit: 'contain',
+                          marginRight: '8px',
+                        }}
+                      />
                       <div className="payment-option-text">MTN Mobile Money</div>
                     </div>
-                    <div 
+                    <div
                       className={`payment-option ${formData.paymentMethod === 'airtel' ? 'active' : ''}`}
                       onClick={() => handleChange({ target: { name: 'paymentMethod', value: 'airtel' } })}
                     >
-                      <div className="payment-option-icon">📲</div>
+                      <img
+                        src={paymentImages.airtel}
+                        alt="Airtel Money"
+                        style={{
+                          width: '50px',
+                          height: '30px',
+                          objectFit: 'contain',
+                          marginRight: '8px',
+                        }}
+                      />
                       <div className="payment-option-text">Airtel Money</div>
                     </div>
-                    <div 
+                    <div
                       className={`payment-option ${formData.paymentMethod === 'chipper' ? 'active' : ''}`}
                       onClick={() => handleChange({ target: { name: 'paymentMethod', value: 'chipper' } })}
                     >
-                      <div className="payment-option-icon">🌍</div>
+                      <img
+                        src={paymentImages.chipper}
+                        alt="Chipper Cash"
+                        style={{
+                          width: '50px',
+                          height: '30px',
+                          objectFit: 'contain',
+                          marginRight: '8px',
+                        }}
+                      />
                       <div className="payment-option-text">Chipper Cash</div>
                     </div>
                   </div>
@@ -318,8 +392,25 @@ const Donate = () => {
                   {formData.paymentMethod === 'card' && (
                     <div className="payment-details">
                       <div className="card-brands">
-                        <span className="card-brand">Visa</span>
-                        <span className="card-brand">Mastercard</span>
+                        <img
+                          src={paymentImages.visa}
+                          alt="Visa"
+                          style={{
+                            width: '60px',
+                            height: '36px',
+                            objectFit: 'contain',
+                            marginRight: '10px',
+                          }}
+                        />
+                        <img
+                          src={paymentImages.mastercard}
+                          alt="Mastercard"
+                          style={{
+                            width: '60px',
+                            height: '36px',
+                            objectFit: 'contain',
+                          }}
+                        />
                       </div>
                       <div className="form-group">
                         <label htmlFor="cardNumber">Card Number</label>
@@ -387,15 +478,21 @@ const Donate = () => {
                   {(formData.paymentMethod === 'paypal' || formData.paymentMethod === 'chipper') && (
                     <div className="payment-details">
                       <p className="payment-info">
-                        You will be redirected to {formData.paymentMethod === 'paypal' ? 'PayPal' : 'Chipper Cash'} to complete your donation after clicking the button below.
+                        You will be redirected to{' '}
+                        {formData.paymentMethod === 'paypal' ? 'PayPal' : 'Chipper Cash'} to complete your donation
+                        after clicking the button below.
                       </p>
                     </div>
                   )}
                 </div>
 
                 <div className="form-buttons">
-                  <button type="button" className="btn btn-secondary" onClick={prevStep}>Back</button>
-                  <button type="submit" className="btn btn-primary">Complete Donation</button>
+                  <button type="button" className="btn btn-secondary" onClick={prevStep}>
+                    Back
+                  </button>
+                  <button type="submit" className="btn btn-primary">
+                    Complete Donation
+                  </button>
                 </div>
               </div>
             )}
@@ -407,14 +504,14 @@ const Donate = () => {
           <div className="info-panel-content">
             <h3>Why Donate?</h3>
             <p>Your donation makes a real impact in our communities. We ensure that 90% of all donations go directly to our programs.</p>
-            
+
             <div className="testimonial">
               <blockquote>
                 "Thanks to donors like you, my children can now attend school and have access to clean water. Your generosity has transformed our lives."
               </blockquote>
               <cite>— Bukomeko, Community Member</cite>
             </div>
-            
+
             <div className="security-info">
               <h4>Secure Donation</h4>
               <p>All transactions are encrypted and secure. We never store your payment details.</p>
@@ -423,7 +520,7 @@ const Donate = () => {
                 <span className="security-text">SSL Secured</span>
               </div>
             </div>
-            
+
             <div className="contact-info">
               <h4>Need Help?</h4>
               <p>Contact our support team:</p>
