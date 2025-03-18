@@ -427,8 +427,8 @@ const Donate = () => {
             <div className="contact-info">
               <h4>Need Help?</h4>
               <p>Contact our support team:</p>
-              <p><strong>Email:</strong> support@organization.org</p>
-              <p><strong>Phone:</strong> +1 (234) 567-8900</p>
+              <p><strong>Email:</strong> support@touchedhearts.org</p>
+              <p><strong>Phone:</strong> +256 700 834 733</p>
             </div>
           </div>
         </div>
