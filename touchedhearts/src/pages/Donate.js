@@ -412,7 +412,7 @@ const Donate = () => {
               <blockquote>
                 "Thanks to donors like you, my children can now attend school and have access to clean water. Your generosity has transformed our lives."
               </blockquote>
-              <cite>— Sarah, Community Member</cite>
+              <cite>— Bukomeko, Community Member</cite>
             </div>
             
             <div className="security-info">

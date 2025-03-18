@@ -84,11 +84,15 @@ p {
 .page-header h1 {
   margin-bottom: 1rem;
   font-size: 3rem;
+  color: #ffffff;
+    font-weight: 700;
 }
 
 .page-header p {
   font-size: 1.25rem;
   opacity: 0.9;
+  color: #ffffff;
+  font-weight: 700;
 }
 
 /* Progress Bar */
