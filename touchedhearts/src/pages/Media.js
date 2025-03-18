@@ -1,10 +1,8 @@
 // src/pages/Media.js
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar'; // Import your existing Header component
-import Footer from '../components/Footer'; // Import your existing Footer component
+import '../styles/media.css'; // Assuming you have this CSS file
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import '../styles/media.css'; // Assuming you have this CSS file
 
 // Register Chart.js components
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
@@ -40,6 +38,28 @@ const Media = () => {
   const [pressFilter, setPressFilter] = useState('all');
   const [pressSearch, setPressSearch] = useState('');
   const [lightboxImage, setLightboxImage] = useState(null);
+
+  // Scroll animation effect
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.media-section').forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   // Press release filtering
   const filteredPress = mediaData.pressReleases.filter(
@@ -88,8 +108,6 @@ const Media = () => {
 
   return (
     <div className="media-page">
-
-
       {/* Page Header */}
       <section className="page-header">
         <h1>Media Center</h1>
@@ -240,8 +258,6 @@ const Media = () => {
           <img id="lightboxImage" src={lightboxImage.src} alt={lightboxImage.alt} />
         </div>
       )}
-
-      
     </div>
   );
 };
