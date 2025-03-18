@@ -1,8 +1,31 @@
-/* impact-cards.css */
+/* ImpactCards.css */
+:root {
+  /* Primary color palette - Warm Teal/Sage */
+  --primary-color: #3a8f85;
+  --primary-dark: #2c7269;
+  --primary-light: #8cc5bf;
+  --secondary-color: #d68c45;
+  --secondary-dark: #b87339;
+  --secondary-light: #e9b384;
+
+  /* Neutral colors - Warmer and more organic */
+  --dark: #2d3a3a;
+  --dark-gray: #4d5c5c;
+  --medium-gray: #7e8c8c;
+  --light-gray: #d2d8d8;
+  --off-white: #f8f7f5;
+  --white: #ffffff;
+
+  /* Accent colors - More earthy and harmonious */
+  --success: #739e73;
+  --warning: #e6b86a;
+  --error: #c17b7b;
+  --info: #6a91ab;
+}
+
 .impact-numbers {
+  background: linear-gradient(135deg, var(--off-white) 0%, var(--light-gray) 100%);
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-  position: relative;
   overflow: hidden;
 }
 
@@ -10,85 +33,56 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  position: relative;
-  z-index: 2;
+  padding: 0 1rem;
 }
 
-/* Impact Item */
 .impact-item {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border-radius: 15px;
+  background: var(--white);
+  border-radius: 1rem;
   padding: 2rem;
   text-align: center;
-  color: var(--off-white);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  animation: fadeInUp 0.5s ease-out forwards;
-  animation-delay: calc(0.1s * var(--index)); /* Staggered animation */
-}
-
-.impact-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  box-shadow: 0 8px 24px rgba(45, 58, 58, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  animation: slideUp 0.6s ease-out forwards;
+  animation-delay: var(--animation-delay);
 }
 
 .impact-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(45, 58, 58, 0.3); /* Using --dark */
+  box-shadow: 0 12px 32px rgba(45, 58, 58, 0.15);
 }
 
-.impact-item:hover::before {
-  opacity: 1;
-}
-
-/* Impact Number */
 .impact-number {
   display: block;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: 3.5rem;
   font-weight: 700;
-  color: var(--secondary-light);
+  color: var(--primary-dark);
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  animation: countUp 1.5s ease-out forwards;
+  transition: transform 0.3s ease;
 }
 
-/* Impact Text */
-.impact-item p {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: var(--light-gray);
-  line-height: 1.4;
+.impact-item:hover .impact-number {
+  transform: scale(1.05);
+}
+
+.impact-text {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
   margin: 0;
-  opacity: 0;
-  animation: fadeInText 0.5s ease-out forwards;
-  animation-delay: calc(0.2s + 0.1s * var(--index));
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* Background Animation */
-.impact-numbers::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
-  animation: rotateGlow 20s linear infinite;
-  z-index: 1;
-}
-
-/* Animations */
-@keyframes fadeInUp {
+/* Animation Keyframes */
+@keyframes slideUp {
   0% {
     opacity: 0;
     transform: translateY(30px);
@@ -99,70 +93,28 @@
   }
 }
 
-@keyframes fadeInText {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes countUp {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes rotateGlow {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-  .impact-numbers {
-    padding: 3rem 1rem;
+  .impact-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
   }
 
-  .impact-container {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
+  .impact-number {
+    font-size: 2.5rem;
+  }
+
+  .impact-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-numbers {
+    padding: 2rem 1rem;
   }
 
   .impact-item {
     padding: 1.5rem;
   }
 }
-
-@media (max-width: 480px) {
-  .impact-number {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-  }
-
-  .impact-item p {
-    font-size: 1rem;
-  }
-}
-
-/* Custom Property for Animation Delay */
-.impact-item {
-  --index: 0;
-}
-
-.impact-item:nth-child(1) { --index: 1; }
-.impact-item:nth-child(2) { --index: 2; }
-.impact-item:nth-child(3) { --index: 3; }
-.impact-item:nth-child(4) { --index: 4; }
