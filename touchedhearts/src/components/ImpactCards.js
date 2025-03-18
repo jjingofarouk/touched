@@ -1,58 +1,23 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import '../styles/ImpactCards.css';
 
 const ImpactCards = () => {
   const impactData = [
-    { number: '10,000+', text: 'Lives Touched', icon: 'heart' },
-    { number: '25', text: 'Communities Served', icon: 'users' },
-    { number: '15', text: 'Years of Service', icon: 'calendar' },
-    { number: '90%', text: 'Funds to Programs', icon: 'dollar-sign' },
+    { id: 'lives', number: '10,000+', text: 'Lives Touched', delay: 0.1 },
+    { id: 'communities', number: '25', text: 'Communities Served', delay: 0.2 },
+    { id: 'years', number: '15', text: 'Years of Service', delay: 0.3 },
+    { id: 'funds', number: '90%', text: 'Funds to Programs', delay: 0.4 },
   ];
-  
-  const sectionRef = useRef(null);
-  
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-    
-    const handleIntersect = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    };
-    
-    const observer = new IntersectionObserver(handleIntersect, observerOptions);
-    
-    if (sectionRef.current) {
-      const cards = sectionRef.current.querySelectorAll('.impact-item');
-      cards.forEach(card => observer.observe(card));
-    }
-    
-    return () => {
-      if (observer) {
-        observer.disconnect();
-      }
-    };
-  }, []);
-  
+
   return (
-    <section className="impact-numbers" ref={sectionRef}>
+    <section className="impact-numbers" aria-label="Our Impact Statistics">
       <div className="impact-container">
-        {impactData.map((item, index) => (
+        {impactData.map((item) => (
           <div 
             className="impact-item" 
-            key={index}
-            style={{ animationDelay: `${index * 150}ms` }}
+            key={item.id}
+            style={{ '--animation-delay': `${item.delay}s` }}
           >
-            <div className="impact-icon">
-              <i className={`icon-${item.icon}`}></i>
-            </div>
             <span className="impact-number">{item.number}</span>
             <p className="impact-text">{item.text}</p>
           </div>
