@@ -158,7 +158,7 @@ const Donate = () => {
                     <input
                       type="number"
                       name="customAmount"
-                      placeholder="Custom Amount"
+                      placeholder="Custom"
                       min="1"
                       value={formData.customAmount}
                       onChange={handleCustomAmount}
@@ -198,7 +198,7 @@ const Donate = () => {
                 </div>
 
                 <div className="form-buttons">
-                  <button type="button" className="btn btn-primary" onClick={nextStep}>Continue</button>
+                  <button type="button" className="btn-primary" onClick={nextStep}>Continue</button>
                 </div>
               </div>
             )}
@@ -248,8 +248,8 @@ const Donate = () => {
                 </div>
 
                 <div className="form-buttons">
-                  <button type="button" className="btn btn-secondary" onClick={prevStep}>Back</button>
-                  <button type="button" className="btn btn-primary" onClick={nextStep}>Continue to Payment</button>
+                  <button type="button" className="btn-primary" onClick={prevStep}>Back</button>
+                  <button type="button" className="btn-primary" onClick={nextStep}>Continue to Payment</button>
                 </div>
               </div>
             )}

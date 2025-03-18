@@ -262,7 +262,7 @@ p {
 
 .frequency-btn {
   flex: 1;
-  background-color: var(--light-gray);
+  background-color: var(--secondary-color);
   border: none;
   border-radius: 8px;
   padding: 1rem;
@@ -272,7 +272,7 @@ p {
 }
 
 .frequency-btn.active {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: var(--white);
 }
 
@@ -285,7 +285,7 @@ p {
 }
 
 .amount-btn {
-  background-color: var(--off-white);
+  background-color: var(--secondary-color);
   border: 2px solid var(--light-gray);
   border-radius: 8px;
   padding: 1rem;
@@ -296,9 +296,9 @@ p {
 }
 
 .amount-btn.active {
-  background-color: var(--primary-light);
-  border-color: var(--primary-color);
-  color: var(--primary-dark);
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var#ffffff;
 }
 
 .custom-amount-container {
@@ -408,6 +408,7 @@ input:focus, select:focus {
 }
 
 .btn {
+  background-color: var(--secondary-color);
   padding: 1rem 2rem;
   border: none;
   border-radius: 8px;
@@ -419,17 +420,23 @@ input:focus, select:focus {
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--white);
+  flex: 1;
+
+}.btn-primary {
+  background-color: var(--secondary-color);
   color: var(--white);
   flex: 1;
 }
 
+
 .btn-primary:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--secondary-color);
 }
 
 .btn-secondary {
-  background-color: var(--light-gray);
+  background-color: var(--secondary-color);
   color: var(--dark-gray);
 }
 
@@ -639,6 +646,8 @@ input:focus, select:focus {
   
   .btn {
     width: 100%;
+    background-color: var(--secondary-color);
+
   }
   
   .payment-options {
@@ -723,6 +732,8 @@ input:focus, select:focus {
   
   .btn {
     display: none;
+    background-color: var(--secondary-color);
+
   }
   
   input, select {
