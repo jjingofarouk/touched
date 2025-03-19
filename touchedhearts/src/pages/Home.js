@@ -15,7 +15,7 @@ import communityImage from '../assets/images/community.jpg';
 import campImage from '../assets/images/camp.png';
 import skillingImage from '../assets/images/skilling.jpg';
 import videoSource from '../assets/images/V1.mp4';
-import testimonialBackground from '../assets/images/testimonial-bg.png'; // Add a background image for testimonials
+import testimonialBackground from '../assets/images/testimonial.png'; // Add a background image for testimonials
 
 import '../styles/Home.css';
 
