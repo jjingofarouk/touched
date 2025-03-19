@@ -1,13 +1,13 @@
-// src/components/DonationWidget.js
+// src/components/DonateWidget.js
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../styles/DonationWidget.css';
+import '../styles/DonateWidget.css';
 
-const DonationWidget = () => {
-  const [selectedAmount, setSelectedAmount] = useState('$100');
+const DonateWidget = () => {
+  const [selectedAmount, setSelectedAmount] = useState('100');
   const [frequency, setFrequency] = useState('one-time');
 
-  const handleAmountClick = (amount) => {
+  const handleAmountSelect = (amount) => {
     setSelectedAmount(amount);
   };
 
@@ -15,79 +15,68 @@ const DonationWidget = () => {
     setFrequency(e.target.value);
   };
 
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+    }).format(amount);
+  };
+
   return (
-    <section className="donation-section" aria-labelledby="donate-title">
-      <div className="donation-container">
-        <div className="donation-content">
-          <h2 id="donate-title" className="section-title">Make a Difference Today</h2>
-          <p className="section-text">
-            Your contribution helps us continue our vital work with vulnerable communities in
-            Uganda. Every donation, no matter the size, brings hope and creates lasting change.
-          </p>
-          <div className="donation-options">
-            {['$25', '$50', '$100', '$250', 'Other'].map((amount) => (
-              <button
-                key={amount}
-                className={`donation-amount ${selectedAmount === amount ? 'active' : ''}`}
-                onClick={() => handleAmountClick(amount)}
-              >
-                {amount}
-              </button>
-            ))}
-          </div>
-          <div className="donation-frequency">
-            <label className="radio-container">
-              <input
-                type="radio"
-                name="frequency"
-                value="one-time"
-                checked={frequency === 'one-time'}
-                onChange={handleFrequencyChange}
-              />
-              <span className="radio-label">One-time</span>
-            </label>
-            <label className="radio-container">
-              <input
-                type="radio"
-                name="frequency"
-                value="monthly"
-                checked={frequency === 'monthly'}
-                onChange={handleFrequencyChange}
-              />
-              <span className="radio-label">Monthly</span>
-            </label>
-          </div>
-          <NavLink to="/donate" className="cta-button primary">
-            Donate Now
-          </NavLink>
+    <section className="donate-widget" aria-labelledby="donate-widget-title">
+      <div className="donate-widget-container">
+        <h2 id="donate-widget-title">Support Our Cause</h2>
+        <p>Your donation empowers communities and changes lives.</p>
+
+        <div className="amount-options">
+          {['25', '50', '100', '200'].map((amount) => (
+            <button
+              key={amount}
+              type="button"
+              className={`amount-btn ${selectedAmount === amount ? 'active' : ''}`}
+              onClick={() => handleAmountSelect(amount)}
+            >
+              {formatCurrency(amount)}
+            </button>
+          ))}
         </div>
-        <div className="donation-impact">
-          <h3 className="impact-title">Your Donation's Impact</h3>
-          <ul className="impact-list">
-            <li className="impact-item">
-              <i className="fas fa-book"></i>
-              <div className="impact-description">
-                <span className="impact-highlight">$25</span> provides school supplies for a child
-              </div>
-            </li>
-            <li className="impact-item">
-              <i className="fas fa-medkit"></i>
-              <div className="impact-description">
-                <span className="impact-highlight">$50</span> delivers medical care for a family
-              </div>
-            </li>
-            <li className="impact-item">
-              <i className="fas fa-home"></i>
-              <div className="impact-description">
-                <span className="impact-highlight">$100</span> supports housing improvements
-              </div>
-            </li>
-            <li className="impact-item">
-              <i className="fas fa-water"></i>
-              <div className="impact-description">
-                <span className="impact-highlight">$250</span> helps build clean water systems
-              </div>
-            </li>
+
+        <div className="frequency-options">
+          <label>
+            <input
+              type="radio"
+              name="frequency"
+              value="one-time"
+              checked={frequency === 'one-time'}
+              onChange={handleFrequencyChange}
+            />
+            One-time
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="frequency"
+              value="monthly"
+              checked={frequency === 'monthly'}
+              onChange={handleFrequencyChange}
+            />
+            Monthly
+          </label>
+        </div>
+
+        <NavLink to="/donate" className="donate-btn">
+          Donate Now
+        </NavLink>
+
+        <div className="impact-summary">
+          <h3>Your Impact</h3>
+          <p>{formatCurrency(selectedAmount)} {frequency === 'one-time' ? 'provides' : 'monthly supports'}:</p>
+          <ul>
+            <li>{formatCurrency(25)} - School supplies for a child</li>
+            <li>{formatCurrency(50)} - Medical care for a family</li>
+            <li>{formatCurrency(100)} - Housing improvements</li>
+            <li>{formatCurrency(200)} - Clean water systems</li>
           </ul>
         </div>
       </div>
@@ -95,4 +84,4 @@ const DonationWidget = () => {
   );
 };
 
-export default DonationWidget;
+export default DonateWidget;
