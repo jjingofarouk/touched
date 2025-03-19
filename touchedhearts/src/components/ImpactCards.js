@@ -5,7 +5,7 @@ const ImpactCards = () => {
   const impactData = [
     { id: 'lives', number: '10,000+', text: 'Lives Touched', icon: '❤️' },
     { id: 'communities', number: '25', text: 'Communities Served', icon: '🏘️' },
-    { id: 'years', number: '15', text: 'Years of Service', icon: '⏱️' },
+    { id: 'years', number: '5', text: 'Years of Service', icon: '⏱️' },
     { id: 'funds', number: '90%', text: 'Funds to Programs', icon: '💰' },
   ];
   
