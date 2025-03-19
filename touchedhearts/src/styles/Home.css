@@ -1,77 +1,93 @@
-/* home.css */
+/* Root variables are assumed to be defined in a global stylesheet */
 .main-content {
-  padding-top: 80px; /* Account for fixed navbar */
+  padding-top: 80px; /* Space for fixed navbar */
   background: var(--off-white);
   overflow-x: hidden;
   width: 100vw;
+  font-family: 'Inter', sans-serif; /* Modern, clean font - ensure it's imported */
 }
 
 /* General Section Styles */
 .section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
   color: var(--dark);
-  font-weight: 700;
-  margin-bottom: 2rem;
-  position: relative;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
   text-align: center;
+  letter-spacing: -0.02em; /* Tighten spacing for a premium look */
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Gradient text effect */
 }
 
 .section-title::after {
   content: '';
-  width: 60px;
-  height: 4px;
-  background: var(--primary-color);
+  width: 80px;
+  height: 5px;
+  background: var(--secondary-color);
   position: absolute;
-  bottom: -10px;
+  bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 2px;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.section-title:hover::after {
+  width: 100px; /* Subtle animation on hover */
 }
 
 .section-text {
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   color: var(--medium-gray);
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto 2rem;
+  line-height: 1.9;
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
 }
 
 /* Mission Section */
 .mission {
-  padding: 5rem 2rem;
-  background: var(--white);
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, var(--white) 80%, var(--light-gray) 100%);
 }
 
 .mission-container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 4rem;
   align-items: center;
 }
 
 .mission-content {
-  padding: 2rem;
+  padding: 2.5rem;
 }
 
 .mission-video {
   position: relative;
   aspect-ratio: 16/9;
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(45, 58, 58, 0.2);
+  box-shadow: 0 15px 40px rgba(45, 58, 58, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.mission-video:hover {
+  box-shadow: 0 20px 50px rgba(45, 58, 58, 0.25);
 }
 
 .mission-video-element {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .mission-video:hover .mission-video-element {
-  transform: scale(1.05);
+  transform: scale(1.08); /* Slightly more pronounced zoom */
 }
 
 .play-button {
@@ -81,149 +97,190 @@
   transform: translate(-50%, -50%);
   background: var(--secondary-color);
   border: none;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .play-button:hover {
   background: var(--secondary-dark);
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Programs Section */
 .programs {
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   background: var(--light-gray);
 }
 
 .programs-grid {
-  max-width: 1200px;
-  margin: 0 auto 2rem;
+  max-width: 1280px;
+  margin: 0 auto 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
 }
 
 .program-card {
   background: var(--white);
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(45, 58, 58, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 25px rgba(45, 58, 58, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .program-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-12px);
+  box-shadow: 0 15px 35px rgba(45, 58, 58, 0.2);
 }
 
 .program-image {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.program-card:hover .program-image {
+  transform: scale(1.05);
 }
 
 .program-content {
-  padding: 1.5rem;
+  padding: 2rem;
 }
 
 .program-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--dark);
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .program-text {
   color: var(--medium-gray);
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
 .program-link {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .program-link:hover {
   color: var(--primary-dark);
+  transform: translateX(5px);
 }
 
 .programs-cta {
   text-align: center;
 }
 
+/* Testimonial Section */
+.testimonial-section {
+  padding: 6rem 2rem;
+  position: relative;
+  color: var(--white);
+}
+
+.testimonial-overlay {
+  background: rgba(45, 58, 58, 0.65); /* Darker overlay for readability */
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 /* News Section */
 .news-updates {
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   background: var(--white);
 }
 
 .news-grid {
-  max-width: 1200px;
-  margin: 0 auto 2rem;
+  max-width: 1280px;
+  margin: 0 auto 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
 }
 
 .news-card {
   background: var(--off-white);
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .news-card:hover {
-  box-shadow: 0 10px 25px rgba(45, 58, 58, 0.15);
+  box-shadow: 0 12px 30px rgba(45, 58, 58, 0.2);
+  transform: translateY(-10px);
 }
 
 .news-image {
   width: 100%;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.news-card:hover .news-image {
+  transform: scale(1.05);
 }
 
 .news-content {
-  padding: 1.5rem;
+  padding: 2rem;
 }
 
 .news-date {
   display: block;
   color: var(--primary-light);
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
 }
 
 .news-title {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--dark);
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .news-excerpt {
   color: var(--medium-gray);
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
 .text-link {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   transition: all 0.3s ease;
 }
 
 .text-link:hover {
   color: var(--primary-dark);
-  padding-left: 0.5rem;
+  transform: translateX(5px);
 }
 
 .news-cta {
@@ -232,46 +289,66 @@
 
 /* CTA Section */
 .cta-section {
-  padding: 5rem 2rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
   color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+  opacity: 0.5;
 }
 
 .cta-container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 1.5rem;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  margin-bottom: 2rem;
   color: var(--white);
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .cta-title::after {
-  background: var(--secondary-color);
+  background: var(--secondary-light);
 }
 
 .cta-text {
-  font-size: 1.25rem;
-  color: var(--light-gray);
-  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  color: var(--off-white);
+  margin-bottom: 3rem;
+  line-height: 1.8;
 }
 
 .cta-buttons {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
 .cta-button {
-  padding: 0.8rem 2rem;
+  padding: 1rem 2.5rem;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button.primary {
@@ -281,7 +358,8 @@
 
 .cta-button.primary:hover {
   background: var(--secondary-dark);
-  transform: translateY(-3px);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button.secondary {
@@ -293,16 +371,19 @@
 .cta-button.secondary:hover {
   background: var(--secondary-light);
   color: var(--dark);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
   .mission-container {
     grid-template-columns: 1fr;
+    gap: 3rem;
   }
-  
+
   .mission-video {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
   }
 }
@@ -315,35 +396,48 @@
   .mission,
   .programs,
   .news-updates,
-  .cta-section {
-    padding: 3rem 1rem;
+  .cta-section,
+  .testimonial-section {
+    padding: 4rem 1.5rem;
   }
 
   .program-card,
   .news-card {
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
   }
 
   .cta-buttons {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .section-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+
+  .section-text {
+    font-size: 1rem;
   }
 
   .program-image,
   .news-image {
-    height: 180px;
+    height: 200px;
   }
 
   .play-button {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+  }
+
+  .cta-text {
+    font-size: 1.1rem;
   }
 }
