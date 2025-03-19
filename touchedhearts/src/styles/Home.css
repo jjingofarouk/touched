@@ -24,7 +24,7 @@
 
 /* Base Styles */
 .main-content {
-  padding-top: 80px; /* Space for fixed navbar */
+  padding-top: 80px;
   background: var(--off-white);
   overflow-x: hidden;
   width: 100%;
@@ -313,19 +313,6 @@
   padding: 6rem 2rem;
   background: var(--primary-dark); /* Simplified background */
   color: var(--white);
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
-  opacity: 0.5;
 }
 
 .cta-container {
