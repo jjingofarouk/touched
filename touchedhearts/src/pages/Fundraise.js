@@ -26,9 +26,7 @@ const Fundraise = () => {
 
   return (
     <div>
-      {/* Navbar */}
-      <Navbar />
-
+    
       {/* Page Header */}
       <section className="page-header">
         <h1>Start a Fundraiser</h1>
@@ -136,7 +134,6 @@ const Fundraise = () => {
       </div>
 
       {/* Footer */}
-      <Footer />
     </div>
   );
 };
