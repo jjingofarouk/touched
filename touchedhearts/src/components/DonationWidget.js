@@ -1,9 +1,9 @@
 // src/components/DonateWidget.js
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../styles/DonateWidget.css';
+import '../styles/DonationWidget.css';
 
-const DonateWidget = () => {
+const DonationWidget = () => {
   const [selectedAmount, setSelectedAmount] = useState('100');
   const [frequency, setFrequency] = useState('one-time');
 
@@ -43,7 +43,7 @@ const DonateWidget = () => {
         </div>
 
         <div className="frequency-options">
-          <label>
+          <label className="frequency-label">
             <input
               type="radio"
               name="frequency"
@@ -51,9 +51,9 @@ const DonateWidget = () => {
               checked={frequency === 'one-time'}
               onChange={handleFrequencyChange}
             />
-            One-time
+            <span>One-time</span>
           </label>
-          <label>
+          <label className="frequency-label">
             <input
               type="radio"
               name="frequency"
@@ -61,7 +61,7 @@ const DonateWidget = () => {
               checked={frequency === 'monthly'}
               onChange={handleFrequencyChange}
             />
-            Monthly
+            <span>Monthly</span>
           </label>
         </div>
 
@@ -71,7 +71,9 @@ const DonateWidget = () => {
 
         <div className="impact-summary">
           <h3>Your Impact</h3>
-          <p>{formatCurrency(selectedAmount)} {frequency === 'one-time' ? 'provides' : 'monthly supports'}:</p>
+          <p>
+            {formatCurrency(selectedAmount)} {frequency === 'one-time' ? 'provides' : 'monthly supports'}:
+          </p>
           <ul>
             <li>{formatCurrency(25)} - School supplies for a child</li>
             <li>{formatCurrency(50)} - Medical care for a family</li>
@@ -84,4 +86,4 @@ const DonateWidget = () => {
   );
 };
 
-export default DonateWidget;
+export default DonationWidget;
