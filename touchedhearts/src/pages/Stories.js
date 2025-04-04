@@ -8,7 +8,7 @@ import storiesData from "../data/stories.json";
 import "../styles/stories.css";
 
 const Stories = () => {
-  const [stories] = useState(storiesData); // Use the stories with manual IDs
+  const [stories] = useState(storiesData);
   const [filteredStories, setFilteredStories] = useState(storiesData);
   const [currentPage, setCurrentPage] = useState(1);
   const storiesPerPage = 6;
@@ -56,8 +56,8 @@ const Stories = () => {
                 {currentStories.length > 0 ? (
                   currentStories.map((story) => (
                     <Link
-                      to={`/story/${story.id}`} // Link to the story page using the id
-                      key={story.id} // Use id as the key
+                      to={`/story/${story.id}`}
+                      key={story.id}
                       style={{ textDecoration: "none" }}
                     >
                       <StoryCard story={story} />
