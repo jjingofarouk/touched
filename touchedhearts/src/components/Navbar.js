@@ -7,10 +7,19 @@ import Button from 'react-bootstrap/Button';
 import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Simple debounce function
+const debounce = (func, delay) => {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func(...args), delay);
+  };
+};
+
 const Navbars = () => {
   const [expanded, setExpanded] = useState(false);
-  const [visible, setVisible] = useState(true); // Controls navbar visibility
-  const [lastScrollY, setLastScrollY] = useState(0); // Tracks last scroll position
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const navbarRef = useRef(null);
 
   const styles = {
@@ -35,23 +44,16 @@ const Navbars = () => {
     navbar: {
       backgroundColor: '#2d3a3a',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-      transition: 'transform 0.3s ease-in-out', // Smooth slide effect
-      transform: visible ? 'translateY(0)' : 'translateY(-100%)', // Hide/show
-      position: 'fixed', // Still fixed, but hides off-screen
+      transition: 'transform 0.3s ease-in-out',
+      transform: visible ? 'translateY(0)' : 'translateY(-100%)',
+      position: 'fixed',
       top: 0,
       width: '100%',
       zIndex: 1000,
     },
-    navLink: {
-      color: '#f8f7f5',
-    },
-    activeLink: {
-      color: '#ffffff',
-      fontWeight: 600,
-    },
-    navLinkHover: {
-      color: '#8cc5bf',
-    },
+    navLink: { color: '#f8f7f5' },
+    activeLink: { color: '#ffffff', fontWeight: 600 },
+    navLinkHover: { color: '#8cc5bf' },
     donateButton: {
       backgroundColor: '#d68c45',
       borderColor: '#d68c45',
@@ -62,12 +64,16 @@ const Navbars = () => {
     },
   };
 
-  // Handle scroll behavior
+  // Scroll handler with debounce
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling down and past a threshold (50px)
+
+      if (currentScrollY <= 0) {
+        // Always show navbar at the top
+        setVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // Scrolling down past threshold
         setVisible(false);
       } else if (currentScrollY < lastScrollY) {
         // Scrolling up
@@ -76,11 +82,13 @@ const Navbars = () => {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const debouncedHandleScroll = debounce(handleScroll, 10); // 10ms debounce
+    window.addEventListener('scroll', debouncedHandleScroll);
+
+    return () => window.removeEventListener('scroll', debouncedHandleScroll);
   }, [lastScrollY]);
 
-  // Close navbar when clicking/tapping outside or pressing Escape
+  // Handle click outside and Escape key (unchanged)
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target) && expanded) {
