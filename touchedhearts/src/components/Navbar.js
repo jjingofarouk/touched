@@ -4,56 +4,27 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import logo from '../assets/images/logo.jpg';
+import logo from '../assets/images/logo.jpg'; // Ensure this path is correct
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-// Simple debounce function
-const debounce = (func, delay) => {
-  let timeoutId;
-  return (...args) => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => func(...args), delay);
-  };
-};
 
 const Navbars = () => {
   const [expanded, setExpanded] = useState(false);
   const [visible, setVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [prevScrollY, setPrevScrollY] = useState(0); // Renamed for clarity
   const navbarRef = useRef(null);
 
   const styles = {
-    vars: {
-      primaryColor: '#3a8f85',
-      primaryDark: '#2c7269',
-      primaryLight: '#8cc5bf',
-      secondaryColor: '#d68c45',
-      secondaryDark: '#b87339',
-      secondaryLight: '#e9b384',
-      dark: '#2d3a3a',
-      darkGray: '#4d5c5c',
-      mediumGray: '#7e8c8c',
-      lightGray: '#d2d8d8',
-      offWhite: '#f8f7f5',
-      white: '#ffffff',
-      success: '#739e73',
-      warning: '#e6b86a',
-      error: '#c17b7b',
-      info: '#6a91ab',
-    },
     navbar: {
       backgroundColor: '#2d3a3a',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-      transition: 'transform 0.3s ease-in-out',
-      transform: visible ? 'translateY(0)' : 'translateY(-100%)',
+      transition: 'top 0.3s ease-in-out', // Changed to 'top' for simpler control
       position: 'fixed',
-      top: 0,
+      top: visible ? '0' : '-100px', // Move navbar up/down instead of transform
+      left: 0,
       width: '100%',
       zIndex: 1000,
     },
     navLink: { color: '#f8f7f5' },
-    activeLink: { color: '#ffffff', fontWeight: 600 },
-    navLinkHover: { color: '#8cc5bf' },
     donateButton: {
       backgroundColor: '#d68c45',
       borderColor: '#d68c45',
@@ -64,31 +35,28 @@ const Navbars = () => {
     },
   };
 
-  // Scroll handler with debounce
+  // Scroll handler
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY <= 0) {
-        // Always show navbar at the top
-        setVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling down past threshold
+      if (currentScrollY > prevScrollY && currentScrollY > 50) {
+        // Scrolling down past 50px
         setVisible(false);
-      } else if (currentScrollY < lastScrollY) {
-        // Scrolling up
+      } else if (currentScrollY < prevScrollY || currentScrollY === 0) {
+        // Scrolling up or at the top
         setVisible(true);
       }
-      setLastScrollY(currentScrollY);
+      setPrevScrollY(currentScrollY);
     };
 
-    const debouncedHandleScroll = debounce(handleScroll, 10); // 10ms debounce
-    window.addEventListener('scroll', debouncedHandleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener('scroll', debouncedHandleScroll);
-  }, [lastScrollY]);
+    // Cleanup
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollY]);
 
-  // Handle click outside and Escape key (unchanged)
+  // Handle click outside and Escape key
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target) && expanded) {
@@ -178,23 +146,20 @@ const Navbars = () => {
 
       <style jsx>{`
         .nav-link-custom:hover {
-          color: ${styles.vars.primaryLight} !important;
+          color: #8cc5bf !important;
           transition: color 0.2s ease;
         }
-        
         .nav-link-custom.active {
-          color: ${styles.vars.white} !important;
+          color: #ffffff !important;
           font-weight: 600;
         }
-        
         .donate-button-custom {
-          background-color: ${styles.vars.secondaryColor} !important;
-          border-color: ${styles.vars.secondaryColor} !important;
+          background-color: #d68c45 !important;
+          border-color: #d68c45 !important;
         }
-        
         .donate-button-custom:hover {
-          background-color: ${styles.vars.secondaryDark} !important;
-          border-color: ${styles.vars.secondaryDark} !important;
+          background-color: #b87339 !important;
+          border-color: #b87339 !important;
           transform: scale(1.05);
         }
       `}</style>
