@@ -4,22 +4,22 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import logo from '../assets/images/logo.jpg'; // Ensure this path is correct
+import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbars = () => {
   const [expanded, setExpanded] = useState(false);
   const [visible, setVisible] = useState(true);
-  const [prevScrollY, setPrevScrollY] = useState(0); // Renamed for clarity
+  const [prevScrollY, setPrevScrollY] = useState(0);
   const navbarRef = useRef(null);
 
   const styles = {
     navbar: {
       backgroundColor: '#2d3a3a',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-      transition: 'top 0.3s ease-in-out', // Changed to 'top' for simpler control
-      position: 'fixed',
-      top: visible ? '0' : '-100px', // Move navbar up/down instead of transform
+      transition: 'top 0.3s ease-in-out',
+      position: 'fixed', // We'll handle mobile differently with media queries
+      top: visible ? '0' : '-100px',
       left: 0,
       width: '100%',
       zIndex: 1000,
@@ -33,30 +33,31 @@ const Navbars = () => {
       padding: '0.5rem 1rem',
       transition: 'all 0.2s ease',
     },
+    brandText: {
+      color: '#f8f7f5',
+      fontSize: '1.5rem',
+      fontWeight: 700,
+      letterSpacing: '1px',
+      marginLeft: '1rem',
+      textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)',
+    }
   };
 
-  // Scroll handler
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
       if (currentScrollY > prevScrollY && currentScrollY > 50) {
-        // Scrolling down past 50px
         setVisible(false);
       } else if (currentScrollY < prevScrollY || currentScrollY === 0) {
-        // Scrolling up or at the top
         setVisible(true);
       }
       setPrevScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    // Cleanup
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollY]);
 
-  // Handle click outside and Escape key
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target) && expanded) {
@@ -90,7 +91,7 @@ const Navbars = () => {
       onToggle={() => setExpanded(!expanded)}
       ref={navbarRef}
     >
-      <Container>
+      <Container className="d-flex align-items-center">
         <Navbar.Brand as={NavLink} to="/" style={styles.navLink}>
           <img
             src={logo}
@@ -100,7 +101,13 @@ const Navbars = () => {
             className="d-inline-block align-top"
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        
+        {/* Added Brand Name */}
+        <div className="brand-name d-none d-lg-flex flex-grow-1 justify-content-center">
+          <span style={styles.brandText}>Touched Hearts</span>
+        </div>
+
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="ms-auto" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to="/" style={styles.navLink} className="nav-link-custom">
@@ -145,6 +152,13 @@ const Navbars = () => {
       </Container>
 
       <style jsx>{`
+        @media (max-width: 991px) {
+          .navbar {
+            position: relative !important; /* Not sticky on mobile */
+            top: 0 !important; /* Override the inline style on mobile */
+          }
+        }
+        
         .nav-link-custom:hover {
           color: #8cc5bf !important;
           transition: color 0.2s ease;
@@ -161,6 +175,12 @@ const Navbars = () => {
           background-color: #b87339 !important;
           border-color: #b87339 !important;
           transform: scale(1.05);
+        }
+        
+        /* Optional: Add hover effect for brand name */
+        .brand-name span:hover {
+          color: #8cc5bf !important;
+          transition: color 0.2s ease;
         }
       `}</style>
     </Navbar>
