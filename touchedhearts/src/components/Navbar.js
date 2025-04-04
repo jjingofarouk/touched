@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -8,6 +8,9 @@ import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbars = () => {
+  const [expanded, setExpanded] = useState(false);
+  const navbarRef = useRef(null);
+
   const styles = {
     vars: {
       primaryColor: '#3a8f85',
@@ -37,7 +40,6 @@ const Navbars = () => {
     activeLink: {
       color: '#ffffff',
       fontWeight: 600,
-      // Removed borderBottom here, but it wasn’t applied anyway
     },
     navLinkHover: {
       color: '#8cc5bf',
@@ -52,8 +54,41 @@ const Navbars = () => {
     },
   };
 
+  // Close navbar when clicking/tapping outside or pressing Escape
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target) && expanded) {
+        setExpanded(false);
+      }
+    };
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape' && expanded) {
+        setExpanded(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside); // For touch devices
+    document.addEventListener('keydown', handleKeyDown); // For Escape key
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [expanded]);
+
   return (
-    <Navbar expand="lg" style={styles.navbar} variant="dark">
+    <Navbar
+      fixed="top" // Makes the navbar sticky
+      expand="lg"
+      style={styles.navbar}
+      variant="dark"
+      expanded={expanded}
+      onToggle={() => setExpanded(!expanded)}
+      ref={navbarRef}
+    >
       <Container>
         <Navbar.Brand as={NavLink} to="/" style={styles.navLink}>
           <img
@@ -108,7 +143,6 @@ const Navbars = () => {
         </Navbar.Collapse>
       </Container>
 
-      {/* Inline styles with underline removed and pseudo-element disabled */}
       <style jsx>{`
         .nav-link-custom:hover {
           color: ${styles.vars.primaryLight} !important;
@@ -118,7 +152,6 @@ const Navbars = () => {
         .nav-link-custom.active {
           color: ${styles.vars.white} !important;
           font-weight: 600;
-          /* Removed border-bottom: 2px solid ${styles.vars.primaryLight}; */
         }
         
         .donate-button-custom {
