@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import StoryCard from "../components/StoryCard";
-import StoryPage from "../components/StoryPage";
 import Pagination from "../components/Pagination";
 import SearchFilter from "../components/SearchFilter";
 import storiesData from "../data/stories.json";
@@ -46,41 +45,30 @@ const Stories = () => {
         </div>
       </section>
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <section className="stories-section" aria-label="Impact Stories">
-              <SearchFilter onSearchFilter={handleSearchFilter} />
-              <div className="stories-grid">
-                {currentStories.length > 0 ? (
-                  currentStories.map((story) => (
-                    <Link
-                      to={`/story/${story.id}`}
-                      key={story.id}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <StoryCard story={story} />
-                    </Link>
-                  ))
-                ) : (
-                  <p className="no-stories-message">No stories match your criteria. Try adjusting your search or filter!</p>
-                )}
-              </div>
-              <Pagination
-                storiesPerPage={storiesPerPage}
-                totalStories={filteredStories.length}
-                currentPage={currentPage}
-                paginate={paginate}
-              />
-            </section>
-          }
+      <section className="stories-section" aria-label="Impact Stories">
+        <SearchFilter onSearchFilter={handleSearchFilter} />
+        <div className="stories-grid">
+          {currentStories.length > 0 ? (
+            currentStories.map((story) => (
+              <Link
+                to={`/story/${story.id}`}
+                key={story.id}
+                style={{ textDecoration: "none" }}
+              >
+                <StoryCard story={story} />
+              </Link>
+            ))
+          ) : (
+            <p className="no-stories-message">No stories match your criteria. Try adjusting your search or filter!</p>
+          )}
+        </div>
+        <Pagination
+          storiesPerPage={storiesPerPage}
+          totalStories={filteredStories.length}
+          currentPage={currentPage}
+          paginate={paginate}
         />
-        <Route
-          path="/story/:id"
-          element={<StoryPage stories={filteredStories} />}
-        />
-      </Routes>
+      </section>
     </div>
   );
 };
