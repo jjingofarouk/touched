@@ -9,6 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbars = () => {
   const [expanded, setExpanded] = useState(false);
+  const [visible, setVisible] = useState(true); // Controls navbar visibility
+  const [lastScrollY, setLastScrollY] = useState(0); // Tracks last scroll position
   const navbarRef = useRef(null);
 
   const styles = {
@@ -33,6 +35,12 @@ const Navbars = () => {
     navbar: {
       backgroundColor: '#2d3a3a',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+      transition: 'transform 0.3s ease-in-out', // Smooth slide effect
+      transform: visible ? 'translateY(0)' : 'translateY(-100%)', // Hide/show
+      position: 'fixed', // Still fixed, but hides off-screen
+      top: 0,
+      width: '100%',
+      zIndex: 1000,
     },
     navLink: {
       color: '#f8f7f5',
@@ -54,6 +62,24 @@ const Navbars = () => {
     },
   };
 
+  // Handle scroll behavior
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // Scrolling down and past a threshold (50px)
+        setVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up
+        setVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   // Close navbar when clicking/tapping outside or pressing Escape
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -69,8 +95,8 @@ const Navbars = () => {
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('touchstart', handleClickOutside); // For touch devices
-    document.addEventListener('keydown', handleKeyDown); // For Escape key
+    document.addEventListener('touchstart', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
@@ -81,7 +107,6 @@ const Navbars = () => {
 
   return (
     <Navbar
-      fixed="top" // Makes the navbar sticky
       expand="lg"
       style={styles.navbar}
       variant="dark"
