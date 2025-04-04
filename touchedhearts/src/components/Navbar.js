@@ -18,7 +18,7 @@ const Navbars = () => {
       backgroundColor: '#2d3a3a',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
       transition: 'top 0.3s ease-in-out',
-      position: 'fixed', // We'll handle mobile differently with media queries
+      position: 'fixed', // Sticky by default, overridden on mobile
       top: visible ? '0' : '-100px',
       left: 0,
       width: '100%',
@@ -35,23 +35,26 @@ const Navbars = () => {
     },
     brandText: {
       color: '#f8f7f5',
-      fontSize: '1.5rem',
+      fontSize: '1.2rem', // Smaller for mobile
       fontWeight: 700,
       letterSpacing: '1px',
-      marginLeft: '1rem',
+      marginLeft: '0.5rem',
       textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)',
-    }
+    },
   };
 
+  // Scroll effect only for desktop (sticky behavior)
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > prevScrollY && currentScrollY > 50) {
-        setVisible(false);
-      } else if (currentScrollY < prevScrollY || currentScrollY === 0) {
-        setVisible(true);
+      if (window.innerWidth >= 992) { // Only apply on desktop (lg and up)
+        if (currentScrollY > prevScrollY && currentScrollY > 50) {
+          setVisible(false);
+        } else if (currentScrollY < prevScrollY || currentScrollY === 0) {
+          setVisible(true);
+        }
+        setPrevScrollY(currentScrollY);
       }
-      setPrevScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -101,9 +104,9 @@ const Navbars = () => {
             className="d-inline-block align-top"
           />
         </Navbar.Brand>
-        
-        {/* Added Brand Name */}
-        <div className="brand-name d-none d-lg-flex flex-grow-1 justify-content-center">
+
+        {/* Brand Name - Visible on mobile only */}
+        <div className="brand-name d-flex d-lg-none flex-grow-1 justify-content-center">
           <span style={styles.brandText}>Touched Hearts</span>
         </div>
 
@@ -154,11 +157,11 @@ const Navbars = () => {
       <style jsx>{`
         @media (max-width: 991px) {
           .navbar {
-            position: relative !important; /* Not sticky on mobile */
-            top: 0 !important; /* Override the inline style on mobile */
+            position: relative !important; /* Non-sticky on mobile */
+            top: 0 !important; /* No hide/show effect on mobile */
           }
         }
-        
+
         .nav-link-custom:hover {
           color: #8cc5bf !important;
           transition: color 0.2s ease;
@@ -176,8 +179,6 @@ const Navbars = () => {
           border-color: #b87339 !important;
           transform: scale(1.05);
         }
-        
-        /* Optional: Add hover effect for brand name */
         .brand-name span:hover {
           color: #8cc5bf !important;
           transition: color 0.2s ease;
