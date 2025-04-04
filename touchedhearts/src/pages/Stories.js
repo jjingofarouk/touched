@@ -8,7 +8,7 @@ import storiesData from "../data/stories.json";
 import "../styles/stories.css";
 
 const Stories = () => {
-  const [stories, setStories] = useState(storiesData);
+  const [stories] = useState(storiesData); // Use the stories with manual IDs
   const [filteredStories, setFilteredStories] = useState(storiesData);
   const [currentPage, setCurrentPage] = useState(1);
   const storiesPerPage = 6;
@@ -54,10 +54,10 @@ const Stories = () => {
               <SearchFilter onSearchFilter={handleSearchFilter} />
               <div className="stories-grid">
                 {currentStories.length > 0 ? (
-                  currentStories.map((story, index) => (
+                  currentStories.map((story) => (
                     <Link
-                      to={`/story/${filteredStories.indexOf(story)}`}
-                      key={index}
+                      to={`/story/${story.id}`} // Link to the story page using the id
+                      key={story.id} // Use id as the key
                       style={{ textDecoration: "none" }}
                     >
                       <StoryCard story={story} />
