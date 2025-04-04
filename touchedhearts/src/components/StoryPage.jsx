@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
 const StoryPage = ({ stories }) => {
-  const { id } = useParams();
-  const story = stories[parseInt(id)];
+  const { id } = useParams(); // id is a string from the URL (e.g., "1")
+  const story = stories.find((s) => s.id === id); // Find story by id
 
   // Comments state with localStorage persistence
   const [comments, setComments] = useState(() => {
@@ -23,7 +23,9 @@ const StoryPage = ({ stories }) => {
     }
   };
 
-  if (!story) return <p style={{ textAlign: "center", color: "#7e8c8c" }}>Story not found!</p>;
+  if (!story) {
+    return <p style={{ textAlign: "center", color: "#7e8c8c" }}>Story not found!</p>;
+  }
 
   return (
     <div
@@ -104,7 +106,11 @@ const StoryPage = ({ stories }) => {
       {/* Social Sharing */}
       <div style={{ marginBottom: "2rem", display: "flex", gap: "1rem" }}>
         <button
-          onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(story.title)}&url=${window.location.href}`)}
+          onClick={() =>
+            window.open(
+              `https://twitter.com/intent/tweet?text=${encodeURIComponent(story.title)}&url=${window.location.href}`
+            )
+          }
           style={{
             padding: "0.5rem 1rem",
             background: "#3a8f85",
@@ -113,13 +119,14 @@ const StoryPage = ({ stories }) => {
             borderRadius: "0.5rem",
             cursor: "pointer",
             transition: "background 0.3s ease",
-            "&:hover": { background: "#2c7269" },
           }}
         >
           Share on Twitter
         </button>
         <button
-          onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`)}
+          onClick={() =>
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`)
+          }
           style={{
             padding: "0.5rem 1rem",
             background: "#3a8f85",
@@ -128,7 +135,6 @@ const StoryPage = ({ stories }) => {
             borderRadius: "0.5rem",
             cursor: "pointer",
             transition: "background 0.3s ease",
-            "&:hover": { background: "#2c7269" },
           }}
         >
           Share on Facebook
@@ -138,10 +144,7 @@ const StoryPage = ({ stories }) => {
       {/* Comments Section */}
       <section style={{ marginBottom: "2rem" }}>
         <h3 style={{ color: "#2c7269", fontSize: "1.5rem", marginBottom: "1rem" }}>Comments</h3>
-        <form
-          onSubmit={handleCommentSubmit}
-          style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}
-        >
+        <form onSubmit={handleCommentSubmit} style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
           <input
             type="text"
             value={newComment}
@@ -154,7 +157,6 @@ const StoryPage = ({ stories }) => {
               border: "1px solid #d2d8d8",
               fontSize: "1rem",
               outline: "none",
-              "&:focus": { borderColor: "#3a8f85", boxShadow: "0 0 0 3px rgba(58, 143, 133, 0.2)" },
             }}
           />
           <button
@@ -167,7 +169,6 @@ const StoryPage = ({ stories }) => {
               borderRadius: "0.5rem",
               cursor: "pointer",
               transition: "background 0.3s ease",
-              "&:hover": { background: "#2c7269" },
             }}
           >
             Post
@@ -199,11 +200,12 @@ const StoryPage = ({ stories }) => {
         <h3 style={{ color: "#2c7269", fontSize: "1.5rem", marginBottom: "1rem" }}>Related Stories</h3>
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
           {stories
-            .filter((s, i) => i !== parseInt(id) && i < parseInt(id) + 3) // Show up to 3 other stories
-            .map((relatedStory, index) => (
+            .filter((s) => s.id !== id) // Exclude the current story
+            .slice(0, 3) // Show up to 3 related stories
+            .map((relatedStory) => (
               <Link
-                to={`/story/${stories.indexOf(relatedStory)}`}
-                key={index}
+                to={`/story/${relatedStory.id}`} // Use the id field
+                key={relatedStory.id} // Use id as key
                 style={{
                   textDecoration: "none",
                   flex: "1 1 200px",
@@ -217,10 +219,6 @@ const StoryPage = ({ stories }) => {
                     borderRadius: "0.5rem",
                     background: "rgba(255, 255, 255, 0.9)",
                     transition: "all 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: "0 10px 25px rgba(58, 143, 133, 0.15)",
-                    },
                   }}
                 >
                   <h4 style={{ color: "#3a8f85", margin: "0", fontSize: "1.25rem" }}>{relatedStory.title}</h4>
