@@ -31,6 +31,9 @@ const StoryPage = ({ stories }) => {
     );
   }
 
+  // Transform the relative path to an absolute path
+  const imageSrc = story.image.replace("./", "/");
+
   return (
     <div
       style={{
@@ -84,7 +87,7 @@ const StoryPage = ({ stories }) => {
         "{story.quote}"
       </blockquote>
       <img
-        src={story.image}
+        src={imageSrc}
         alt={story.title}
         style={{
           width: "100%",
@@ -104,8 +107,6 @@ const StoryPage = ({ stories }) => {
       >
         {story.story}
       </p>
-
-      {/* Add more sections like comments, social sharing, etc., as needed */}
     </div>
   );
 };
