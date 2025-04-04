@@ -18,8 +18,8 @@ const Navbars = () => {
       backgroundColor: '#2d3a3a',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
       transition: 'top 0.3s ease-in-out',
-      position: 'fixed', // Sticky by default, overridden on mobile
-      top: visible ? '0' : '-100px',
+      position: 'fixed', // Sticky on all devices
+      top: visible ? '0' : '-100px', // Hide/show effect
       left: 0,
       width: '100%',
       zIndex: 1000,
@@ -43,18 +43,19 @@ const Navbars = () => {
     },
   };
 
-  // Scroll effect only for desktop (sticky behavior)
+  // Scroll effect for hide/show on all devices
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (window.innerWidth >= 992) { // Only apply on desktop (lg and up)
-        if (currentScrollY > prevScrollY && currentScrollY > 50) {
-          setVisible(false);
-        } else if (currentScrollY < prevScrollY || currentScrollY === 0) {
-          setVisible(true);
-        }
-        setPrevScrollY(currentScrollY);
+
+      if (currentScrollY > prevScrollY && currentScrollY > 50) {
+        // Scrolling down past 50px - hide navbar
+        setVisible(false);
+      } else if (currentScrollY < prevScrollY) {
+        // Scrolling up - show navbar
+        setVisible(true);
       }
+      setPrevScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -155,13 +156,6 @@ const Navbars = () => {
       </Container>
 
       <style jsx>{`
-        @media (max-width: 991px) {
-          .navbar {
-            position: relative !important; /* Non-sticky on mobile */
-            top: 0 !important; /* No hide/show effect on mobile */
-          }
-        }
-
         .nav-link-custom:hover {
           color: #8cc5bf !important;
           transition: color 0.2s ease;
