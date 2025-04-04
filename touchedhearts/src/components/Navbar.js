@@ -18,7 +18,7 @@ const Navbars = () => {
       backgroundColor: '#2d3a3a',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
       transition: 'top 0.3s ease-in-out',
-      position: 'fixed', // Sticky on all devices
+      position: 'sticky', // Sticky on all devices
       top: visible ? '0' : '-100px', // Hide/show effect
       left: 0,
       width: '100%',
