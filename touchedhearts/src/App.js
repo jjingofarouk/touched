@@ -1,51 +1,51 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
-import Navbars from './components/Navbar';
-import Footer from './components/Footer';
-import BasicExample from './components/BasicExample';
-import StoryPage from './components/StoryPage'; // Import StoryPage directly
+import Navbars from "./components/Navbar";
+import Footer from "./components/Footer";
+import BasicExample from "./components/BasicExample";
+import StoryPage from "./pages/StoryPage"; // Import StoryPage directly
 
 // Pages
-import Home from './pages/Home';
-import About from './pages/About';
-import Programs from './pages/Programs';
-import Education from './pages/Education';
-import Healthcare from './pages/Healthcare';
-import Disabilities from './pages/Disabilities';
-import Community from './pages/Community';
-import Stories from './pages/Stories';
-import Gallery from './pages/Gallery';
-import GetInvolved from './pages/GetInvolved';
-import Volunteers from './pages/Volunteers';
-import PartnersPage from './pages/Partners';
-import Donate from './pages/Donate';
-import Blog from './pages/Blog';
-import CommunityNews from './pages/news/Community';
-import CampNews from './pages/news/Camp';
-import CommunitySkillingNews from './pages/news/CommunitySkilling';
-import Events from './pages/Events';
-import AnnualReports from './pages/AnnualReports';
-import FinancialStatements from './pages/FinancialStatements';
-import Media from './pages/Media';
-import FAQs from './pages/FAQs';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import Accessibility from './pages/Accessibility';
-import Fundraise from './pages/Fundraise';
-import Team from './pages/Team';
-import './App.css';
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Programs from "./pages/Programs";
+import Education from "./pages/Education";
+import Healthcare from "./pages/Healthcare";
+import Disabilities from "./pages/Disabilities";
+import Community from "./pages/Community";
+import Stories from "./pages/Stories";
+import Gallery from "./pages/Gallery";
+import GetInvolved from "./pages/GetInvolved";
+import Volunteers from "./pages/Volunteers";
+import PartnersPage from "./pages/Partners";
+import Donate from "./pages/Donate";
+import Blog from "./pages/Blog";
+import CommunityNews from "./pages/news/Community";
+import CampNews from "./pages/news/Camp";
+import CommunitySkillingNews from "./pages/news/CommunitySkilling";
+import Events from "./pages/Events";
+import AnnualReports from "./pages/AnnualReports";
+import FinancialStatements from "./pages/FinancialStatements";
+import Media from "./pages/Media";
+import FAQs from "./pages/FAQs";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import Accessibility from "./pages/Accessibility";
+import Fundraise from "./pages/Fundraise";
+import Team from "./pages/Team";
+import "./App.css";
 
 // Import stories data
-import storiesData from './data/stories.json';
+import storiesData from "./data/stories.json";
 
 const App = () => {
   return (
     <Router>
       <div className="app-container">
-        <-more
-Navbars />
+        <Navbars />
+
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -57,7 +57,11 @@ Navbars />
             <Route path="/disabilities" element={<Disabilities />} />
             <Route path="/community" element={<Community />} />
             <Route path="/stories" element={<Stories />} />
-            <Route path="/story/:id" element={<StoryPage stories={storiesData} />} /> {/* Add this */}
+            <Route
+              path="/story/:id"
+              element={<StoryPage stories={storiesData} />}
+            />{" "}
+            {/* Add this */}
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/get-involved" element={<GetInvolved />} />
             <Route path="/volunteers" element={<Volunteers />} />
@@ -66,10 +70,16 @@ Navbars />
             <Route path="/blog" element={<Blog />} />
             <Route path="/news/community" element={<CommunityNews />} />
             <Route path="/news/camp" element={<CampNews />} />
-            <Route path="/news/community-skilling" element={<CommunitySkillingNews />} />
+            <Route
+              path="/news/community-skilling"
+              element={<CommunitySkillingNews />}
+            />
             <Route path="/events" element={<Events />} />
             <Route path="/annual-reports" element={<AnnualReports />} />
-            <Route path="/financial-statements" element={<FinancialStatements />} />
+            <Route
+              path="/financial-statements"
+              element={<FinancialStatements />}
+            />
             <Route path="/media" element={<Media />} />
             <Route path="/faq" element={<FAQs />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />

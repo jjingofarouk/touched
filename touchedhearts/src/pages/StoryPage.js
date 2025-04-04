@@ -17,13 +17,18 @@ const StoryPage = ({ stories }) => {
   const handleCommentSubmit = (e) => {
     e.preventDefault();
     if (newComment.trim()) {
-      setComments([...comments, { text: newComment, date: new Date().toLocaleString() }]);
+      setComments([
+        ...comments,
+        { text: newComment, date: new Date().toLocaleString() },
+      ]);
       setNewComment("");
     }
   };
 
   if (!story) {
-    return <p style={{ textAlign: "center", color: "#7e8c8c" }}>Story not found!</p>;
+    return (
+      <p style={{ textAlign: "center", color: "#7e8c8c" }}>Story not found!</p>
+    );
   }
 
   return (
@@ -40,7 +45,7 @@ const StoryPage = ({ stories }) => {
       }}
     >
       <Link
-        to="/"
+        to="/stories"
         style={{
           color: "#3a8f85",
           textDecoration: "none",
