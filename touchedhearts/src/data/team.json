@@ -1,32 +1,32 @@
 [
   {
     "name": "Solomon Ssekiranda",
-    "role": "Cofounder",
-    "bio": "Solomon is a passionate advocate for education and healthcare, holding a Bachelor's degree in Education (Chemistry and Mathematics) from Makerere University. Currently pursuing a Bachelor's in Medicine and Surgery at Kabale University, he has served as Vice President and Director of Research and Projects in the Federation of Uganda Medical Students' Association (FUMSA).",
+    "role": "Executive Director",
+    "bio": "Solomon Ssekiranda is a dynamic leader and advocate for transformative education and healthcare solutions. With a Bachelor's degree in Education (Chemistry and Mathematics) from Makerere University and ongoing studies in Medicine and Surgery at Kabale University, he brings a unique blend of academic rigor and practical expertise. As former Vice President and Director of Research and Projects for the Federation of Uganda Medical Students' Association (FUMSA), Solomon spearheaded innovative health and education initiatives, securing partnerships and driving measurable impact. His strategic vision and proven leadership ensure Touched Hearts' mission thrives, fostering sustainable change across communities.",
     "image": "./assets/images/team/solomon.png"
   },
   {
     "name": "Robinson Byamukama",
-    "role": "Cofounder",
-    "bio": "Robinson is a dedicated medical student at Kabale University. He has held several leadership roles in the Federation of Uganda Medical Students' Association (FUMSA), including President and Director of Community Health, where he spearheaded health awareness campaigns and fostered collaboration among students to address healthcare disparities.",
+    "role": "Director of Community Health Programs",
+    "bio": "Robinson Byamukama is a trailblazing medical student at Kabale University with an unparalleled commitment to public health. As former President and Director of Community Health for the Federation of Uganda Medical Students' Association (FUMSA), he led high-impact health awareness campaigns, mobilized cross-sector collaborations, and designed interventions that reduced healthcare disparities in underserved regions. His expertise in community engagement and medical knowledge positions him to oversee Touched Hearts' health programs, delivering life-changing services with precision and compassion.",
     "image": "./assets/images/team/robinson.jpg"
   },
   {
     "name": "Stanley Okecho",
-    "role": "Secretary General",
-    "bio": "Stanley brings exceptional organizational skills and a commitment to transparency. With a background in community development and leadership training, he is well-positioned in seamless communication and coordination across all our initiatives.",
+    "role": "Operations and Communications Manager",
+    "bio": "Stanley Okecho is a master of operational excellence and strategic communication, ensuring Touched Hearts runs seamlessly. With a robust background in community development and advanced leadership training, he has a proven track record of streamlining processes and fostering transparency. Stanley’s exceptional organizational skills have enabled effective coordination of complex initiatives, while his communication expertise amplifies the NGO’s mission to stakeholders worldwide. His dedication to efficiency and clarity drives the organization’s success behind the scenes.",
     "image": "./assets/images/team/stan.jpg"
   },
   {
     "name": "Judith Nahwera",
-    "role": "Program Manager",
-    "bio": "Judith is a dedicated community development specialist with extensive experience in grassroots organizing. Her passion for empowering local communities and building sustainable relationships has been instrumental in expanding our reach and ensuring our programs effectively address the needs of the communities we serve.",
+    "role": "Program Development Coordinator",
+    "bio": "Judith Nahwera is a seasoned community development expert whose strategic insight and passion for empowerment have transformed lives. With extensive experience in grassroots organizing, she has designed and scaled sustainable programs that address critical community needs, earning trust and driving impact. Her ability to forge lasting partnerships and tailor initiatives to local contexts has expanded Touched Hearts' reach exponentially. Judith’s meticulous approach to program design and evaluation ensures every project delivers measurable, long-term benefits.",
     "image": "./assets/images/team/jude.jpg"
   },
   {
     "name": "Farouk Jjingo",
-    "role": "Innovations Manager",
-    "bio": "Farouk is a visionary leader dedicated to rural empowerment through innovation and sustainable social entrepreneurship. He has a Bachelor's in Medicine and Surgery from Mbarara University and has founded CareWave+ and EcoSpin. He is currently developing an inclusive telemedicine platform and recycling initiatives that will benefit millions of Ugandans. His expertise in digital health and project management drives Touched Hearts' innovative solutions.",
+    "role": "Innovation and Technology Lead",
+    "bio": "Farouk Jjingo is a visionary innovator revolutionizing rural empowerment through cutting-edge technology and social entrepreneurship. Holding a Bachelor's in Medicine and Surgery from Mbarara University, he founded CareWave+ and EcoSpin, initiatives that redefine healthcare access and sustainability. Currently developing a groundbreaking telemedicine platform and scalable recycling programs, Farouk’s expertise in digital health and project management drives Touched Hearts’ most ambitious solutions. His ability to translate complex challenges into actionable, inclusive innovations positions him as a catalyst for transformative change across Uganda.",
     "image": "./assets/images/team/farouk.png"
   }
 ]
