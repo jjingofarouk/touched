@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ImpactCards from '../components/ImpactCards';
-import '../styles/Healthcare.css';
 import headerImage from './reports-header.png';
 
 // Theme variables consistent with Education component
@@ -207,6 +206,7 @@ const Healthcare = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           color: theme.white,
+          paddingTop: '80px',
           position: 'relative',
           minHeight: '300px',
           display: 'flex',
