@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import headerImage from './reports-header.png'; // Import the header image
 
@@ -245,7 +244,6 @@ const AnnualReports = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };
