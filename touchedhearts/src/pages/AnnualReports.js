@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Footer from '../components/Footer';
 import headerImage from './reports-header.png'; // Import the header image
 
 // Define root variables as a JavaScript object to use in inline styles
@@ -78,42 +77,90 @@ const AnnualReports = () => {
   return (
     <div>
 
-      {/* Page Header */}
+      {/* Enhanced Page Header */}
       <section
         role="banner"
         style={{
           textAlign: 'center',
-          padding: `${theme.spacingLg} ${theme.spacingSm}`,
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${headerImage})`,
+          padding: `${theme.spacingXl} ${theme.spacingSm}`, // Increased padding for more height
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${headerImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           color: theme.white,
           position: 'relative',
+          minHeight: '300px', // Minimum height for the header
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
           ...responsiveStyles.pageHeader,
         }}
       >
-        <h1
-          style={{
-            fontFamily: theme.fontHeading,
-            fontSize: theme.h1Size,
-            margin: `0 0 ${theme.spacingSm}`,
-            color: theme.white,
-          }}
-        >
-          Annual Reports
-        </h1>
-        <p
-          style={{
-            fontFamily: theme.fontBody,
-            fontSize: theme.bodySize,
-            color: theme.offWhite,
-            maxWidth: '600px',
-            margin: '0 auto',
-          }}
-        >
-          Explore our projects and their impact
-        </p>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h1
+            style={{
+              fontFamily: theme.fontHeading,
+              fontSize: theme.h1Size,
+              margin: `0 0 ${theme.spacingSm}`,
+              color: theme.white,
+              textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+            }}
+          >
+            Annual Reports & Impact Documentation
+          </h1>
+          <p
+            style={{
+              fontFamily: theme.fontBody,
+              fontSize: theme.bodySize,
+              color: theme.offWhite,
+              maxWidth: '700px',
+              margin: '0 auto',
+              lineHeight: 1.6,
+              marginBottom: theme.spacingMd,
+            }}
+          >
+            Explore our comprehensive collection of annual reports documenting our community projects, their outcomes, and the lasting positive impact we've made together through sustainable development initiatives.
+          </p>
+          <div 
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: theme.spacingSm,
+              flexWrap: 'wrap',
+            }}
+          >
+            <button
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: theme.secondaryColor,
+                color: theme.white,
+                border: 'none',
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Latest Reports
+            </button>
+            <button
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: 'transparent',
+                color: theme.white,
+                border: `2px solid ${theme.white}`,
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              View Archive
+            </button>
+          </div>
+        </div>
       </section>
 
       {/* Reports Section */}
