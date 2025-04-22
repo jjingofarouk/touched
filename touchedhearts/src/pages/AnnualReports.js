@@ -1,28 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import headerImage from './reports-header.png'; // Import the header image
+import headerImage from './reports-header.png';
 
-// Define root variables as a JavaScript object to use in inline styles
 const theme = {
-  // Primary color palette - Warm Teal/Sage
   primaryColor: '#3a8f85',
   primaryDark: '#2c7269',
   primaryLight: '#8cc5bf',
   secondaryColor: '#d68c45',
   secondaryDark: '#b87339',
   secondaryLight: '#e9b384',
-  // Neutral colors - Warmer and more organic
   dark: '#2d3a3a',
   darkGray: '#4d5c5c',
   mediumGray: '#7e8c8c',
   lightGray: '#d2d8d8',
   offWhite: '#f8f7f5',
   white: '#ffffff',
-  // Accent colors - More earthy and harmonious
   success: '#739e73',
   warning: '#e6b86a',
   error: '#c17b7b',
   info: '#6a91ab',
-  // Typography
   fontHeading: "'Lora', serif",
   fontBody: "'Poppins', sans-serif",
   h1Size: 'clamp(2.5rem, 5vw, 3.5rem)',
@@ -30,7 +25,6 @@ const theme = {
   h3Size: 'clamp(1.25rem, 3vw, 1.75rem)',
   bodySize: 'clamp(1rem, 2vw, 1.125rem)',
   smallText: 'clamp(0.875rem, 1.5vw, 1rem)',
-  // Spacing
   spacingXs: '0.5rem',
   spacingSm: '1rem',
   spacingMd: '2rem',
@@ -40,56 +34,54 @@ const theme = {
 
 const AnnualReports = () => {
   const [reports, setReports] = useState([]);
+  const [latestReport, setLatestReport] = useState(null);
 
   useEffect(() => {
-    // Fetch reports data from API or use static data
     const fetchedReports = [
       {
         id: 1,
         title: 'Hope After Floods Project 2025',
         description: 'Extended relief to Kawempe flood victims.',
-        imageUrl: '/assets/images/reports/kawempe.jpg', // Still in public/
+        imageUrl: '/assets/images/reports/kawempe.jpg',
         googleDriveLink: 'https://drive.google.com/file/d/1zILWKhZ8Kzc3w2WGhsMfImY2MRTy0TOl/view?usp=drivesdk',
-        projectDate: 'April 3, 2025',
+        projectDate: '2025-04-03',
         relatedDetails: 'Provided relief for victims of floods that swept through Kawempe Division on April 3, 2025.',
       },
       {
         id: 2,
         title: 'Scholarship Program 2024',
         description: 'Provided scholarships and resources to 20 students.',
-        imageUrl: '/assets/images/reports/scholarships.png', // Still in public/
+        imageUrl: '/assets/images/reports/scholarships.png',
         googleDriveLink: 'https://drive.google.com/file/d/1zILWKhZ8Kzc3w2WGhsMfImY2MRTy0TOl/view?usp=drivesdk',
-        projectDate: 'September 2023',
+        projectDate: '2023-09-01',
         relatedDetails: 'Collaborated with Rines Secondary School Scholarship Trust.',
       },
     ];
 
-    setReports(fetchedReports);
+    const sortedReports = fetchedReports.sort((a, b) => new Date(b.projectDate) - new Date(a.projectDate));
+    setReports(sortedReports);
+    setLatestReport(sortedReports[0]);
   }, []);
 
-  // Responsive styles for media queries
   const responsiveStyles = {
-    reportsGrid: window.innerWidth <= 768 ? { gridTemplateColumns: '1fr' } : {},
-    pageHeader: window.innerWidth <= 768 ? { padding: `${theme.spacingMd} ${theme.spacingSm}` } : {},
-    reportImage: window.innerWidth <= 768 ? { height: '180px' } : {},
+    reportsGrid: window.innerWidth <= 768 ? { gridTemplateColumns: '1fr' } : { gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' },
+    pageHeader: window.innerWidth <= 768 ? { padding: `${theme.spacingMd} ${theme.spacingSm}` } : { padding: `${theme.spacingXl} ${theme.spacingSm}` },
+    reportImage: window.innerWidth <= 768 ? { height: '180px' } : { height: '220px' },
   };
 
   return (
-    <div>
-
-      {/* Enhanced Page Header */}
+    <div style={{ paddingTop: '80px' /* Adjust based on navbar height */ }}>
+      {/* Page Header */}
       <section
         role="banner"
         style={{
           textAlign: 'center',
-          padding: `${theme.spacingXl} ${theme.spacingSm}`, // Increased padding for more height
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${headerImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           color: theme.white,
-          position: 'relative',
-          minHeight: '300px', // Minimum height for the header
+          minHeight: '300px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
@@ -119,17 +111,13 @@ const AnnualReports = () => {
               marginBottom: theme.spacingMd,
             }}
           >
-            Explore our comprehensive collection of annual reports documenting our community projects, their outcomes, and the lasting positive impact we've made together through sustainable development initiatives.
+            Explore our comprehensive collection of annual reports documenting our community projects, their outcomes, and the lasting positive impact we've made together.
           </p>
-          <div 
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: theme.spacingSm,
-              flexWrap: 'wrap',
-            }}
-          >
-            <button
+          <div style={{ display: 'flex', justifyContent: 'center', gap: theme.spacingSm, flexWrap: 'wrap' }}>
+            <a
+              href={latestReport?.googleDriveLink}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 padding: `${theme.spacingXs} ${theme.spacingMd}`,
                 backgroundColor: theme.secondaryColor,
@@ -138,12 +126,12 @@ const AnnualReports = () => {
                 borderRadius: '6px',
                 fontFamily: theme.fontBody,
                 fontWeight: 600,
-                cursor: 'pointer',
+                textDecoration: 'none',
                 transition: 'background-color 0.3s ease',
               }}
             >
-              Latest Reports
-            </button>
+              Latest Report
+            </a>
             <button
               style={{
                 padding: `${theme.spacingXs} ${theme.spacingMd}`,
@@ -187,14 +175,7 @@ const AnnualReports = () => {
         >
           Annual Reports
         </h2>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: theme.spacingMd,
-            ...responsiveStyles.reportsGrid,
-          }}
-        >
+        <div style={{ display: 'grid', gap: theme.spacingMd, ...responsiveStyles.reportsGrid }}>
           {reports.map((report) => (
             <div
               key={report.id}
@@ -204,10 +185,6 @@ const AnnualReports = () => {
                 overflow: 'hidden',
                 boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                ':hover': {
-                  transform: 'translateY(-5px)',
-                  boxShadow: '0 6px 16px rgba(0, 0, 0, 0.15)',
-                },
               }}
             >
               <img
@@ -215,7 +192,6 @@ const AnnualReports = () => {
                 alt={`${report.title} preview`}
                 style={{
                   width: '100%',
-                  height: '220px',
                   objectFit: 'cover',
                   borderBottom: `2px solid ${theme.primaryLight}`,
                   ...responsiveStyles.reportImage,
@@ -251,7 +227,8 @@ const AnnualReports = () => {
                     margin: `0 0 ${theme.spacingXs}`,
                   }}
                 >
-                  <strong style={{ color: theme.dark }}>Completed:</strong> {report.projectDate}
+                  <strong style={{ color: theme.dark }}>Completed:</strong>{' '}
+                  {new Date(report.projectDate).toLocaleDateString()}
                 </p>
                 <p
                   style={{
@@ -278,9 +255,6 @@ const AnnualReports = () => {
                     textDecoration: 'none',
                     borderRadius: '6px',
                     transition: 'background-color 0.3s ease',
-                    ':hover': {
-                      backgroundColor: theme.secondaryDark,
-                    },
                   }}
                 >
                   View Full Report
@@ -290,7 +264,6 @@ const AnnualReports = () => {
           ))}
         </div>
       </section>
-
     </div>
   );
 };
