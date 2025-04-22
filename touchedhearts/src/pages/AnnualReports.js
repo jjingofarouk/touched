@@ -1,99 +1,85 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar'; // Assuming you have a separate Header component
-import Footer from '../components/Footer'; // Assuming you have a separate Footer component
-import { Line } from 'react-chartjs-2'; // If you're using a chart library like Chart.js
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import './AnnualReports.css'; // Assuming you have a CSS file for styling
 
 const AnnualReports = () => {
-    const [reports, setReports] = useState([]);
-    
-    // This is a placeholder for your impact data, you can replace it with actual data.
-    const impactData = {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-        datasets: [
-            {
-                label: 'Impact Statistics',
-                data: [10, 20, 30, 40, 50, 60],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1,
-            },
-        ],
-    };
+  const [reports, setReports] = useState([]);
 
-    useEffect(() => {
-        // Fetch reports data from API or file
-        // For now, we're using static data as a placeholder
-        const fetchedReports = [
-            {
-                year: 2023,
-                summary: "Summary of the impact in 2023",
-                downloadLink: "/path/to/report-2023.pdf",
-            },
-            {
-                year: 2022,
-                summary: "Summary of the impact in 2022",
-                downloadLink: "/path/to/report-2022.pdf",
-            },
-            // Add more reports as needed
-        ];
+  useEffect(() => {
+    // Fetch reports data from API or use static data
+    const fetchedReports = [
+      {
+        id: 1,
+        title: 'Hope After Floods Project 2025',
+        description: 'Extended relief to Kawempe flood victims.',
+        imageUrl: '/images/kawempe.jpg', // Replace with actual image path
+        googleDriveLink: 'https://drive.google.com/file/d/1zILWKhZ8Kzc3w2WGhsMfImY2MRTy0TOl/view?usp=drivesdk',
+        projectDate: 'April 3, 2025',
+        relatedDetails: 'Provided relief for victims of floods that swept through Kawempe Division on April 3, 2025.',
+      },
+      {
+        id: 2,
+        title: 'Education Program 2022',
+        description: 'Provided scholarships and resources to 200 students.',
+        imageUrl: '/images/education-program-2022.jpg', // Replace with actual image path
+        googleDriveLink: 'https://drive.google.com/file/d/EXAMPLE_ID_2022/view',
+        projectDate: 'August 2022',
+        relatedDetails: 'Collaborated with XYZ Education Trust.',
+      },
+      // Add more reports as needed
+    ];
 
-        setReports(fetchedReports);
-    }, []);
+    setReports(fetchedReports);
+  }, []);
 
-    const openModal = (report) => {
-        const modal = document.getElementById('reportModal');
-        modal.querySelector('.modal-title').textContent = `Report for ${report.year}`;
-        modal.querySelector('.modal-summary').textContent = report.summary;
-        modal.querySelector('.modal-download').href = report.downloadLink;
-        modal.setAttribute('aria-hidden', 'false');
-    };
+  return (
+    <div>
+      <Navbar />
 
-    const closeModal = () => {
-        const modal = document.getElementById('reportModal');
-        modal.setAttribute('aria-hidden', 'true');
-    };
+      {/* Page Header43 */}
+      <section className="page-header" role="banner">
+        <h1>Annual Reports</h1>
+        <p className="header-subtitle">Explore our projects and their impact</p>
+      </section>
 
-    return (
-        <div>
-      
-            
-            {/* Page Header */}
-            <section className="page-header" role="banner">
-                <h1>Annual Reports</h1>
-                <p className="header-subtitle">Discover our journey, impact, and financial transparency</p>
-            </section>
-
-            {/* Reports Section */}
-            <section className="reports-section" aria-labelledby="reports-heading">
-                <h2 id="reports-heading" className="visually-hidden">Annual Reports</h2>
-                <div className="reports-timeline">
-                    <div className="timeline-line"></div>
-                    {reports.map((report, index) => (
-                        <div key={index} className="timeline-entry">
-                            <button className="timeline-button" onClick={() => openModal(report)}>
-                                <span>{report.year}</span>
-                            </button>
-                        </div>
-                    ))}
-                </div>
-                <div className="reports-stats">
-                    <Line data={impactData} />
-                </div>
-            </section>
-
-            {/* Interactive Modal for Report Details */}
-            <div className="report-modal" id="reportModal" role="dialog" aria-hidden="true">
-                <div className="modal-content">
-                    <button className="modal-close" aria-label="Close modal" onClick={closeModal}>✕</button>
-                    <h3 className="modal-title"></h3>
-                    <p className="modal-summary"></p>
-                    <a className="modal-download" href="#" target="_blank" download>Download Report</a>
-                </div>
+      {/* Reports Section */}
+      <section className="reports-section" aria-labelledby="reports-heading">
+        <h2 id="reports-heading" className="visually-hidden">Annual Reports</h2>
+        <div className="reports-grid">
+          {reports.map((report) => (
+            <div key={report.id} className="report-card">
+              <img
+                src={report.imageUrl}
+                alt={`${report.title} preview`}
+                className="report-image"
+              />
+              <div className="report-content">
+                <h3 className="report-title">{report.title}</h3>
+                <p className="report-description">{report.description}</p>
+                <p className="report-date">
+                  <strong>Completed:</strong> {report.projectDate}
+                </p>
+                <p className="report-details">
+                  <strong>Details:</strong> {report.relatedDetails}
+                </p>
+                <a
+                  href={report.googleDriveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="report-link"
+                >
+                  View Full Report
+                </a>
+              </div>
             </div>
-
-            
+          ))}
         </div>
-    );
+      </section>
+
+      <Footer />
+    </div>
+  );
 };
 
 export default AnnualReports;
