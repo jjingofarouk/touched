@@ -162,42 +162,6 @@ const AnnualReports = () => {
               flexWrap: 'wrap',
             }}
           >
-            <a
-              href={latestReport?.googleDriveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                padding: `${theme.spacingXs} ${theme.spacingMd}`,
-                backgroundColor: theme.secondaryColor,
-                color: theme.white,
-                border: 'none',
-                borderRadius: '6px',
-                fontFamily: theme.fontBody,
-                fontWeight: 600,
-                cursor: 'pointer',
-                textDecoration: 'none',
-                transition: 'background-color 0.3s ease',
-              }}
-            >
-              Latest Report
-            </a>
-            <a
-              href="/reports-archive"
-              style={{
-                padding: `${theme.spacingXs} ${theme.spacingMd}`,
-                backgroundColor: 'transparent',
-                color: theme.white,
-                border: `2px solid ${theme.white}`,
-                borderRadius: '6px',
-                fontFamily: theme.fontBody,
-                fontWeight: 600,
-                cursor: 'pointer',
-                textDecoration: 'none',
-                transition: 'all 0.3s ease',
-              }}
-            >
-              View Archive
-            </a>
           </div>
         </div>
       </section>
