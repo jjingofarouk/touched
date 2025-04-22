@@ -7,6 +7,15 @@ import Button from 'react-bootstrap/Button';
 import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Utility function for debouncing
+const debounce = (func, wait) => {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), wait);
+  };
+};
+
 const Navbars = () => {
   const [expanded, setExpanded] = useState(false);
   const [visible, setVisible] = useState(true);
@@ -18,8 +27,8 @@ const Navbars = () => {
       backgroundColor: '#2d3a3a',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
       transition: 'top 0.3s ease-in-out',
-      position: 'sticky', // Sticky on all devices
-      top: visible ? '0' : '-100px', // Hide/show effect
+      position: 'fixed', // Changed to fixed for consistent behavior
+      top: visible ? '0' : '-100px',
       left: 0,
       width: '100%',
       zIndex: 1000,
@@ -35,7 +44,7 @@ const Navbars = () => {
     },
     brandText: {
       color: '#f8f7f5',
-      fontSize: '1.2rem', // Smaller for mobile
+      fontSize: '1.2rem',
       fontWeight: 700,
       letterSpacing: '1px',
       marginLeft: '0.5rem',
@@ -43,25 +52,24 @@ const Navbars = () => {
     },
   };
 
-  // Scroll effect for hide/show on all devices
+  // Scroll effect with debouncing
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = debounce(() => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > prevScrollY && currentScrollY > 50) {
-        // Scrolling down past 50px - hide navbar
-        setVisible(false);
+        setVisible(false); // Hide navbar when scrolling down
       } else if (currentScrollY < prevScrollY) {
-        // Scrolling up - show navbar
-        setVisible(true);
+        setVisible(true); // Show navbar when scrolling up
       }
       setPrevScrollY(currentScrollY);
-    };
+    }, 100); // Debounce for 100ms
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollY]);
 
+  // Handle clicks outside navbar and ESC key
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target) && expanded) {
@@ -94,6 +102,7 @@ const Navbars = () => {
       expanded={expanded}
       onToggle={() => setExpanded(!expanded)}
       ref={navbarRef}
+      aria-label="Main navigation"
     >
       <Container className="d-flex align-items-center">
         <Navbar.Brand as={NavLink} to="/" style={styles.navLink}>
@@ -114,33 +123,28 @@ const Navbars = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="ms-auto" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/" style={styles.navLink} className="nav-link-custom">
-              Home
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/about" style={styles.navLink} className="nav-link-custom">
-              About Us
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/education" style={styles.navLink} className="nav-link-custom">
-              Education
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/healthcare" style={styles.navLink} className="nav-link-custom">
-              Healthcare
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/disabilities" style={styles.navLink} className="nav-link-custom">
-              Disability Support
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/community" style={styles.navLink} className="nav-link-custom">
-              Community
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/stories" style={styles.navLink} className="nav-link-custom">
-              Stories
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/gallery" style={styles.navLink} className="nav-link-custom">
-              Gallery
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/get-involved" style={styles.navLink} className="nav-link-custom">
-              Get Involved
-            </Nav.Link>
+            {[
+              { to: '/', label: 'Home' },
+              { to: '/about', label: 'About Us' },
+              { to: '/education', label: 'Education' },
+              { to: '/healthcare', label: 'Healthcare' },
+              { to: '/disabilities', label: 'Disability Support' },
+              { to: '/community', label: 'Community' },
+              { to: '/stories', label: 'Stories' },
+              { to: '/gallery', label: 'Gallery' },
+              { to: '/get-involved', label: 'Get Involved' },
+            ].map((link) => (
+              <Nav.Link
+                key={link.to}
+                as={NavLink}
+                to={link.to}
+                style={styles.navLink}
+                className="nav-link-custom"
+                onClick={() => setExpanded(false)} // Close navbar on link click
+              >
+                {link.label}
+              </Nav.Link>
+            ))}
           </Nav>
           <Nav className="ms-auto align-items-center">
             <Button
@@ -148,6 +152,7 @@ const Navbars = () => {
               to="/donate"
               style={styles.donateButton}
               className="donate-button-custom ms-2"
+              onClick={() => setExpanded(false)} // Close navbar on button click
             >
               Donate Now
             </Button>
@@ -162,7 +167,7 @@ const Navbars = () => {
         }
         .nav-link-custom.active {
           color: #ffffff !important;
-          font-weight: 600;
+          fontWeight: 600;
         }
         .donate-button-custom {
           background-color: #d68c45 !important;
