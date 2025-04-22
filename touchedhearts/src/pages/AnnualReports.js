@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import headerImage from './reports-header.png';
 
-// Define theme variables consistent with the Community component
 const theme = {
   primaryColor: '#3a8f85',
   primaryDark: '#2c7269',
@@ -40,7 +40,6 @@ const AnnualReports = () => {
   const [reports, setReports] = useState([]);
   const [latestReport, setLatestReport] = useState(null);
 
-  // Reports data
   const reportsData = [
     {
       id: 1,
@@ -63,19 +62,13 @@ const AnnualReports = () => {
   ];
 
   useEffect(() => {
-    // Sort and set reports
     const sortedReports = reportsData.sort((a, b) => new Date(b.projectDate) - new Date(a.projectDate));
     setReports(sortedReports);
     setLatestReport(sortedReports[0]);
 
-    // Handle window resize for responsive styles
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
+    const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
 
-    // Scroll animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -95,12 +88,9 @@ const AnnualReports = () => {
       observer.observe(item);
     });
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Responsive styles
   const responsiveStyles = {
     pageHeader: windowWidth <= 768 ? { padding: `${theme.spacingMd} ${theme.spacingSm}` } : {},
     reportsGrid: windowWidth <= 768 ? { gridTemplateColumns: '1fr' } : { gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' },
@@ -109,8 +99,7 @@ const AnnualReports = () => {
 
   return (
     <div className="annual-reports-page">
-
-      {/* Enhanced Header Section */}
+      <Navbar />
       <section
         role="banner"
         style={{
@@ -121,6 +110,7 @@ const AnnualReports = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           color: theme.white,
+          paddingTop: '80px',
           position: 'relative',
           minHeight: '300px',
           display: 'flex',
@@ -162,13 +152,48 @@ const AnnualReports = () => {
               flexWrap: 'wrap',
             }}
           >
+            <Link
+              to="/get-involved"
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: theme.secondaryColor,
+                color: theme.white,
+                border: 'none',
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Get Involved
+            </Link>
+            <Link
+              to="/donate"
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: 'transparent',
+                color: theme.white,
+                border: `2px solid ${theme.white}`,
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              Donate Now
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Reports Section */}
       <section className="reports-section">
-        <h2>Our Project Reports</h2>
+        <h2 style={{ fontFamily: theme.fontHeading, fontSize: theme.h2Size, color: theme.dark, textAlign: 'center' }}>
+          Our Project Reports
+        </h2>
         <div
           className="reports-container"
           style={{
@@ -272,7 +297,6 @@ const AnnualReports = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
       <section className="cta-section">
         <div
           className="cta-container"
@@ -304,28 +328,46 @@ const AnnualReports = () => {
           >
             Your support helps us continue documenting and expanding our impact. Whether through donations, volunteering, or sharing our reports, every action counts.
           </p>
-          <a
-            href="/get-involved"
-            className="cta-button"
-            style={{
-              padding: `${theme.spacingXs} ${theme.spacingMd}`,
-              backgroundColor: theme.secondaryColor,
-              color: theme.white,
-              border: 'none',
-              borderRadius: '6px',
-              fontFamily: theme.fontBody,
-              fontWeight: 600,
-              cursor: 'pointer',
-              textDecoration: 'none',
-              transition: 'background-color 0.3s ease',
-            }}
-          >
-            Get Involved
-          </a>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: theme.spacingSm, flexWrap: 'wrap' }}>
+            <Link
+              to="/get-involved"
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: theme.secondaryColor,
+                color: theme.white,
+                border: 'none',
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Get Involved
+            </Link>
+            <Link
+              to="/donate"
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: 'transparent',
+                color: theme.dark,
+                border: `2px solid ${theme.secondaryColor}`,
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              Donate Now
+            </Link>
+          </div>
         </div>
       </section>
 
-
+      <Footer />
     </div>
   );
 };
