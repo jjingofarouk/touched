@@ -62,12 +62,12 @@ const Community = () => {
     {
       title: 'Providing Clean Water',
       details: [
-        'Many families in Kisoro District still walk miles for water. We're working to change that by installing a borehole and improving existing springs.',
+        'Many families in Kisoro District still walk miles for water. We are working to change that by installing a borehole and improving existing springs.',
         'By 2026, our gravity-flow system will bring clean water to 300 homes, reducing waterborne diseases and freeing children from long walks to fetch water.',
       ],
     },
     {
-      title: 'Women's Economic Empowerment',
+      title: 'Womens Economic Empowerment',
       details: [
         'In Masaka District, 20 women received seed funding and training to start a cooperative mat-weaving business. Today, their work supports their families and strengthens their community.',
         'We continue to provide mentorship, financial literacy training, and market access to expand their reach and impact.',
@@ -76,7 +76,7 @@ const Community = () => {
     {
       title: 'Keeping Girls in School',
       details: [
-        'In many rural areas, lack of sanitary pads forces girls to miss school. We've provided reusable sanitary kits to 300 girls in Kabale District, ensuring they can continue their education with dignity.',
+        'In many rural areas, lack of sanitary pads forces girls to miss school. We have provided reusable sanitary kits to 300 girls in Kabale District, ensuring they can continue their education with dignity.',
         'Our goal is to expand this program to more schools, reducing dropout rates among adolescent girls.',
       ],
     },
@@ -85,7 +85,7 @@ const Community = () => {
   // Success stories
   const stories = [
     {
-      title: 'Nalem Judith's Journey to Health',
+      title: 'Nalem Judiths Journey to Health',
       quote: '"If it were not for Touched Hearts, I would never have known what was wrong with me..."',
       text: 'Nalem Judith, a resident of Moroto District, suffered from undiagnosed health issues for years. Our outreach program connected her with specialists who provided treatment, allowing her to regain her strength and resume work.',
       image: judithStory,
