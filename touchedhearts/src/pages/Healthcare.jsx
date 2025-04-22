@@ -515,4 +515,52 @@ const Healthcare = () => {
               lineHeight: 1.6,
             }}
           >
-            Your support can bring vital healthcare to Uganda’s underserved communities. Partner with us or donate to make a lasting
+            Your support can bring vital healthcare to Uganda’s underserved communities. Partner with us or donate to make a lasting difference.
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: theme.spacingSm, flexWrap: 'wrap' }}>
+            <Link
+              to="/get-involved"
+              className="cta-button"
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: theme.secondaryColor,
+                color: theme.white,
+                border: 'none',
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Get Involved
+            </Link>
+            <Link
+              to="/donate"
+              className="cta-button"
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: 'transparent',
+                color: theme.dark,
+                border: `2px solid ${theme.secondaryColor}`,
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              Donate Now
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Healthcare;
