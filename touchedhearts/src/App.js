@@ -6,6 +6,7 @@ import Navbars from "./components/Navbar";
 import Footer from "./components/Footer";
 import BasicExample from "./components/BasicExample";
 import StoryPage from "./pages/StoryPage"; // Import StoryPage directly
+import { Analytics } from "@vercel/analytics";
 
 // Pages
 import Home from "./pages/Home";
