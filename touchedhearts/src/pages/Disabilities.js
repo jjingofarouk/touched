@@ -1,16 +1,47 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import HeroSection from '../components/HeroSection';
 import '../styles/disabilities.css';
-
-// Importing real images from the assets folder
 import eminati from '../assets/images/eminati.jpg';
 import wheels from '../assets/images/wheels.jpg';
 import sarah from '../assets/images/sarah.jpg';
 import emma from '../assets/images/emma.jpg';
 
+const theme = {
+  primaryColor: '#3a8f85',
+  primaryDark: '#2c7269',
+  primaryLight: '#8cc5bf',
+  secondaryColor: '#d68c45',
+  secondaryDark: '#b87339',
+  secondaryLight: '#e9b384',
+  dark: '#2d3a3a',
+  darkGray: '#4d5c5c',
+  mediumGray: '#7e8c8c',
+  lightGray: '#d2d8d8',
+  offWhite: '#f8f7f5',
+  white: '#ffffff',
+  success: '#739e73',
+  warning: '#e6b86a',
+  error: '#c17b7b',
+  info: '#6a91ab',
+  fontHeading: "'Lora', serif",
+  fontBody: "'Poppins', sans-serif",
+  h1Size: 'clamp(2.5rem, 5vw, 3.5rem)',
+  h2Size: 'clamp(1.75rem, 4vw, 2.5rem)',
+  h3Size: 'clamp(1.25rem, 3vw, 1.75rem)',
+  bodySize: 'clamp(1rem, 2vw, 1.125rem)',
+  smallText: 'clamp(0.875rem, 1.5vw, 1rem)',
+  spacingXs: '0.5rem',
+  spacingSm: '1rem',
+  spacingMd: '2rem',
+  spacingLg: '4rem',
+  spacingXl: '6rem',
+};
+
 const Disabilities = () => {
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+
   const programs = [
     {
       title: 'Assistive Devices Outreach',
@@ -44,19 +75,28 @@ const Disabilities = () => {
     {
       title: 'Eminati Robert - Gulu',
       description: 'Eminati, a father of three, lost his leg in a 2019 accident. Without resources for a wheelchair, he struggled to farm. Our 2023 outreach in Gulu city provided him with a wheelchair, restoring his ability to work and support his family.',
-      image: eminati, // Actual image
+      image: eminati,
+      alt: 'Eminati with his wheelchair',
     },
     {
       title: 'Sarah Atim - Lira',
       description: 'Visually impaired since childhood, Sarah faced exclusion until she joined our tailoring program. Now, she earns a living stitching uniforms, proving that disability is not inability.',
-      image: sarah, // Actual image
+      image: sarah,
+      alt: 'Sarah at her tailoring business',
     },
     {
       title: 'Emmanuel Ouma - Tororo',
       description: 'Deaf since birth, Emmanuel struggled in school until our education support provided hearing aids and teacher training. He’s now a top student with big dreams.',
-      image: emma, // Actual image
+      image: emma,
+      alt: 'Emmanuel in school',
     },
   ];
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const programHeaders = document.querySelectorAll('.program-header');
@@ -93,40 +133,132 @@ const Disabilities = () => {
     });
   }, []);
 
+  const responsiveStyles = {
+    pageHeader: windowWidth <= 768 ? { padding: `${theme.spacingMd} ${theme.spacingSm}` } : {},
+  };
+
   return (
     <div className="disabilities-page">
-      <header className="disabilities-header">
-        <h1>Supporting Persons with Disabilities</h1>
-        <p>
-          At Touched Hearts, we empower individuals with disabilities in Uganda through inclusive programs, healthcare access, and community integration, ensuring they live with dignity and opportunity.
-        </p>
-      </header>
+      <Navbar />
+      <section
+        role="banner"
+        style={{
+          textAlign: 'center',
+          padding: `${theme.spacingXl} ${theme.spacingSm}`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${wheels})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          color: theme.white,
+          paddingTop: '80px',
+          position: 'relative',
+          minHeight: '300px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          ...responsiveStyles.pageHeader,
+        }}
+      >
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h1
+            style={{
+              fontFamily: theme.fontHeading,
+              fontSize: theme.h1Size,
+              margin: `0 0 ${theme.spacingSm}`,
+              color: theme.white,
+              textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+            }}
+          >
+            Supporting Persons with Disabilities
+          </h1>
+          <p
+            style={{
+              fontFamily: theme.fontBody,
+              fontSize: theme.bodySize,
+              color: theme.offWhite,
+              maxWidth: '700px',
+              margin: '0 auto',
+              lineHeight: 1.6,
+              marginBottom: theme.spacingMd,
+            }}
+          >
+            At Touched Hearts, we empower individuals with disabilities in Uganda through inclusive programs, healthcare access, and community integration, ensuring they live with dignity and opportunity.
+          </p>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: theme.spacingSm,
+              flexWrap: 'wrap',
+            }}
+          >
+            <Link
+              to="/get-involved"
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: theme.secondaryColor,
+                color: theme.white,
+                border: 'none',
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Get Involved
+            </Link>
+            <Link
+              to="/donate"
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: 'transparent',
+                color: theme.white,
+                border: `2px solid ${theme.white}`,
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              Donate Now
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <section className="disabilities-content">
-        <h2>Our Commitment to Disability Support</h2>
-        <p>
+        <h2 style={{ fontFamily: theme.fontHeading, fontSize: theme.h2Size, color: theme.dark, textAlign: 'center' }}>
+          Our Commitment to Disability Support
+        </h2>
+        <p style={{ fontFamily: theme.fontBody, fontSize: theme.bodySize, color: theme.darkGray, lineHeight: 1.6 }}>
           Since our founding in 2010, Touched Hearts has been dedicated to addressing the unique challenges faced by persons with disabilities (PWDs) in Uganda. With over 1.5 million Ugandans living with some form of disability—ranging from physical impairments to visual, hearing, and intellectual challenges—we work tirelessly to bridge gaps in access to healthcare, education, and economic opportunities.
         </p>
-        <p>
+        <p style={{ fontFamily: theme.fontBody, fontSize: theme.bodySize, color: theme.darkGray, lineHeight: 1.6 }}>
           Our approach combines direct support with advocacy, partnering with local communities, government bodies, and international organizations to create sustainable change. Below are some of the key programs and outreaches we’ve undertaken to uplift PWDs across Uganda.
         </p>
-        
-        {/* Image Section */}
+
         <div className="image-placeholder">
-          <img src={wheels} alt="Wheelchair distribution in Gulu" />
+          <img src={wheels} alt="Wheelchair distribution in Gulu" style={{ width: '100%', objectFit: 'cover' }} />
         </div>
 
-        {/* Programs Section */}
         <div className="programs-list">
           {programs.map((program, index) => (
             <div className="program-item" key={index}>
               <div className="program-header">
-                <h3>{program.title}</h3>
+                <h3 style={{ fontFamily: theme.fontHeading, fontSize: theme.h3Size, color: theme.primaryDark }}>
+                  {program.title}
+                </h3>
                 <span className="toggle-icon">▼</span>
               </div>
               <div className="program-details">
                 {program.details.map((detail, idx) => (
-                  <p key={idx}>{detail}</p>
+                  <p key={idx} style={{ fontFamily: theme.fontBody, fontSize: theme.bodySize, color: theme.darkGray }}>
+                    {detail}
+                  </p>
                 ))}
               </div>
             </div>
@@ -134,21 +266,28 @@ const Disabilities = () => {
         </div>
       </section>
 
-      {/* Case Studies Section */}
       <section className="case-studies">
-        <h2>Real Lives, Real Impact</h2>
+        <h2 style={{ fontFamily: theme.fontHeading, fontSize: theme.h2Size, color: theme.dark, textAlign: 'center' }}>
+          Real Lives, Real Impact
+        </h2>
         <div className="case-container">
           {caseStudies.map((study, index) => (
             <div className="case-card" key={index}>
-              <h3>{study.title}</h3>
-              <p>{study.description}</p>
+              <h3 style={{ fontFamily: theme.fontHeading, fontSize: theme.h3Size, color: theme.primaryDark }}>
+                {study.title}
+              </h3>
+              <p style={{ fontFamily: theme.fontBody, fontSize: theme.bodySize, color: theme.darkGray }}>
+                {study.description}
+              </p>
               <div className="image-placeholder">
-                <img src={study.image} alt={study.title} />
+                <img src={study.image} alt={study.alt} style={{ width: '100%', objectFit: 'cover' }} />
               </div>
             </div>
           ))}
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
