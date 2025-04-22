@@ -78,7 +78,6 @@ const AnnualReports = () => {
 
   return (
     <div>
-      <Navbar />
 
       {/* Page Header */}
       <section
