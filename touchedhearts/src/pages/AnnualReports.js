@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import headerImage from '../assets/images/bgs/reports-header.png'; // Import the header image
+import headerImage from './reports-header.png'; // Import the header image
 
 // Define root variables as a JavaScript object to use in inline styles
 const theme = {
