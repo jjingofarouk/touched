@@ -31,6 +31,7 @@ const Navbars = () => {
       top: visible ? '0' : '-100px',
       left: 0,
       width: '100%',
+      height: '80px',
       zIndex: 1000,
     },
     navLink: { color: '#f8f7f5' },
