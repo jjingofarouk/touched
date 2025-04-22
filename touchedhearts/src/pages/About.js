@@ -45,7 +45,7 @@ const About = () => {
   };
 
   return (
-    <main >
+    <main style={{ paddingTop: '80px' /* Adjust based on navbar height */ }}>
       {/* Page Header */}
       <section
         role="banner"

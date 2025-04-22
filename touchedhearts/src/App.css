@@ -24,7 +24,6 @@ html, body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  padding-top: 80px; /* Pushes content below 80px navbar */
 }
 
 /* Main Content Area */
