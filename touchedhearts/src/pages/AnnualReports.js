@@ -35,7 +35,6 @@ const AnnualReports = () => {
 
   return (
     <div>
-      <Navbar />
 
       {/* Page Header43 */}
       <section className="page-header" role="banner">
@@ -77,7 +76,6 @@ const AnnualReports = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };
