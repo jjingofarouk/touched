@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import ImpactCards from '../components/ImpactCards';
 import '../styles/community.css';
 

@@ -5,7 +5,7 @@ import VolunteerForm from '../components/VolunteerForm';
 import Partners from '../components/Partners';
 import Fundraise from './Fundraise';
 import DonationWidget from '../components/DonationWidget';
-import headerImage from './reports-header.jpg'; // Add a relevant header image
+import headerImage from './reports-header.png'; // Add a relevant header image
 
 const theme = {
   primaryColor: '#3a8f85',
@@ -73,17 +73,7 @@ const GetInvolved = () => {
         }}
       >
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h1
-            style={{
-              fontFamily: theme.fontHeading,
-              fontSize: theme.h1Size,
-              margin: `0 0 ${theme.spacingSm}`,
-              color: theme.white,
-              textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-            }}
-          >
-            Get Involved
-          </h1>
+
           <p
             style={{
               fontFamily: theme.fontBody,
@@ -106,7 +96,7 @@ const GetInvolved = () => {
             }}
           >
             <Link
-              to="/get-involved"
+              to="/donate"
               style={{
                 padding: `${theme.spacingXs} ${theme.spacingMd}`,
                 backgroundColor: theme.secondaryColor,
@@ -120,25 +110,9 @@ const GetInvolved = () => {
                 transition: 'background-color 0.3s ease',
               }}
             >
-              Get Involved
-            </Link>
-            <Link
-              to="/donate"
-              style={{
-                padding: `${theme.spacingXs} ${theme.spacingMd}`,
-                backgroundColor: 'transparent',
-                color: theme.white,
-                border: `2px solid ${theme.white}`,
-                borderRadius: '6px',
-                fontFamily: theme.fontBody,
-                fontWeight: 600,
-                cursor: 'pointer',
-                textDecoration: 'none',
-                transition: 'all 0.3s ease',
-              }}
-            >
               Donate Now
             </Link>
+            
           </div>
         </div>
       </section>

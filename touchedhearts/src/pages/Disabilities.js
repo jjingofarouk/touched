@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import '../styles/disabilities.css';
 import eminati from '../assets/images/eminati.jpg';
 import wheels from '../assets/images/wheels.jpg';
@@ -209,23 +208,7 @@ const Disabilities = () => {
             >
               Get Involved
             </Link>
-            <Link
-              to="/donate"
-              style={{
-                padding: `${theme.spacingXs} ${theme.spacingMd}`,
-                backgroundColor: 'transparent',
-                color: theme.white,
-                border: `2px solid ${theme.white}`,
-                borderRadius: '6px',
-                fontFamily: theme.fontBody,
-                fontWeight: 600,
-                cursor: 'pointer',
-                textDecoration: 'none',
-                transition: 'all 0.3s ease',
-              }}
-            >
-              Donate Now
-            </Link>
+
           </div>
         </div>
       </section>
@@ -287,7 +270,6 @@ const Disabilities = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

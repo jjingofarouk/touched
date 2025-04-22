@@ -93,6 +93,7 @@ const Stories = () => {
           backgroundRepeat: 'no-repeat',
           color: theme.white,
           position: 'relative',
+          paddingTop: '80px',
           minHeight: '300px',
           display: 'flex',
           flexDirection: 'column',

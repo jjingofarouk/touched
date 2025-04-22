@@ -265,23 +265,6 @@ const Healthcare = () => {
             >
               Get Involved
             </Link>
-            <Link
-              to="/donate"
-              style={{
-                padding: `${theme.spacingXs} ${theme.spacingMd}`,
-                backgroundColor: 'transparent',
-                color: theme.white,
-                border: `2px solid ${theme.white}`,
-                borderRadius: '6px',
-                fontFamily: theme.fontBody,
-                fontWeight: 600,
-                cursor: 'pointer',
-                textDecoration: 'none',
-                transition: 'all 0.3s ease',
-              }}
-            >
-              Donate Now
-            </Link>
           </div>
         </div>
       </section>
@@ -519,7 +502,7 @@ const Healthcare = () => {
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: theme.spacingSm, flexWrap: 'wrap' }}>
             <Link
-              to="/get-involved"
+              to="/donate"
               className="cta-button"
               style={{
                 padding: `${theme.spacingXs} ${theme.spacingMd}`,
@@ -534,31 +517,13 @@ const Healthcare = () => {
                 transition: 'background-color 0.3s ease',
               }}
             >
-              Get Involved
+              Donate
             </Link>
-            <Link
-              to="/donate"
-              className="cta-button"
-              style={{
-                padding: `${theme.spacingXs} ${theme.spacingMd}`,
-                backgroundColor: 'transparent',
-                color: theme.dark,
-                border: `2px solid ${theme.secondaryColor}`,
-                borderRadius: '6px',
-                fontFamily: theme.fontBody,
-                fontWeight: 600,
-                cursor: 'pointer',
-                textDecoration: 'none',
-                transition: 'all 0.3s ease',
-              }}
-            >
-              Donate Now
-            </Link>
+
           </div>
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

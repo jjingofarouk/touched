@@ -165,7 +165,6 @@ const Education = () => {
 
   return (
     <div className="education-page">
-      <Navbar />
       {/* Enhanced Header Section */}
       <section
         role="banner"
@@ -179,6 +178,7 @@ const Education = () => {
           color: theme.white,
           position: 'relative',
           minHeight: '300px',
+          paddingTop: '80px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
@@ -219,7 +219,7 @@ const Education = () => {
             }}
           >
             <Link
-              to="/get-involved"
+              to="/donate"
               style={{
                 padding: `${theme.spacingXs} ${theme.spacingMd}`,
                 backgroundColor: theme.secondaryColor,
@@ -233,25 +233,9 @@ const Education = () => {
                 transition: 'background-color 0.3s ease',
               }}
             >
-              Get Involved
-            </Link>
-            <Link
-              to="/donate"
-              style={{
-                padding: `${theme.spacingXs} ${theme.spacingMd}`,
-                backgroundColor: 'transparent',
-                color: theme.white,
-                border: `2px solid ${theme.white}`,
-                borderRadius: '6px',
-                fontFamily: theme.fontBody,
-                fontWeight: 600,
-                cursor: 'pointer',
-                textDecoration: 'none',
-                transition: 'all 0.3s ease',
-              }}
-            >
               Donate Now
             </Link>
+
           </div>
         </div>
       </section>
@@ -452,7 +436,6 @@ const Education = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

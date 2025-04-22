@@ -110,36 +110,7 @@ const Gallery = () => {
         </div>
       )}
 
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-column">
-            <a href="/" className="footer-logo">
-              <img src="/assets/images/logo.jpg" alt="Touched Hearts Logo" className="logo" />
-            </a>
-            <p className="footer-tagline">Transforming lives with compassion and hope</p>
-          </div>
-          <div className="footer-column">
-            <h3 className="footer-heading">Quick Links</h3>
-            <ul className="footer-links">
-              <li><a href="/about" className="footer-link">About Us</a></li>
-              <li><a href="/programs" className="footer-link">Our Programs</a></li>
-              <li><a href="/donate" className="footer-link">Donate</a></li>
-            </ul>
-          </div>
-          <div className="footer-column">
-            <h3 className="footer-heading">Contact Us</h3>
-            <address className="contact-info">
-              <p><i className="fas fa-map-marker-alt"></i> 123 Kampala Road, Kampala, Uganda</p>
-              <p><i className="fas fa-phone"></i> +256 700 834 733</p>
-              <p><i className="fas fa-envelope"></i> <a href="mailto:touchedheartsfoundation@gmail.com">touchedheartsfoundation@gmail.com</a></p>
-            </address>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>&copy; 2025 Touched Hearts. All rights reserved.</p>
-        </div>
-      </footer>
+      
     </div>
   );
 };
