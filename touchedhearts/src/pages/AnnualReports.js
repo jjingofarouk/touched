@@ -22,7 +22,7 @@ const AnnualReports = () => {
         id: 2,
         title: 'Education Program 2022',
         description: 'Provided scholarships and resources to 200 students.',
-        imageUrl: '/assets/images/reporte/scholarships.png', // Replace with actual image path
+        imageUrl: '/assets/images/reports/scholarships.png', // Replace with actual image path
         googleDriveLink: 'https://drive.google.com/file/d/EXAMPLE_ID_2022/view',
         projectDate: 'August 2022',
         relatedDetails: 'Collaborated with XYZ Education Trust.',
