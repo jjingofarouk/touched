@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import '../styles/annual-reports.css'; // Assuming a similar CSS file for styling
 import headerImage from './reports-header.png';
 
 // Define theme variables consistent with the Community component
