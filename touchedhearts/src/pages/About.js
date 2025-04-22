@@ -45,22 +45,24 @@ const About = () => {
   };
 
   return (
-    <main style={{ paddingTop: '80px' /* Adjust based on navbar height */ }}>
+    <div>
       {/* Page Header */}
       <section
         role="banner"
         style={{
           textAlign: 'center',
+          padding: `${theme.spacingXl} ${theme.spacingSm}`,
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${aboutImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           color: theme.white,
+          position: 'relative',
           minHeight: '300px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          ...responsiveStyles.sectionPadding,
+          ...responsiveStyles.pageHeader,
         }}
       >
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -334,7 +336,7 @@ const About = () => {
           Meet the Team
         </NavLink>
       </section>
-    </main>
+    </div>
   );
 };
 
