@@ -5,7 +5,6 @@
 .page-header {
   text-align: center;
   padding: var(--spacing-lg) var(--spacing-sm);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/bgs/reports-header.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -17,13 +16,13 @@
   font-family: var(--font-heading);
   font-size: var(--h1-size);
   margin: 0 0 var(--spacing-sm);
-  color: var(--white); /* Changed to white for contrast against dark overlay */
+  color: var(--white);
 }
 
 .header-subtitle {
   font-family: var(--font-body);
   font-size: var(--body-size);
-  color: var(--off-white); /* Slightly lighter for better readability */
+  color: var(--off-white);
   max-width: 600px;
   margin: 0 auto;
 }
