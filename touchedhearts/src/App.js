@@ -91,6 +91,7 @@ const App = () => {
           </Routes>
         </main>
         <Footer />
+        <Analytics />
       </div>
     </Router>
   );
