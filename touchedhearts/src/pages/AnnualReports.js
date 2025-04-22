@@ -99,7 +99,7 @@ const AnnualReports = () => {
 
   return (
     <div className="annual-reports-page">
-      <Navbar />
+      
       <section
         role="banner"
         style={{
@@ -366,8 +366,6 @@ const AnnualReports = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };
