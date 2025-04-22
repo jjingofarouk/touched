@@ -1,19 +1,124 @@
 // src/pages/Healthcare.js
-import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar'; // Import your existing Header component
-import Footer from '../components/Footer'; // Import your existing Footer component
-import '../styles/healthcare.css'; // Assuming you have this CSS file
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import ImpactCards from '../components/ImpactCards';
+import '../styles/Healthcare.css';
+import headerImage from './reports-header.png';
+
+// Theme variables consistent with Education component
+const theme = {
+  primaryColor: '#3a8f85',
+  primaryDark: '#2c7269',
+  primaryLight: '#8cc5bf',
+  secondaryColor: '#d68c45',
+  secondaryDark: '#b87339',
+  secondaryLight: '#e9b384',
+  dark: '#2d3a3a',
+  darkGray: '#4d5c5c',
+  mediumGray: '#7e8c8c',
+  lightGray: '#d2d8d8',
+  offWhite: '#f8f7f5',
+  white: '#ffffff',
+  success: '#739e73',
+  warning: '#e6b86a',
+  error: '#c17b7b',
+  info: '#6a91ab',
+  fontHeading: "'Lora', serif",
+  fontBody: "'Poppins', sans-serif",
+  h1Size: 'clamp(2.5rem, 5vw, 3.5rem)',
+  h2Size: 'clamp(1.75rem, 4vw, 2.5rem)',
+  h3Size: 'clamp(1.25rem, 3vw, 1.75rem)',
+  bodySize: 'clamp(1rem, 2vw, 1.125rem)',
+  smallText: 'clamp(0.875rem, 1.5vw, 1rem)',
+  spacingXs: '0.5rem',
+  spacingSm: '1rem',
+  spacingMd: '2rem',
+  spacingLg: '4rem',
+  spacingXl: '6rem',
+};
 
 const Healthcare = () => {
-  // State for accordion functionality
   const [activeProgram, setActiveProgram] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  const programRefs = useRef([]);
+  const statRefs = useRef([]);
+  const caseRefs = useRef([]);
 
-  // Handle accordion toggle
-  const toggleProgram = (index) => {
-    setActiveProgram(activeProgram === index ? null : index);
-  };
+  // Impact statistics
+  const impactData = [
+    { number: '5,000+', label: 'Patients Treated (2024)' },
+    { number: '4', label: 'Rural Communities Served' },
+    { number: '45%', label: 'Vaccination Rate Achieved' },
+    { number: '150', label: 'Safe Births Facilitated' },
+  ];
 
-  // Scroll animation effect
+  // Program data
+  const programs = [
+    {
+      title: 'Mobile Medical Outreach',
+      description:
+        'Our mobile clinics deliver primary healthcare to remote Ugandan communities, offering consultations, treatments, and medications. In 2024, we reached over 12,000 patients across 15 villages in Karamoja.',
+      image: '/assets/images/mobile-clinic.png',
+      alt: 'Mobile clinic in rural Karamoja',
+    },
+    {
+      title: 'Maternal and Child Health',
+      description:
+        'We support safe births through training, birthing kits, and maternal waiting homes. In Mubende, our program reduced maternal mortality by 45% since 2022, facilitating over 1,200 safe deliveries in 2024.',
+      image: '/assets/images/maternal-health.png',
+      alt: 'Maternal health support',
+    },
+    {
+      title: 'Disease Prevention and Vaccination',
+      description:
+        'Our vaccination campaigns target diseases like measles and polio, alongside malaria prevention. In Katete parish, we achieved a 65% immunization rate and distributed 1,000 mosquito nets in 2023-2024.',
+      image: '/assets/images/vaccination.png',
+      alt: 'Vaccination campaign',
+    },
+    {
+      title: 'Health Education and Training',
+      description:
+        'We train community health workers and educate on nutrition, hygiene, and disease prevention. In Mbarara, our "Healthy Villages" initiative trained 20 volunteers in 2024 to serve as local health educators.',
+      image: '/assets/images/health-education.png',
+      alt: 'Health education session',
+    },
+    {
+      title: 'HIV/AIDS Support and Testing',
+      description:
+        'We provide confidential HIV testing, counseling, and support. In Kampala’s informal settlements, our mobile units screened over 500 individuals in 2024, with a 70% retention rate in treatment programs.',
+      image: '/assets/images/hiv-support.png',
+      alt: 'HIV testing and support',
+    },
+  ];
+
+  // Case studies
+  const caseStudies = [
+    {
+      title: 'Maria Namukasa - Mubende',
+      description:
+        'Maria, pregnant with her third child, faced complications but received timely care at our maternal waiting home. Today, she and her baby boy are healthy and thriving.',
+      image: '/assets/images/maria.png',
+      alt: 'Maria with her healthy baby',
+    },
+    {
+      title: 'Brenda Ochieng - Soroti',
+      description:
+        'Brenda, 16, overcame recurring malaria after receiving mosquito nets. Now malaria-free for six months, she excels in school, and her family engages in our health education programs.',
+      image: '/assets/images/mosquito-net.png',
+      alt: 'Brenda with her mosquito net',
+    },
+  ];
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Scroll animation for programs and case studies
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -27,142 +132,387 @@ const Healthcare = () => {
       { threshold: 0.2 }
     );
 
-    document.querySelectorAll('.program-item, .case-card, .stat-card').forEach((item) => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(20px)';
-      item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(item);
+    [...programRefs.current, ...caseRefs.current].forEach((ref) => {
+      if (ref) {
+        ref.style.opacity = '0';
+        ref.style.transform = 'translateY(20px)';
+        ref.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(ref);
+      }
     });
 
     return () => observer.disconnect();
   }, []);
 
+  // Stat counter animation
+  useEffect(() => {
+    const statObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const stat = entry.target;
+            const target = parseInt(stat.textContent.replace(/[^0-9]/g, '')) || parseInt(stat.textContent);
+            let count = 0;
+            const increment = target / 50;
+            const hasPlus = stat.textContent.includes('+');
+            const hasPercent = stat.textContent.includes('%');
+
+            const updateCount = () => {
+              count += increment;
+              if (count >= target) {
+                stat.textContent = hasPlus
+                  ? `${target.toLocaleString()}+`
+                  : hasPercent
+                  ? `${target}%`
+                  : target.toLocaleString();
+              } else {
+                stat.textContent = Math.ceil(count).toLocaleString() + (hasPlus ? '+' : hasPercent ? '%' : '');
+                requestAnimationFrame(updateCount);
+              }
+            };
+            requestAnimationFrame(updateCount);
+            statObserver.unobserve(stat);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    statRefs.current.forEach((ref) => {
+      if (ref) statObserver.observe(ref);
+    });
+
+    return () => statObserver.disconnect();
+  }, []);
+
+  // Responsive styles
+  const responsiveStyles = {
+    pageHeader: windowWidth <= 768 ? { padding: `${theme.spacingMd} ${theme.spacingSm}` } : {},
+    programsGrid: windowWidth <= 768 ? { gridTemplateColumns: '1fr' } : { gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' },
+    programImage: windowWidth <= 768 ? { height: '180px' } : { height: '220px' },
+    caseGrid: windowWidth <= 768 ? { gridTemplateColumns: '1fr' } : { gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' },
+  };
+
   return (
     <div className="healthcare-page">
-
-
-      {/* Hero Section */}
-      <section className="healthcare-hero">
-        <h1>Healthcare for All Communities</h1>
-        <p>
-          At Touched Hearts, we believe quality healthcare is a basic human right. Our initiatives bring vital medical services, preventive care, and health education to underserved communities throughout Uganda.
-        </p>
-      </section>
-
-      {/* Main Content */}
-      <section className="healthcare-content">
-        <h2>Our Healthcare Mission</h2>
-        <p>
-          Since 2021, Touched Hearts has been committed to addressing the healthcare challenges facing vulnerable communities across Uganda. With limited access to medical facilities, inadequate resources, and preventable diseases causing significant suffering, we've implemented comprehensive healthcare programs that bring vital services directly to those in need.
-        </p>
-        <p>
-          Working alongside local health professionals, government health departments, and international partners, we deliver sustainable healthcare solutions that create lasting impact. Our holistic approach combines immediate medical care with preventive education and community empowerment.
-        </p>
-        <img src="/assets/images/clinic.png" alt="Mobile clinic in rural Karamoja" className="image-placeholder" />
-
-        {/* Impact Stats */}
-        <h2>Our Impact</h2>
-        <div className="impact-stats">
-          <div className="stat-card">
-            <div className="stat-number">5,000+</div>
-            <div className="stat-label">Patients Treated (2024)</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number">4</div>
-            <div className="stat-label">Rural Communities Served</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number">45%</div>
-            <div className="stat-label">Vaccination Rate Achieved</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number">150</div>
-            <div className="stat-label">Safe Births Facilitated</div>
+      <Navbar />
+      {/* Header Section */}
+      <section
+        role="banner"
+        style={{
+          textAlign: 'center',
+          padding: `${theme.spacingXl} ${theme.spacingSm}`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${headerImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          color: theme.white,
+          position: 'relative',
+          minHeight: '300px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          ...responsiveStyles.pageHeader,
+        }}
+      >
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h1
+            style={{
+              fontFamily: theme.fontHeading,
+              fontSize: theme.h1Size,
+              margin: `0 0 ${theme.spacingSm}`,
+              color: theme.white,
+              textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+            }}
+          >
+            Healthcare Initiatives
+          </h1>
+          <p
+            style={{
+              fontFamily: theme.fontBody,
+              fontSize: theme.bodySize,
+              color: theme.offWhite,
+              maxWidth: '700px',
+              margin: '0 auto',
+              lineHeight: 1.6,
+              marginBottom: theme.spacingMd,
+            }}
+          >
+            Delivering quality healthcare to Uganda’s underserved communities. Since 2021, we’ve provided medical services, preventive care, and education to those in need.
+          </p>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: theme.spacingSm,
+              flexWrap: 'wrap',
+            }}
+          >
+            <Link
+              to="/get-involved"
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: theme.secondaryColor,
+                color: theme.white,
+                border: 'none',
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Get Involved
+            </Link>
+            <Link
+              to="/donate"
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: 'transparent',
+                color: theme.white,
+                border: `2px solid ${theme.white}`,
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              Donate Now
+            </Link>
           </div>
         </div>
+      </section>
 
-        {/* Programs Accordion */}
-        <h2>Our Healthcare Programs</h2>
-        <div className="programs-list">
-          {[
-            {
-              title: 'Mobile Medical Outreach',
-              details: [
-                'Our fleet of mobile clinics travels to remote areas across Uganda, bringing primary healthcare services to communities with limited access to medical facilities. Each mobile unit is staffed with doctors, nurses, and community health workers who provide consultations, basic treatments, and medication.',
-                'In 2024, our mobile clinics conducted outreaches in Karamoja, reaching over 12,000 patients across 15 villages. These visits included general medical check-ups, dental care, eye examinations, and treatment for common illnesses such as malaria, respiratory infections, and diarrheal diseases.',
-              ],
-            },
-            {
-              title: 'Maternal and Child Health',
-              details: [
-                'Our maternal health initiative provides comprehensive care for pregnant women and newborns. We support safe births by training traditional birth attendants, providing birthing kits, and offering transportation to health facilities for complicated deliveries.',
-                'In Mubende District, we worked with local midwives to establish a maternal waiting home where high-risk mothers can stay near the health center before delivery. This program has reduced maternal mortality in the region by 45% since its inception in 2022, and facilitated over 1,200 safe deliveries last year alone.',
-              ],
-            },
-            {
-              title: 'Disease Prevention and Vaccination',
-              details: [
-                'We conduct vaccination campaigns targeting preventable diseases like measles, polio, and tetanus. Our growing community of health workers go door-to-door to ensure all children receive their essential immunizations, while also distributing mosquito nets to prevent malaria.',
-                'In 2023-2024, our vaccination drive in Katete parish reached over 100 children, achieving a 65% immunization rate. We also distributed 1,000 insecticide-treated mosquito nets to families with children under five and pregnant women, hoping for a 60% reduction in reported malaria cases.',
-              ],
-            },
-            {
-              title: 'Health Education and Training',
-              details: [
-                'Knowledge is power in disease prevention. We train community health workers and conduct public health education campaigns on nutrition, hygiene, family planning, and disease prevention.',
-                'Our "Healthy Villages" initiative in Mbarara District trains local volunteers to become health educators within their communities. These volunteers hold regular sessions on handwashing, safe water handling, balanced diets, and early disease recognition. In 2024, we trained 20 community health workers who now serve as the first point of contact for health information in their villages.',
-              ],
-            },
-            {
-              title: 'HIV/AIDS Support and Testing',
-              details: [
-                'Our HIV/AIDS program provides confidential testing, counseling, and support groups for affected individuals. We partner with local clinics to ensure access to antiretroviral therapy and work to reduce stigma through community education.',
-                'In Kampala\'s informal settlements, our mobile testing units provided HIV screening to over 500 individuals in 2024. For those testing positive, we established support networks and ensured linkage to care, with a 70% retention rate in treatment programs.',
-              ],
-            },
-          ].map((program, index) => (
-            <div className="program-item" key={index}>
-              <div
-                className={`program-header ${activeProgram === index ? 'active' : ''}`}
-                onClick={() => toggleProgram(index)}
-              >
-                <h3>{program.title}</h3>
-                <span className="toggle-icon">{activeProgram === index ? '▲' : '▼'}</span>
+      {/* Healthcare Section */}
+      <section className="healthcare-section">
+        <div
+          className="healthcare-intro"
+          style={{
+            maxWidth: '800px',
+            margin: '0 auto',
+            padding: `${theme.spacingMd} ${theme.spacingSm}`,
+            textAlign: 'center',
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: theme.fontHeading,
+              fontSize: theme.h2Size,
+              color: theme.dark,
+              margin: `0 0 ${theme.spacingSm}`,
+            }}
+          >
+            Our Commitment to Healthcare
+          </h2>
+          <p
+            style={{
+              fontFamily: theme.fontBody,
+              fontSize: theme.bodySize,
+              color: theme.darkGray,
+              lineHeight: 1.6,
+            }}
+          >
+            At Touched Hearts, we believe quality healthcare is a fundamental right. Since 2021, we’ve addressed healthcare challenges in Uganda’s vulnerable communities through mobile clinics, maternal care, vaccinations, and education, creating sustainable solutions with lasting impact.
+          </p>
+        </div>
+
+        <h2
+          style={{
+            fontFamily: theme.fontHeading,
+            fontSize: theme.h2Size,
+            color: theme.dark,
+            textAlign: 'center',
+            margin: `${theme.spacingMd} 0`,
+          }}
+        >
+          Our Programs
+        </h2>
+        <div
+          className="programs-container"
+          style={{
+            display: 'grid',
+            gap: theme.spacingMd,
+            ...responsiveStyles.programsGrid,
+            maxWidth: '1200px',
+            margin: '0 auto',
+            padding: `${theme.spacingMd} ${theme.spacingSm}`,
+          }}
+        >
+          {programs.map((program, index) => (
+            <div
+              key={index}
+              className="program-card"
+              ref={(el) => (programRefs.current[index] = el)}
+              style={{
+                backgroundColor: theme.white,
+                borderRadius: '12px',
+                overflow: 'hidden',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              }}
+            >
+              <div className="image-placeholder">
+                <img
+                  src={program.image}
+                  alt={program.alt}
+                  style={{
+                    width: '100%',
+                    objectFit: 'cover',
+                    borderBottom: `2px solid ${theme.primaryLight}`,
+                    ...responsiveStyles.programImage,
+                  }}
+                />
               </div>
-              <div className={`program-details ${activeProgram === index ? 'active' : ''}`}>
-                {program.details.map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
-                ))}
+              <div style={{ padding: theme.spacingSm }}>
+                <h3
+                  style={{
+                    fontFamily: theme.fontHeading,
+                    fontSize: theme.h3Size,
+                    color: theme.primaryDark,
+                    margin: `0 0 ${theme.spacingXs}`,
+                  }}
+                >
+                  {program.title}
+                </h3>
+                <p
+                  style={{
+                    fontFamily: theme.fontBody,
+                    fontSize: theme.bodySize,
+                    color: theme.darkGray,
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {program.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Impact Section */}
+      <section className="impact-section">
+        <h2
+          style={{
+            fontFamily: theme.fontHeading,
+            fontSize: theme.h2Size,
+            color: theme.dark,
+            textAlign: 'center',
+            margin: `${theme.spacingMd} 0`,
+          }}
+        >
+          Our Impact
+        </h2>
+        <ImpactCards data={impactData} />
+      </section>
+
       {/* Case Studies */}
       <section className="case-studies">
-        <h2>Stories of Health Transformation</h2>
-        <div className="case-container">
-          <div className="case-card">
-            <h3>Maria Namukasa - Mubende</h3>
-            <p>
-              Maria was pregnant with her third child when complications developed. Thanks to our first maternal waiting home, she received timely care during a difficult delivery. Today, both Maria and her baby boy are healthy.
-            </p>
-            <img src="/assets/images/maria.png" alt="Maria with her healthy baby" className="image-placeholder" />
-          </div>
-          <div className="case-card">
-            <h3>Brenda Ochieng - Soroti</h3>
-            <p>
-              Sixteen-year-old Brenda suffered from recurring malaria until her family received insecticide-treated nets through our program. Now malaria-free for over six months, she's thriving in school and her parents have become active participants in our community health education sessions.
-            </p>
-            <img src="/assets/images/mosquito-net.png" alt="Brenda with her mosquito net" className="image-placeholder" />
-          </div>
+        <h2
+          style={{
+            fontFamily: theme.fontHeading,
+            fontSize: theme.h2Size,
+            color: theme.dark,
+            textAlign: 'center',
+            margin: `${theme.spacingMd} 0`,
+          }}
+        >
+          Stories of Health Transformation
+        </h2>
+        <div
+          className="case-container"
+          style={{
+            display: 'grid',
+            gap: theme.spacingMd,
+            ...responsiveStyles.caseGrid,
+            maxWidth: '1200px',
+            margin: '0 auto',
+            padding: `${theme.spacingMd} ${theme.spacingSm}`,
+          }}
+        >
+          {caseStudies.map((caseStudy, index) => (
+            <div
+              key={index}
+              className="case-card"
+              ref={(el) => (caseRefs.current[index] = el)}
+              style={{
+                backgroundColor: theme.white,
+                borderRadius: '12px',
+                overflow: 'hidden',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              }}
+            >
+              <div className="image-placeholder">
+                <img
+                  src={caseStudy.image}
+                  alt={caseStudy.alt}
+                  style={{
+                    width: '100%',
+                    objectFit: 'cover',
+                    borderBottom: `2px solid ${theme.primaryLight}`,
+                    ...responsiveStyles.programImage,
+                  }}
+                />
+              </div>
+              <div style={{ padding: theme.spacingSm }}>
+                <h3
+                  style={{
+                    fontFamily: theme.fontHeading,
+                    fontSize: theme.h3Size,
+                    color: theme.primaryDark,
+                    margin: `0 0 ${theme.spacingXs}`,
+                  }}
+                >
+                  {caseStudy.title}
+                </h3>
+                <p
+                  style={{
+                    fontFamily: theme.fontBody,
+                    fontSize: theme.bodySize,
+                    color: theme.darkGray,
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {caseStudy.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      
-    </div>
-  );
-};
-
-export default Healthcare;
+      {/* Call to Action */}
+      <section className="cta-section">
+        <div
+          className="cta-container"
+          style={{
+            textAlign: 'center',
+            padding: `${theme.spacingMd} ${theme.spacingSm}`,
+            maxWidth: '800px',
+            margin: '0 auto',
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: theme.fontHeading,
+              fontSize: theme.h2Size,
+              color: theme.dark,
+              margin: `0 0 ${theme.spacingSm}`,
+            }}
+          >
+            Join Us in Transforming Healthcare
+          </h2>
+          <p
+            style={{
+              fontFamily: theme.fontBody,
+              fontSize: theme.bodySize,
+              color: theme.darkGray,
+              margin: `0 0 ${theme.spacingMd}`,
+              lineHeight: 1.6,
+            }}
+          >
+            Your support can bring vital healthcare to Uganda’s underserved communities. Partner with us or donate to make a lasting
