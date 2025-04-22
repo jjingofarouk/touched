@@ -139,7 +139,7 @@ const AnnualReports = () => {
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
             }}
           >
-            Annual Reports & Impact Documentation
+            Project Reports & Impact Documentation
           </h1>
           <p
             style={{
@@ -152,7 +152,7 @@ const AnnualReports = () => {
               marginBottom: theme.spacingMd,
             }}
           >
-            Explore our comprehensive collection of annual reports documenting our community projects, their outcomes, and the lasting positive impact we've made together.
+            Explore our comprehensive collection of project reports documenting our community activities, their outcomes, and the lasting positive impact we've made together.
           </p>
           <div
             style={{
@@ -204,7 +204,7 @@ const AnnualReports = () => {
 
       {/* Reports Section */}
       <section className="reports-section">
-        <h2>Our Annual Reports</h2>
+        <h2>Our Project Reports</h2>
         <div
           className="reports-container"
           style={{

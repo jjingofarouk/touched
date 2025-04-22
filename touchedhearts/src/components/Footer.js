@@ -45,7 +45,7 @@ const Footer = () => {
         <div className="footer-column">
           <h3 className="footer-heading">Resources</h3>
           <ul className="footer-links">
-            <li><NavLink to="/annual-reports" className="footer-link">Annual Reports</NavLink></li>
+            <li><NavLink to="/annual-reports" className="footer-link">Project Reports</NavLink></li>
             <li><NavLink to="/financial-statements" className="footer-link">Financial Statements</NavLink></li>
             <li><NavLink to="/media" className="footer-link">Media Resources</NavLink></li>
             <li><NavLink to="/stories" className="footer-link">Success Stories</NavLink></li>
