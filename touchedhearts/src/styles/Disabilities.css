@@ -1,0 +1,52 @@
+/* styles/disabilities.css */
+.disabilities-page * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.disabilities-page a:hover {
+  background-color: #b87339;
+}
+
+.program-item,
+.case-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.program-item.show,
+.case-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.program-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f8f7f5;
+  border-radius: 6px;
+}
+
+.program-header.active {
+  background-color: #8cc5bf;
+}
+
+.program-details {
+  display: none;
+  padding: 1rem;
+}
+
+.program-details.active {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .case-container {
+    grid-template-columns: 1fr;
+  }
+}
