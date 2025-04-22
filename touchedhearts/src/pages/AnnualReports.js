@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import './AnnualReports.css'; // Assuming you have a CSS file for styling
+import headerImage from '../assets/images/bgs/reports-header.png'; // Import the image
+import './AnnualReports.css';
 
 const AnnualReports = () => {
   const [reports, setReports] = useState([]);
@@ -11,23 +12,22 @@ const AnnualReports = () => {
     const fetchedReports = [
       {
         id: 1,
-        title: 'Hope After Floods Project 2025',
-        description: 'Extended relief to Kawempe flood victims.',
-        imageUrl: '/assets/images/reports/kawempe.jpg', // Replace with actual image path
-        googleDriveLink: 'https://drive.google.com/file/d/1zILWKhZ8Kzc3w2WGhsMfImY2MRTy0TOl/view?usp=drivesdk',
-        projectDate: 'April 3, 2025',
-        relatedDetails: 'Provided relief for victims of floods that swept through Kawempe Division on April 3, 2025.',
+        title: 'Community Health Initiative 2023',
+        description: 'Improved healthcare access for 500+ families in rural areas.',
+        imageUrl: '/images/health-initiative-2023.jpg', // Still in public/
+        googleDriveLink: 'https://drive.google.com/file/d/EXAMPLE_ID_2023/view',
+        projectDate: 'December 2023',
+        relatedDetails: 'Partnered with local clinics, funded by ABC Foundation.',
       },
       {
         id: 2,
         title: 'Education Program 2022',
         description: 'Provided scholarships and resources to 200 students.',
-        imageUrl: '/assets/images/reports/scholarships.png', // Replace with actual image path
+        imageUrl: '/images/education-program-2022.jpg', // Still in public/
         googleDriveLink: 'https://drive.google.com/file/d/EXAMPLE_ID_2022/view',
         projectDate: 'August 2022',
         relatedDetails: 'Collaborated with XYZ Education Trust.',
       },
-      // Add more reports as needed
     ];
 
     setReports(fetchedReports);
@@ -35,9 +35,16 @@ const AnnualReports = () => {
 
   return (
     <div>
+      <Navbar />
 
-      {/* Page Header43 */}
-      <section className="page-header" role="banner">
+      {/* Page Header with inline background image */}
+      <section
+        className="page-header"
+        role="banner"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${headerImage})`,
+        }}
+      >
         <h1>Annual Reports</h1>
         <p className="header-subtitle">Explore our projects and their impact</p>
       </section>
@@ -76,6 +83,7 @@ const AnnualReports = () => {
         </div>
       </section>
 
+      <Footer />
     </div>
   );
 };
