@@ -1,191 +1,362 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
-import logo from '../assets/images/logo.jpg';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import aboutImage from '../assets/images/D1.jpg';
+import educationSupportImage from '../assets/images/C3.jpg';
+import healthcareSupportImage from '../assets/images/H50.jpg';
+import womenEmpowermentImage from '../assets/images/C5.jpg';
 
-// Utility function for debouncing
-const debounce = (func, wait) => {
-  let timeout;
-  return (...args) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), wait);
-  };
+const theme = {
+  primaryColor: '#3a8f85',
+  primaryDark: '#2c7269',
+  primaryLight: '#8cc5bf',
+  secondaryColor: '#d68c45',
+  secondaryDark: '#b87339',
+  secondaryLight: '#e9b384',
+  dark: '#2d3a3a',
+  darkGray: '#4d5c5c',
+  mediumGray: '#7e8c8c',
+  lightGray: '#d2d8d8',
+  offWhite: '#f8f7f5',
+  white: '#ffffff',
+  success: '#739e73',
+  warning: '#e6b86a',
+  error: '#c17b7b',
+  info: '#6a91ab',
+  fontHeading: "'Lora', serif",
+  fontBody: "'Poppins', sans-serif",
+  h1Size: 'clamp(2.5rem, 5vw, 3.5rem)',
+  h2Size: 'clamp(1.75rem, 4vw, 2.5rem)',
+  h3Size: 'clamp(1.25rem, 3vw, 1.75rem)',
+  bodySize: 'clamp(1rem, 2vw, 1.125rem)',
+  smallText: 'clamp(0.875rem, 1.5vw, 1rem)',
+  spacingXs: '0.5rem',
+  spacingSm: '1rem',
+  spacingMd: '2rem',
+  spacingLg: '4rem',
+  spacingXl: '6rem',
 };
 
-const Navbars = () => {
-  const [expanded, setExpanded] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const [prevScrollY, setPrevScrollY] = useState(0);
-  const navbarRef = useRef(null);
+const About = () => {
+  const [responsiveStyles, setResponsiveStyles] = useState({
+    aboutContent: { flexDirection: 'row' },
+    aboutImage: { width: '50%' },
+    existContainer: { gridTemplateColumns: 'repeat(3, 1fr)' },
+    sectionPadding: { padding: `${theme.spacingLg} ${theme.spacingSm}` },
+  });
 
-  const styles = {
-    navbar: {
-      backgroundColor: '#2d3a3a',
-      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-      transition: 'top 0.3s ease-in-out',
-      position: 'fixed', // Changed to fixed for consistent behavior
-      top: visible ? '0' : '-100px',
-      left: 0,
-      width: '100%',
-      height: '80px',
-      zIndex: 1000,
-    },
-    navLink: { color: '#f8f7f5' },
-    donateButton: {
-      backgroundColor: '#d68c45',
-      borderColor: '#d68c45',
-      color: '#ffffff',
-      fontWeight: 600,
-      padding: '0.5rem 1rem',
-      transition: 'all 0.2s ease',
-    },
-    brandText: {
-      color: '#f8f7f5',
-      fontSize: '1.2rem',
-      fontWeight: 700,
-      letterSpacing: '1px',
-      marginLeft: '0.5rem',
-      textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)',
-    },
-  };
-
-  // Scroll effect with debouncing
   useEffect(() => {
-    const handleScroll = debounce(() => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > prevScrollY && currentScrollY > 50) {
-        setVisible(false); // Hide navbar when scrolling down
-      } else if (currentScrollY < prevScrollY) {
-        setVisible(true); // Show navbar when scrolling up
-      }
-      setPrevScrollY(currentScrollY);
-    }, 100); // Debounce for 100ms
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollY]);
-
-  // Handle clicks outside navbar and ESC key
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (navbarRef.current && !navbarRef.current.contains(event.target) && expanded) {
-        setExpanded(false);
-      }
+    const handleResize = () => {
+      const isMobile = window.innerWidth <= 768;
+      setResponsiveStyles({
+        aboutContent: isMobile ? { flexDirection: 'column', padding: theme.spacingMd } : { flexDirection: 'row' },
+        aboutImage: isMobile ? { width: '100%', height: 'auto' } : { width: '50%' },
+        existContainer: isMobile ? { gridTemplateColumns: '1fr' } : { gridTemplateColumns: 'repeat(3, 1fr)' },
+        sectionPadding: isMobile ? { padding: `${theme.spacingMd} ${theme.spacingSm}` } : { padding: `${theme.spacingLg} ${theme.spacingSm}` },
+      });
     };
 
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape' && expanded) {
-        setExpanded(false);
-      }
-    };
+    // Set initial responsive styles
+    handleResize();
 
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('touchstart', handleClickOutside);
-    document.addEventListener('keydown', handleKeyDown);
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
 
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchstart', handleClickOutside);
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [expanded]);
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <Navbar
-      expand="lg"
-      style={styles.navbar}
-      variant="dark"
-      expanded={expanded}
-      onToggle={() => setExpanded(!expanded)}
-      ref={navbarRef}
-      aria-label="Main navigation"
-    >
-      <Container className="d-flex align-items-center">
-        <Navbar.Brand as={NavLink} to="/" style={styles.navLink}>
-          <img
-            src={logo}
-            alt="Touched Hearts Logo"
-            height="25"
-            width="50"
-            className="d-inline-block align-top"
-          />
-        </Navbar.Brand>
-
-        {/* Brand Name - Visible on mobile only */}
-        <div className="brand-name d-flex d-lg-none flex-grow-1 justify-content-center">
-          <span style={styles.brandText}>Touched Hearts</span>
+    <main style={{ paddingTop: '80px' /* Exact navbar height */ }}>
+      {/* Page Header */}
+      <section
+        role="banner"
+        style={{
+          textAlign: 'center',
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${aboutImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          color: theme.white,
+          minHeight: '300px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          ...responsiveStyles.sectionPadding,
+        }}
+      >
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h1
+            style={{
+              fontFamily: theme.fontHeading,
+              fontSize: theme.h1Size,
+              margin: `0 0 ${theme.spacingSm}`,
+              color: theme.white,
+              textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+            }}
+          >
+            About Touched Hearts
+          </h1>
+          <p
+            style={{
+              fontFamily: theme.fontBody,
+              fontSize: theme.bodySize,
+              color: theme.offWhite,
+              maxWidth: '700px',
+              margin: '0 auto',
+              lineHeight: 1.6,
+              marginBottom: theme.spacingMd,
+            }}
+          >
+            Learn about our mission, vision, and the impactful work we do to uplift Uganda's most vulnerable communities.
+          </p>
         </div>
+      </section>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="ms-auto" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            {[
-              { to: '/', label: 'Home' },
-              { to: '/about', label: 'About Us' },
-              { to: '/education', label: 'Education' },
-              { to: '/healthcare', label: 'Healthcare' },
-              { to: '/disabilities', label: 'Disability Support' },
-              { to: '/community', label: 'Community' },
-              { to: '/stories', label: 'Stories' },
-              { to: '/gallery', label: 'Gallery' },
-              { to: '/get-involved', label: 'Get Involved' },
-            ].map((link) => (
-              <Nav.Link
-                key={link.to}
-                as={NavLink}
-                to={link.to}
-                style={styles.navLink}
-                className="nav-link-custom"
-                onClick={() => setExpanded(false)} // Close navbar on link click
-              >
-                {link.label}
-              </Nav.Link>
-            ))}
-          </Nav>
-          <Nav className="ms-auto align-items-center">
-            <Button
-              as={NavLink}
-              to="/donate"
-              style={styles.donateButton}
-              className="donate-button-custom ms-2"
-              onClick={() => setExpanded(false)} // Close navbar on button click
+      {/* About Section */}
+      <section
+        aria-labelledby="our-story"
+        style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          ...responsiveStyles.sectionPadding,
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            gap: theme.spacingMd,
+            alignItems: 'center',
+            ...responsiveStyles.aboutContent,
+          }}
+        >
+          <div style={{ flex: 1 }}>
+            <h2
+              id="our-story"
+              style={{
+                fontFamily: theme.fontHeading,
+                fontSize: theme.h2Size,
+                color: theme.primaryDark,
+                marginBottom: theme.spacingSm,
+              }}
             >
-              Donate Now
-            </Button>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
+              Our Story
+            </h2>
+            <p
+              style={{
+                fontFamily: theme.fontBody,
+                fontSize: theme.bodySize,
+                color: theme.darkGray,
+                lineHeight: 1.6,
+                marginBottom: theme.spacingMd,
+              }}
+            >
+              Touched Hearts was founded in 2020 with a mission to support Uganda's most vulnerable communities, including children, women, and persons with disabilities. Our journey began with a small group of passionate medical students dedicated to making a difference in Kabale District. Today, we have impacted thousands of Ugandans through education, healthcare, and empowerment programs.
+            </p>
+            <h2
+              style={{
+                fontFamily: theme.fontHeading,
+                fontSize: theme.h2Size,
+                color: theme.primaryDark,
+                marginBottom: theme.spacingSm,
+              }}
+            >
+              Our Mission
+            </h2>
+            <p
+              style={{
+                fontFamily: theme.fontBody,
+                fontSize: theme.bodySize,
+                color: theme.darkGray,
+                lineHeight: 1.6,
+                marginBottom: theme.spacingMd,
+              }}
+            >
+              We strive to uplift underprivileged individuals by providing access to basic needs, education, and development opportunities for a decent life.
+            </p>
+            <h2
+              style={{
+                fontFamily: theme.fontHeading,
+                fontSize: theme.h2Size,
+                color: theme.primaryDark,
+                marginBottom: theme.spacingSm,
+              }}
+            >
+              Our Vision
+            </h2>
+            <p
+              style={{
+                fontFamily: theme.fontBody,
+                fontSize: theme.bodySize,
+                color: theme.darkGray,
+                lineHeight: 1.6,
+              }}
+            >
+              We envision a future where every vulnerable person in Uganda has access to a dignified life.
+            </p>
+          </div>
+          <figure style={{ flex: 1, margin: 0 }}>
+            <img
+              src={aboutImage}
+              alt="Touched Hearts team working with community in Uganda"
+              style={{
+                width: '100%',
+                borderRadius: '12px',
+                objectFit: 'cover',
+                ...responsiveStyles.aboutImage,
+              }}
+            />
+            <figcaption style={{ position: 'absolute', width: '1px', height: '1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)' }}>
+              Touched Hearts in action supporting Uganda's communities
+            </figcaption>
+          </figure>
+        </div>
+      </section>
 
-      <style jsx>{`
-        .nav-link-custom:hover {
-          color: #8cc5bf !important;
-          transition: color 0.2s ease;
-        }
-        .nav-link-custom.active {
-          color: #ffffff !important;
-          fontWeight: 600;
-        }
-        .donate-button-custom {
-          background-color: #d68c45 !important;
-          border-color: #d68c45 !important;
-        }
-        .donate-button-custom:hover {
-          background-color: #b87339 !important;
-          border-color: #b87339 !important;
-          transform: scale(1.05);
-        }
-        .brand-name span:hover {
-          color: #8cc5bf !important;
-          transition: color 0.2s ease;
-        }
-      `}</style>
-    </Navbar>
+      {/* Why We Exist Section */}
+      <section
+        aria-labelledby="why-we-exist-heading"
+        style={{
+          backgroundColor: theme.offWhite,
+          ...responsiveStyles.sectionPadding,
+        }}
+      >
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h2
+            id="why-we-exist-heading"
+            style={{
+              fontFamily: theme.fontHeading,
+              fontSize: theme.h2Size,
+              color: theme.primaryDark,
+              textAlign: 'center',
+              marginBottom: theme.spacingMd,
+            }}
+          >
+            Why We Exist
+          </h2>
+          <div style={{ display: 'grid', gap: theme.spacingMd, ...responsiveStyles.existContainer }}>
+            {[
+              {
+                image: educationSupportImage,
+                title: 'Education for All',
+                description: 'We provide scholarships and learning materials to children from low-income families.',
+                alt: 'Children receiving education support',
+              },
+              {
+                image: healthcareSupportImage,
+                title: 'Healthcare Support',
+                description: 'We offer free medical check-ups and ensure access to essential health services for people in remote areas.',
+                alt: 'Healthcare professional assisting patient',
+              },
+              {
+                image: womenEmpowermentImage,
+                title: 'Women's Empowerment',
+                description: 'We equip women with vocational skills to help them achieve financial independence.',
+                alt: 'Women in vocational training',
+              },
+            ].map((item, index) => (
+              <article
+                key={index}
+                style={{
+                  backgroundColor: theme.white,
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                }}
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  style={{
+                    width: '100%',
+                    height: '220px',
+                    objectFit: 'cover',
+                    borderBottom: `2px solid ${theme.primaryLight}`,
+                    ...responsiveStyles.aboutImage,
+                  }}
+                />
+                <div style={{ padding: theme.spacingSm }}>
+                  <h3
+                    style={{
+                      fontFamily: theme.fontHeading,
+                      fontSize: theme.h3Size,
+                      color: theme.primaryDark,
+                      margin: `0 0 ${theme.spacingXs}`,
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: theme.fontBody,
+                      fontSize: theme.bodySize,
+                      color: theme.darkGray,
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {item.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Meet the Team Teaser */}
+      <section
+        aria-labelledby="meet-team-heading"
+        style={{
+          textAlign: 'center',
+          maxWidth: '1200px',
+          margin: '0 auto',
+          ...responsiveStyles.sectionPadding,
+        }}
+      >
+        <h2
+          id="meet-team-heading"
+          style={{
+            fontFamily: theme.fontHeading,
+            fontSize: theme.h2Size,
+            color: theme.primaryDark,
+            marginBottom: theme.spacingSm,
+          }}
+        >
+          Meet Our Team
+        </h2>
+        <p
+          style={{
+            fontFamily: theme.fontBody,
+            fontSize: theme.bodySize,
+            color: theme.darkGray,
+            maxWidth: '700px',
+            margin: '0 auto',
+            lineHeight: 1.6,
+            marginBottom: theme.spacingMd,
+          }}
+        >
+          Behind Touched Hearts is a team of dedicated individuals committed to making a difference.
+        </p>
+        <NavLink
+          to="/team"
+          style={{
+            display: 'inline-block',
+            padding: `${theme.spacingXs} ${theme.spacingMd}`,
+            backgroundColor: theme.secondaryColor,
+            color: theme.white,
+            fontFamily: theme.fontBody,
+            fontSize: theme.bodySize,
+            fontWeight: 600,
+            textDecoration: 'none',
+            borderRadius: '6px',
+            transition: 'background-color 0.3s ease',
+          }}
+        >
+          Meet the Team
+        </NavLink>
+      </section>
+    </main>
   );
 };
 
-export default Navbars;
+export default About;
