@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState, useEffect, useRef } from 'react';
 
 const Navbars = () => {
   const [expanded, setExpanded] = useState(false);
@@ -18,8 +19,8 @@ const Navbars = () => {
       backgroundColor: '#2d3a3a',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
       transition: 'top 0.3s ease-in-out',
-      position: 'fixed', // Sticky on all devices
-      top: visible ? '0' : '-100px', // Hide/show effect
+      position: 'fixed',
+      top: visible ? '0' : '-100px',
       left: 0,
       width: '100%',
       zIndex: 1000,
@@ -35,12 +36,28 @@ const Navbars = () => {
     },
     brandText: {
       color: '#f8f7f5',
-      fontSize: '1.2rem', // Smaller for mobile
+      fontSize: '1.2rem',
       fontWeight: 700,
       letterSpacing: '1px',
       marginLeft: '0.5rem',
       textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)',
     },
+    logoContainer: {
+      width: '40px',
+      height: '40px',
+      borderRadius: '50%',
+      overflow: 'hidden',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#ffffff',
+      border: '2px solid #8cc5bf',
+    },
+    logoImage: {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+    }
   };
 
   // Scroll effect for hide/show on all devices
@@ -49,10 +66,8 @@ const Navbars = () => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > prevScrollY && currentScrollY > 50) {
-        // Scrolling down past 50px - hide navbar
         setVisible(false);
       } else if (currentScrollY < prevScrollY) {
-        // Scrolling up - show navbar
         setVisible(true);
       }
       setPrevScrollY(currentScrollY);
@@ -96,14 +111,16 @@ const Navbars = () => {
       ref={navbarRef}
     >
       <Container className="d-flex align-items-center">
-        <Navbar.Brand as={NavLink} to="/" style={styles.navLink}>
-          <img
-            src={logo}
-            alt="Touched Hearts Logo"
-            height="25"
-            width="50"
-            className="d-inline-block align-top"
-          />
+        <Navbar.Brand as={NavLink} to="/" style={styles.navLink} className="d-flex align-items-center">
+          <div style={styles.logoContainer} className="logo-circle">
+            <img
+              src={logo}
+              alt="Touched Hearts Logo"
+              style={styles.logoImage}
+              className="logo-image"
+            />
+          </div>
+          <span style={styles.brandText} className="d-none d-lg-inline ms-2">Touched Hearts</span>
         </Navbar.Brand>
 
         {/* Brand Name - Visible on mobile only */}
@@ -176,6 +193,16 @@ const Navbars = () => {
         .brand-name span:hover {
           color: #8cc5bf !important;
           transition: color 0.2s ease;
+        }
+        .logo-circle {
+          transition: transform 0.3s ease;
+        }
+        .logo-circle:hover {
+          transform: scale(1.1);
+          border-color: #d68c45;
+        }
+        .logo-image {
+          transition: transform 0.3s ease;
         }
       `}</style>
     </Navbar>
