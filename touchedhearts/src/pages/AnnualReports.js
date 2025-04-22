@@ -48,18 +48,18 @@ const AnnualReports = () => {
     const fetchedReports = [
       {
         id: 1,
-        title: 'Community Health Initiative 2023',
-        description: 'Improved healthcare access for 500+ families in rural areas.',
+        title: 'Hope After Floods Project 2025',
+        description: 'Extended relief to Kawempe flood victims.',
         imageUrl: '/assets/images/reports/kawempe.jpg', // Still in public/
-        googleDriveLink: 'https://drive.google.com/file/d/EXAMPLE_ID_2023/view',
-        projectDate: 'December 2023',
-        relatedDetails: 'Partnered with local clinics, funded by ABC Foundation.',
+        googleDriveLink: 'https://drive.google.com/file/d/1zILWKhZ8Kzc3w2WGhsMfImY2MRTy0TOl/view?usp=drivesdk',
+        projectDate: 'April 3, 2025',
+        relatedDetails: 'Provided relief for victims of floods that swept through Kawempe Division on April 3, 2025.',
       },
       {
         id: 2,
-        title: 'Education Program 2022',
+        title: 'Scholarship Program 2024',
         description: 'Provided scholarships and resources to 20 students.',
-        imageUrl: '/assets/images/scholarships.png', // Still in public/
+        imageUrl: '/assets/images/reports/scholarships.png', // Still in public/
         googleDriveLink: 'https://drive.google.com/file/d/1zILWKhZ8Kzc3w2WGhsMfImY2MRTy0TOl/view?usp=drivesdk',
         projectDate: 'September 2023',
         relatedDetails: 'Collaborated with Rines Secondary School Scholarship Trust.',
