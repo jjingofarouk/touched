@@ -1,6 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import '../styles/annual-reports.css'; // Assuming a similar CSS file for styling
 import headerImage from './reports-header.png';
 
+// Define theme variables consistent with the Community component
 const theme = {
   primaryColor: '#3a8f85',
   primaryDark: '#2c7269',
@@ -33,54 +37,92 @@ const theme = {
 };
 
 const AnnualReports = () => {
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
   const [reports, setReports] = useState([]);
   const [latestReport, setLatestReport] = useState(null);
 
-  useEffect(() => {
-    const fetchedReports = [
-      {
-        id: 1,
-        title: 'Hope After Floods Project 2025',
-        description: 'Extended relief to Kawempe flood victims.',
-        imageUrl: '/assets/images/reports/kawempe.jpg',
-        googleDriveLink: 'https://drive.google.com/file/d/1zILWKhZ8Kzc3w2WGhsMfImY2MRTy0TOl/view?usp=drivesdk',
-        projectDate: '2025-04-03',
-        relatedDetails: 'Provided relief for victims of floods that swept through Kawempe Division on April 3, 2025.',
-      },
-      {
-        id: 2,
-        title: 'Scholarship Program 2024',
-        description: 'Provided scholarships and resources to 20 students.',
-        imageUrl: '/assets/images/reports/scholarships.png',
-        googleDriveLink: 'https://drive.google.com/file/d/1zILWKhZ8Kzc3w2WGhsMfImY2MRTy0TOl/view?usp=drivesdk',
-        projectDate: '2023-09-01',
-        relatedDetails: 'Collaborated with Rines Secondary School Scholarship Trust.',
-      },
-    ];
+  // Reports data
+  const reportsData = [
+    {
+      id: 1,
+      title: 'Hope After Floods Project 2025',
+      description: 'Extended relief to Kawempe flood victims.',
+      imageUrl: '/assets/images/reports/kawempe.jpg',
+      googleDriveLink: 'https://drive.google.com/file/d/1zILWKhZ8Kzc3w2WGhsMfImY2MRTy0TOl/view?usp=drivesdk',
+      projectDate: '2025-04-03',
+      relatedDetails: 'Provided relief for victims of floods that swept through Kawempe Division on April 3, 2025.',
+    },
+    {
+      id: 2,
+      title: 'Scholarship Program 2024',
+      description: 'Provided scholarships and resources to 20 students.',
+      imageUrl: '/assets/images/reports/scholarships.png',
+      googleDriveLink: 'https://drive.google.com/file/d/1zILWKhZ8Kzc3w2WGhsMfImY2MRTy0TOl/view?usp=drivesdk',
+      projectDate: '2023-09-01',
+      relatedDetails: 'Collaborated with Rines Secondary School Scholarship Trust.',
+    },
+  ];
 
-    const sortedReports = fetchedReports.sort((a, b) => new Date(b.projectDate) - new Date(a.projectDate));
+  useEffect(() => {
+    // Sort and set reports
+    const sortedReports = reportsData.sort((a, b) => new Date(b.projectDate) - new Date(a.projectDate));
     setReports(sortedReports);
     setLatestReport(sortedReports[0]);
+
+    // Handle window resize for responsive styles
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Scroll animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll('.report-card').forEach((item) => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(item);
+    });
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
+  // Responsive styles
   const responsiveStyles = {
-    reportsGrid: window.innerWidth <= 768 ? { gridTemplateColumns: '1fr' } : { gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' },
-    pageHeader: window.innerWidth <= 768 ? { padding: `${theme.spacingMd} ${theme.spacingSm}` } : { padding: `${theme.spacingXl} ${theme.spacingSm}` },
-    reportImage: window.innerWidth <= 768 ? { height: '180px' } : { height: '220px' },
+    pageHeader: windowWidth <= 768 ? { padding: `${theme.spacingMd} ${theme.spacingSm}` } : {},
+    reportsGrid: windowWidth <= 768 ? { gridTemplateColumns: '1fr' } : { gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' },
+    reportImage: windowWidth <= 768 ? { height: '180px' } : { height: '220px' },
   };
 
   return (
-    <div style={{ paddingTop: '80px' /* Adjust based on navbar height */ }}>
-      {/* Page Header */}
+    <div className="annual-reports-page">
+
+      {/* Enhanced Header Section */}
       <section
         role="banner"
         style={{
           textAlign: 'center',
+          padding: `${theme.spacingXl} ${theme.spacingSm}`,
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${headerImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           color: theme.white,
+          position: 'relative',
           minHeight: '300px',
           display: 'flex',
           flexDirection: 'column',
@@ -113,7 +155,14 @@ const AnnualReports = () => {
           >
             Explore our comprehensive collection of annual reports documenting our community projects, their outcomes, and the lasting positive impact we've made together.
           </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: theme.spacingSm, flexWrap: 'wrap' }}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: theme.spacingSm,
+              flexWrap: 'wrap',
+            }}
+          >
             <a
               href={latestReport?.googleDriveLink}
               target="_blank"
@@ -126,13 +175,15 @@ const AnnualReports = () => {
                 borderRadius: '6px',
                 fontFamily: theme.fontBody,
                 fontWeight: 600,
+                cursor: 'pointer',
                 textDecoration: 'none',
                 transition: 'background-color 0.3s ease',
               }}
             >
               Latest Report
             </a>
-            <button
+            <a
+              href="/reports-archive"
               style={{
                 padding: `${theme.spacingXs} ${theme.spacingMd}`,
                 backgroundColor: 'transparent',
@@ -142,43 +193,34 @@ const AnnualReports = () => {
                 fontFamily: theme.fontBody,
                 fontWeight: 600,
                 cursor: 'pointer',
+                textDecoration: 'none',
                 transition: 'all 0.3s ease',
               }}
             >
               View Archive
-            </button>
+            </a>
           </div>
         </div>
       </section>
 
       {/* Reports Section */}
-      <section
-        aria-labelledby="reports-heading"
-        style={{
-          padding: `${theme.spacingMd} ${theme.spacingSm}`,
-          maxWidth: '1200px',
-          margin: '0 auto',
-        }}
-      >
-        <h2
-          id="reports-heading"
+      <section className="reports-section">
+        <h2>Our Annual Reports</h2>
+        <div
+          className="reports-container"
           style={{
-            position: 'absolute',
-            width: '1px',
-            height: '1px',
-            padding: 0,
-            margin: '-1px',
-            overflow: 'hidden',
-            clip: 'rect(0, 0, 0, 0)',
-            border: 0,
+            display: 'grid',
+            gap: theme.spacingMd,
+            ...responsiveStyles.reportsGrid,
+            maxWidth: '1200px',
+            margin: '0 auto',
+            padding: `${theme.spacingMd} ${theme.spacingSm}`,
           }}
         >
-          Annual Reports
-        </h2>
-        <div style={{ display: 'grid', gap: theme.spacingMd, ...responsiveStyles.reportsGrid }}>
           {reports.map((report) => (
             <div
               key={report.id}
+              className="report-card"
               style={{
                 backgroundColor: theme.white,
                 borderRadius: '12px',
@@ -187,16 +229,18 @@ const AnnualReports = () => {
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              <img
-                src={report.imageUrl}
-                alt={`${report.title} preview`}
-                style={{
-                  width: '100%',
-                  objectFit: 'cover',
-                  borderBottom: `2px solid ${theme.primaryLight}`,
-                  ...responsiveStyles.reportImage,
-                }}
-              />
+              <div className="image-placeholder">
+                <img
+                  src={report.imageUrl}
+                  alt={`${report.title} preview`}
+                  style={{
+                    width: '100%',
+                    objectFit: 'cover',
+                    borderBottom: `2px solid ${theme.primaryLight}`,
+                    ...responsiveStyles.reportImage,
+                  }}
+                />
+              </div>
               <div style={{ padding: theme.spacingSm }}>
                 <h3
                   style={{
@@ -264,6 +308,61 @@ const AnnualReports = () => {
           ))}
         </div>
       </section>
+
+      {/* Call to Action */}
+      <section className="cta-section">
+        <div
+          className="cta-container"
+          style={{
+            textAlign: 'center',
+            padding: `${theme.spacingMd} ${theme.spacingSm}`,
+            maxWidth: '800px',
+            margin: '0 auto',
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: theme.fontHeading,
+              fontSize: theme.h2Size,
+              color: theme.dark,
+              margin: `0 0 ${theme.spacingSm}`,
+            }}
+          >
+            Support Our Mission
+          </h2>
+          <p
+            style={{
+              fontFamily: theme.fontBody,
+              fontSize: theme.bodySize,
+              color: theme.darkGray,
+              margin: `0 0 ${theme.spacingMd}`,
+              lineHeight: 1.6,
+            }}
+          >
+            Your support helps us continue documenting and expanding our impact. Whether through donations, volunteering, or sharing our reports, every action counts.
+          </p>
+          <a
+            href="/get-involved"
+            className="cta-button"
+            style={{
+              padding: `${theme.spacingXs} ${theme.spacingMd}`,
+              backgroundColor: theme.secondaryColor,
+              color: theme.white,
+              border: 'none',
+              borderRadius: '6px',
+              fontFamily: theme.fontBody,
+              fontWeight: 600,
+              cursor: 'pointer',
+              textDecoration: 'none',
+              transition: 'background-color 0.3s ease',
+            }}
+          >
+            Get Involved
+          </a>
+        </div>
+      </section>
+
+
     </div>
   );
 };
