@@ -13,7 +13,7 @@ const AnnualReports = () => {
         id: 1,
         title: 'Hope After Floods Project 2025',
         description: 'Extended relief to Kawempe flood victims.',
-        imageUrl: '/images/kawempe.jpg', // Replace with actual image path
+        imageUrl: '/assets/images/reports/kawempe.jpg', // Replace with actual image path
         googleDriveLink: 'https://drive.google.com/file/d/1zILWKhZ8Kzc3w2WGhsMfImY2MRTy0TOl/view?usp=drivesdk',
         projectDate: 'April 3, 2025',
         relatedDetails: 'Provided relief for victims of floods that swept through Kawempe Division on April 3, 2025.',
@@ -22,7 +22,7 @@ const AnnualReports = () => {
         id: 2,
         title: 'Education Program 2022',
         description: 'Provided scholarships and resources to 200 students.',
-        imageUrl: '/images/education-program-2022.jpg', // Replace with actual image path
+        imageUrl: '/assets/images/reporte/scholarships.png', // Replace with actual image path
         googleDriveLink: 'https://drive.google.com/file/d/EXAMPLE_ID_2022/view',
         projectDate: 'August 2022',
         relatedDetails: 'Collaborated with XYZ Education Trust.',
