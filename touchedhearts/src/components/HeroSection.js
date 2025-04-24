@@ -1,178 +1,76 @@
 
 
-/* src/styles/HeroSection.css */
-.hero-header {
-  padding-left: 0;
-  margin-top: 0;
-  position: relative;
-  margin-bottom: 2rem; /* Space below hero */
-}
+// src/components/HeroSection.js
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { Carousel } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS
+import '../styles/HeroSection.css'; // Custom CSS
 
-.hero-carousel {
-  height: 70vh; /* Default for laptops */
-  min-height: 400px;
-  max-height: 800px;
-}
+// Import your 5 images (ensure paths are correct)
+import photo1 from '../assets/images/photo1.jpg';
+import photo2 from '../assets/images/photo2.jpg';
+import photo3 from '../assets/images/photo3.jpg';
+import photo4 from '../assets/images/photo4.jpg';
+import photo5 from '../assets/images/photo5.jpg';
 
-.hero-image {
-  position: relative;
-  width: 100%;
-  height: 70vh; /* Matches carousel */
-  min-height: 400px;
-  max-height: 800px;
-}
+const HeroSection = () => {
+  const images = [photo1, photo2, photo3, photo4, photo5];
 
-.hero-mask {
-  background-color: rgba(0, 0, 0, 0.6);
-  height: 100%;
-  width: 100%;
-}
+  return (
+    <header className="hero-header">
+      <Carousel
+        controls={true}
+        indicators={true}
+        interval={5000}
+        pause="hover"
+        keyboard={true}
+        className="hero-carousel"
+      >
+        {images.map((image, index) => (
+          <Carousel.Item key={index}>
+            <div
+              className="hero-image"
+              style={{
+                backgroundImage: `url(${image})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'
+              }}
+            >
+              <div className="hero-mask"></div>
+            </div>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+      <div className="hero-overlay d-flex justify-content-center align-items-center">
+        <div className="hero-content">
+          <h1 className="hero-title">Touched Hearts</h1>
+          <h4 className="hero-subtitle">Transforming Lives in Uganda</h4>
+          <NavLink
+            to="/donate"
+            className="hero-button"
+            style={{
+              backgroundColor: '#d68c45',
+              borderColor: '#d68c45'
+            }}
+            onMouseOver={(e) => {
+              e.target.style.backgroundColor = '#b87339';
+              e.target.style.borderColor = '#b87339';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.backgroundColor = '#d68c45';
+              e.target.style.borderColor = '#d68c45';
+            }}
+            role="button"
+            aria-label="Donate Now to Support Our Cause"
+          >
+            Donate Now
+          </NavLink>
+        </div>
+      </div>
+    </header>
+  );
+};
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-
-.hero-content {
-  text-align: center;
-  color: #ffffff; /* Bold white base for all text */
-}
-
-.hero-title {
-  color: #ffffff !important; /* Very bold white */
-  font-weight: bold !important;
-  margin-bottom: 1rem;
-  font-size: 3rem;
-}
-
-.hero-subtitle {
-  color: #ffffff !important; /* Very white */
-  font-weight: normal;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}
-
-.hero-button {
-  color: #ffffff !important; /* Very bold white */
-  font-weight: bold !important;
-  padding: 12px 30px;
-  text-decoration: none;
-  border-radius: 5px;
-  border: 2px solid;
-  transition: all 0.3s ease;
-  display: inline-block;
-  font-size: 1.1rem;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.justify-content-center {
-  justify-content: center;
-}
-
-.align-items-center {
-  align-items: center;
-}
-
-/* Carousel controls */
-.carousel-control-prev,
-.carousel-control-next {
-  z-index: 3; /* Above overlay */
-  width: 5%;
-}
-
-.carousel-indicators {
-  z-index: 3;
-  bottom: 10px;
-}
-
-/* Media Queries for Responsiveness */
-
-/* Laptops (1024px and up) */
-@media (min-width: 1024px) {
-  .hero-carousel,
-  .hero-image {
-    height: 70vh;
-  }
-  .hero-title {
-    font-size: 3rem;
-  }
-  .hero-subtitle {
-    font-size: 1.25rem;
-  }
-  .hero-button {
-    padding: 12px 30px;
-    font-size: 1.1rem;
-  }
-}
-
-/* Tablets (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .hero-carousel,
-  .hero-image {
-    height: 60vh;
-    min-height: 350px;
-  }
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-  .hero-button {
-    padding: 10px 25px;
-    font-size: 1rem;
-  }
-}
-
-/* Phones (up to 767px) */
-@media (max-width: 767px) {
-  .hero-carousel,
-  .hero-image {
-    height: 50vh;
-    min-height: 300px;
-  }
-  .hero-content {
-    padding: 0 10px; /* Prevent text from touching edges */
-  }
-  .hero-title {
-    font-size: 2rem;
-  }
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  .hero-button {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-  }
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 10%;
-  }
-}
-
-/* Very small phones (up to 576px) */
-@media (max-width: 576px) {
-  .hero-carousel,
-  .hero-image {
-    height: 45vh;
-    min-height: 250px;
-  }
-  .hero-title {
-    font-size: 1.5rem;
-  }
-  .hero-subtitle {
-    font-size: 0.9rem;
-  }
-  .hero-button {
-    padding: 6px 15px;
-    font-size: 0.85rem;
-  }
-}
-
+export default HeroSection;
