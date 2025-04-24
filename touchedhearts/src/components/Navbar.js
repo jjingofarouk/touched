@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown'; // Added NavDropdown
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -169,13 +169,12 @@ const Navbars = () => {
                 {item.label}
               </Nav.Link>
             ))}
-            {/* Programs Dropdown */}
+            {/* Programs Dropdown - Removed the onClick handler that was closing the menu */}
             <NavDropdown
               title="Programs"
               id="programs-nav-dropdown"
               style={styles.navLink}
               className="nav-link-custom"
-              onClick={() => setExpanded(false)} // Close mobile menu on dropdown click
             >
               {[
                 { to: '/education', label: 'Education' },
@@ -219,6 +218,14 @@ const Navbars = () => {
           color: #ffffff !important;
           font-weight: 600;
         }
+        /* Improve dropdown styling for better visibility */
+        .dropdown-menu {
+          background-color: #343f3f;
+          border: 1px solid #495757;
+        }
+        .dropdown-item {
+          color: #f8f7f5;
+        }
         .dropdown-item:hover {
           background-color: #8cc5bf !important;
           color: #ffffff !important;
@@ -227,6 +234,10 @@ const Navbars = () => {
           background-color: #2d3a3a !important;
           color: #ffffff !important;
           font-weight: 600;
+        }
+        /* Improve dropdown toggle appearance */
+        .dropdown-toggle::after {
+          vertical-align: middle;
         }
         .donate-button-custom {
           background-color: #d68c45 !important;
