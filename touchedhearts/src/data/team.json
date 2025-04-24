@@ -1,32 +1,169 @@
-[
-  {
-    "name": "Solomon Ssekiranda",
-    "role": "Executive Director",
-    "bio": "Solomon Ssekiranda is a dynamic leader and advocate for transformative education and healthcare solutions. With a Bachelor's degree in Education (Chemistry and Mathematics) from Makerere University and ongoing studies in Medicine and Surgery at Kabale University, he brings a unique blend of academic rigor and practical expertise. As former Vice President and Director of Research and Projects for the Federation of Uganda Medical Students' Association (FUMSA), Solomon spearheaded innovative health and education initiatives, securing partnerships and driving measurable impact. His strategic vision and proven leadership ensure Touched Hearts' mission thrives, fostering sustainable change across communities.",
-    "image": "./assets/images/team/solomon.png"
-  },
-  {
-    "name": "Robinson Byamukama",
-    "role": "Director of Community Health Programs",
-    "bio": "Robinson Byamukama is a trailblazing medical student at Kabale University with an unparalleled commitment to public health. As former President and Director of Community Health for the Federation of Uganda Medical Students' Association (FUMSA), he led high-impact health awareness campaigns, mobilized cross-sector collaborations, and designed interventions that reduced healthcare disparities in underserved regions. His expertise in community engagement and medical knowledge positions him to oversee Touched Hearts' health programs, delivering life-changing services with precision and compassion.",
-    "image": "./assets/images/team/robinson.jpg"
-  },
-  {
-    "name": "Stanley Okecho",
-    "role": "Operations and Communications Manager",
-    "bio": "Stanley Okecho is a master of operational excellence and strategic communication, ensuring Touched Hearts runs seamlessly. With a robust background in community development and advanced leadership training, he has a proven track record of streamlining processes and fostering transparency. Stanley’s exceptional organizational skills have enabled effective coordination of complex initiatives, while his communication expertise amplifies the NGO’s mission to stakeholders worldwide. His dedication to efficiency and clarity drives the organization’s success behind the scenes.",
-    "image": "./assets/images/team/stan.jpg"
-  },
-  {
-    "name": "Judith Nahwera",
-    "role": "Program Development Coordinator",
-    "bio": "Judith Nahwera is a seasoned community development expert whose strategic insight and passion for empowerment have transformed lives. With extensive experience in grassroots organizing, she has designed and scaled sustainable programs that address critical community needs, earning trust and driving impact. Her ability to forge lasting partnerships and tailor initiatives to local contexts has expanded Touched Hearts' reach exponentially. Judith’s meticulous approach to program design and evaluation ensures every project delivers measurable, long-term benefits.",
-    "image": "./assets/images/team/jude.jpg"
-  },
-  {
-    "name": "Farouk Jjingo",
-    "role": "Innovation and Technology Lead",
-    "bio": "Farouk Jjingo is a visionary innovator revolutionizing rural empowerment through cutting-edge technology and social entrepreneurship. Holding a Bachelor's in Medicine and Surgery from Mbarara University, he founded CareWave+ and EcoSpin, initiatives that redefine healthcare access and sustainability. Currently developing a groundbreaking telemedicine platform and scalable recycling programs, Farouk’s expertise in digital health and project management drives Touched Hearts’ most ambitious solutions. His ability to translate complex challenges into actionable, inclusive innovations positions him as a catalyst for transformative change across Uganda.",
-    "image": "./assets/images/team/farouk.png"
+{
+  "organization": "Touched Hearts",
+  "hierarchy": {
+    "governance": {
+      "board_of_directors": {
+        "description": "The Board of Directors provides strategic oversight, ensures ethical compliance, and aligns Touched Hearts with international NGO standards. Comprising 5-7 external experts in finance, law, and development, plus one team representative, the board drives accountability and transparency.",
+        "members": [
+          {
+            "name": "TBD",
+            "role": "Board Chair",
+            "bio": "The Board Chair, an expert in international development, leads strategic governance, ensuring Touched Hearts’ mission aligns with global standards. Their leadership fosters transparency and sustainable growth.",
+            "image": "./assets/images/team/placeholder.png"
+          },
+          {
+            "name": "Solomon Ssekiranda (Representative)",
+            "role": "Board Member",
+            "bio": "As Executive Director and board liaison, Solomon ensures alignment between operational and governance objectives, leveraging his strategic expertise.",
+            "image": "./assets/images/team/solomon.png"
+          }
+        ]
+      },
+      "executive_leadership": {
+        "members": [
+          {
+            "name": "Solomon Ssekiranda",
+            "role": "Executive Director",
+            "bio": "Solomon Ssekiranda, a strategic visionary with a B.Ed. from Makerere University and ongoing MBChB studies at Kabale University, drives Touched Hearts’ transformative education and healthcare initiatives. Formerly Vice President of FUMSA, he secured high-impact partnerships and led pioneering projects, ensuring sustainable community outcomes through rigorous leadership and data-driven strategies.",
+            "image": "./assets/images/team/solomon.png"
+          },
+          {
+            "name": "TBD",
+            "role": "Deputy Director",
+            "bio": "The Deputy Director supports strategic operations, oversees departmental coordination, and ensures resilience in leadership. With expertise in NGO management, they drive scalable, impactful programs globally.",
+            "image": "./assets/images/team/placeholder.png"
+          }
+        ]
+      }
+    },
+    "core_departments": {
+      "programs_department": {
+        "members": [
+          {
+            "name": "Judith Nahwera",
+            "role": "Head of Programs",
+            "bio": "Judith Nahwera, a community development specialist, designs scalable, sustainable programs for Touched Hearts. Her expertise in grassroots mobilization and strategic partnerships drives measurable impact in underserved communities. Through meticulous program evaluation and localized solutions, Judith ensures initiatives deliver long-term, transformative benefits with exceptional efficiency and stakeholder trust.",
+            "image": "./assets/images/team/jude.jpg"
+          },
+          {
+            "name": "Robinson Byamukama",
+            "role": "Director of Community Health Programs",
+            "bio": "Robinson Byamukama, an MBChB candidate at Kabale University, spearheads Touched Hearts’ health programs with unparalleled expertise. As former FUMSA President, he engineered impactful health campaigns and cross-sector collaborations, reducing disparities in underserved regions. His precision in community engagement ensures scalable, evidence-based interventions that transform public health outcomes.",
+            "image": "./assets/images/team/robinson.jpg"
+          }
+        ]
+      },
+      "operations_and_finance_department": {
+        "members": [
+          {
+            "name": "Stanley Okecho",
+            "role": "Head of Operations and Finance",
+            "bio": "Stanley Okecho optimizes Touched Hearts’ operations with exceptional organizational acumen and strategic communication expertise. His advanced training in community development enables seamless coordination of complex initiatives. By streamlining processes and amplifying stakeholder engagement, Stanley ensures operational excellence and transparent, impactful communication aligned with global NGO standards.",
+            "image": "./assets/images/team/stan.jpg"
+          },
+          {
+            "name": "TBD",
+            "role": "Finance Officer",
+            "bio": "The Finance Officer ensures robust financial management, compliance, and transparent reporting. With expertise in nonprofit accounting, they safeguard Touched Hearts’ fiscal integrity and support sustainable growth.",
+            "image": "./assets/images/team/placeholder.png"
+          }
+        ]
+      },
+      "innovation_and_technology_department": {
+        "members": [
+          {
+            "name": "Farouk Jjingo",
+            "role": "Head of Innovation and Technology",
+            "bio": "Farouk Jjingo, MBChB (Mbarara University), pioneers Touched Hearts’ technological advancements. Founding CareWave+ and EcoSpin, he develops telemedicine and sustainability solutions that redefine rural empowerment. His expertise in digital health and scalable innovation delivers inclusive, high-impact programs, positioning Touched Hearts as a leader in transformative NGO technology.",
+            "image": "./assets/images/team/farouk.png"
+          }
+        ]
+      },
+      "communications_and_fundraising_department": {
+        "members": [
+          {
+            "name": "TBD",
+            "role": "Head of Communications and Fundraising",
+            "bio": "The Head of Communications and Fundraising drives donor engagement, branding, and global outreach. With expertise in nonprofit marketing, they secure sustainable funding and amplify Touched Hearts’ mission through strategic campaigns.",
+            "image": "./assets/images/team/placeholder.png"
+          }
+        ]
+      },
+      "support_functions": {
+        "members": [
+          {
+            "name": "TBD",
+            "role": "Monitoring, Evaluation, and Learning (MEL) Coordinator",
+            "bio": "The MEL Coordinator tracks program impact, ensuring data-driven decisions and donor accountability. Their expertise in evaluation methodologies strengthens Touched Hearts’ evidence-based approach and global credibility.",
+            "image": "./assets/images/team/placeholder.png"
+          },
+          {
+            "name": "TBD",
+            "role": "Volunteer and Community Engagement Coordinator",
+            "bio": "The Volunteer Coordinator recruits, trains, and manages volunteers, fostering community trust and participation. Their expertise in grassroots engagement supports Touched Hearts’ mission of localized, impactful change.",
+            "image": "./icity, stakeholder trust, and measurable impact across underserved communities.",
+            "image": "./assets/images/team/jude.jpg"
+          },
+          {
+            "name": "Robinson Byamukama",
+            "role": "Director of Community Health Programs",
+            "reporting_to": "Head of Programs",
+            "bio": "Robinson Byamukama, an MBChB candidate at Kabale University, spearheads Touched Hearts’ health programs with unparalleled expertise. As former FUMSA President, he engineered impactful health campaigns and cross-sector collaborations, reducing disparities in underserved regions. His precision in community engagement ensures scalable, evidence-based interventions that transform public health outcomes.",
+            "image": "./assets/images/team/robinson.jpg"
+          }
+        ]
+      },
+      "operations_and_finance_department": {
+        "head": {
+          "name": "Stanley Okecho",
+          "role": "Head of Operations and Finance",
+          "bio": "Stanley Okecho optimizes Touched Hearts’ operations with exceptional organizational acumen and strategic communication expertise. His advanced training in community development enables seamless coordination of complex initiatives. By streamlining processes and amplifying stakeholder engagement, Stanley ensures operational excellence and transparent, impactful communication aligned with global NGO standards.",
+          "image": "./assets/images/team/stan.jpg"
+        },
+        "team": [
+          {
+            "name": "TBD",
+            "role": "Finance Officer",
+            "reporting_to": "Head of Operations and Finance",
+            "bio": "The Finance Officer ensures robust financial management, compliance, and transparent reporting. With expertise in nonprofit accounting, they safeguard Touched Hearts’ fiscal integrity and support sustainable growth.",
+            "image": "./assets/images/team/placeholder.png"
+          }
+        ]
+      },
+      "innovation_and_technology_department": {
+        "head": {
+          "name": "Farouk Jjingo",
+          "role": "Head of Innovation and Technology",
+          "bio": "Farouk Jjingo, MBChB (Mbarara University), pioneers Touched Hearts’ technological advancements. Founding CareWave+ and EcoSpin, he develops telemedicine and sustainability solutions that redefine rural empowerment. His expertise in digital health and scalable innovation delivers inclusive, high-impact programs, positioning Touched Hearts as a leader in transformative NGO technology.",
+          "image": "./assets/images/team/farouk.png"
+        },
+        "team": []
+      },
+      "communications_and_fundraising_department": {
+        "head": {
+          "name": "TBD",
+          "role": "Head of Communications and Fundraising",
+          "bio": "The Head of Communications and Fundraising drives donor engagement, branding, and global outreach. With expertise in nonprofit marketing, they secure sustainable funding and amplify Touched Hearts’ mission through strategic campaigns.",
+          "image": "./assets/images/team/placeholder.png"
+        },
+        "team": []
+      },
+      "support_functions": {
+        "team": [
+          {
+            "name": "TBD",
+            "role": "Monitoring, Evaluation, and Learning (MEL) Coordinator",
+            "bio": "The MEL Coordinator tracks program impact, ensuring data-driven decisions and donor accountability. Their expertise in evaluation methodologies strengthens Touched Hearts’ evidence-based approach and global credibility.",
+            "image": "./assets/images/team/placeholder.png"
+          },
+          {
+            "name": "TBD",
+            "role": "Volunteer and Community Engagement Coordinator",
+            "bio": "The Volunteer Coordinator recruits, trains, and manages volunteers, fostering community trust and participation. Their expertise in grassroots engagement supports Touched Hearts’ mission of localized, impactful change.",
+            "image": "./assets/images/team/placeholder.png"
+          }
+        ]
+      }
+    }
   }
-]
+}
