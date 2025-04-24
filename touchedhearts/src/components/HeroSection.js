@@ -1,19 +1,23 @@
-// src/components/HeroSection.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS
-import '../styles/HeroSection.css'; // Custom CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/HeroSection.css';
 
-// Import your 5 images (ensure paths are correct)
-import photo1 from '../assets/images/photo1.jpg';
-import photo2 from '../assets/images/photo2.jpg';
-import photo3 from '../assets/images/photo3.jpg';
-import photo4 from '../assets/images/photo4.jpg';
-import photo5 from '../assets/images/photo5.jpg';
+// Import optimized WebP images
+import photo1 from '../assets/images/photo1-1920.webp';
+import photo2 from '../assets/images/photo2-1920.webp';
+import photo3 from '../assets/images/photo3-1920.webp';
+import photo4 from '../assets/images/photo4-1920.webp';
+import photo5 from '../assets/images/photo5-1920.webp';
 
 const HeroSection = () => {
   const images = [photo1, photo2, photo3, photo4, photo5];
+
+  useEffect(() => {
+    const preloadImage = new Image();
+    preloadImage.src = images[0]; // Preload first image
+  }, []);
 
   return (
     <header className="hero-header">
@@ -27,17 +31,18 @@ const HeroSection = () => {
       >
         {images.map((image, index) => (
           <Carousel.Item key={index}>
-            <div
+            <img
+              src={image}
+              srcSet={`
+                ${image.replace('1920', '1200')} 1200w,
+                ${image} 1920w
+              `}
+              sizes="(max-width: 1200px) 1200px, 1920px"
+              alt={`Slide ${index + 1}`}
               className="hero-image"
-              style={{
-                backgroundImage: `url(${image})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-              }}
-            >
-              <div className="hero-mask"></div>
-            </div>
+              loading="lazy"
+            />
+            <div className="hero-mask"></div>
           </Carousel.Item>
         ))}
       </Carousel>
