@@ -1,12 +1,13 @@
-/* src/styles/ImpactCards.css */
+/* src/styles/ImpactCards.css - Redesigned */
 .impact-section {
   padding: 5rem 0;
-  background-color: #f7f9fc;
+  background-color: #1a1a1a;
   position: relative;
   overflow: hidden;
+  color: #f0f0f0;
 }
 
-/* Add subtle background pattern */
+/* Subtle background texture */
 .impact-section::before {
   content: '';
   position: absolute;
@@ -15,8 +16,8 @@
   right: 0;
   bottom: 0;
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(148, 187, 233, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(238, 174, 202, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 25% 25%, rgba(65, 88, 208, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(200, 80, 192, 0.04) 0%, transparent 50%);
   z-index: 0;
 }
 
@@ -25,7 +26,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 1.75rem;
   padding: 0 1.5rem;
   position: relative;
   z-index: 1;
@@ -33,8 +34,8 @@
 
 .impact-item {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
   transition-delay: calc(var(--index) * 0.1s);
 }
 
@@ -44,63 +45,65 @@
 }
 
 .impact-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 2.5rem 1.5rem;
+  background: #242424;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-/* Add subtle gradient accent to each card */
+/* Subtle top border accent */
 .impact-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, #4ca5ff, #b673f8);
-  opacity: 0.85;
+  height: 3px;
+  background: linear-gradient(90deg, #5a67d8, #805ad5);
+  opacity: 0.8;
 }
 
 .impact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.2);
+  background: #2a2a2a;
 }
 
 .impact-icon-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: #333333;
   margin-bottom: 1.5rem;
   position: relative;
   z-index: 1;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.05);
 }
 
 .impact-icon {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   line-height: 1;
+  color: #f0f0f0;
 }
 
 .impact-number {
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   font-weight: 700;
   margin: 0.5rem 0;
-  background: linear-gradient(90deg, #4ca5ff, #b673f8);
+  background: linear-gradient(90deg, #5a67d8, #805ad5);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -109,11 +112,11 @@
 }
 
 .impact-text {
-  font-size: 1.1rem;
-  color: #6c757d;
+  font-size: 1rem;
+  color: #b3b3b3;
   margin: 0.5rem 0 0;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
 /* Responsive styles */
@@ -124,28 +127,28 @@
   
   .impact-container {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
   
   .impact-card {
-    padding: 2rem 1rem;
+    padding: 1.75rem 1rem;
   }
   
   .impact-icon-wrapper {
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
   }
   
   .impact-icon {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   
   .impact-number {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
   }
   
   .impact-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -160,21 +163,22 @@
   }
   
   .impact-icon-wrapper {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     margin-bottom: 1rem;
+    border-radius: 12px;
   }
   
   .impact-icon {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   
   .impact-number {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   
   .impact-text {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -184,44 +188,51 @@
   }
 }
 
-/* Optional: Different gradient accent for each card */
+/* Color variations for each card */
 .impact-item:nth-child(1) .impact-card::before {
-  background: linear-gradient(90deg, #4ca5ff, #1a86ff);
+  background: linear-gradient(90deg, #5a67d8, #805ad5);
 }
 
 .impact-item:nth-child(2) .impact-card::before {
-  background: linear-gradient(90deg, #78c350, #54a832);
+  background: linear-gradient(90deg, #38b2ac, #4fd1c5);
 }
 
 .impact-item:nth-child(3) .impact-card::before {
-  background: linear-gradient(90deg, #ffa751, #ffe259);
+  background: linear-gradient(90deg, #ed8936, #f6ad55);
 }
 
 .impact-item:nth-child(4) .impact-card::before {
-  background: linear-gradient(90deg, #fc6076, #ff9a44);
+  background: linear-gradient(90deg, #e53e3e, #fc8181);
 }
 
 /* Matching gradients for numbers */
 .impact-item:nth-child(1) .impact-number {
-  background: linear-gradient(90deg, #4ca5ff, #1a86ff);
+  background: linear-gradient(90deg, #5a67d8, #805ad5);
   -webkit-background-clip: text;
   background-clip: text;
 }
 
 .impact-item:nth-child(2) .impact-number {
-  background: linear-gradient(90deg, #78c350, #54a832);
+  background: linear-gradient(90deg, #38b2ac, #4fd1c5);
   -webkit-background-clip: text;
   background-clip: text;
 }
 
 .impact-item:nth-child(3) .impact-number {
-  background: linear-gradient(90deg, #ffa751, #ffe259);
+  background: linear-gradient(90deg, #ed8936, #f6ad55);
   -webkit-background-clip: text;
   background-clip: text;
 }
 
 .impact-item:nth-child(4) .impact-number {
-  background: linear-gradient(90deg, #fc6076, #ff9a44);
+  background: linear-gradient(90deg, #e53e3e, #fc8181);
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+/* Add subtle hover effect for icon wrappers */
+.impact-card:hover .impact-icon-wrapper {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
