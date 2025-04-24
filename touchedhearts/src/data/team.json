@@ -9,7 +9,7 @@
             "name": "TBD",
             "role": "Board Chair",
             "bio": "The Board Chair, an expert in international development, leads strategic governance, ensuring Touched Hearts’ mission aligns with global standards. Their leadership fosters transparency and sustainable growth.",
-            "image": "./assets/images/team/placeholder.png"
+            "image": "./assets/images/team/touched.jpg"
           },
           {
             "name": "Solomon Ssekiranda (Representative)",
@@ -31,7 +31,7 @@
             "name": "TBD",
             "role": "Deputy Director",
             "bio": "The Deputy Director supports strategic operations, oversees departmental coordination, and ensures resilience in leadership. With expertise in NGO management, they drive scalable, impactful programs globally.",
-            "image": "./assets/images/team/placeholder.png"
+            "image": "./assets/images/team/touched.jpg"
           }
         ]
       }
@@ -65,7 +65,7 @@
             "name": "TBD",
             "role": "Finance Officer",
             "bio": "The Finance Officer ensures robust financial management, compliance, and transparent reporting. With expertise in nonprofit accounting, they safeguard Touched Hearts’ fiscal integrity and support sustainable growth.",
-            "image": "./assets/images/team/placeholder.png"
+            "image": "./assets/images/team/touched.jpg"
           }
         ]
       },
@@ -85,7 +85,7 @@
             "name": "TBD",
             "role": "Head of Communications and Fundraising",
             "bio": "The Head of Communications and Fundraising drives donor engagement, branding, and global outreach. With expertise in nonprofit marketing, they secure sustainable funding and amplify Touched Hearts’ mission through strategic campaigns.",
-            "image": "./assets/images/team/placeholder.png"
+            "image": "./assets/images/team/touched.jpg"
           }
         ]
       },
@@ -95,7 +95,7 @@
             "name": "TBD",
             "role": "Monitoring, Evaluation, and Learning (MEL) Coordinator",
             "bio": "The MEL Coordinator tracks program impact, ensuring data-driven decisions and donor accountability. Their expertise in evaluation methodologies strengthens Touched Hearts’ evidence-based approach and global credibility.",
-            "image": "./assets/images/team/placeholder.png"
+            "image": "./assets/images/team/touched.jpg"
           },
           {
             "name": "TBD",
@@ -126,7 +126,7 @@
             "role": "Finance Officer",
             "reporting_to": "Head of Operations and Finance",
             "bio": "The Finance Officer ensures robust financial management, compliance, and transparent reporting. With expertise in nonprofit accounting, they safeguard Touched Hearts’ fiscal integrity and support sustainable growth.",
-            "image": "./assets/images/team/placeholder.png"
+            "image": "./assets/images/team/touched.jpg"
           }
         ]
       },
@@ -144,7 +144,7 @@
           "name": "TBD",
           "role": "Head of Communications and Fundraising",
           "bio": "The Head of Communications and Fundraising drives donor engagement, branding, and global outreach. With expertise in nonprofit marketing, they secure sustainable funding and amplify Touched Hearts’ mission through strategic campaigns.",
-          "image": "./assets/images/team/placeholder.png"
+          "image": "./assets/images/team/touched.jpg"
         },
         "team": []
       },
@@ -154,13 +154,13 @@
             "name": "TBD",
             "role": "Monitoring, Evaluation, and Learning (MEL) Coordinator",
             "bio": "The MEL Coordinator tracks program impact, ensuring data-driven decisions and donor accountability. Their expertise in evaluation methodologies strengthens Touched Hearts’ evidence-based approach and global credibility.",
-            "image": "./assets/images/team/placeholder.png"
+            "image": "./assets/images/team/touched.jpg"
           },
           {
             "name": "TBD",
             "role": "Volunteer and Community Engagement Coordinator",
             "bio": "The Volunteer Coordinator recruits, trains, and manages volunteers, fostering community trust and participation. Their expertise in grassroots engagement supports Touched Hearts’ mission of localized, impactful change.",
-            "image": "./assets/images/team/placeholder.png"
+            "image": "./assets/images/team/touched.jpg"
           }
         ]
       }
