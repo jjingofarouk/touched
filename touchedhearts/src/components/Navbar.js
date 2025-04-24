@@ -11,19 +11,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Navbars = () => {
   const [expanded, setExpanded] = useState(false);
   const [visible, setVisible] = useState(true);
-  const [prevScrollY, setPrevScrollY] = useState(0);
+  const [scrollingUp, setScrollingUp] = useState(true);
+  const prevScrollY = useRef(0);
   const navbarRef = useRef(null);
 
   const styles = {
+    navbarContainer: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 1000,
+      transition: 'transform 0.3s ease',
+      transform: visible ? 'translateY(0)' : 'translateY(-100%)',
+    },
     navbar: {
       backgroundColor: '#2d3a3a',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-      transition: 'transform 0.3s ease-in-out',
-      position: 'fixed',
-      transform: visible ? 'translateY(0)' : 'translateY(-100%)',
-      left: 0,
       width: '100%',
-      zIndex: 1000,
     },
     navLink: { color: '#f8f7f5' },
     donateButton: {
@@ -60,27 +65,37 @@ const Navbars = () => {
     },
   };
 
-  // Improved scroll effect for hide/show navbar
+  // Improved scroll effect for hiding/showing navbar
   useEffect(() => {
+    // Function to handle scroll events
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Only hide when scrolling down and we're at least 50px down
-      if (currentScrollY > prevScrollY && currentScrollY > 50) {
+      // Determine if we're scrolling up or down
+      const isScrollingUp = currentScrollY < prevScrollY.current;
+      setScrollingUp(isScrollingUp);
+      
+      // Update visibility based on scroll direction and position
+      if (!isScrollingUp && currentScrollY > 100) {
         setVisible(false);
-      } 
-      // Show when scrolling up
-      else if (currentScrollY < prevScrollY) {
+        // Also close the menu if it's expanded
+        if (expanded) setExpanded(false);
+      } else if (isScrollingUp || currentScrollY < 50) {
         setVisible(true);
       }
       
-      setPrevScrollY(currentScrollY);
+      // Save current scroll position for next comparison
+      prevScrollY.current = currentScrollY;
     };
 
-    // Add event listener without debounce for more responsive behavior
+    // Add the scroll event listener
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollY]);
+    
+    // Clean up the event listener when component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [expanded]); // Re-run when expanded state changes
 
   // Handle clicks outside navbar and Escape key for mobile menu
   useEffect(() => {
@@ -110,101 +125,114 @@ const Navbars = () => {
   }, [expanded]);
 
   return (
-    <Navbar
-      expand="lg"
-      style={styles.navbar}
-      variant="dark"
-      expanded={expanded}
-      onToggle={() => setExpanded(!expanded)}
-      ref={navbarRef}
-      aria-label="Main navigation"
-    >
-      <Container className="d-flex align-items-center">
-        <Navbar.Brand as={NavLink} to="/" style={styles.navLink} className="d-flex align-items-center">
-          <div style={styles.logoContainer} className="logo-circle">
-            <img
-              src={logo}
-              alt="Touched Hearts Logo"
-              style={styles.logoImage}
-              className="logo-image"
-            />
+    <div style={styles.navbarContainer} className="navbar-container">
+      <Navbar
+        expand="lg"
+        style={styles.navbar}
+        variant="dark"
+        expanded={expanded}
+        onToggle={() => setExpanded(!expanded)}
+        ref={navbarRef}
+        aria-label="Main navigation"
+      >
+        <Container className="d-flex align-items-center">
+          <Navbar.Brand as={NavLink} to="/" style={styles.navLink} className="d-flex align-items-center">
+            <div style={styles.logoContainer} className="logo-circle">
+              <img
+                src={logo}
+                alt="Touched Hearts Logo"
+                style={styles.logoImage}
+                className="logo-image"
+              />
+            </div>
+            <span style={styles.brandText} className="d-none d-lg-inline ms-2">
+              Touched Hearts
+            </span>
+          </Navbar.Brand>
+
+          {/* Brand Name - Visible on mobile only */}
+          <div className="brand-name d-flex d-lg-none flex-grow-1 justify-content-center">
+            <span style={styles.brandText}>Touched Hearts</span>
           </div>
-          <span style={styles.brandText} className="d-none d-lg-inline ms-2">
-            Touched Hearts
-          </span>
-        </Navbar.Brand>
 
-        {/* Brand Name - Visible on mobile only */}
-        <div className="brand-name d-flex d-lg-none flex-grow-1 justify-content-center">
-          <span style={styles.brandText}>Touched Hearts</span>
-        </div>
-
-        <Navbar.Toggle
-          aria-controls="basic-navbar-nav"
-          className="ms-auto"
-          aria-label="Toggle navigation"
-        />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            {[
-              { to: '/', label: 'Home' },
-              { to: '/about', label: 'About Us' },
-              { to: '/stories', label: 'Stories' },
-              { to: '/gallery', label: 'Gallery' },
-              { to: '/get-involved', label: 'Get Involved' },
-            ].map((item) => (
-              <Nav.Link
-                key={item.to}
-                as={NavLink}
-                to={item.to}
-                style={styles.navLink}
-                className="nav-link-custom"
-                onClick={() => setExpanded(false)}
-                aria-current={item.to === window.location.pathname ? 'page' : undefined}
-              >
-                {item.label}
-              </Nav.Link>
-            ))}
-            {/* Programs Dropdown */}
-            <NavDropdown
-              title="Programs"
-              id="programs-nav-dropdown"
-              className="nav-dropdown-custom"
-            >
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            className="ms-auto"
+            aria-label="Toggle navigation"
+          />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
               {[
-                { to: '/education', label: 'Education' },
-                { to: '/healthcare', label: 'Healthcare' },
-                { to: '/disabilities', label: 'Disability Support' },
-                { to: '/community', label: 'Community' },
+                { to: '/', label: 'Home' },
+                { to: '/about', label: 'About Us' },
+                { to: '/stories', label: 'Stories' },
+                { to: '/gallery', label: 'Gallery' },
+                { to: '/get-involved', label: 'Get Involved' },
               ].map((item) => (
-                <NavDropdown.Item
+                <Nav.Link
                   key={item.to}
                   as={NavLink}
                   to={item.to}
+                  style={styles.navLink}
+                  className="nav-link-custom"
                   onClick={() => setExpanded(false)}
-                  className="dropdown-item-custom"
                   aria-current={item.to === window.location.pathname ? 'page' : undefined}
                 >
                   {item.label}
-                </NavDropdown.Item>
+                </Nav.Link>
               ))}
-            </NavDropdown>
-          </Nav>
-          <Nav className="ms-auto align-items-center">
-            <Button
-              as={NavLink}
-              to="/donate"
-              style={styles.donateButton}
-              className="donate-button-custom ms-2"
-              onClick={() => setExpanded(false)}
-            >
-              Donate Now
-            </Button>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
+              {/* Programs Dropdown */}
+              <NavDropdown
+                title="Programs"
+                id="programs-nav-dropdown"
+                className="nav-dropdown-custom"
+              >
+                {[
+                  { to: '/education', label: 'Education' },
+                  { to: '/healthcare', label: 'Healthcare' },
+                  { to: '/disabilities', label: 'Disability Support' },
+                  { to: '/community', label: 'Community' },
+                ].map((item) => (
+                  <NavDropdown.Item
+                    key={item.to}
+                    as={NavLink}
+                    to={item.to}
+                    onClick={() => setExpanded(false)}
+                    className="dropdown-item-custom"
+                    aria-current={item.to === window.location.pathname ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+            </Nav>
+            <Nav className="ms-auto align-items-center">
+              <Button
+                as={NavLink}
+                to="/donate"
+                style={styles.donateButton}
+                className="donate-button-custom ms-2"
+                onClick={() => setExpanded(false)}
+              >
+                Donate Now
+              </Button>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
 
       <style jsx>{`
+        /* Set space to compensate for fixed navbar */
+        body {
+          padding-top: 56px;
+        }
+        
+        @media (min-width: 992px) {
+          body {
+            padding-top: 64px;
+          }
+        }
+        
         /* Navigation Links */
         .nav-link-custom, .nav-dropdown-custom .dropdown-toggle {
           color: #f8f7f5 !important;
@@ -289,7 +317,7 @@ const Navbars = () => {
           color: #f8f7f5 !important;
         }
       `}</style>
-    </Navbar>
+    </div>
   );
 };
 
