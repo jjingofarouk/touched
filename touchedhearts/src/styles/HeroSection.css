@@ -1,31 +1,38 @@
-
-
 /* src/styles/HeroSection.css */
 .hero-header {
-  padding-left: 0;
-  margin-top: 0;
+  padding: 0;
+  margin: 0;
   position: relative;
-  margin-bottom: 2rem; /* Space below hero */
+  width: 100%;
+  overflow: hidden;
 }
 
 .hero-carousel {
-  height: 70vh; /* Default for laptops */
-  min-height: 400px;
-  max-height: 800px;
+  height: 100vh; /* Full viewport height for grandeur */
+  min-height: 600px;
+  width: 100%;
 }
 
 .hero-image {
   position: relative;
   width: 100%;
-  height: 70vh; /* Matches carousel */
-  min-height: 400px;
-  max-height: 800px;
+  height: 100vh; /* Full viewport height */
+  min-height: 600px;
+  transform: scale(1.05); /* Subtle zoom effect */
+  transition: transform 8s ease-in-out; /* Slow, subtle movement */
+}
+
+.carousel-item.active .hero-image {
+  transform: scale(1); /* Subtle zoom animation when slide is active */
 }
 
 .hero-mask {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4); /* Lighter overlay for more vibrant images */
   height: 100%;
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .hero-overlay {
@@ -35,80 +42,116 @@
   width: 100%;
   height: 100%;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-content {
   text-align: center;
-  color: #ffffff; /* Bold white base for all text */
+  color: #ffffff;
+  max-width: 800px;
+  padding: 20px;
+  animation: fadeIn 1.5s ease-in-out; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-title {
-  color: #ffffff !important; /* Very bold white */
-  font-weight: bold !important;
-  margin-bottom: 1rem;
-  font-size: 3rem;
+  color: #ffffff !important;
+  font-weight: 800 !important; /* Extra bold */
+  margin-bottom: 1.5rem;
+  font-size: 4.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
 }
 
 .hero-subtitle {
-  color: #ffffff !important; /* Very white */
-  font-weight: normal;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
+  color: #ffffff !important;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
 }
 
 .hero-button {
-  color: #ffffff !important; /* Very bold white */
-  font-weight: bold !important;
-  padding: 12px 30px;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  padding: 15px 40px;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 50px; /* Rounded button for modern look */
   border: 2px solid;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   display: inline-block;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.d-flex {
+.hero-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Loading state */
+.hero-loading {
+  height: 100vh;
+  min-height: 600px;
+  width: 100%;
   display: flex;
-}
-
-.justify-content-center {
   justify-content: center;
-}
-
-.align-items-center {
   align-items: center;
+  background-color: #1a1a1a;
 }
 
 /* Carousel controls */
 .carousel-control-prev,
 .carousel-control-next {
-  z-index: 3; /* Above overlay */
-  width: 5%;
+  z-index: 3;
+  width: 7%;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 0.9;
 }
 
 .carousel-indicators {
   z-index: 3;
-  bottom: 10px;
+  bottom: 20px;
+}
+
+.carousel-indicators li {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
 }
 
 /* Media Queries for Responsiveness */
 
-/* Laptops (1024px and up) */
-@media (min-width: 1024px) {
-  .hero-carousel,
-  .hero-image {
-    height: 70vh;
-  }
+/* Large screens (1440px and up) */
+@media (min-width: 1440px) {
   .hero-title {
-    font-size: 3rem;
+    font-size: 5rem;
   }
   .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 2rem;
   }
-  .hero-button {
-    padding: 12px 30px;
-    font-size: 1.1rem;
+}
+
+/* Laptops (1024px - 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .hero-carousel,
+  .hero-image {
+    height: 90vh;
   }
 }
 
@@ -116,18 +159,18 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .hero-carousel,
   .hero-image {
-    height: 60vh;
-    min-height: 350px;
+    height: 80vh;
+    min-height: 500px;
   }
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
   .hero-button {
-    padding: 10px 25px;
-    font-size: 1rem;
+    padding: 12px 30px;
+    font-size: 1.1rem;
   }
 }
 
@@ -135,25 +178,23 @@
 @media (max-width: 767px) {
   .hero-carousel,
   .hero-image {
-    height: 50vh;
-    min-height: 300px;
+    height: 70vh;
+    min-height: 400px;
   }
   .hero-content {
-    padding: 0 10px; /* Prevent text from touching edges */
+    padding: 0 15px;
   }
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
   }
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
   }
   .hero-button {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-  }
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 10%;
+    padding: 10px 25px;
+    font-size: 1rem;
   }
 }
 
@@ -161,18 +202,17 @@
 @media (max-width: 576px) {
   .hero-carousel,
   .hero-image {
-    height: 45vh;
-    min-height: 250px;
+    height: 60vh;
+    min-height: 350px;
   }
   .hero-title {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
   }
   .hero-subtitle {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
   .hero-button {
-    padding: 6px 15px;
-    font-size: 0.85rem;
+    padding: 8px 20px;
+    font-size: 0.9rem;
   }
 }
-
