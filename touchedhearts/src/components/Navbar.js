@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown'; // Added NavDropdown
 import Button from 'react-bootstrap/Button';
 import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -152,10 +153,6 @@ const Navbars = () => {
             {[
               { to: '/', label: 'Home' },
               { to: '/about', label: 'About Us' },
-              { to: '/education', label: 'Education' },
-              { to: '/healthcare', label: 'Healthcare' },
-              { to: '/disabilities', label: 'Disability Support' },
-              { to: '/community', label: 'Community' },
               { to: '/stories', label: 'Stories' },
               { to: '/gallery', label: 'Gallery' },
               { to: '/get-involved', label: 'Get Involved' },
@@ -172,6 +169,31 @@ const Navbars = () => {
                 {item.label}
               </Nav.Link>
             ))}
+            {/* Programs Dropdown */}
+            <NavDropdown
+              title="Programs"
+              id="programs-nav-dropdown"
+              style={styles.navLink}
+              className="nav-link-custom"
+              onClick={() => setExpanded(false)} // Close mobile menu on dropdown click
+            >
+              {[
+                { to: '/education', label: 'Education' },
+                { to: '/healthcare', label: 'Healthcare' },
+                { to: '/disabilities', label: 'Disability Support' },
+                { to: '/community', label: 'Community' },
+              ].map((item) => (
+                <NavDropdown.Item
+                  key={item.to}
+                  as={NavLink}
+                  to={item.to}
+                  onClick={() => setExpanded(false)}
+                  aria-current={item.to === window.location.pathname ? 'page' : undefined}
+                >
+                  {item.label}
+                </NavDropdown.Item>
+              ))}
+            </NavDropdown>
           </Nav>
           <Nav className="ms-auto align-items-center">
             <Button
@@ -188,11 +210,21 @@ const Navbars = () => {
       </Container>
 
       <style jsx>{`
-        .nav-link-custom:hover {
+        .nav-link-custom:hover,
+        .nav-dropdown-custom:hover {
           color: #8cc5bf !important;
           transition: color 0.2s ease;
         }
         .nav-link-custom.active {
+          color: #ffffff !important;
+          font-weight: 600;
+        }
+        .dropdown-item:hover {
+          background-color: #8cc5bf !important;
+          color: #ffffff !important;
+        }
+        .dropdown-item.active {
+          background-color: #2d3a3a !important;
           color: #ffffff !important;
           font-weight: 600;
         }
