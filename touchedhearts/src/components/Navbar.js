@@ -8,15 +8,6 @@ import Button from 'react-bootstrap/Button';
 import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Utility function to debounce scroll events
-const debounce = (func, wait) => {
-  let timeout;
-  return (...args) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func.apply(null, args), wait);
-  };
-};
-
 const Navbars = () => {
   const [expanded, setExpanded] = useState(false);
   const [visible, setVisible] = useState(true);
@@ -27,9 +18,9 @@ const Navbars = () => {
     navbar: {
       backgroundColor: '#2d3a3a',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-      transition: 'top 0.3s ease-in-out',
+      transition: 'transform 0.3s ease-in-out',
       position: 'fixed',
-      top: visible ? '0' : '-100px',
+      transform: visible ? 'translateY(0)' : 'translateY(-100%)',
       left: 0,
       width: '100%',
       zIndex: 1000,
@@ -69,21 +60,25 @@ const Navbars = () => {
     },
   };
 
-  // Scroll effect for hide/show navbar
+  // Improved scroll effect for hide/show navbar
   useEffect(() => {
-    const handleScroll = debounce(() => {
+    const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
+      
+      // Only hide when scrolling down and we're at least 50px down
       if (currentScrollY > prevScrollY && currentScrollY > 50) {
         setVisible(false);
-        setExpanded(false); // Close mobile menu when hiding
-      } else if (currentScrollY < prevScrollY || currentScrollY <= 50) {
+      } 
+      // Show when scrolling up
+      else if (currentScrollY < prevScrollY) {
         setVisible(true);
       }
+      
       setPrevScrollY(currentScrollY);
-    }, 100);
+    };
 
-    window.addEventListener('scroll', handleScroll);
+    // Add event listener without debounce for more responsive behavior
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollY]);
 
@@ -98,7 +93,8 @@ const Navbars = () => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape' && expanded) {
         setExpanded(false);
-        navbarRef.current.querySelector('.navbar-toggler').focus(); // Return focus to toggler
+        const togglerElement = navbarRef.current?.querySelector('.navbar-toggler');
+        if (togglerElement) togglerElement.focus();
       }
     };
 
@@ -169,12 +165,11 @@ const Navbars = () => {
                 {item.label}
               </Nav.Link>
             ))}
-            {/* Programs Dropdown - Removed the onClick handler that was closing the menu */}
+            {/* Programs Dropdown */}
             <NavDropdown
               title="Programs"
               id="programs-nav-dropdown"
-              style={styles.navLink}
-              className="nav-link-custom"
+              className="nav-dropdown-custom"
             >
               {[
                 { to: '/education', label: 'Education' },
@@ -187,6 +182,7 @@ const Navbars = () => {
                   as={NavLink}
                   to={item.to}
                   onClick={() => setExpanded(false)}
+                  className="dropdown-item-custom"
                   aria-current={item.to === window.location.pathname ? 'page' : undefined}
                 >
                   {item.label}
@@ -209,58 +205,88 @@ const Navbars = () => {
       </Container>
 
       <style jsx>{`
-        .nav-link-custom:hover,
-        .nav-dropdown-custom:hover {
-          color: #8cc5bf !important;
+        /* Navigation Links */
+        .nav-link-custom, .nav-dropdown-custom .dropdown-toggle {
+          color: #f8f7f5 !important;
           transition: color 0.2s ease;
         }
+        
+        .nav-link-custom:hover, 
+        .nav-dropdown-custom .dropdown-toggle:hover {
+          color: #8cc5bf !important;
+        }
+        
         .nav-link-custom.active {
           color: #ffffff !important;
           font-weight: 600;
         }
-        /* Improve dropdown styling for better visibility */
+        
+        /* Dropdown Menu Styling */
         .dropdown-menu {
-          background-color: #343f3f;
-          border: 1px solid #495757;
+          background-color: #343f3f !important;
+          border: 1px solid #495757 !important;
+          padding: 0.5rem 0 !important;
+          margin-top: 0.5rem !important;
+          min-width: 12rem !important;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
         }
-        .dropdown-item {
-          color: #f8f7f5;
+        
+        .dropdown-item-custom {
+          color: #f8f7f5 !important;
+          padding: 0.5rem 1.5rem !important;
+          font-size: 0.95rem !important;
         }
-        .dropdown-item:hover {
+        
+        .dropdown-item-custom:hover {
           background-color: #8cc5bf !important;
           color: #ffffff !important;
         }
-        .dropdown-item.active {
+        
+        .dropdown-item-custom.active {
           background-color: #2d3a3a !important;
           color: #ffffff !important;
           font-weight: 600;
         }
-        /* Improve dropdown toggle appearance */
+        
+        /* Dropdown toggle appearance */
         .dropdown-toggle::after {
           vertical-align: middle;
         }
+        
+        /* Button styling */
         .donate-button-custom {
           background-color: #d68c45 !important;
           border-color: #d68c45 !important;
         }
+        
         .donate-button-custom:hover {
           background-color: #b87339 !important;
           border-color: #b87339 !important;
           transform: scale(1.05);
         }
+        
+        /* Logo and brand styling */
         .brand-name span:hover {
           color: #8cc5bf !important;
           transition: color 0.2s ease;
         }
+        
         .logo-circle {
           transition: transform 0.3s ease;
         }
+        
         .logo-circle:hover {
           transform: scale(1.1);
           border-color: #d68c45;
         }
+        
         .logo-image {
           transition: transform 0.3s ease;
+        }
+        
+        /* Make nav dropdown text white too */
+        .nav-dropdown-custom .dropdown-toggle {
+          color: #f8f7f5 !important;
         }
       `}</style>
     </Navbar>
