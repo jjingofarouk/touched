@@ -3,18 +3,18 @@
   "hierarchy": {
     "governance": {
       "board_of_directors": {
-        "description": "The Board of Directors provides strategic oversight, ensures ethical compliance, and aligns Touched Hearts with international NGO standards. Comprising 5-7 external experts in finance, law, and development, plus one team representative, the board drives accountability and transparency.",
+        "description": "The Board of Directors provides strategic oversight, ensures ethical compliance, and aligns Us with international standards. Comprises 5 external experts in finance, law, and development plus one team representative. The board drives accountability and transparency.",
         "members": [
           {
             "name": "TBD",
             "role": "Board Chair",
-            "bio": "The Board Chair, an expert in international development, leads strategic governance, ensuring Touched Hearts’ mission aligns with global standards. Their leadership fosters transparency and sustainable growth.",
+            "bio": "The Board Chair is an expert in international development. Leads strategic governance to ensure our mission aligns with global standards. Their leadership promotes transparency and sustainable growth.",
             "image": "./assets/images/team/touched.jpg"
           },
           {
             "name": "Solomon Ssekiranda (Representative)",
             "role": "Board Member",
-            "bio": "As Executive Director and board liaison, Solomon ensures alignment between operational and governance objectives, leveraging his strategic expertise.",
+            "bio": "As Executive Director and board liaison, Solomon ensures alignment between operational and governance objectives through his strategic expertise.",
             "image": "./assets/images/team/solomon.png"
           }
         ]
@@ -24,13 +24,13 @@
           {
             "name": "Solomon Ssekiranda",
             "role": "Executive Director",
-            "bio": "Solomon Ssekiranda, a strategic visionary with a B.Ed. from Makerere University and ongoing MBChB studies at Kabale University, drives Touched Hearts’ transformative education and healthcare initiatives. Formerly Vice President of FUMSA, he secured high-impact partnerships and led pioneering projects, ensuring sustainable community outcomes through rigorous leadership and data-driven strategies.",
+            "bio": "Solomon Ssekiranda is a strategic visionary with a B.Ed. from Makerere University and ongoing MBChB studies at Kabale University. Formerly Vice President of FUMSA, he secured high-impact partnerships and led powerful nationwide projects.",
             "image": "./assets/images/team/solomon.png"
           },
           {
             "name": "TBD",
             "role": "Deputy Director",
-            "bio": "The Deputy Director supports strategic operations, oversees departmental coordination, and ensures resilience in leadership. With expertise in NGO management, they drive scalable, impactful programs globally.",
+            "bio": "The Deputy Director supports strategic operations, oversees departmental coordination, and ensures resilience in leadership. They drive scalable and impactful programs globally.",
             "image": "./assets/images/team/touched.jpg"
           }
         ]
@@ -42,13 +42,13 @@
           {
             "name": "Judith Nahwera",
             "role": "Head of Programs",
-            "bio": "Judith Nahwera, a community development specialist, designs scalable, sustainable programs for Touched Hearts. Her expertise in grassroots mobilization and strategic partnerships drives measurable impact in underserved communities. Through meticulous program evaluation and localized solutions, Judith ensures initiatives deliver long-term, transformative benefits with exceptional efficiency and stakeholder trust.",
+            "bio": "Judith Nahwera is a seasoned community development specialist. She designs our scalable programs using her extensive expertise in grassroots mobilization and strategic partnerships to drive measurable impact in underserved communities. She has meticulously foreseen several program evaluations and localized solutions that solidified the transformative benefits of our projects.",
             "image": "./assets/images/team/jude.jpg"
           },
           {
             "name": "Robinson Byamukama",
             "role": "Director of Community Health Programs",
-            "bio": "Robinson Byamukama, an MBChB candidate at Kabale University, spearheads Touched Hearts’ health programs with unparalleled expertise. As former FUMSA President, he engineered impactful health campaigns and cross-sector collaborations, reducing disparities in underserved regions. His precision in community engagement ensures scalable, evidence-based interventions that transform public health outcomes.",
+            "bio": "Robinson Byamukama is an MBChB candidate at Kabale University. He spearheads our health programs with unparalleled expertise. As former FUMSA President, he supervised impactful health campaigns and cross-sector collaborations that considerably reduced disparities in underserved regions.",
             "image": "./assets/images/team/robinson.jpg"
           }
         ]
@@ -58,7 +58,7 @@
           {
             "name": "Stanley Okecho",
             "role": "Head of Operations and Finance",
-            "bio": "Stanley Okecho optimizes Touched Hearts’ operations with exceptional organizational acumen and strategic communication expertise. His advanced training in community development enables seamless coordination of complex initiatives. By streamlining processes and amplifying stakeholder engagement, Stanley ensures operational excellence and transparent, impactful communication aligned with global NGO standards.",
+            "bio": "Stanley Okecho optimizes our operations with exceptional organizational acumen and strategic communication expertise. His advanced training in community development enables seamless coordination of complex initiatives. He streamli and amplifying stakeholder engagement, Stanley ensures operational excellence and transparent, impactful communication aligned with global NGO standards.",
             "image": "./assets/images/team/stan.jpg"
           },
           {
@@ -117,7 +117,7 @@
         "head": {
           "name": "Stanley Okecho",
           "role": "Head of Operations and Finance",
-          "bio": "Stanley Okecho optimizes Touched Hearts’ operations with exceptional organizational acumen and strategic communication expertise. His advanced training in community development enables seamless coordination of complex initiatives. By streamlining processes and amplifying stakeholder engagement, Stanley ensures operational excellence and transparent, impactful communication aligned with global NGO standards.",
+          "bio": "Stanley Okecho optimizes Touched Hearts’ operations with exceptional organizational acumen and strategic communication expertise. His advanced training in community development enables seamless coordination of complex initiatives. He amplifies stakeholder engagement to ensure operational excellence and transparent communication aligned with our high standards.",
           "image": "./assets/images/team/stan.jpg"
         },
         "team": [
@@ -125,7 +125,7 @@
             "name": "TBD",
             "role": "Finance Officer",
             "reporting_to": "Head of Operations and Finance",
-            "bio": "The Finance Officer ensures robust financial management, compliance, and transparent reporting. With expertise in nonprofit accounting, they safeguard Touched Hearts’ fiscal integrity and support sustainable growth.",
+            "bio": "The Finance Officer ensures robust financial management, compliance, and transparent reporting. Has expertise in nonprofit accounting that safeguards our fiscal integrity.",
             "image": "./assets/images/team/touched.jpg"
           }
         ]
@@ -134,7 +134,7 @@
         "head": {
           "name": "Farouk Jjingo",
           "role": "Head of Innovation and Technology",
-          "bio": "Farouk Jjingo, MBChB (Mbarara University), pioneers Touched Hearts’ technological advancements. Founding CareWave+ and EcoSpin, he develops telemedicine and sustainability solutions that redefine rural empowerment. His expertise in digital health and scalable innovation delivers inclusive, high-impact programs, positioning Touched Hearts as a leader in transformative NGO technology.",
+          "bio": "Farouk Jjingo is a medical doctor (Mbarara University) and software developer. Having founded several award-winning projects like EcoSpin and CareWave+, he comes with poweful skills develops that redefine rural empowerment. His deep expertise in digital health and scalable innovation delivers inclusive and high-impact programs that position us as a leader in transformative community-focused technological solutions.",
           "image": "./assets/images/team/farouk.png"
         },
         "team": []
@@ -143,7 +143,7 @@
         "head": {
           "name": "TBD",
           "role": "Head of Communications and Fundraising",
-          "bio": "The Head of Communications and Fundraising drives donor engagement, branding, and global outreach. With expertise in nonprofit marketing, they secure sustainable funding and amplify Touched Hearts’ mission through strategic campaigns.",
+          "bio": "The Head of Communications and Fundraising drives donor engagement, branding, and global outreach. Her expertise in nonprofit marketing enables us to secure sustainable funding and amplify our mission through strategic campaigns.",
           "image": "./assets/images/team/touched.jpg"
         },
         "team": []
@@ -153,13 +153,13 @@
           {
             "name": "TBD",
             "role": "Monitoring, Evaluation, and Learning (MEL) Coordinator",
-            "bio": "The MEL Coordinator tracks program impact, ensuring data-driven decisions and donor accountability. Their expertise in evaluation methodologies strengthens Touched Hearts’ evidence-based approach and global credibility.",
+            "bio": "The MEL Coordinator tracks program impact to ensure data-driven decisions and donor accountability. Her expertise in evaluation methodologies strengthens our evidence-based approach and global credibility.",
             "image": "./assets/images/team/touched.jpg"
           },
           {
             "name": "TBD",
             "role": "Volunteer and Community Engagement Coordinator",
-            "bio": "The Volunteer Coordinator recruits, trains, and manages volunteers, fostering community trust and participation. Their expertise in grassroots engagement supports Touched Hearts’ mission of localized, impactful change.",
+            "bio": "The Volunteer Coordinator recruits, trains, and manages volunteers to improve community trust and participation. Her expertise in grassroots engagement supports our mission of localized but impactful change.",
             "image": "./assets/images/team/touched.jpg"
           }
         ]
