@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -6,7 +6,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState, useEffect, useRef } from 'react';
+
+// Utility function to debounce scroll events
+const debounce = (func, wait) => {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(null, args), wait);
+  };
+};
 
 const Navbars = () => {
   const [expanded, setExpanded] = useState(false);
@@ -57,26 +65,28 @@ const Navbars = () => {
       width: '100%',
       height: '100%',
       objectFit: 'cover',
-    }
+    },
   };
 
-  // Scroll effect for hide/show on all devices
+  // Scroll effect for hide/show navbar
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = debounce(() => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > prevScrollY && currentScrollY > 50) {
         setVisible(false);
-      } else if (currentScrollY < prevScrollY) {
+        setExpanded(false); // Close mobile menu when hiding
+      } else if (currentScrollY < prevScrollY || currentScrollY <= 50) {
         setVisible(true);
       }
       setPrevScrollY(currentScrollY);
-    };
+    }, 100);
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollY]);
 
+  // Handle clicks outside navbar and Escape key for mobile menu
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target) && expanded) {
@@ -87,6 +97,7 @@ const Navbars = () => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape' && expanded) {
         setExpanded(false);
+        navbarRef.current.querySelector('.navbar-toggler').focus(); // Return focus to toggler
       }
     };
 
@@ -109,6 +120,7 @@ const Navbars = () => {
       expanded={expanded}
       onToggle={() => setExpanded(!expanded)}
       ref={navbarRef}
+      aria-label="Main navigation"
     >
       <Container className="d-flex align-items-center">
         <Navbar.Brand as={NavLink} to="/" style={styles.navLink} className="d-flex align-items-center">
@@ -120,7 +132,9 @@ const Navbars = () => {
               className="logo-image"
             />
           </div>
-          <span style={styles.brandText} className="d-none d-lg-inline ms-2">Touched Hearts</span>
+          <span style={styles.brandText} className="d-none d-lg-inline ms-2">
+            Touched Hearts
+          </span>
         </Navbar.Brand>
 
         {/* Brand Name - Visible on mobile only */}
@@ -128,36 +142,36 @@ const Navbars = () => {
           <span style={styles.brandText}>Touched Hearts</span>
         </div>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="ms-auto" />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className="ms-auto"
+          aria-label="Toggle navigation"
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/" style={styles.navLink} className="nav-link-custom">
-              Home
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/about" style={styles.navLink} className="nav-link-custom">
-              About Us
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/education" style={styles.navLink} className="nav-link-custom">
-              Education
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/healthcare" style={styles.navLink} className="nav-link-custom">
-              Healthcare
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/disabilities" style={styles.navLink} className="nav-link-custom">
-              Disability Support
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/community" style={styles.navLink} className="nav-link-custom">
-              Community
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/stories" style={styles.navLink} className="nav-link-custom">
-              Stories
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/gallery" style={styles.navLink} className="nav-link-custom">
-              Gallery
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/get-involved" style={styles.navLink} className="nav-link-custom">
-              Get Involved
-            </Nav.Link>
+            {[
+              { to: '/', label: 'Home' },
+              { to: '/about', label: 'About Us' },
+              { to: '/education', label: 'Education' },
+              { to: '/healthcare', label: 'Healthcare' },
+              { to: '/disabilities', label: 'Disability Support' },
+              { to: '/community', label: 'Community' },
+              { to: '/stories', label: 'Stories' },
+              { to: '/gallery', label: 'Gallery' },
+              { to: '/get-involved', label: 'Get Involved' },
+            ].map((item) => (
+              <Nav.Link
+                key={item.to}
+                as={NavLink}
+                to={item.to}
+                style={styles.navLink}
+                className="nav-link-custom"
+                onClick={() => setExpanded(false)}
+                aria-current={item.to === window.location.pathname ? 'page' : undefined}
+              >
+                {item.label}
+              </Nav.Link>
+            ))}
           </Nav>
           <Nav className="ms-auto align-items-center">
             <Button
@@ -165,6 +179,7 @@ const Navbars = () => {
               to="/donate"
               style={styles.donateButton}
               className="donate-button-custom ms-2"
+              onClick={() => setExpanded(false)}
             >
               Donate Now
             </Button>
