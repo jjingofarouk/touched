@@ -1,35 +1,50 @@
-.impact-numbers {
-  --card-transition-duration: 0.6s;
-  --number-animation-duration: 2s;
-  
-  padding: 6rem 2rem;
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+:root {
+  /* Professional NGO color palette */
+  --primary-dark: #2b6777;     /* Deep teal */
+  --primary-color: #52ab98;    /* Medium teal */
+  --primary-light: #c8d8e4;    /* Light blue-gray */
+  --secondary-dark: #45625d;   /* Deep sage */
+  --secondary-color: #7aa095;  /* Medium sage */
+  --secondary-light: #b7d1c4;  /* Light sage */
+  --accent: #f2b880;           /* Warm accent */
+  --white: #ffffff;
+  --off-white: #f8f9fa;
+  --light-gray: #e9ecef;
+  --medium-gray: #dee2e6;
+  --dark-gray: #495057;
+  --text-color: #2f3e46;
+}
+
+.impact-section {
+  --card-transition-duration: 0.5s;
+  padding: 5rem 2rem;
+  background: linear-gradient(170deg, var(--primary-dark), var(--primary-color));
   position: relative;
   overflow: hidden;
 }
 
-/* Background decoration */
-.impact-numbers::before {
+/* Subtle background patterns */
+.impact-section::before {
   content: '';
   position: absolute;
   top: -10%;
-  right: -10%;
-  width: 40%;
-  height: 40%;
-  background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
-  opacity: 0.4;
+  right: -5%;
+  width: 35%;
+  height: 35%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  opacity: 0.6;
   border-radius: 50%;
 }
 
-.impact-numbers::after {
+.impact-section::after {
   content: '';
   position: absolute;
   bottom: -5%;
   left: -5%;
   width: 30%;
   height: 30%;
-  background: radial-gradient(circle, var(--secondary-light) 0%, transparent 70%);
-  opacity: 0.3;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  opacity: 0.5;
   border-radius: 50%;
 }
 
@@ -37,8 +52,8 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
   position: relative;
   z-index: 1;
 }
@@ -47,7 +62,7 @@
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-  transition-delay: calc(var(--index) * 0.1s);
+  transition-delay: calc(var(--index) * 0.15s);
 }
 
 .impact-item.visible {
@@ -57,15 +72,15 @@
 
 .impact-card {
   background: var(--white);
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
   position: relative;
   overflow: hidden;
   transition: transform var(--card-transition-duration) ease, 
@@ -78,54 +93,66 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--secondary-color), var(--secondary-light));
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease-out;
 }
 
 .impact-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
 .impact-card:hover::before {
   transform: scaleX(1);
 }
 
-.impact-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.impact-icon-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  background-color: var(--off-white);
-  box-shadow: 0 4px 15px rgba(58, 143, 133, 0.15);
+  background-color: var(--light-gray);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-icon-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(82, 171, 152, 0.15), rgba(200, 216, 228, 0.15));
+  border-radius: 50%;
+}
+
+.impact-icon {
+  font-size: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .impact-number {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--primary-dark);
-  position: relative;
-  display: inline-block;
+  margin-bottom: 0.75rem;
   background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  letter-spacing: -0.02em;
 }
 
 .impact-text {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--dark-gray);
   margin: 0;
@@ -133,51 +160,46 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .impact-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+  .impact-section {
+    padding: 4rem 1.5rem;
+  }
+  
   .impact-container {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
   
   .impact-card {
-    padding: 1.5rem 1rem;
+    padding: 2rem 1.25rem;
   }
   
   .impact-number {
     font-size: 2.8rem;
   }
-}
-
-/* Animation for the card appearance */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .impact-text {
+    font-size: 1rem;
   }
 }
 
-/* Subtle pulse animation for the numbers */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
+/* Additional accessibility features */
+@media (prefers-reduced-motion: reduce) {
+  .impact-item {
+    transition: none;
   }
-  50% {
-    transform: scale(1.05);
+  
+  .impact-card {
+    transition: none;
   }
-  100% {
-    transform: scale(1);
+  
+  .impact-card::before {
+    transition: none;
   }
-}
-
-.impact-number.animated {
-  animation: pulse 2s ease-in-out;
 }
