@@ -59,7 +59,7 @@ const Footer = () => {
             <p><i className="fas fa-phone"></i> +256 700 834 733</p>
             <p>
               <i className="fas fa-envelope"></i>{' '}
-              <a href="mailto:touchedheartsug12@gmail.com">touchedheartsug12@gmail.com</a>
+              <a href="mailto:touchedheartsfoundation@gmail.com">touchedheartsfoundation@gmail.com</a>
             </p>
           </address>
         </div>
