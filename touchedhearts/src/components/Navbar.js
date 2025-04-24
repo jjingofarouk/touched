@@ -11,93 +11,65 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Navbars = () => {
   const [expanded, setExpanded] = useState(false);
   const [visible, setVisible] = useState(true);
-  const [scrollingUp, setScrollingUp] = useState(true);
-  const prevScrollY = useRef(0);
+  const lastScrollTop = useRef(0);
   const navbarRef = useRef(null);
-
-  const styles = {
-    navbarContainer: {
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      zIndex: 1000,
-      transition: 'transform 0.3s ease',
-      transform: visible ? 'translateY(0)' : 'translateY(-100%)',
-    },
-    navbar: {
-      backgroundColor: '#2d3a3a',
-      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-      width: '100%',
-    },
-    navLink: { color: '#f8f7f5' },
-    donateButton: {
-      backgroundColor: '#d68c45',
-      borderColor: '#d68c45',
-      color: '#ffffff',
-      fontWeight: 600,
-      padding: '0.5rem 1rem',
-      transition: 'all 0.2s ease',
-    },
-    brandText: {
-      color: '#f8f7f5',
-      fontSize: '1.2rem',
-      fontWeight: 700,
-      letterSpacing: '1px',
-      marginLeft: '0.5rem',
-      textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)',
-    },
-    logoContainer: {
-      width: '40px',
-      height: '40px',
-      borderRadius: '50%',
-      overflow: 'hidden',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#ffffff',
-      border: '2px solid #8cc5bf',
-    },
-    logoImage: {
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-    },
-  };
-
-  // Improved scroll effect for hiding/showing navbar
+  const navbarHeight = useRef(0);
+  
+  // Calculate and store navbar height on mount and window resize
   useEffect(() => {
-    // Function to handle scroll events
+    const updateNavHeight = () => {
+      if (navbarRef.current) {
+        navbarHeight.current = navbarRef.current.getBoundingClientRect().height;
+      }
+    };
+    
+    updateNavHeight();
+    window.addEventListener('resize', updateNavHeight);
+    
+    return () => {
+      window.removeEventListener('resize', updateNavHeight);
+    };
+  }, []);
+
+  // Scroll effect for hide/show navbar
+  useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      const st = window.pageYOffset || document.documentElement.scrollTop;
       
-      // Determine if we're scrolling up or down
-      const isScrollingUp = currentScrollY < prevScrollY.current;
-      setScrollingUp(isScrollingUp);
+      // Don't hide navbar when at the top of the page
+      if (st <= 10) {
+        setVisible(true);
+        lastScrollTop.current = st;
+        return;
+      }
       
-      // Update visibility based on scroll direction and position
-      if (!isScrollingUp && currentScrollY > 100) {
+      // Don't hide navbar when menu is expanded on mobile
+      if (expanded) {
+        lastScrollTop.current = st;
+        return;
+      }
+      
+      // Hide navbar when scrolling down, show when scrolling up
+      if (st > lastScrollTop.current && st > navbarHeight.current) {
+        // Scrolling DOWN
         setVisible(false);
-        // Also close the menu if it's expanded
-        if (expanded) setExpanded(false);
-      } else if (isScrollingUp || currentScrollY < 50) {
+      } else {
+        // Scrolling UP
         setVisible(true);
       }
       
-      // Save current scroll position for next comparison
-      prevScrollY.current = currentScrollY;
+      lastScrollTop.current = st;
     };
-
-    // Add the scroll event listener
+    
+    // Add event listener with passive flag for better performance
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // Clean up the event listener when component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [expanded]); // Re-run when expanded state changes
+  }, [expanded]);
 
-  // Handle clicks outside navbar and Escape key for mobile menu
+  // Handle clicks outside navbar to close mobile menu
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target) && expanded) {
@@ -108,8 +80,6 @@ const Navbars = () => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape' && expanded) {
         setExpanded(false);
-        const togglerElement = navbarRef.current?.querySelector('.navbar-toggler');
-        if (togglerElement) togglerElement.focus();
       }
     };
 
@@ -124,35 +94,32 @@ const Navbars = () => {
     };
   }, [expanded]);
 
+  // Styles with CSS-in-JS
+  const navbarClasses = `custom-navbar ${visible ? 'navbar-visible' : 'navbar-hidden'}`;
+
   return (
-    <div style={styles.navbarContainer} className="navbar-container">
+    <header className="navbar-wrapper">
       <Navbar
+        ref={navbarRef}
         expand="lg"
-        style={styles.navbar}
+        className={navbarClasses}
         variant="dark"
         expanded={expanded}
         onToggle={() => setExpanded(!expanded)}
-        ref={navbarRef}
+        fixed="top"
         aria-label="Main navigation"
       >
         <Container className="d-flex align-items-center">
-          <Navbar.Brand as={NavLink} to="/" style={styles.navLink} className="d-flex align-items-center">
-            <div style={styles.logoContainer} className="logo-circle">
-              <img
-                src={logo}
-                alt="Touched Hearts Logo"
-                style={styles.logoImage}
-                className="logo-image"
-              />
+          <Navbar.Brand as={NavLink} to="/" className="d-flex align-items-center brand-link">
+            <div className="logo-circle">
+              <img src={logo} alt="Touched Hearts Logo" className="logo-image" />
             </div>
-            <span style={styles.brandText} className="d-none d-lg-inline ms-2">
-              Touched Hearts
-            </span>
+            <span className="brand-text d-none d-lg-inline ms-2">Touched Hearts</span>
           </Navbar.Brand>
 
           {/* Brand Name - Visible on mobile only */}
           <div className="brand-name d-flex d-lg-none flex-grow-1 justify-content-center">
-            <span style={styles.brandText}>Touched Hearts</span>
+            <span className="brand-text">Touched Hearts</span>
           </div>
 
           <Navbar.Toggle
@@ -173,7 +140,6 @@ const Navbars = () => {
                   key={item.to}
                   as={NavLink}
                   to={item.to}
-                  style={styles.navLink}
                   className="nav-link-custom"
                   onClick={() => setExpanded(false)}
                   aria-current={item.to === window.location.pathname ? 'page' : undefined}
@@ -210,7 +176,6 @@ const Navbars = () => {
               <Button
                 as={NavLink}
                 to="/donate"
-                style={styles.donateButton}
                 className="donate-button-custom ms-2"
                 onClick={() => setExpanded(false)}
               >
@@ -222,25 +187,73 @@ const Navbars = () => {
       </Navbar>
 
       <style jsx>{`
-        /* Set space to compensate for fixed navbar */
-        body {
-          padding-top: 56px;
+        /* Important: These are global styles that need to be applied */
+        /* You may need to move these to a global CSS file if they're not applying */
+        
+        .navbar-wrapper {
+          position: relative;
+          height: 0;
+          z-index: 1030;
         }
         
-        @media (min-width: 992px) {
-          body {
-            padding-top: 64px;
-          }
+        .custom-navbar {
+          background-color: #2d3a3a !important;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease-in-out !important;
+        }
+        
+        .navbar-visible {
+          transform: translateY(0);
+        }
+        
+        .navbar-hidden {
+          transform: translateY(-100%);
+        }
+        
+        /* Brand styling */
+        .brand-link {
+          color: #f8f7f5 !important;
+        }
+        
+        .brand-text {
+          color: #f8f7f5;
+          font-size: 1.2rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-circle {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #ffffff;
+          border: 2px solid #8cc5bf;
+          transition: transform 0.3s ease;
+        }
+        
+        .logo-circle:hover {
+          transform: scale(1.1);
+          border-color: #d68c45;
+        }
+        
+        .logo-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
         
         /* Navigation Links */
-        .nav-link-custom, .nav-dropdown-custom .dropdown-toggle {
+        .nav-link-custom {
           color: #f8f7f5 !important;
           transition: color 0.2s ease;
         }
         
-        .nav-link-custom:hover, 
-        .nav-dropdown-custom .dropdown-toggle:hover {
+        .nav-link-custom:hover {
           color: #8cc5bf !important;
         }
         
@@ -249,7 +262,16 @@ const Navbars = () => {
           font-weight: 600;
         }
         
-        /* Dropdown Menu Styling */
+        /* Dropdown Menu */
+        .nav-dropdown-custom .dropdown-toggle {
+          color: #f8f7f5 !important;
+          transition: color 0.2s ease;
+        }
+        
+        .nav-dropdown-custom .dropdown-toggle:hover {
+          color: #8cc5bf !important;
+        }
+        
         .dropdown-menu {
           background-color: #343f3f !important;
           border: 1px solid #495757 !important;
@@ -276,15 +298,14 @@ const Navbars = () => {
           font-weight: 600;
         }
         
-        /* Dropdown toggle appearance */
-        .dropdown-toggle::after {
-          vertical-align: middle;
-        }
-        
-        /* Button styling */
+        /* Donate Button */
         .donate-button-custom {
           background-color: #d68c45 !important;
           border-color: #d68c45 !important;
+          color: #ffffff;
+          font-weight: 600;
+          padding: 0.5rem 1rem;
+          transition: all 0.2s ease;
         }
         
         .donate-button-custom:hover {
@@ -292,32 +313,8 @@ const Navbars = () => {
           border-color: #b87339 !important;
           transform: scale(1.05);
         }
-        
-        /* Logo and brand styling */
-        .brand-name span:hover {
-          color: #8cc5bf !important;
-          transition: color 0.2s ease;
-        }
-        
-        .logo-circle {
-          transition: transform 0.3s ease;
-        }
-        
-        .logo-circle:hover {
-          transform: scale(1.1);
-          border-color: #d68c45;
-        }
-        
-        .logo-image {
-          transition: transform 0.3s ease;
-        }
-        
-        /* Make nav dropdown text white too */
-        .nav-dropdown-custom .dropdown-toggle {
-          color: #f8f7f5 !important;
-        }
       `}</style>
-    </div>
+    </header>
   );
 };
 
