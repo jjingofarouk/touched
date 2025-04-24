@@ -4,12 +4,12 @@ import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/HeroSection.css';
 
-// Import optimized WebP images
-import photo1 from '../assets/images/photo1-1920.webp';
-import photo2 from '../assets/images/photo2-1920.webp';
-import photo3 from '../assets/images/photo3-1920.webp';
-import photo4 from '../assets/images/photo4-1920.webp';
-import photo5 from '../assets/images/photo5-1920.webp';
+// Import optimized jpg images
+import photo1 from '../assets/images/photo1.jpg';
+import photo2 from '../assets/images/photo2.jpg';
+import photo3 from '../assets/images/photo3.jpg';
+import photo4 from '../assets/images/photo4.jpg';
+import photo5 from '../assets/images/photo5.jpg';
 
 const HeroSection = () => {
   const images = [photo1, photo2, photo3, photo4, photo5];
