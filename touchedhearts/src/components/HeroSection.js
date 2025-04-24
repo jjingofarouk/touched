@@ -1,7 +1,5 @@
-
-
 // src/components/HeroSection.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS
@@ -15,38 +13,73 @@ import photo4 from '../assets/images/photo4.jpg';
 import photo5 from '../assets/images/photo5.jpg';
 
 const HeroSection = () => {
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const images = [photo1, photo2, photo3, photo4, photo5];
+  
+  // Preload images for faster rendering
+  useEffect(() => {
+    const preloadImages = async () => {
+      const promises = images.map((src) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      });
+      
+      try {
+        await Promise.all(promises);
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error("Failed to load images:", error);
+        // Still mark as loaded so UI is not blocked indefinitely
+        setImagesLoaded(true);
+      }
+    };
+    
+    preloadImages();
+  }, []);
 
   return (
     <header className="hero-header">
-      <Carousel
-        controls={true}
-        indicators={true}
-        interval={5000}
-        pause="hover"
-        keyboard={true}
-        className="hero-carousel"
-      >
-        {images.map((image, index) => (
-          <Carousel.Item key={index}>
-            <div
-              className="hero-image"
-              style={{
-                backgroundImage: `url(${image})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-              }}
-            >
-              <div className="hero-mask"></div>
-            </div>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+      {imagesLoaded ? (
+        <Carousel
+          controls={true}
+          indicators={true}
+          interval={6000} // Slightly longer interval for a more majestic feel
+          pause="hover"
+          keyboard={true}
+          className="hero-carousel"
+        >
+          {images.map((image, index) => (
+            <Carousel.Item key={index}>
+              <div
+                className="hero-image"
+                style={{
+                  backgroundImage: `url(${image})`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
+                <div className="hero-mask"></div>
+              </div>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      ) : (
+        <div className="hero-loading">
+          <div className="spinner-border text-light" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      )}
+      
       <div className="hero-overlay d-flex justify-content-center align-items-center">
         <div className="hero-content">
           <h1 className="hero-title">Touched Hearts</h1>
-          <h4 className="hero-subtitle">Transforming Lives in Uganda</h4>
+          <h2 className="hero-subtitle">Transforming Lives in Uganda</h2>
           <NavLink
             to="/donate"
             className="hero-button"
