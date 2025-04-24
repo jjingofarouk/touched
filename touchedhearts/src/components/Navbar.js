@@ -7,7 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import logo from '../assets/images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Navbars.css';
+import './Navbar.css';
 
 const Navbars = () => {
   const [expanded, setExpanded] = useState(false);
