@@ -29,20 +29,20 @@
         "@context": "http://schema.org",
         "@type": "NGO",
         "name": "Touched Hearts",
-        "url": "https://touched.vercel.app",
+        "url": "https://www.touchedhearts.org",
         "logo": "%PUBLIC_URL%/logo192.png",
         "description": "Touched Hearts is an NGO focused on social impact, humanitarian work, and changing lives. We empower communities worldwide.",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "123 Charity Blvd.",
-          "addressLocality": "City Name",
-          "addressRegion": "State",
-          "postalCode": "12345",
-          "addressCountry": "Country"
+          "addressLocality": "Kampala",
+          "addressRegion": "Kampala",
+          "postalCode": "10218",
+          "addressCountry": "Uganda"
         },
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+1-800-555-1234",
+          "telephone": "+256751360385",
           "contactType": "Customer Service",
           "areaServed": "Global",
           "availableLanguage": "English"
@@ -70,10 +70,10 @@
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "456 Donation St.",
-            "addressLocality": "City Name",
-            "addressRegion": "State",
-            "postalCode": "12345",
-            "addressCountry": "Country"
+            "addressLocality": "Kampala",
+            "addressRegion": "Uganda",
+            "postalCode": "10218",
+            "addressCountry": "Uganda"
           }
         },
         "image": "%PUBLIC_URL%/event-image.jpg",
@@ -81,12 +81,12 @@
       }
     </script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EW36DS4XPY"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_GA_MEASUREMENT_ID%"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-EW36DS4XPY');
+      gtag('config', '%REACT_APP_GA_MEASUREMENT_ID%');
     </script>
   </head>
   <body>
