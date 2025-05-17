@@ -1,3 +1,4 @@
+// App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -5,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbars from "./components/Navbar";
 import Footer from "./components/Footer";
 import BasicExample from "./components/BasicExample";
-import StoryPage from "./pages/StoryPage"; // Import StoryPage directly
+import StoryPage from "./pages/StoryPage";
 import { Analytics } from "@vercel/analytics/react";
 
 // Pages
@@ -36,6 +37,7 @@ import TermsOfService from "./pages/TermsOfService";
 import Accessibility from "./pages/Accessibility";
 import Fundraise from "./pages/Fundraise";
 import Team from "./pages/Team";
+import NotFound from "./pages/NotFound"; // Add this import
 import "./App.css";
 
 // Import stories data
@@ -46,7 +48,6 @@ const App = () => {
     <Router>
       <div className="app-container">
         <Navbars />
-
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -58,11 +59,7 @@ const App = () => {
             <Route path="/disabilities" element={<Disabilities />} />
             <Route path="/community" element={<Community />} />
             <Route path="/stories" element={<Stories />} />
-            <Route
-              path="/story/:id"
-              element={<StoryPage stories={storiesData} />}
-            />{" "}
-            {/* Add this */}
+            <Route path="/story/:id" element={<StoryPage stories={storiesData} />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/get-involved" element={<GetInvolved />} />
             <Route path="/volunteers" element={<Volunteers />} />
@@ -71,16 +68,10 @@ const App = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/news/community" element={<CommunityNews />} />
             <Route path="/news/camp" element={<CampNews />} />
-            <Route
-              path="/news/community-skilling"
-              element={<CommunitySkillingNews />}
-            />
+            <Route path="/news/community-skilling" element={<CommunitySkillingNews />} />
             <Route path="/events" element={<Events />} />
             <Route path="/annual-reports" element={<AnnualReports />} />
-            <Route
-              path="/financial-statements"
-              element={<FinancialStatements />}
-            />
+            <Route path="/financial-statements" element={<FinancialStatements />} />
             <Route path="/media" element={<Media />} />
             <Route path="/faq" element={<FAQs />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
@@ -88,6 +79,7 @@ const App = () => {
             <Route path="/accessibility" element={<Accessibility />} />
             <Route path="/fundraise" element={<Fundraise />} />
             <Route path="/team" element={<Team />} />
+            <Route path="*" element={<NotFound />} /> {/* Add this catch-all route */}
           </Routes>
         </main>
         <Footer />
