@@ -28,7 +28,7 @@ body {
   width: 100vw;
   height: 500px; /* Fixed height to prevent resizing */
   margin-left: calc(-50vw + 50%);
-  background-image: url('../assets/images/donate.png');
+  background-image: url('../assets/images/medias.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
