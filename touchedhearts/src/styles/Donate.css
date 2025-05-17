@@ -1,40 +1,42 @@
 :root {
-  --primary-color: #007bff; /* Modern blue accent */
-  --neutral-dark: #333333;
-  --neutral-gray: #666666;
-  --neutral-light: #f5f5f5;
+  --primary-color: #2a9d8f; /* Vibrant teal */
+  --neutral-dark: #264653; /* Deep navy */
+  --neutral-gray: #6b7280; /* Cool gray */
+  --neutral-light: #f1f5f9; /* Soft white */
   --white: #ffffff;
 }
 
 body {
   background-color: var(--white);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .donate-page {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
 .donate-header {
-  background-color: var(--neutral-light);
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
   text-align: center;
 }
 
 .donate-header h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--neutral-dark);
-  margin: 0 0 0.5rem;
-  font-weight: 600;
+  margin: 0 0 0.75rem;
+  font-weight: 700;
 }
 
 .donate-header p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--neutral-gray);
   margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .donation-form-section {
@@ -43,13 +45,13 @@ body {
 
 .donation-form {
   background: var(--white);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .donation-form h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--neutral-dark);
   margin: 0 0 1.5rem;
   font-weight: 600;
@@ -57,23 +59,23 @@ body {
 
 .donation-frequency {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .frequency-label {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--neutral-dark);
   cursor: pointer;
 }
 
 .frequency-label input[type="radio"] {
   appearance: none;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border: 2px solid var(--primary-color);
   border-radius: 50%;
   position: relative;
@@ -86,8 +88,8 @@ body {
 
 .frequency-label input[type="radio"]:checked::after {
   content: '';
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background-color: var(--white);
   border-radius: 50%;
   position: absolute;
@@ -98,26 +100,27 @@ body {
 
 .amount-buttons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .amount-btn {
-  padding: 0.75rem;
-  font-size: 1rem;
+  padding: 1rem;
+  font-size: 1.1rem;
   color: var(--neutral-dark);
   background-color: var(--neutral-light);
   border: 1px solid var(--neutral-gray);
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .amount-btn:hover {
   background-color: var(--primary-color);
   color: var(--white);
+  border-color: var(--primary-color);
 }
 
 .amount-btn.active {
@@ -136,19 +139,19 @@ body {
 
 .currency-symbol {
   position: absolute;
-  left: 10px;
+  left: 12px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--neutral-dark);
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .custom-amount-input {
   width: 100%;
-  padding: 0.75rem 0.75rem 0.75rem 2rem;
-  font-size: 1rem;
+  padding: 1rem 1rem 1rem 2.5rem;
+  font-size: 1.1rem;
   border: 1px solid var(--neutral-gray);
-  border-radius: 6px;
+  border-radius: 8px;
   background-color: var(--white);
 }
 
@@ -158,7 +161,7 @@ body {
 
 .form-group label {
   display: block;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--neutral-dark);
   margin-bottom: 0.5rem;
   font-weight: 500;
@@ -166,41 +169,44 @@ body {
 
 .form-group input {
   width: 100%;
-  padding: 0.75rem;
+  padding: 1rem;
   font-size: 1rem;
   border: 1px solid var(--neutral-gray);
-  border-radius: 6px;
+  border-radius: 8px;
   background-color: var(--white);
 }
 
 .form-group input:focus {
   outline: none;
   border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.1);
 }
 
 .payment-methods {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .payment-methods h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--neutral-dark);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .payment-options {
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .payment-option {
   flex: 1;
-  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
   border: 1px solid var(--neutral-gray);
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  text-align: center;
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .payment-option:hover {
@@ -214,34 +220,67 @@ body {
 }
 
 .payment-option span {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
+.payment-icon {
+  width: 40px;
+  height: 24px;
+  object-fit: contain;
+}
+
 .payment-details {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--neutral-gray);
-  margin-top: 0.75rem;
+  margin-top: 1rem;
 }
 
 .btn-primary {
   width: 100%;
-  padding: 1rem;
+  padding: 1.2rem;
   background: var(--primary-color);
   color: var(--white);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
 .btn-primary:hover {
-  background: #0056b3; /* Darker blue */
+  background: #21867a;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
+  .donate-header {
+    padding: 3rem 1rem;
+  }
+
+  .donate-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .donate-header p {
+    font-size: 1.1rem;
+  }
+
+  .donation-form {
+    padding: 2rem;
+  }
+
+  .amount-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .payment-options {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
   .donate-header {
     padding: 2rem 1rem;
   }
@@ -254,33 +293,15 @@ body {
     font-size: 1rem;
   }
 
-  .donation-form {
-    padding: 1.5rem;
-  }
-
-  .amount-buttons {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .donate-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .donate-header p {
-    font-size: 0.9rem;
-  }
-
   .donation-form h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .amount-buttons {
     grid-template-columns: 1fr;
   }
 
-  .payment-options {
-    flex-direction: column;
+  .donation-form {
+    padding: 1.5rem;
   }
 }
