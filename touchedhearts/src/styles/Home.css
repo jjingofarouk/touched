@@ -1,114 +1,103 @@
 :root {
-  /* Primary color palette - Warm Teal/Sage */
-  --primary-color: #3a8f85;
-  --primary-dark: #2c7269;
-  --primary-light: #8cc5bf;
-  --secondary-color: #d68c45;
-  --secondary-dark: #b87339;
-  --secondary-light: #e9b384;
-
-  /* Neutral colors - Warmer and more organic */
-  --dark: #2d3a3a;
-  --dark-gray: #4d5c5c;
-  --medium-gray: #7e8c8c;
-  --light-gray: #d2d8d8;
-  --off-white: #f8f7f5;
+  /* UN-inspired color palette */
+  --primary-color: #005566; /* Deep teal for trust */
+  --primary-dark: #003d4a;
+  --primary-light: #80b3bf;
+  --secondary-color: #009edb; /* UN blue for global appeal */
+  --secondary-dark: #0078a8;
+  --secondary-light: #66c4e6;
+  --neutral-dark: #1a2526;
+  --neutral-gray: #5b6b6d;
+  --neutral-light: #e8ecef;
   --white: #ffffff;
-
-  /* Accent colors - More earthy and harmonious */
-  --success: #739e73;
-  --warning: #e6b86a;
-  --error: #c17b7b;
-  --info: #6a91ab;
+  --success: #007a33;
+  --error: #d32f2f;
 }
 
 /* Base Styles */
 .main-content {
   padding-top: 80px;
-  background: var(--off-white);
+  background: var(--white);
   overflow-x: hidden;
   width: 100%;
   font-family: 'Inter', sans-serif;
-  position: relative; /* Ensure proper stacking context */
 }
 
 /* General Section Styles */
 .section-title {
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
-  font-weight: 800;
-  margin-bottom: 2.5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
   text-align: center;
-  letter-spacing: -0.02em;
-  color: var(--dark); /* Fallback to solid color to avoid rendering issues */
-  /* Removed gradient text effect to test if it’s the cause */
+  color: var(--neutral-dark);
 }
 
 .section-title::after {
   content: '';
-  width: 80px;
-  height: 5px;
+  width: 60px;
+  height: 4px;
   background: var(--secondary-color);
   position: absolute;
-  bottom: -15px;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 5px;
+  border-radius: 4px;
   transition: width 0.3s ease;
 }
 
 .section-title:hover::after {
-  width: 100px;
+  width: 80px;
 }
 
 .section-text {
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-  color: var(--medium-gray);
-  line-height: 1.9;
-  max-width: 900px;
-  margin: 0 auto 2.5rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--neutral-gray);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 2rem;
   text-align: center;
 }
 
 /* Mission Section */
 .mission {
-  padding: 6rem 2rem;
-  background: var(--white); /* Simplified background */
+  padding: 4rem 1.5rem;
+  background: var(--neutral-light);
 }
 
 .mission-container {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
 }
 
 .mission-content {
-  padding: 2.5rem;
+  padding: 2rem;
 }
 
 .mission-video {
   position: relative;
   aspect-ratio: 16/9;
-  border-radius: 20px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(45, 58, 58, 0.1); /* Reduced shadow size */
+  box-shadow: 0 6px 16px rgba(0, 53, 66, 0.1);
 }
 
 .mission-video:hover {
-  box-shadow: 0 12px 30px rgba(45, 58, 58, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 53, 66, 0.15);
 }
 
 .mission-video-element {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease;
 }
 
 .mission-video:hover .mission-video-element {
-  transform: scale(1.05); /* Reduced scale to minimize rendering issues */
+  transform: scale(1.03);
 }
 
 .play-button {
@@ -118,332 +107,106 @@
   transform: translate(-50%, -50%);
   background: var(--secondary-color);
   border: none;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   color: var(--white);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  transition: all 0.4s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .play-button:hover {
   background: var(--secondary-dark);
-  transform: translate(-50%, -50%) scale(1.1); /* Slightly reduced scale */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* Programs Section */
 .programs {
-  padding: 6rem 2rem;
-  background: var(--light-gray);
+  padding: 4rem 1.5rem;
+  background: var(--white);
 }
 
 .programs-grid {
-  max-width: 1280px;
-  margin: 0 auto 3rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .program-card {
   background: var(--white);
-  border-radius: 20px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(45, 58, 58, 0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 6px 16px rgba(0, 53, 66, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .program-card:hover {
-  transform: translateY(-8px); /* Reduced lift */
-  box-shadow: 0 12px 25px rgba(45, 58, 58, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 53, 66, 0.15);
 }
 
 .program-image {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease;
 }
 
 .program-card:hover .program-image {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .program-content {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .program-title {
-  font-size: 1.6rem;
-  color: var(--dark);
-  margin-bottom: 1rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--neutral-dark);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
 }
 
 .program-text {
-  color: var(--medium-gray);
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  color: var(--neutral-gray);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
 .program-link {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .program-link:hover {
   color: var(--primary-dark);
-  transform: translateX(5px);
-}
-
-.programs-cta {
-  text-align: center;
 }
 
 /* Testimonial Section */
 .testimonial-section {
-  padding: 6rem 2rem;
+  padding: 4rem 1.5rem;
+  background: url('../assets/images/testimonial.png') center/cover no-repeat;
   position: relative;
-  color: var(--white);
 }
 
 .testimonial-overlay {
-  background: rgba(45, 58, 58, 0.65);
-  border-radius: 20px;
-  padding: 3rem;
-  max-width: 1280px;
+  background: rgba(0, 53, 66, 0.7);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 /* News Section */
 .news-updates {
-  padding: 6rem 2rem;
-  background: var(--white);
-}
-
-.news-grid {
-  max-width: 1280px;
-  margin: 0 auto 3rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-}
-
-.news-card {
-  background: var(--off-white);
-  border-radius: 20px;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.news-card:hover {
-  box-shadow: 0 10px 25px rgba(45, 58, 58, 0.15);
-  transform: translateY(-8px);
-}
-
-.news-image {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.news-card:hover .news-image {
-  transform: scale(1.05);
-}
-
-.news-content {
-  padding: 2rem;
-}
-
-.news-date {
-  display: block;
-  color: var(--primary-light);
-  font-size: 0.95rem;
-  font-weight: 500;
-  margin-bottom: 0.75rem;
-}
-
-.news-title {
-  font-size: 1.4rem;
-  color: var(--dark);
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.news-excerpt {
-  color: var(--medium-gray);
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.text-link {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.text-link:hover {
-  color: var(--primary-dark);
-  transform: translateX(5px);
-}
-
-.news-cta {
-  text-align: center;
-}
-
-/* CTA Section */
-.cta-section {
-  padding: 6rem 2rem;
-  background: var(--primary-dark); /* Simplified background */
-  color: var(--white);
-}
-
-.cta-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.cta-title {
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
-  margin-bottom: 2rem;
-  color: var(--white);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.cta-title::after {
-  background: var(--secondary-light);
-}
-
-.cta-text {
-  font-size: 1.3rem;
-  color: var(--off-white);
-  margin-bottom: 3rem;
-  line-height: 1.8;
-}
-
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.cta-button {
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: all 0.4s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.cta-button.primary {
-  background: var(--secondary-color);
-  color: var(--white);
-}
-
-.cta-button.primary:hover {
-  background: var(--secondary-dark);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-.cta-button.secondary {
-  background: transparent;
-  color: var(--white);
-  border: 2px solid var(--secondary-light);
-}
-
-.cta-button.secondary:hover {
-  background: var(--secondary-light);
-  color: var(--dark);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .mission-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .mission-video {
-    max-width: 700px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .main-content {
-    padding-top: 60px;
-  }
-
-  .mission,
-  .programs,
-  .news-updates,
-  .cta-section,
-  .testimonial-section {
-    padding: 4rem 1.5rem;
-  }
-
-  .program-card,
-  .news-card {
-    max-width: 450px;
-    margin: 0 auto;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .section-text {
-    font-size: 1rem;
-  }
-
-  .program-image,
-  .news-image {
-    height: 200px;
-  }
-
-  .play-button {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-
-  .cta-title {
-    font-size: 1.8rem;
-  }
-
-  .cta-text {
-    font-size: 1.1rem;
-  }
-}
+  padding
