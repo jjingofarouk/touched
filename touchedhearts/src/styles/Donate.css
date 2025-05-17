@@ -19,41 +19,37 @@
 }
 
 .page-header {
-  text-align: center;
-  padding: 0;
   position: relative;
-}
-
-.header-image {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 1rem;
+  width: 100vw;
+  height: 500px;
+  margin-left: calc(-50vw + 50%);
+  background-image: url('../assets/images/donate.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .page-header-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 53, 66, 0.7);
-  padding: 1.5rem 2rem;
-  border-radius: 8px;
+  background: rgba(0, 53, 66, 0.75);
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  max-width: 700px;
 }
 
 .page-header-content h1 {
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   color: var(--white);
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .page-header-content p {
-  font-size: 1.1rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   color: var(--neutral-light);
-  max-width: 600px;
-  margin: 0 auto;
   line-height: 1.6;
 }
 
@@ -327,21 +323,22 @@
     padding: 1.5rem;
   }
 
-  .page-header-content {
-    position: static;
-    transform: none;
-    background: none;
-    padding: 1rem;
+  .page-header {
+    height: 400px;
   }
 
-  .header-image {
-    max-height: 300px;
+  .page-header-content {
+    padding: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .page-header-content h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+
+  .page-header-content p {
+    font-size: 1rem;
   }
 
   .donation-form-container h2 {
@@ -350,5 +347,9 @@
 
   .amount-buttons {
     grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    height: 300px;
   }
 }
