@@ -4,7 +4,6 @@ import '../styles/get-involved.css';
 import VolunteerForm from '../components/VolunteerForm';
 import Partners from '../components/Partners';
 import Fundraise from './Fundraise';
-import DonationWidget from '../components/DonationWidget';
 import headerImage from './reports-header.png'; // Add a relevant header image
 
 const theme = {
@@ -198,7 +197,6 @@ const GetInvolved = () => {
           >
             Donate Now
           </Link>
-          <DonationWidget />
         </section>
 
         <section className="involve-section fundraise">
@@ -257,7 +255,7 @@ const GetInvolved = () => {
           >
             Contact Us
           </a>
-          <Partners />
+
         </section>
       </div>
     </div>
