@@ -69,7 +69,7 @@ const Footer = () => {
           <address className="contact-info">
             <div className="contact-item">
               <i className="fas fa-map-marker-alt contact-icon"></i>
-              <span>123 Kampala Road, Kampala, Uganda</span>
+              <span>1024 Rubaga Road, Kampala, Uganda</span>
             </div>
             <div className="contact-item">
               <i className="fas fa-phone contact-icon"></i>
@@ -80,15 +80,7 @@ const Footer = () => {
               <a href="mailto:touchedheartsfoundation@gmail.com">touchedheartsfoundation@gmail.com</a>
             </div>
           </address>
-          <div className="newsletter">
-            <h4 className="newsletter-heading">Stay Updated</h4>
-            <form className="newsletter-form">
-              <input type="email" placeholder="Your email" className="newsletter-input" aria-label="Email for newsletter" />
-              <button type="submit" className="newsletter-button" aria-label="Subscribe">
-                <i className="fas fa-paper-plane"></i>
-              </button>
-            </form>
-          </div>
+     
         </div>
       </div>
       
