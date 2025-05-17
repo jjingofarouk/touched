@@ -152,7 +152,7 @@ const Stories = () => {
               View All Stories
             </button>
             <Link
-              to="/share-story"
+              to="/stories"
               style={{
                 padding: `${theme.spacingXs} ${theme.spacingMd}`,
                 backgroundColor: 'transparent',
