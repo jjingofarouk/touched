@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import '../styles/Donate.css
 
 // Import payment images
 import visaImage from '../assets/images/visa.png';
@@ -68,7 +68,6 @@ const Donate = () => {
       <section className="page-header donate-page-header">
         <div className="page-header-content">
           <h1>Transform Lives with Your Donation</h1>
-          <p>Your generosity drives global impact, empowering communities worldwide.</p>
         </div>
       </section>
 
