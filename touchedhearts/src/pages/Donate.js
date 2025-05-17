@@ -6,6 +6,7 @@ import '../styles/Donate.css';
 import visaImage from '../assets/images/visa.png';
 import mastercardImage from '../assets/images/mastercard.png';
 import paypalImage from '../assets/images/paypal.png';
+import donateImage from './donate.png';
 
 const paymentImages = {
   visa: visaImage,
@@ -67,7 +68,7 @@ const Donate = () => {
     <div className="donate-page">
       <section className="page-header">
         <img
-          src="/assets/images/donate.jpeg"
+          src={donateImage}
           alt="Support our mission"
           className="header-image"
           loading="lazy"
