@@ -1,16 +1,23 @@
 
 
+
+/* Donate.css - Modern dark blue theme for NGO donation page */
+
 /* Global styles and variables */
 :root {
-  --primary-color: #0077cc;
-  --primary-hover: #0066b3;
-  --secondary-color: #f8f9fa;
-  --text-color: #333;
-  --text-light: #767676;
-  --border-color: #e2e2e2;
-  --success-color: #28a745;
-  --focus-shadow: 0 0 0 0.2rem rgba(0, 119, 204, 0.25);
-  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --primary-color: #1e88e5;
+  --primary-hover: #1565c0;
+  --secondary-color: #f5f9ff;
+  --dark-blue: #0a1929;
+  --dark-blue-light: #132f4c;
+  --dark-blue-lighter: #173a5e;
+  --text-light: #b0bec5;
+  --text-white: #ffffff;
+  --text-muted: #90a4ae;
+  --border-color: #2c4b6e;
+  --success-color: #4caf50;
+  --focus-shadow: 0 0 0 0.2rem rgba(30, 136, 229, 0.25);
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   --border-radius: 8px;
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -20,13 +27,21 @@
 }
 
 /* Base styles */
+body {
+  background-color: var(--dark-blue);
+  color: var(--text-white);
+  margin: 0;
+  padding: 0;
+}
+
 .donate-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--spacing-md);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  color: var(--text-color);
+  background-color: var(--dark-blue);
   line-height: 1.6;
+  min-height: 100vh;
 }
 
 /* Header styles */
@@ -37,10 +52,11 @@
 }
 
 .donate-header h1 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   margin-bottom: var(--spacing-sm);
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--text-white);
+  letter-spacing: -0.02em;
 }
 
 .donate-header p {
@@ -57,18 +73,19 @@
 }
 
 .donation-form {
-  background-color: #fff;
+  background-color: var(--dark-blue-light);
   border-radius: var(--border-radius);
   box-shadow: var(--card-shadow);
   padding: var(--spacing-lg);
   width: 100%;
   max-width: 640px;
+  border: 1px solid var(--border-color);
 }
 
 .donation-form h2 {
   font-size: 1.75rem;
   margin-bottom: var(--spacing-md);
-  color: var(--text-color);
+  color: var(--text-white);
   font-weight: 600;
 }
 
@@ -76,7 +93,7 @@
 .donation-frequency {
   display: flex;
   margin-bottom: var(--spacing-md);
-  background: var(--secondary-color);
+  background: var(--dark-blue-lighter);
   border-radius: var(--border-radius);
   padding: 0.25rem;
 }
@@ -90,6 +107,7 @@
   border-radius: calc(var(--border-radius) - 2px);
   font-weight: 500;
   transition: background-color 0.2s;
+  color: var(--text-light);
 }
 
 .frequency-label input {
@@ -97,14 +115,9 @@
   opacity: 0;
 }
 
-.frequency-label input:checked + .frequency-label {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
 .frequency-label:has(input:checked) {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: var(--primary-color);
+  color: var(--text-white);
 }
 
 /* Amount buttons */
@@ -116,7 +129,7 @@
 }
 
 .amount-btn {
-  background-color: var(--secondary-color);
+  background-color: var(--dark-blue-lighter);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   padding: var(--spacing-sm);
@@ -124,16 +137,18 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  color: var(--text-light);
 }
 
 .amount-btn:hover {
-  background-color: #f0f0f0;
+  background-color: var(--dark-blue-light);
+  border-color: var(--primary-color);
 }
 
 .amount-btn.active {
-  background-color: rgba(0, 119, 204, 0.1);
+  background-color: var(--primary-color);
   border: 1px solid var(--primary-color);
-  color: var(--primary-color);
+  color: var(--text-white);
 }
 
 /* Custom amount input */
@@ -141,7 +156,7 @@
   grid-column: span 2;
   display: flex;
   align-items: center;
-  background-color: var(--secondary-color);
+  background-color: var(--dark-blue-lighter);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   padding: 0 var(--spacing-sm);
@@ -149,7 +164,6 @@
 }
 
 .custom-amount-container.active {
-  background-color: rgba(0, 119, 204, 0.1);
   border: 1px solid var(--primary-color);
 }
 
@@ -165,8 +179,12 @@
   background: transparent;
   padding: var(--spacing-sm);
   font-size: 1rem;
-  color: var(--text-color);
+  color: var(--text-white);
   outline: none;
+}
+
+.custom-amount-input::placeholder {
+  color: var(--text-muted);
 }
 
 /* Form fields */
@@ -178,6 +196,7 @@
   display: block;
   margin-bottom: var(--spacing-xs);
   font-weight: 500;
+  color: var(--text-white);
 }
 
 .form-group input {
@@ -187,6 +206,12 @@
   border-radius: var(--border-radius);
   font-size: 1rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: var(--dark-blue-lighter);
+  color: var(--text-white);
+}
+
+.form-group input::placeholder {
+  color: var(--text-muted);
 }
 
 .form-group input:focus {
@@ -204,6 +229,7 @@
   font-size: 1.1rem;
   margin-bottom: var(--spacing-sm);
   font-weight: 500;
+  color: var(--text-white);
 }
 
 .payment-options {
@@ -221,26 +247,32 @@
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: all 0.2s ease;
+  background-color: var(--dark-blue-lighter);
+  color: var(--text-light);
 }
 
 .payment-option:hover {
-  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
 }
 
 .payment-option.active {
-  background-color: rgba(0, 119, 204, 0.1);
+  background-color: var(--primary-color);
   border: 1px solid var(--primary-color);
+  color: var(--text-white);
 }
 
 .payment-icon {
   height: 24px;
   margin-bottom: var(--spacing-xs);
+  background-color: white;
+  padding: 2px;
+  border-radius: 4px;
 }
 
 .payment-details {
   margin-top: var(--spacing-sm);
   font-size: 0.875rem;
-  color: var(--text-light);
+  color: var(--text-muted);
 }
 
 /* Submit button */
@@ -267,6 +299,53 @@
   outline: none;
 }
 
+/* Impact info section - new addition */
+.impact-info {
+  margin-top: var(--spacing-xl);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.impact-card {
+  background-color: var(--dark-blue-light);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  flex: 1;
+  min-width: 200px;
+  max-width: calc(33.333% - var(--spacing-md));
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.impact-card h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.impact-card p {
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* Secure donation info - new addition */
+.secure-info {
+  display: flex;
+  align-items: center;
+  margin-top: var(--spacing-sm);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  justify-content: center;
+}
+
+.secure-info svg {
+  margin-right: var(--spacing-xs);
+  height: 16px;
+  width: 16px;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .donate-header h1 {
@@ -279,6 +358,10 @@
 
   .donation-form {
     padding: var(--spacing-md);
+  }
+  
+  .impact-card {
+    max-width: 100%;
   }
 }
 
@@ -306,6 +389,13 @@
   }
 }
 
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  .payment-icon {
+    background-color: transparent;
+  }
+}
+
 /* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -323,5 +413,3 @@
     outline: 2px solid CanvasText;
   }
 }
-
-
