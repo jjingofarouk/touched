@@ -1,10 +1,8 @@
+// pages/GetInvolved.jsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/get-involved.css';
-import VolunteerForm from '../components/VolunteerForm';
-import Partners from '../components/Partners';
-import Fundraise from './Fundraise';
-import headerImage from './reports-header.png'; // Add a relevant header image
+import headerImage from './reports-header.png';
 
 const theme = {
   primaryColor: '#3a8f85',
@@ -72,7 +70,9 @@ const GetInvolved = () => {
         }}
       >
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-
+          <h1 style={{ fontFamily: theme.fontHeading, fontSize: theme.h1Size, color: theme.white }}>
+            Get Involved with Touched Hearts
+          </h1>
           <p
             style={{
               fontFamily: theme.fontBody,
@@ -95,6 +95,23 @@ const GetInvolved = () => {
             }}
           >
             <Link
+              to="/volunteers"
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: theme.secondaryColor,
+                color: theme.white,
+                border: 'none',
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Volunteer
+            </Link>
+            <Link
               to="/donate"
               style={{
                 padding: `${theme.spacingXs} ${theme.spacingMd}`,
@@ -111,7 +128,40 @@ const GetInvolved = () => {
             >
               Donate Now
             </Link>
-            
+            <Link
+              to="/fundraise"
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: theme.secondaryColor,
+                color: theme.white,
+                border: 'none',
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Fundraise
+            </Link>
+            <Link
+              to="/partners"
+              style={{
+                padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                backgroundColor: theme.secondaryColor,
+                color: theme.white,
+                border: 'none',
+                borderRadius: '6px',
+                fontFamily: theme.fontBody,
+                fontWeight: 600,
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'background-color 0.3s ease',
+              }}
+            >
+              Partner
+            </Link>
           </div>
         </div>
       </section>
@@ -128,134 +178,128 @@ const GetInvolved = () => {
               color: theme.darkGray,
               lineHeight: 1.6,
               textAlign: 'center',
+              maxWidth: '800px',
+              margin: '0 auto',
             }}
           >
-            At Touched Hearts, we believe that every individual has the power to create change. Whether you're passionate
-            about education, healthcare, disability support, or community development, your involvement helps us reach
-            more people and transform lives.
+            At Touched Hearts, we believe every individual can drive change. Your involvement in our programs—whether through time, resources, or partnerships—helps us empower communities in Uganda with education, healthcare, disability support, and sustainable development.
           </p>
         </section>
 
-        <section className="involve-section volunteer">
-          <h2 style={{ fontFamily: theme.fontHeading, fontSize: theme.h2Size, color: theme.primaryDark }}>
-            Volunteer with Us
+        <section className="involve-section options">
+          <h2 style={{ fontFamily: theme.fontHeading, fontSize: theme.h2Size, color: theme.dark, textAlign: 'center' }}>
+            Ways to Make a Difference
           </h2>
-          <p style={{ fontFamily: theme.fontBody, fontSize: theme.bodySize, color: theme.darkGray, lineHeight: 1.6 }}>
-            Volunteering with Touched Hearts is a rewarding way to make a direct impact.
-          </p>
-          <h3 style={{ fontFamily: theme.fontHeading, fontSize: theme.h3Size, color: theme.primaryDark }}>
-            Opportunities Include:
-          </h3>
-          <ul
-            style={{
-              fontFamily: theme.fontBody,
-              fontSize: theme.bodySize,
-              color: theme.darkGray,
-              lineHeight: 1.6,
-              paddingLeft: '1.5rem',
-            }}
-          >
-            <li>
-              <strong>Education Support:</strong> Tutor students or assist with school supply drives.
-            </li>
-            <li>
-              <strong>Healthcare Outreach:</strong> Help with mobile clinics or health education workshops.
-            </li>
-            <li>
-              <strong>Community Building:</strong> Participate in construction projects or skill-building programs.
-            </li>
-            <li>
-              <strong>Event Support:</strong> Organize or assist at fundraising and awareness events.
-            </li>
-          </ul>
-          <VolunteerForm />
-        </section>
-
-        <section className="involve-section donate">
-          <h2 style={{ fontFamily: theme.fontHeading, fontSize: theme.h2Size, color: theme.primaryDark }}>
-            Make a Donation
-          </h2>
-          <p style={{ fontFamily: theme.fontBody, fontSize: theme.bodySize, color: theme.darkGray, lineHeight: 1.6 }}>
-            Your financial support fuels our programs and allows us to reach more individuals in need.
-          </p>
-          <Link
-            to="/donate"
-            style={{
-              display: 'inline-block',
-              padding: `${theme.spacingXs} ${theme.spacingMd}`,
-              backgroundColor: theme.secondaryColor,
-              color: theme.white,
-              border: 'none',
-              borderRadius: '6px',
-              fontFamily: theme.fontBody,
-              fontWeight: 600,
-              cursor: 'pointer',
-              textDecoration: 'none',
-              transition: 'background-color 0.3s ease',
-              margin: `${theme.spacingSm} 0`,
-            }}
-          >
-            Donate Now
-          </Link>
-        </section>
-
-        <section className="involve-section fundraise">
-          <h2 style={{ fontFamily: theme.fontHeading, fontSize: theme.h2Size, color: theme.primaryDark }}>
-            Start a Fundraiser
-          </h2>
-          <p style={{ fontFamily: theme.fontBody, fontSize: theme.bodySize, color: theme.darkGray, lineHeight: 1.6 }}>
-            Turn your passion into action by organizing a fundraising campaign for Touched Hearts.
-          </p>
-          <a
-            href="/fundraising-guide.pdf"
-            download
-            style={{
-              display: 'inline-block',
-              padding: `${theme.spacingXs} ${theme.spacingMd}`,
-              backgroundColor: theme.secondaryColor,
-              color: theme.white,
-              border: 'none',
-              borderRadius: '6px',
-              fontFamily: theme.fontBody,
-              fontWeight: 600,
-              cursor: 'pointer',
-              textDecoration: 'none',
-              transition: 'background-color 0.3s ease',
-              margin: `${theme.spacingSm} 0`,
-            }}
-          >
-            Download Fundraising Guide
-          </a>
-          <Fundraise />
-        </section>
-
-        <section className="involve-section partner">
-          <h2 style={{ fontFamily: theme.fontHeading, fontSize: theme.h2Size, color: theme.primaryDark }}>
-            Become a Partner
-          </h2>
-          <p style={{ fontFamily: theme.fontBody, fontSize: theme.bodySize, color: theme.darkGray, lineHeight: 1.6 }}>
-            We collaborate with businesses, organizations, and institutions to amplify our impact.
-          </p>
-          <a
-            href="mailto:touchedheartsug12@gmail.com"
-            style={{
-              display: 'inline-block',
-              padding: `${theme.spacingXs} ${theme.spacingMd}`,
-              backgroundColor: theme.secondaryColor,
-              color: theme.white,
-              border: 'none',
-              borderRadius: '6px',
-              fontFamily: theme.fontBody,
-              fontWeight: 600,
-              cursor: 'pointer',
-              textDecoration: 'none',
-              transition: 'background-color 0.3s ease',
-              margin: `${theme.spacingSm} 0`,
-            }}
-          >
-            Contact Us
-          </a>
-
+          <div className="options-grid">
+            <div className="option-card">
+              <h3 style={{ fontFamily: theme.fontHeading, fontSize: theme.h3Size, color: theme.primaryDark }}>
+                Volunteer
+              </h3>
+              <p style={{ fontFamily: theme.fontBody, fontSize: theme.bodySize, color: theme.darkGray, lineHeight: 1.6 }}>
+                Contribute your skills and time to support education, healthcare, or community projects.
+              </p>
+              <Link
+                to="/volunteers"
+                style={{
+                  display: 'inline-block',
+                  padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                  backgroundColor: theme.primaryColor,
+                  color: theme.white,
+                  border: 'none',
+                  borderRadius: '6px',
+                  fontFamily: theme.fontBody,
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  transition: 'background-color 0.3s ease',
+                  marginTop: theme.spacingSm,
+                }}
+              >
+                Learn More
+              </Link>
+            </div>
+            <div className="option-card">
+              <h3 style={{ fontFamily: theme.fontHeading, fontSize: theme.h3Size, color: theme.primaryDark }}>
+                Donate
+              </h3>
+              <p style={{ fontFamily: theme.fontBody, fontSize: theme.bodySize, color: theme.darkGray, lineHeight: 1.6 }}>
+                Your financial support fuels our programs, reaching more individuals in need.
+              </p>
+              <Link
+                to="/donate"
+                style={{
+                  display: 'inline-block',
+                  padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                  backgroundColor: theme.primaryColor,
+                  color: theme.white,
+                  border: 'none',
+                  borderRadius: '6px',
+                  fontFamily: theme.fontBody,
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  transition: 'background-color 0.3s ease',
+                  marginTop: theme.spacingSm,
+                }}
+              >
+                Learn More
+              </Link>
+            </div>
+            <div className="option-card">
+              <h3 style={{ fontFamily: theme.fontHeading, fontSize: theme.h3Size, color: theme.primaryDark }}>
+                Fundraise
+              </h3>
+              <p style={{ fontFamily: theme.fontBody, fontSize: theme.bodySize, color: theme.darkGray, lineHeight: 1.6 }}>
+                Organize a campaign to rally support and resources for our mission.
+              </p>
+              <Link
+                to="/fundraise"
+                style={{
+                  display: 'inline-block',
+                  padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                  backgroundColor: theme.primaryColor,
+                  color: theme.white,
+                  border: 'none',
+                  borderRadius: '6px',
+                  fontFamily: theme.fontBody,
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  transition: 'background-color 0.3s ease',
+                  marginTop: theme.spacingSm,
+                }}
+              >
+                Learn More
+              </Link>
+            </div>
+            <div className="option-card">
+              <h3 style={{ fontFamily: theme.fontHeading, fontSize: theme.h3Size, color: theme.primaryDark }}>
+                Partner
+              </h3>
+              <p style={{ fontFamily: theme.fontBody, fontSize: theme.bodySize, color: theme.darkGray, lineHeight: 1.6 }}>
+                Collaborate with us to amplify our impact through shared goals and resources.
+              </p>
+              <Link
+                to="/partners"
+                style={{
+                  display: 'inline-block',
+                  padding: `${theme.spacingXs} ${theme.spacingMd}`,
+                  backgroundColor: theme.primaryColor,
+                  color: theme.white,
+                  border: 'none',
+                  borderRadius: '6px',
+                  fontFamily: theme.fontBody,
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  transition: 'background-color 0.3s ease',
+                  marginTop: theme.spacingSm,
+                }}
+              >
+                Learn More
+              </Link>
+            </div>
+          </div>
         </section>
       </div>
     </div>
