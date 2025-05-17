@@ -65,7 +65,7 @@ const Donate = () => {
 
   return (
     <div className="donate-page">
-      <section className="page-header">
+      <section className="page-header donate-page-header">
         <div className="page-header-content">
           <h1>Transform Lives with Your Donation</h1>
           <p>Your generosity drives global impact, empowering communities worldwide.</p>
