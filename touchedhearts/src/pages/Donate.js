@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Donate.css';
+
 
 // Import payment images
 import visaImage from '../assets/images/visa.png';
