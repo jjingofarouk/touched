@@ -41,12 +41,12 @@
   overflow-x: hidden;
 }
 
-h1, h2 {
+.media-page h1, .media-page h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
 }
 
-h3, h4, h5, h6 {
+.media-page h3, .media-page h4, .media-page h5, .media-page h6 {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
 }
@@ -73,10 +73,8 @@ h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-/* Add intersection observer in JS (snippet at bottom) */
-
 /* Page Header */
-.page-header {
+.media-page .page-header {
   position: relative;
   height: 70vh;
   min-height: 500px;
@@ -91,7 +89,7 @@ h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-.page-header::before {
+.media-page .page-header::before {
   content: "";
   position: absolute;
   top: 0;
@@ -104,7 +102,7 @@ h3, h4, h5, h6 {
   animation: fadeIn 1.5s ease forwards, float 15s ease-in-out infinite alternate;
 }
 
-.page-header h1 {
+.media-page .page-header h1 {
   font-size: 4.5rem;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
@@ -115,7 +113,7 @@ h3, h4, h5, h6 {
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.header-subtitle {
+.media-page .header-subtitle {
   font-size: 1.5rem;
   font-weight: 300;
   max-width: 600px;
@@ -648,7 +646,7 @@ h3, h4, h5, h6 {
 
 /* Responsive Design */
 @media (max-width: 992px) {
-  .page-header h1 {
+  .media-page .page-header h1 {
     font-size: 3.5rem;
   }
   
@@ -662,11 +660,11 @@ h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
-  .page-header h1 {
+  .media-page .page-header h1 {
     font-size: 2.8rem;
   }
   
-  .header-subtitle {
+  .media-page .header-subtitle {
     font-size: 1.2rem;
   }
   
@@ -692,11 +690,11 @@ h3, h4, h5, h6 {
 }
 
 @media (max-width: 480px) {
-  .page-header h1 {
+  .media-page .page-header h1 {
     font-size: 2.3rem;
   }
   
-  .page-header {
+  .media-page .page-header {
     min-height: 400px;
   }
   
@@ -708,4 +706,3 @@ h3, h4, h5, h6 {
     grid-template-columns: 1fr;
   }
 }
-
