@@ -2,6 +2,17 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Donate.css';
 
+// Import payment images
+import visaImage from '../assets/images/visa.png';
+import mastercardImage from '../assets/images/mastercard.png';
+import paypalImage from '../assets/images/paypal.png';
+
+const paymentImages = {
+  visa: visaImage,
+  mastercard: mastercardImage,
+  paypal: paypalImage,
+};
+
 const Donate = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -55,13 +66,13 @@ const Donate = () => {
   return (
     <div className="donate-page">
       <header className="donate-header">
-        <h1>Support Our Mission</h1>
-        <p>Your donation makes a difference worldwide.</p>
+        <h1>Make a Difference Today</h1>
+        <p>Your support transforms lives around the world.</p>
       </header>
 
       <section className="donation-form-section">
         <form className="donation-form" onSubmit={handleSubmit}>
-          <h2>Donate Now</h2>
+          <h2>Your Donation</h2>
 
           <div className="donation-frequency">
             <label className="frequency-label">
@@ -145,12 +156,27 @@ const Donate = () => {
                 className={`payment-option ${formData.paymentMethod === 'card' ? 'active' : ''}`}
                 onClick={() => handleChange({ target: { name: 'paymentMethod', value: 'card' } })}
               >
+                <img
+                  src={paymentImages.visa}
+                  alt="Visa"
+                  className="payment-icon"
+                />
+                <img
+                  src={paymentImages.mastercard}
+                  alt="Mastercard"
+                  className="payment-icon"
+                />
                 <span>Credit/Debit Card</span>
               </div>
               <div
                 className={`payment-option ${formData.paymentMethod === 'paypal' ? 'active' : ''}`}
                 onClick={() => handleChange({ target: { name: 'paymentMethod', value: 'paypal' } })}
               >
+                <img
+                  src={paymentImages.paypal}
+                  alt="PayPal"
+                  className="payment-icon"
+                />
                 <span>PayPal</span>
               </div>
             </div>
